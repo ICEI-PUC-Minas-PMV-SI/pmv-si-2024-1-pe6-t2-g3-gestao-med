@@ -1,4 +1,4 @@
-# TÍTULO DO PROJETO
+# GESTÃO MED
 
 `CURSO: Sistemas de Informação`
 
@@ -10,16 +10,16 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Ana Laura Souza Rosa da Silva
+* Denise Cristina de Souza
+* Eduardo Ramon Cardoso Fernandes
 * Guilherme Lima de Freitas
-* Nome completo do aluno 6
+* Jamesson Seren de Arruda
+* Marcos Paulo Silva Costa
 
 ## Orientador
 
-* Nome completo do professor 1
+* Josiane da Cosat Vieira Rezende
 
 # Planejamento
 
