@@ -112,7 +112,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 | Casos de Uso | CdU02 - Fazer login  |
 |------|------------------------------|
-|Procedimento| 1) Usuário informa e-mail, senha e clica em "entrar".<br /> 2) A aplicação verifica se os dados estão corretos e informa ao usuário caso não estejam.<br /> 3) A aplicação direciona o usuário para a sua página inicial.|
+|Procedimento| 1) Usuário informa e-mail, senha e clica em "entrar".         <br /> 2) A aplicação verifica se os dados estão corretos e informa ao usuário caso não estejam.        <br /> 3) A aplicação direciona o usuário para a sua página inicial.|
 |Requisitos associados|Cadastro de usuário.|
 |Resultado esperado| Redirecionamento para página home da aplicação. | 
 |Dados de entrada |E-mail e senha. |
