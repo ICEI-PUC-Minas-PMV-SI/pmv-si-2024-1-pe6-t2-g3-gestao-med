@@ -103,6 +103,15 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
 |RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
 
+### Caso de Uso
+| Casos de Uso | CdU01 - Criar conta  |
+|------|------------------------------|
+|Procedimento| 1) Usuário informa nome, sobrenome, e-mail, senha, Estado, Cidade, gênero, data de nascimento e clica no botão  "Criar usuário".
+2) A aplicação verifica se os dados são válidos e informa ao usuário caso não estejam.
+3) A aplicação armazena os dados e direciona o usuário para a tela de login.|
+|Resultado esperado| Criação do usuário e redirecionamento para página de login. | 
+|Dados de entrada |Nome, sobrenome, e-mail, senha, steado, cidade, gênero, data de nascimento. | 
+
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
 - [Requisitos Funcionais
