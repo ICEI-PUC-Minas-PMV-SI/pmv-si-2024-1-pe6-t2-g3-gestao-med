@@ -131,6 +131,27 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |Resultado esperado| O usuário terá acesso ao histórico de todos os medicamentos já tomados. | 
 |Dados de entrada |Histórico de ingestão e dia, semana, mês e ano. |
 
+| Casos de Uso | CdU05 -  |
+|------|------------------------------|
+|Procedimento| ----- |
+|Requisitos associados| ------ |
+|Resultado esperado| ----- | 
+|Dados de entrada | -------- |
+
+| Casos de Uso | CdU06 -  |
+|------|------------------------------|
+|Procedimento| --------- |
+|Requisitos associados| ---------- |
+|Resultado esperado|-------- | 
+|Dados de entrada | ------------|
+
+| Casos de Uso | CdU07 -  |
+|------|------------------------------|
+|Procedimento| ------------------ |
+|Requisitos associados| ------ |
+|Resultado esperado| ------- | 
+|Dados de entrada | ----------- |
+
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
 - [Requisitos Funcionais
