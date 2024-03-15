@@ -106,9 +106,23 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 ### Caso de Uso
 | Casos de Uso | CdU01 - Criar conta  |
 |------|------------------------------|
-|Procedimento| 1) Usuário informa nome, sobrenome, e-mail, senha, Estado, Cidade, gênero, data de nascimento e clica no botão  "Criar usuário". 2)<br /> A aplicação verifica se os dados são válidos e informa ao usuário caso não estejam.<br /> 3) A aplicação armazena os dados e direciona o usuário para a tela de login.|
+|Procedimento| 1) Usuário informa nome, sobrenome, e-mail, senha, Estado, Cidade, gênero, data de nascimento e clica no botão  "Criar usuário". <br />2) A aplicação verifica se os dados são válidos e informa ao usuário caso não estejam.<br /> 3) A aplicação armazena os dados e direciona o usuário para a tela de login.|
 |Resultado esperado| Criação do usuário e redirecionamento para página de login. | 
-|Dados de entrada |Nome, sobrenome, e-mail, senha, steado, cidade, gênero, data de nascimento. | 
+|Dados de entrada |Nome, sobrenome, e-mail, senha, steado, cidade, gênero, data de nascimento. |
+
+| Casos de Uso | CdU02 - Fazer login  |
+|------|------------------------------|
+|Procedimento| 1) Usuário informa e-mail, senha e clica em "entrar".<br /> 2) A aplicação verifica se os dados estão corretos e informa ao usuário caso não estejam.<br /> 3) A aplicação direciona o usuário para a sua página inicial.|
+|Requisitos associados|Cadastro de usuário.|
+|Resultado esperado| Redirecionamento para página home da aplicação. | 
+|Dados de entrada |E-mail e senha. |
+
+| Casos de Uso | CdU03 - Cadastrar  medicações e alarmes  |
+|------|------------------------------|
+|Procedimento| 1)O usuário acessa a página de cadastro de medicamentos.<br /> 2)O usuário informa o nome do medicamento, o estoque Inicial, o período de uso e  horários programados para alarme  e clica em adicionar.<br /> 3) A aplicação armazena os dados e direciona o usuário para a home da aplicação.|
+|Requisitos associados|Cadastro de usuário e login.|
+|Resultado esperado| O medicamento e horários programados para alarmes serão adicionados, e o usuário será redirecionado para página home. | 
+|Dados de entrada |Nome do medicamento, o estoque Inicial, o período de uso e o horário de uso. |
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
