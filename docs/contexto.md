@@ -124,6 +124,13 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |Resultado esperado| O medicamento e horários programados para alarmes serão adicionados, e o usuário será redirecionado para página home. | 
 |Dados de entrada |Nome do medicamento, o estoque Inicial, o período de uso e o horário de uso. |
 
+| Casos de Uso | CdU04 - Consultar Histórico de Ingestão de Medicamentos |
+|------|------------------------------|
+|Procedimento| 1)O usuário seleciona a opção “Histórico de Ingestão”. <br />2) O aplicativo devolve uma interface para seleção de período de consulta do histórico como “Dia” “Semana” “Mês” e “Ano”. <br />3) O usuário seleciona o período desejado. <br />4) O sistema recupera e devolve o histórico de ingestão de medicamentos para o período selecionado.|
+|Requisitos associados|Cadastro de usuário, login, cadastro de medicamentos.|
+|Resultado esperado| O usuário terá acesso ao histórico de todos os medicamentos já tomados. | 
+|Dados de entrada |Histórico de ingestão e dia, semana, mês e ano. |
+
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
 - [Requisitos Funcionais
