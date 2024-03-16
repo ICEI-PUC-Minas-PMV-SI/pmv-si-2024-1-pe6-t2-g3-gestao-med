@@ -193,7 +193,7 @@ Descreva aqui todos os serviços que serão disponibilizados pelo seu projeto, d
 
 # Gerenciamento de Projeto
 
-De acordo com o PMBoK v6 as dez áreas que constituem os pilares para gerenciar projetos, e que caracterizam a multidisciplinaridade envolvida, são: Integração, Escopo, Cronograma (Tempo), Custos, Qualidade, Recursos, Comunicações, Riscos, Aquisições, Partes Interessadas. Para desenvolver projetos um profissional deve se preocupar em gerenciar todas essas dez áreas. Elas se complementam e se relacionam, de tal forma que não se deve apenas examinar uma área de forma estanque. É preciso considerar, por exemplo, que as áreas de Escopo, Cronograma e Custos estão muito relacionadas. Assim, se eu amplio o escopo de um projeto eu posso afetar seu cronograma e seus custos.
+O gerenciamento de projetos é um conjunto de práticas, métodos e ferramentas utilizadas para coordenar os processos de um projeto de forma eficaz e atingir resultados. Ele serve para garantir que o projeto seja concluído com sucesso. Ou seja, que os resultados desejados sejam alcançados de acordo com as metas estabelecidas. 
 
 ## Gerenciamento de Tempo
 
