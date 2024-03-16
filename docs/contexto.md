@@ -47,9 +47,7 @@ Adicione informações sobre o público-alvo por meio de uma descrição textual
 
 # Especificações do Projeto
 
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
-
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
+Nesta seção, serão abordados  os tópicos que norteiam o desenvolvimento desta aplicação Web, que serão descritos a seguir.
 
 ## Personas
 
@@ -79,34 +77,19 @@ Mauro Gomes Teixeira, 34 anos, é solteiro e mora sozinho. Ele é técnico de en
 Com base na análise das personas foram identificadas as seguintes histórias de usuários:
 
 
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
-|--------------------|------------------------------------|----------------------------------------|
-|Todos os usuários   | Receber notificações com as instru-| Proporcionar que eu utilize o medica-  |                                    |
-|                    | ções a hora do uso dos medicamen-  |mento certo, na hora certa e na dose    |
-|                    | tos.                               | prescrita.                             |
-|--------------------|------------------------------------|----------------------------------------|
-|Sueli Aparecida     |Organizar as informações dos vários |Viabilizar utilização segura e eficiente|    
-|Usuária Paciente    |medicamentos que utilizo            |dos medicamentos                        |      
-|--------------------|------------------------------------|----------------------------------------|
-|Sueli Aparecida     |Receber notificações 2 dias antes   |Evitar interrupções no tratamento e pre-|
-|Usuária Paciente    |quando determinado medicamento      |juízo à saúde.                          |
-|                    |está acabando.                      |                                        |
-|--------------------|------------------------------------|----------------------------------------|
-|Adriana Pereira     | Manter registro completo de todos  | Manter o tratamento correto e eficien- |
-|Usuária Paciente    | os medicamentos já administrados   | te.                                    |
-|                    | durante o dia e ao longo do trata- |                                        |
-|                    | mento.                             |                                        |
-|--------------------|------------------------------------|----------------------------------------|
-|Mauro Gomes         | Cadastrar todos os medicamenos a   | Não confundir suas medicações e horá-  |
-|Usuário Paciente    | serem usados.                      | rios de administração.                 | 
-|--------------------|------------------------------------|----------------------------------------|
-|Joaquim Cardoso     | Gerar um relatório do histórico de | Acompanhar e partilhar com o médico    |
-|Usuário Paciente    | tomada de medicamentos.            | como tomei os medicamentos.            |
-|--------------------|------------------------------------|----------------------------------------|
+|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`|
+|--------------------|------------------------------------|-----------------------|
+|Todos os usuários pacientes|Receber notificações com as instruções a hora do uso dos medicamentos.|Proporcionar que eu utilize o medicamento certo, na hora certa e na dose prescrita.|                   
+|Sueli Aparecida  Usuário Paciente|Organizar as informações dos vários medicamentos que utilizo.|Viabilizar utilização segura e eficiente dos medicamentos.|        
+|Sueli Aparecida  Usuário Paciente|Receber notificações 2 dias antes avisando quando determinado medicamento está acabando.|Evitar interrupções no tratamento e prejuízo à saúde.|
+|Adriana Pereira  Usuário Paciente|Manter registro completo de todos os medicamentos já administrados durante o dia e ao longo do tratamento.|Manter o tratamento correto e eficiente.|
+|Mauro Gomes  Usuário Paciente|Cadastrar todos os medicamenos a serem usados.|Não confundir suas medicações e horários de adminstração.|
+|Joaquim Cardoso  Usuário Paciente|Gerar um relatório do histórico de tomada de medicamentos.|Acompanhar e partilhar com o médico como tomei os medicamentos.|
 
 ## Requisitos
 
-As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto. Para determinar a prioridade de requisitos, aplicar uma técnica de priorização de requisitos e detalhar como a técnica foi aplicada.
+Os requisitos funcionais se relacionam ao que o software faz, em termos de tarefas e serviços. Já os requisitos não funcionais se relacionam ao uso da aplicação em termos de desempenho, usabilidade, confiabilidade, segurança, disponibilidade, manutenção e tecnologias envolvidas.
+As tabelas a seguir apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto.
 
 ### Requisitos Funcionais
 
@@ -188,7 +171,9 @@ todos os aspectos capturados nas Histórias de Usuário foram cobertos.
 
 ## Restrições
 
-O projeto está restrito pelos itens apresentados na tabela a seguir.
+As restrições são as situações que limitam o projeto, que podem ser impostas por alguém ou pelo próprio ambiente no qual o projeto está inserido. Elas podem comprometer a execução e o desenvolvimento dos trabalhos que compõem o projeto. 
+O projeto está restrito pelos itens apresentados na tabela abaixo:
+
 
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
