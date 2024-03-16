@@ -197,11 +197,25 @@ O gerenciamento de projetos é um conjunto de práticas, métodos e ferramentas 
 
 ## Gerenciamento de Tempo
 
-Com diagramas bem organizados que permitem gerenciar o tempo nos projetos, o gerente de projetos agenda e coordena tarefas dentro de um projeto para estimar o tempo necessário de conclusão.
+ETAPA 1: Documentação de Contexto <br />  
+•	Análise e definição de requisitos do projeto. <br /> •	Definição de funcionalidades do sistema. <br /> •	Criação dos casos de uso e do diagrama de uso. <br /> •	Definição da arquitetura do sistema. <br /> •	Prototipagem. <br /> •	Criação de documento com as informações e especificações do projeto. <br /> •	Interação com o cliente.<br />  
 
-![Diagrama de rede simplificado notação francesa (método francês)](img/02-diagrama-rede-simplificado.png)
+ETAPA 2: Planejar, Desenvolver e Gerenciar APIs e Web Services <br /> 
+•	Definição das APIs do sistema. <br /> •	Projeto da arquitetura da API. <br /> 
+•	Desenvolvimento das APIs e serviços web. <br /> •	Realização de testes de unidade e integração nas APIs e serviços web. <br /> •	Documentação da API. <br /> •	Interação com o cliente. <br /> 
 
-O gráfico de Gantt ou diagrama de Gantt também é uma ferramenta visual utilizada para controlar e gerenciar o cronograma de atividades de um projeto. Com ele, é possível listar tudo que precisa ser feito para colocar o projeto em prática, dividir em atividades e estimar o tempo necessário para executá-las.
+ETAPA 3: Planejar, Desenvolver e Gerenciar uma Aplicação Web <br /> 
+•	Projeto da arquitetura da aplicação web. <br /> •	Desenvolvimento das páginas da aplicação web. <br /> •	Integração das APIs e serviços web. <br /> •	Testes de responsividade da aplicação web. <br /> •	Testes de desempenho. <br /> 
+•	Interação com o cliente. <br /> 
+
+ETAPA 4: Planejar, Desenvolver e Gerenciar uma Aplicação Móvel <br /> 
+•	Projeto da interface do usuário da aplicação móvel. <br /> •	Desenvolvimento das telas da aplicação móvel. <br /> •	Integração das APIs e serviços da aplicação móvel. <br /> •	Realização de testes em diferentes dispositivos. <br /> 
+•	Interação com o cliente. <br /> 
+
+ETAPA 5: Apresentação <br /> 
+•	Montagem de apresentação e materiais visuais. <br /> •	Apresentação do projeto ao cliente. <br /> •	Demonstração da funcionalidade das aplicações web e móvel. <br /> •	Recepção de feedback do cliente e responder a perguntas. <br /> •	Entrega do manual do usuário. <br /> 
+
+colocar foto do cronograma
 
 ![Gráfico de Gantt](img/02-grafico-gantt.png)
 
@@ -209,7 +223,16 @@ O gráfico de Gantt ou diagrama de Gantt também é uma ferramenta visual utiliz
 
 O gerenciamento adequado de tarefas contribuirá para que o projeto alcance altos níveis de produtividade. Por isso, é fundamental que ocorra a gestão de tarefas e de pessoas, de modo que os times envolvidos no projeto possam ser facilmente gerenciados. 
 
+•	Distribuição de atividades e responsabilidades para a divisão eficiente do trabalho; <br /> •	Comunicação diária rápida de 20 minutos para ajustes e retorno do andamento das atividades; <br /> •	Reunião semanal para acompanhamento do andamento do projeto e abertura de discussões, além de feedbacks para aprimoramento contínuo. <br /> 
+
+colocar foto do nosso gerenciamento de equipe
 ![Simple Project Timeline](img/02-project-timeline.png)
+
+## Gerenciamento de Custos
+
+Gerenciamento de Custos em Projetos é um conjunto de processos que tem por objetivo garantir que o projeto seja entregue dentro do orçamento aprovado. Dessa forma, é possível conciliar os recursos financeiros que o projeto precisa para ser concluído. Ele traz uma forma estruturada para planejar, estimar, determinar e controlar os custos. Dessa forma, garante que nenhuma etapa seja esquecida e proporciona a elaboração de um orçamento mais próximo da realidade. <br />
+
+colocar foto do gerenciamento 
 
 # Arquitetura da Solução
 
