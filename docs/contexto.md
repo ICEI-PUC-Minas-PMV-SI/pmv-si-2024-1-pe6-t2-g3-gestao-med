@@ -53,37 +53,56 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 ## Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
-
+A descrição das personas trata-se de uma representação semi-fictícia, baseada em dados reais, do seu cliente ideal. É um modelo construído a partir de características comportamentais e demográficas
 Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
 
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
+1) Joaquim Cardoso dos Santos 
+
+Joaquim Cardoso dos Santos, 46 anos, viúvo, tem 3 filhos. Atualmente mora sozinho no subúrbio de São Paulo, trabalha como operador de máquinas pesadas em grandes construções e é portador da Síndrome de Burnout (distúrbio psíquico causado pela exaustão extrema). Ultimamente seu psicólogo recomendou-lhe que utilizasse redes sociais para entretenimento, e praticasse exercícios físicos; então ele passou a utilizar frequentemente WhatsApp, Facebook e o Instagram; e faz uma curta caminhada no final da tarde todos os dias. Ele faz uso diário de antidepressivos e ansiolíticos para tratamento de seu distúrbio. Como o horário de sua medicação fica dentro do horário de trabalho ele acaba atrasando ou antecipando o uso dos medicamentos. Tendo isso em mente, ele está procurando por um artifício que possa lembrá-lo de se medicar no horário correto.
+
+2) Sueli Aparecida 
+
+Sueli Aparecida tem 70 anos, é professora aposentada e vive na companhia do marido que também é aposentado. Ela costuma utilizar algumas redes sociais como WhatsApp e Facebook para se relacionar com familiares e amigos. Faz uso regular de medicamentos para controle de diabetes, hipertensão arterial, dislipidemia e hipotireoidismo. Além disso, também toma algumas vitaminas para suplementação nutricional. Procura algum meio para auxiliá-la a organizar as informações, bem como para lembrá-la de tomar o medicamento certo, na hora certa e na dosagem correta, pois tem dificuldades com a bula, esquecimentos de horários, nome dos medicamentos, além de esquecer de verificar quando determinado medicamento está acabando.
+
+3) Adriana Pereira da Silva 
+
+Adriana Pereira Silva, 50 anos, é casada e mãe de três filhos. Ela trabalha como professora há quinze anos e há cinco anos foi diagnosticada com diabetes, hipertensão arterial além de ansiedade, e para controle dessas doenças faz uso de vários medicamentos. Em sua rotina, Adriana precisa controlar os horários e as doses dos remédios, necessitando assim de um auxílio tecnológico que a faça lembrar dos horários para que ela possa ter o controle das doses a administrar no dia.
+
+4)Mauro Gomes Teixeira
+
+Mauro Gomes Teixeira, 34 anos, é solteiro e mora sozinho. Ele é técnico de enfermagem e recentemente iniciou um tratamento medicamentoso para diabetes tipo II. Ao longo do seu dia ele toma 3 medicações diferentes e às vezes se esquece de tomá-las, além de se confundir se já as tomou ou não.  Com a vida corrida, ele se sente muitas vezes confuso com administração de seus medicamentos e acredita que uma ferramenta tecnológica em que ele pudesse ser avisado dos horários de administração, e em que poderia acompanhar como se medicou e quais medicações já tomou no dia, poderia auxiliá-lo nesse tratamento crônico.
+
 
 ## Histórias de Usuários
 
-Com base na análise das personas forma identificadas as seguintes histórias de usuários:
+É uma explicação informal e geral sobre um recurso de software, escrita a partir da perspectiva do usuário final. Seu objetivo é articular como um recurso de software pode gerar valor para o cliente.
+Com base na análise das personas foram identificadas as seguintes histórias de usuários:
+
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
-
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
-
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
+|Todos os usuários   | Receber notificações com as instru-| Proporcionar que eu utilize o medica-  |                                    |
+|                    | ções a hora do uso dos medicamen-  |mento certo, na hora certa e na dose    |
+|                    | tos.                               | prescrita.                             |
+|--------------------|------------------------------------|----------------------------------------|
+|Sueli Aparecida     |Organizar as informações dos vários |Viabilizar utilização segura e eficiente|    
+|Usuária Paciente    |medicamentos que utilizo            |dos medicamentos                        |      
+|--------------------|------------------------------------|----------------------------------------|
+|Sueli Aparecida     |Receber notificações 2 dias antes   |Evitar interrupções no tratamento e pre-|
+|Usuária Paciente    |quando determinado medicamento      |juízo à saúde.                          |
+|                    |está acabando.                      |                                        |
+|--------------------|------------------------------------|----------------------------------------|
+|Adriana Pereira     | Manter registro completo de todos  | Manter o tratamento correto e eficien- |
+|Usuária Paciente    | os medicamentos já administrados   | te.                                    |
+|                    | durante o dia e ao longo do trata- |                                        |
+|                    | mento.                             |                                        |
+|--------------------|------------------------------------|----------------------------------------|
+|Mauro Gomes         | Cadastrar todos os medicamenos a   | Não confundir suas medicações e horá-  |
+|Usuário Paciente    | serem usados.                      | rios de administração.                 | 
+|--------------------|------------------------------------|----------------------------------------|
+|Joaquim Cardoso     | Gerar um relatório do histórico de | Acompanhar e partilhar com o médico    |
+|Usuário Paciente    | tomada de medicamentos.            | como tomei os medicamentos.            |
+|--------------------|------------------------------------|----------------------------------------|
 
 ## Requisitos
 
