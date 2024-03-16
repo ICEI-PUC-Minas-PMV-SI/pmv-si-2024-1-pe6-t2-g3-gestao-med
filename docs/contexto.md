@@ -66,7 +66,7 @@ Sueli Aparecida tem 70 anos, é professora aposentada e vive na companhia do mar
 
 Adriana Pereira Silva, 50 anos, é casada e mãe de três filhos. Ela trabalha como professora há quinze anos e há cinco anos foi diagnosticada com diabetes, hipertensão arterial além de ansiedade, e para controle dessas doenças faz uso de vários medicamentos. Em sua rotina, Adriana precisa controlar os horários e as doses dos remédios, necessitando assim de um auxílio tecnológico que a faça lembrar dos horários para que ela possa ter o controle das doses a administrar no dia.
 
-4)Mauro Gomes Teixeira
+4) Mauro Gomes Teixeira
 
 Mauro Gomes Teixeira, 34 anos, é solteiro e mora sozinho. Ele é técnico de enfermagem e recentemente iniciou um tratamento medicamentoso para diabetes tipo II. Ao longo do seu dia ele toma 3 medicações diferentes e às vezes se esquece de tomá-las, além de se confundir se já as tomou ou não.  Com a vida corrida, ele se sente muitas vezes confuso com administração de seus medicamentos e acredita que uma ferramenta tecnológica em que ele pudesse ser avisado dos horários de administração, e em que poderia acompanhar como se medicou e quais medicações já tomou no dia, poderia auxiliá-lo nesse tratamento crônico.
 
@@ -74,6 +74,7 @@ Mauro Gomes Teixeira, 34 anos, é solteiro e mora sozinho. Ele é técnico de en
 ## Histórias de Usuários
 
 É uma explicação informal e geral sobre um recurso de software, escrita a partir da perspectiva do usuário final. Seu objetivo é articular como um recurso de software pode gerar valor para o cliente.
+
 Com base na análise das personas foram identificadas as seguintes histórias de usuários:
 
 
