@@ -54,19 +54,19 @@ Nesta seção, serão abordados  os tópicos que norteiam o desenvolvimento dest
 A descrição das personas trata-se de uma representação semi-fictícia, baseada em dados reais, do seu cliente ideal. É um modelo construído a partir de características comportamentais e demográficas
 Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
 
-1) Joaquim Cardoso dos Santos 
+**1) Joaquim Cardoso dos Santos** 
 
 Joaquim Cardoso dos Santos, 46 anos, viúvo, tem 3 filhos. Atualmente mora sozinho no subúrbio de São Paulo, trabalha como operador de máquinas pesadas em grandes construções e é portador da Síndrome de Burnout (distúrbio psíquico causado pela exaustão extrema). Ultimamente seu psicólogo recomendou-lhe que utilizasse redes sociais para entretenimento, e praticasse exercícios físicos; então ele passou a utilizar frequentemente WhatsApp, Facebook e o Instagram; e faz uma curta caminhada no final da tarde todos os dias. Ele faz uso diário de antidepressivos e ansiolíticos para tratamento de seu distúrbio. Como o horário de sua medicação fica dentro do horário de trabalho ele acaba atrasando ou antecipando o uso dos medicamentos. Tendo isso em mente, ele está procurando por um artifício que possa lembrá-lo de se medicar no horário correto.
 
-2) Sueli Aparecida 
+**2) Sueli Aparecida** 
 
 Sueli Aparecida tem 70 anos, é professora aposentada e vive na companhia do marido que também é aposentado. Ela costuma utilizar algumas redes sociais como WhatsApp e Facebook para se relacionar com familiares e amigos. Faz uso regular de medicamentos para controle de diabetes, hipertensão arterial, dislipidemia e hipotireoidismo. Além disso, também toma algumas vitaminas para suplementação nutricional. Procura algum meio para auxiliá-la a organizar as informações, bem como para lembrá-la de tomar o medicamento certo, na hora certa e na dosagem correta, pois tem dificuldades com a bula, esquecimentos de horários, nome dos medicamentos, além de esquecer de verificar quando determinado medicamento está acabando.
 
-3) Adriana Pereira da Silva 
+**3) Adriana Pereira da Silva** 
 
 Adriana Pereira Silva, 50 anos, é casada e mãe de três filhos. Ela trabalha como professora há quinze anos e há cinco anos foi diagnosticada com diabetes, hipertensão arterial além de ansiedade, e para controle dessas doenças faz uso de vários medicamentos. Em sua rotina, Adriana precisa controlar os horários e as doses dos remédios, necessitando assim de um auxílio tecnológico que a faça lembrar dos horários para que ela possa ter o controle das doses a administrar no dia.
 
-4) Mauro Gomes Teixeira
+**4) Mauro Gomes Teixeira**
 
 Mauro Gomes Teixeira, 34 anos, é solteiro e mora sozinho. Ele é técnico de enfermagem e recentemente iniciou um tratamento medicamentoso para diabetes tipo II. Ao longo do seu dia ele toma 3 medicações diferentes e às vezes se esquece de tomá-las, além de se confundir se já as tomou ou não.  Com a vida corrida, ele se sente muitas vezes confuso com administração de seus medicamentos e acredita que uma ferramenta tecnológica em que ele pudesse ser avisado dos horários de administração, e em que poderia acompanhar como se medicou e quais medicações já tomou no dia, poderia auxiliá-lo nesse tratamento crônico.
 
@@ -188,18 +188,18 @@ O gerenciamento de projetos é um conjunto de práticas, métodos e ferramentas 
 
 ## Gerenciamento de Tempo
 
-ETAPA 1: Documentação de Contexto <br /> •	Análise e definição de requisitos do projeto. <br /> •	Definição de funcionalidades do sistema. <br /> •	Criação dos casos de uso e do diagrama de uso. <br /> •	Definição da arquitetura do sistema. <br /> •	Prototipagem. <br /> •	Criação de documento com as informações e especificações do projeto. <br /> •	Interação com o cliente.<br />  
+**ETAPA 1: Documentação de Contexto** <br /> •	Análise e definição de requisitos do projeto. <br /> •	Definição de funcionalidades do sistema. <br /> •	Criação dos casos de uso e do diagrama de uso. <br /> •	Definição da arquitetura do sistema. <br /> •	Prototipagem. <br /> •	Criação de documento com as informações e especificações do projeto. <br /> •	Interação com o cliente.<br />  
 
-ETAPA 2: Planejar, Desenvolver e Gerenciar APIs e Web Services <br /> •	Definição das APIs do sistema. <br /> •	Projeto da arquitetura da API. <br /> 
+**ETAPA 2: Planejar, Desenvolver e Gerenciar APIs e Web Services** <br /> •	Definição das APIs do sistema. <br /> •	Projeto da arquitetura da API. <br /> 
 •	Desenvolvimento das APIs e serviços web. <br /> •	Realização de testes de unidade e integração nas APIs e serviços web. <br /> •	Documentação da API. <br /> •	Interação com o cliente. <br /> 
 
-ETAPA 3: Planejar, Desenvolver e Gerenciar uma Aplicação Web <br /> •	Projeto da arquitetura da aplicação web. <br /> •	Desenvolvimento das páginas da aplicação web. <br /> •	Integração das APIs e serviços web. <br /> •	Testes de responsividade da aplicação web. <br /> •	Testes de desempenho. <br /> 
+**ETAPA 3: Planejar, Desenvolver e Gerenciar uma Aplicação Web** <br /> •	Projeto da arquitetura da aplicação web. <br /> •	Desenvolvimento das páginas da aplicação web. <br /> •	Integração das APIs e serviços web. <br /> •	Testes de responsividade da aplicação web. <br /> •	Testes de desempenho. <br /> 
 •	Interação com o cliente. <br /> 
 
-ETAPA 4: Planejar, Desenvolver e Gerenciar uma Aplicação Móvel <br /> •	Projeto da interface do usuário da aplicação móvel. <br /> •	Desenvolvimento das telas da aplicação móvel. <br /> •	Integração das APIs e serviços da aplicação móvel. <br /> •	Realização de testes em diferentes dispositivos. <br /> 
+**ETAPA 4: Planejar, Desenvolver e Gerenciar uma Aplicação Móvel** <br /> •	Projeto da interface do usuário da aplicação móvel. <br /> •	Desenvolvimento das telas da aplicação móvel. <br /> •	Integração das APIs e serviços da aplicação móvel. <br /> •	Realização de testes em diferentes dispositivos. <br /> 
 •	Interação com o cliente. <br /> 
 
-ETAPA 5: Apresentação <br /> •	Montagem de apresentação e materiais visuais. <br /> •	Apresentação do projeto ao cliente. <br /> •	Demonstração da funcionalidade das aplicações web e móvel. <br /> •	Recepção de feedback do cliente e responder a perguntas. <br /> •	Entrega do manual do usuário. <br /> 
+**ETAPA 5: Apresentação** <br /> •	Montagem de apresentação e materiais visuais. <br /> •	Apresentação do projeto ao cliente. <br /> •	Demonstração da funcionalidade das aplicações web e móvel. <br /> •	Recepção de feedback do cliente e responder a perguntas. <br /> •	Entrega do manual do usuário. <br /> 
 
 ![cronograma1](img/cronograma-foto-1.png)
 ![cronograma](cronograma-foto-3.png)
