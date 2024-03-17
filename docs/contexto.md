@@ -14,16 +14,13 @@ Com base nesse contexto, é proposto o desenvolvimento de uma aplicação web de
 
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
+A organização pessoal de medicamentos emerge como uma tarefa complexa, especialmente para idosos com patologias crônicas. A diversidade de medicamentos a serem consumidos diariamente, em diferentes horários e doses, contribui para essa complexidade. A habilidade e a memória necessárias para o uso correto dos medicamentos podem ser comprometidas por uma série de fatores. Segundo Costa (2012), menos de 30% dos idosos utilizam suas medicações corretamente.
 
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
+Entre os problemas mais comuns associados à administração de medicamentos estão o uso desnecessário ou incorreto de medicamentos, doses inadequadas e a não conformidade com os horários prescritos. Esses problemas podem resultar em efeitos adversos graves, exigindo intervenção médica (Manual do Cuidador da Pessoa Idosa, 2008).
 
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+Portanto, a administração de medicamentos afeta os usuários bem como os  que precisam gerenciar medicamentos em outras pessoas, como cuidadores e enfermeiros. A complexidade aumenta quando múltiplos medicamentos devem ser administrados em várias pessoas, com horários variados. Sendo assim, este trabalho busca abordar os desafios enfrentados na administração de medicamentos, não apenas na terceira idade, mas em todas as faixas etárias, propondo uma solução prática e inovadora através do design de produto e do conhecimento em Sistema de Informações. 
+
 
 ## Objetivos
 
