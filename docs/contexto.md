@@ -10,7 +10,7 @@ Conforme relatado por Patel e Zed (2002), complicações relacionadas à farmaco
 
 O armazenamento de medicamentos nos domicílios é prática comum da população brasileira, podendo representar um potencial risco para o surgimento de agravos à saúde. Além disso, esses medicamentos são armazenados, frequentemente, em ambientes inadequados, propiciando diversas possibilidades de consumo irracional, incluindo medicamentos prescritos para doenças crônicas, analgésicos, antibióticos e anti-inflamatórios. (Milanez et al., 2010)
 
-Com base nesse contexto, é proposto o desenvolvimento de uma aplicação web dedicada à organização e gestão da administração de medicamentos, visando facilitar  o dia a dia das pessoas que dependem da ingestão de medicamentos regularmente. 
+Com base nesse contexto, é proposto o desenvolvimento de uma aplicação *web* dedicada à organização e gestão da administração de medicamentos, visando facilitar  o dia a dia das pessoas que dependem da ingestão de medicamentos regularmente. 
 
 
 ## Problema
@@ -19,7 +19,7 @@ A organização pessoal de medicamentos emerge como uma tarefa complexa, especia
 
 Entre os problemas mais comuns associados à administração de medicamentos estão o uso desnecessário ou incorreto de medicamentos, doses inadequadas e a não conformidade com os horários prescritos. Esses problemas podem resultar em efeitos adversos graves, exigindo intervenção médica (Manual do Cuidador da Pessoa Idosa, 2008).
 
-Portanto, a administração de medicamentos afeta os usuários que precisam gerenciar administração de medicamentos. A complexidade aumenta quando múltiplos medicamentos devem ser administrados em várias pessoas, com horários variados. Sendo assim, este trabalho busca abordar os desafios enfrentados na administração de medicamentos, não apenas na terceira idade, mas em todas as faixas etárias, propondo uma solução prática e inovadora através do design de produto e do conhecimento em Sistema de Informações. 
+Portanto, a administração de medicamentos afeta os usuários que precisam gerenciar administração de medicamentos. A complexidade aumenta quando múltiplos medicamentos devem ser administrados em várias pessoas, com horários variados. Sendo assim, este trabalho busca abordar os desafios enfrentados na administração de medicamentos, não apenas na terceira idade, mas em todas as faixas etárias, propondo uma solução prática e inovadora através do *design* de produto e do conhecimento em Sistema de Informações. 
 
 
 ## Objetivos
@@ -34,7 +34,7 @@ O objetivo é não apenas indicar o medicamento a ser ingerido, mas também forn
 
 1. Desenvolver uma interface intuitiva e amigável que permita aos usuários cadastrarem informações sobre os medicamentos, incluindo nome, dosagem, horário de administração e duração do tratamento;
 2. Criar um banco de dados completo contendo informações detalhadas sobre os medicamentos, como nome, substância ativa, dosagem e posologia;
-3. Implementar funcionalidades de alerta e lembrete, utilizando notificações na tela do celular ou do smartwatch, para informar os usuários sobre os horários de administração dos medicamentos e alertar sobre a necessidade de compra caso um medicamento em uso esteja prestes a acabar no estoque do usuário;  
+3. Implementar funcionalidades de alerta e lembrete, utilizando notificações na tela do celular ou do *smartwatch*, para informar os usuários sobre os horários de administração dos medicamentos e alertar sobre a necessidade de compra caso um medicamento em uso esteja prestes a acabar no estoque do usuário;  
 4. Integrar um sistema de organização dos medicamentos por dia e horário, proporcionando uma visualização clara e organizada do cronograma de administração;
 5. Incluir ferramentas de acompanhamento e registro do histórico de administração de medicamentos, permitindo aos usuários monitorarem a adesão ao tratamento ao longo do tempo e compartilhar essas informações com seus médicos, caso desejem;
 6. Implementar a funcionalidade de enviar esses dados através de um relatório para o médico, facilitando a comunicação entre paciente e profissional de saúde e auxiliando no acompanhamento do tratamento;
@@ -52,7 +52,7 @@ O uso racional de medicamentos (URM) é fundamental para garantir o correto e ap
 
 Nesse contexto, a tecnologia assistiva surge como uma aliada importante, buscando promover a autonomia e independência das pessoas, especialmente aquelas com deficiência ou mobilidade reduzida. Terapeutas ocupacionais, fisioterapeutas, farmacêuticos e designers, entre outros profissionais, têm trabalhado no desenvolvimento e adaptação de produtos e recursos assistivos para atender às necessidades dos usuários.
 
-Identificado esse problema como uma demanda mais ampla, surge a possibilidade de oferecer uma solução por meio do design de produto. Desta forma, propõe-se a criação desta aplicação web como uma ferramenta de auxílio na última etapa do processo de administração de medicamentos. 
+Identificado esse problema como uma demanda mais ampla, surge a possibilidade de oferecer uma solução por meio do design de produto. Desta forma, propõe-se a criação desta aplicação *web* como uma ferramenta de auxílio na última etapa do processo de administração de medicamentos. 
 
 
 ## Público-Alvo
