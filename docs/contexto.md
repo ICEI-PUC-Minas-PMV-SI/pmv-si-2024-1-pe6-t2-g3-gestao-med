@@ -47,20 +47,19 @@ Adicione informações sobre o público-alvo por meio de uma descrição textual
 
 # Especificações do Projeto
 
-Nesta seção, serão abordados  os tópicos que norteiam o desenvolvimento desta aplicação Web, que serão descritos a seguir.
+Nesta seção, serão abordados  os tópicos que norteiam o desenvolvimento desta aplicação *web*, que serão descritos a seguir.
 
 ## Personas
 
-A descrição das personas trata-se de uma representação semi-fictícia, baseada em dados reais, do seu cliente ideal. É um modelo construído a partir de características comportamentais e demográficas
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
+A descrição das personas trata-se de uma representação semi-fictícia, baseada em dados reais, do seu cliente ideal. É um modelo construído a partir de características comportamentais e demográficas.
 
 **1) Joaquim Cardoso dos Santos** 
 
-Joaquim Cardoso dos Santos, 46 anos, viúvo, tem 3 filhos. Atualmente mora sozinho no subúrbio de São Paulo, trabalha como operador de máquinas pesadas em grandes construções e é portador da Síndrome de Burnout (distúrbio psíquico causado pela exaustão extrema). Ultimamente seu psicólogo recomendou-lhe que utilizasse redes sociais para entretenimento, e praticasse exercícios físicos; então ele passou a utilizar frequentemente WhatsApp, Facebook e o Instagram; e faz uma curta caminhada no final da tarde todos os dias. Ele faz uso diário de antidepressivos e ansiolíticos para tratamento de seu distúrbio. Como o horário de sua medicação fica dentro do horário de trabalho ele acaba atrasando ou antecipando o uso dos medicamentos. Tendo isso em mente, ele está procurando por um artifício que possa lembrá-lo de se medicar no horário correto.
+Joaquim Cardoso dos Santos, 46 anos, viúvo, tem 3 filhos. Atualmente mora sozinho no subúrbio de São Paulo, trabalha como operador de máquinas pesadas em grandes construções e é portador da Síndrome de Burnout (distúrbio psíquico causado pela exaustão extrema). Ultimamente seu psicólogo recomendou-lhe que utilizasse redes sociais para entretenimento, e praticasse exercícios físicos; então ele passou a utilizar frequentemente *WhatsApp*, *Facebook* e o *Instagram*; e faz uma curta caminhada no final da tarde todos os dias. Ele faz uso diário de antidepressivos e ansiolíticos para tratamento de seu distúrbio. Como o horário de sua medicação fica dentro do horário de trabalho ele acaba atrasando ou antecipando o uso dos medicamentos. Tendo isso em mente, ele está procurando por um artifício que possa lembrá-lo de se medicar no horário correto.
 
 **2) Sueli Aparecida** 
 
-Sueli Aparecida tem 70 anos, é professora aposentada e vive na companhia do marido que também é aposentado. Ela costuma utilizar algumas redes sociais como WhatsApp e Facebook para se relacionar com familiares e amigos. Faz uso regular de medicamentos para controle de diabetes, hipertensão arterial, dislipidemia e hipotireoidismo. Além disso, também toma algumas vitaminas para suplementação nutricional. Procura algum meio para auxiliá-la a organizar as informações, bem como para lembrá-la de tomar o medicamento certo, na hora certa e na dosagem correta, pois tem dificuldades com a bula, esquecimentos de horários, nome dos medicamentos, além de esquecer de verificar quando determinado medicamento está acabando.
+Sueli Aparecida tem 70 anos, é professora aposentada e vive na companhia do marido que também é aposentado. Ela costuma utilizar algumas redes sociais como *WhatsApp* e *Facebook* para se relacionar com familiares e amigos. Faz uso regular de medicamentos para controle de diabetes, hipertensão arterial, dislipidemia e hipotireoidismo. Além disso, também toma algumas vitaminas para suplementação nutricional. Procura algum meio para auxiliá-la a organizar as informações, bem como para lembrá-la de tomar o medicamento certo, na hora certa e na dosagem correta, pois tem dificuldades com a bula, esquecimentos de horários, nome dos medicamentos, além de esquecer de verificar quando determinado medicamento está acabando.
 
 **3) Adriana Pereira da Silva** 
 
@@ -73,7 +72,7 @@ Mauro Gomes Teixeira, 34 anos, é solteiro e mora sozinho. Ele é técnico de en
 
 ## Histórias de Usuários
 
-É uma explicação informal e geral sobre um recurso de software, escrita a partir da perspectiva do usuário final. Seu objetivo é articular como um recurso de software pode gerar valor para o cliente.
+É uma explicação informal e geral sobre um recurso do sistema, escrita a partir da perspectiva do usuário final. Seu objetivo é articular como um recurso do sistema pode gerar valor para o cliente.
 
 Com base na análise das personas foram identificadas as seguintes histórias de usuários:
 
@@ -89,7 +88,7 @@ Com base na análise das personas foram identificadas as seguintes histórias de
 
 ## Requisitos
 
-Os requisitos funcionais se relacionam ao que o software faz, em termos de tarefas e serviços. Já os requisitos não funcionais se relacionam ao uso da aplicação em termos de desempenho, usabilidade, confiabilidade, segurança, disponibilidade, manutenção e tecnologias envolvidas.
+Os requisitos funcionais se relacionam ao que o sistema faz, em termos de tarefas e serviços. Já os requisitos não funcionais se relacionam ao uso do sistema em termos de desempenho, usabilidade, confiabilidade, segurança, disponibilidade, manutenção e tecnologias envolvidas.
 As tabelas a seguir apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto.
 
 ### Requisitos Funcionais
@@ -172,14 +171,16 @@ O projeto está restrito pelos itens apresentados na tabela abaixo:
 |04| O desenvolvimento do projeto estará limitado a 6 colaboradores.|
 |05| O projeto será desenvolvido apenas no idioma português.|
 |06| A hospedagem back-end deve ser somente na AWS.|
-|07| A hospedagem front-end será na plataforma vercel.|
-|08| Atividades no web browser serão restritas.|
+|07| A hospedagem front-end será na plataforma Vercel.|
+|08| Atividades no *web browser* serão restritas.|
 
 # Catálogo de Serviços
 
 O catálogo de serviços do projeto é uma ferramenta vital que delineia os serviços oferecidos, proporcionando clareza e transparência sobre as funcionalidades disponíveis. Com uma estrutura bem definida, o catálogo de serviços torna-se essencial para a gestão eficiente do projeto, auxiliando na tomada de decisões e na alocação adequada de recursos.
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-1-pe6-t2-g3-gestao-med/assets/84341202/aa47f648-30df-4275-a165-69a4e62637cb)
+
+# Matriz de Rastreabilidade 
 
 # Gerenciamento de Projeto
 
@@ -198,7 +199,7 @@ O gerenciamento de projetos é um conjunto de práticas, métodos e ferramentas 
 
 **ETAPA 3: Planejar, Desenvolver e Gerenciar uma Aplicação Web** 
 
-•	Projeto da arquitetura da aplicação web. <br /> •	Desenvolvimento das páginas da aplicação web. <br /> •	Integração das APIs e serviços web. <br /> •	Testes de responsividade da aplicação web. <br /> •	Testes de desempenho. <br /> 
+•	Projeto da arquitetura da aplicação *web*. <br /> •	Desenvolvimento das páginas da aplicação *web*. <br /> •	Integração das APIs e serviços *web*. <br /> •	Testes de responsividade da aplicação *web*. <br /> •	Testes de desempenho. <br /> 
 •	Interação com o cliente. <br /> 
 
 **ETAPA 4: Planejar, Desenvolver e Gerenciar uma Aplicação Móvel**
@@ -208,7 +209,7 @@ O gerenciamento de projetos é um conjunto de práticas, métodos e ferramentas 
 
 **ETAPA 5: Apresentação** 
 
-•	Montagem de apresentação e materiais visuais. <br /> •	Apresentação do projeto ao cliente. <br /> •	Demonstração da funcionalidade das aplicações web e móvel. <br /> •	Recepção de feedback do cliente e responder a perguntas. <br /> •	Entrega do manual do usuário. <br /> 
+•	Montagem de apresentação e materiais visuais. <br /> •	Apresentação do projeto ao cliente. <br /> •	Demonstração da funcionalidade das aplicações *web* e móvel. <br /> •	Recepção de *feedback* do cliente e responder a perguntas. <br /> •	Entrega do manual do usuário. <br /> 
 
 ![cronograma1](img/cronograma-foto-1.png)
 ![cronograma](cronograma-foto-3.png)
@@ -217,7 +218,7 @@ O gerenciamento de projetos é um conjunto de práticas, métodos e ferramentas 
 
 O gerenciamento adequado de tarefas contribuirá para que o projeto alcance altos níveis de produtividade. Por isso, é fundamental que ocorra a gestão de tarefas e de pessoas, de modo que os times envolvidos no projeto possam ser facilmente gerenciados. 
 
-•	Distribuição de atividades e responsabilidades para a divisão eficiente do trabalho; <br /> •	Comunicação diária rápida de 20 minutos para ajustes e retorno do andamento das atividades; <br /> •	Reunião semanal para acompanhamento do andamento do projeto e abertura de discussões, além de feedbacks para aprimoramento contínuo. <br /> 
+•	Distribuição de atividades e responsabilidades para a divisão eficiente do trabalho; <br /> •	Comunicação diária rápida de 20 minutos para ajustes e retorno do andamento das atividades; <br /> •	Reunião semanal para acompanhamento do andamento do projeto e abertura de discussões, além de *feedbacks* para aprimoramento contínuo. <br /> 
 
 ![equipe](GERENCIAMENTO-DE-EQUIPE.png)
 
@@ -229,36 +230,31 @@ Gerenciamento de custos em projetos é um conjunto de processos que tem por obje
 
 # Arquitetura da Solução
 
-A arquitetura de software compreende a organização dos elementos de uma solução, junto ao ambiente de hospedagem. Inclui a estrutura do software, seus componentes e a infraestrutura para garantir seu funcionamento. Considerar aspectos técnicos e operacionais é crucial para desenvolver, implantar e manter aplicações robustas.
+A arquitetura de *software* compreende a organização dos elementos de uma solução, junto ao ambiente de hospedagem. Inclui a estrutura do *software*, seus componentes e a infraestrutura para garantir seu funcionamento. Considerar aspectos técnicos e operacionais é crucial para desenvolver, implantar e manter aplicações robustas.
 
 ![BD de Usuários](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-1-pe6-t2-g3-gestao-med/assets/84341202/bcfedbdb-e682-45cd-895f-84a784d57327)
 
 
 ## Tecnologias Utilizadas
 
-Ao desenvolver um projeto, a seleção das tecnologias desempenha um papel fundamental, definindo sua base e influenciando diretamente sua eficiência e funcionalidade. Abaixo estão as tecnologias inicialmente consideradas para a implementação da solução. No entanto, é importante ressaltar que essas escolhas podem ser ajustadas ao longo do processo de desenvolvimento, conforme novos insights e requisitos emergem.
+Ao desenvolver um projeto, a seleção das tecnologias desempenha um papel fundamental, definindo sua base e influenciando diretamente sua eficiência e funcionalidade. Abaixo estão as tecnologias inicialmente consideradas para a implementação da solução. No entanto, é importante ressaltar que essas escolhas podem ser ajustadas ao longo do processo de desenvolvimento, conforme novos *insights* e requisitos emergem.
 
-- Linguagens de programação: JavaScript e TypeScript
-- Frameworks: React Native
-- Bibliotecas: React e Redux
-- Ferramentas: Visual Studio Code, Postman e Git
-- Banco de dados: MySQL
-- Plataforma de tempo de execução: Node.js
+- Linguagens de programação: *JavaScript* e *TypeScript*
+- *Frameworks*: *React* *Native*
+- Bibliotecas: *React* e *Redux*
+- Ferramentas: *Visual Studio Code*, *Postman* e *Git*
+- Banco de dados: *MySQL*
+- Plataforma de tempo de execução: *Node.js*
 - Hospedagem: Vercel e AWS
 
 ## Hospedagem
 
-**Frontend (aplicação web):** Vamos hospedar o frontend da nossa aplicação web na plataforma Vercel.
+***Frontend* (aplicação *web*):** Vamos hospedar o frontend da nossa aplicação *web* na plataforma Vercel.
 
-**Aplicativo móvel:** Para o aplicativo móvel, o frontend será incorporado diretamente no próprio aplicativo, eliminando a necessidade de hospedagem em nuvem.
+**Aplicativo móvel:** Para o aplicativo móvel, o *front-end* será incorporado diretamente no próprio aplicativo, eliminando a necessidade de hospedagem em nuvem.
 
-**Backend:** Para o backend, iremos utilizar o Amazon EC2 (Elastic Compute Cloud) para hospedagem, garantindo escalabilidade e flexibilidade na infraestrutura.
+***Backend*:** Para o *back-end*, iremos utilizar o *Amazon EC2 (Elastic Compute Cloud)* para hospedagem, garantindo escalabilidade e flexibilidade na infraestrutura.
 
-**Base de dados:** Para a base de dados, optaremos pelo Amazon RDS (Relational Database Service) para hospedar nosso banco de dados MySQL. O Amazon RDS oferece um gerenciamento simplificado de bancos de dados relacionais, proporcionando facilidade de uso e manutenção.
+**Base de dados:** Para a base de dados, optaremos pelo *Amazon RDS (Relational Database Service)* para hospedar nosso banco de dados *MySQL*. O *Amazon RDS* oferece um gerenciamento simplificado de bancos de dados relacionais, proporcionando facilidade de uso e manutenção.
 
-> **Links Úteis**:
->
-> - [Website com GitHub Pages](https://pages.github.com/)
-> - [Programação colaborativa com Repl.it](https://repl.it/)
-> - [Getting Started with Heroku](https://devcenter.heroku.com/start)
-> - [Publicando Seu Site No Heroku](http://pythonclub.com.br/publicando-seu-hello-world-no-heroku.html)
+# Referências Bibliográficas
