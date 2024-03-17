@@ -24,12 +24,28 @@ Portanto, a administração de medicamentos afeta os usuários que precisam gere
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+**Objetivo geral:**
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+O objetivo geral é promover o bem-estar dos usuários através de uma solução integrada para a gestão de medicamentos e acompanhamento da saúde, garantindo administração correta e segura dos medicamentos e melhorando a qualidade de vida de todos os envolvidos.
+
+**Objetivos específicos:**
+
+O objetivo é não apenas indicar o medicamento a ser ingerido, mas também fornecer informações sobre o horário correto de ingestão, quantidade e duração do tratamento, visando assim facilitar e tornar mais segura a administração de medicamentos para os usuários como também:
+
+1. Desenvolver uma interface intuitiva e amigável que permita aos usuários cadastrarem informações sobre os medicamentos, incluindo nome, dosagem, horário de administração e duração do tratamento.
+   
+2. Criar um banco de dados completo contendo informações detalhadas sobre os medicamentos, como nome, substância ativa, dosagem e posologia.
+   
+5. Implementar funcionalidades de alerta e lembrete, utilizando notificações na tela do celular ou do smartwatch, para informar os usuários sobre os horários de administração dos medicamentos e alertar sobre a necessidade de compra caso um medicamento em uso esteja prestes a acabar no estoque do usuário.
+   
+7. Integrar um sistema de organização dos medicamentos por dia e horário, proporcionando uma visualização clara e organizada do cronograma de administração.
+8. Incluir ferramentas de acompanhamento e registro do histórico de administração de medicamentos, permitindo aos usuários monitorarem a adesão ao tratamento ao longo do tempo e compartilhar essas informações com seus médicos, caso desejem.
+9. Implementar a funcionalidade de enviar esses dados através de um relatório para o médico, facilitando a comunicação entre paciente e profissional de saúde e auxiliando no acompanhamento do tratamento.
+10. Garantir a segurança e privacidade dos dados dos usuários, implementando medidas robustas de proteção de informações pessoais e de saúde, em conformidade com as regulamentações de proteção de dados.
+11. Disponibilizar suporte técnico e orientações para os usuários, visando esclarecer dúvidas e fornecer assistência na utilização do sistema, garantindo uma experiência satisfatória e segura para todos os envolvidos.
+Esses objetivos visam não apenas facilitar e tornar mais seguro o processo de administração de medicamentos, mas também promover o acompanhamento e a gestão eficaz da saúde do usuário, integrando-o de forma mais completa ao sistema ou aplicativo.
+
+
 
 ## Justificativa
 
