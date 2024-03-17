@@ -133,24 +133,23 @@ As tabelas a seguir apresentam os requisitos funcionais e não funcionais que de
 |Resultado esperado| O usuário terá acesso ao histórico de todos os medicamentos já tomados. | 
 |Dados de entrada |Histórico de ingestão e dia, semana, mês e ano. |
 
-| Casos de Uso | CdU05 -  |
+| Casos de Uso | CdU05 - Editar medicamentos cadastrados. |
 |------|------------------------------|
 |Procedimento| 1) O usuário acessa a opção “Cadastrar Medicamentos”.<br /> 2)O usuário visualiza os medicamentos já cadastrados. <br />3) O usuário seleciona o medicamento que deseja editar. <br />4) O aplicativo exibe informações sobre o medicamento selecionado como nome, dosagem e horários de administração.<br /> 5) O usuário seleciona a opção que deseja alterar.<br /> 6) O usuário edita a opção selecionada e clicar na opção “Guardar Alteração”.<br /> 7) O aplicativo exibe uma mensagem informando que a alteração foi salva com sucesso. |
 |Requisitos associados| Cadastro de usuário, login, cadastro de medicamentos. |
 |Resultado esperado| O usuário realiza alterações das informações sobre medicamentos já cadastrados. | 
 |Dados de entrada | Lista de medicamentos, informações sobre medicamento selecionado, alterações desejadas e confirmação de alteração. |
 
-| Casos de Uso | CdU06 -  |
+| Casos de Uso | CdU06 -  Confirmar ingestão de medicamento |
 |------|------------------------------|
 |Procedimento| 1) O usuário recebe um lembrete na tela do celular indicando o horário correto para a ingestão do medicamento, assim como as suas informações e a sua respectiva dosagem. <br />2) O usuário toca na notificação para abrir o aplicativo. <br />3) O aplicativo exibe os detalhes sobre o medicamento para qual o lembrete foi disparado. <br /> 4) O usuário confirma que tomou a medicação carregando no botão “Confirmar Ingestão”.  <br />5) O aplicativo  confirma a ingestão do medicamento. |
 |Requisitos associados| Cadastro de usuário, login, cadastro de medicamentos |
 |Resultado esperado|Confirmação de ingestão de medicamento de forma manual. | 
 |Dados de entrada | Recepção de lembrete, detalhes do medicamento e confirmação de ingestão de medicamento.|
 
-| Casos de Uso | CdU07 -  |
+| Casos de Uso | CdU07 -  Gerar relatório de medicamentos. |
 |------|------------------------------|
-|Procedimento| 1)O usuário acessa a opção “Gerar Relatório”. <br /> 2) O usuário seleciona os medicamentos que deseja incluir no relatório.  <br />3) O aplicativo gera um relatório com as informações dos medicamentos selecionados e cria um arquivo em formato PDF. <br /> 4) O aplicativo  disponibiliza um link para o download do arquivo PDF. <br /> 5) O usuário descarrega o arquivo para envio ao médico. 
- |
+|Procedimento| 1)O usuário acessa a opção “Gerar Relatório”. <br /> 2) O usuário seleciona os medicamentos que deseja incluir no relatório.  <br />3) O aplicativo gera um relatório com as informações dos medicamentos selecionados e cria um arquivo em formato PDF. <br /> 4) O aplicativo  disponibiliza um link para o download do arquivo PDF. <br /> 5) O usuário descarrega o arquivo para envio ao médico. |
 |Requisitos associados| Cadastro de usuário, login, cadastro de medicamentos |
 |Resultado esperado| O usuário recebe um arquivo em formato PDF com um relatório de medicamentos após realizar o pedido de geração de relatório. | 
 |Dados de entrada | Seleção de medicamentos, acesso ao Link para download do arquivo PDF e conexão à internet.  |
