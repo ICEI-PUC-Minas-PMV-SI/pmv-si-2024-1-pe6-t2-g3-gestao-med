@@ -212,7 +212,8 @@ ETAPA 4: Planejar, Desenvolver e Gerenciar uma Aplicação Móvel <br /> •	Pro
 
 ETAPA 5: Apresentação <br /> •	Montagem de apresentação e materiais visuais. <br /> •	Apresentação do projeto ao cliente. <br /> •	Demonstração da funcionalidade das aplicações web e móvel. <br /> •	Recepção de feedback do cliente e responder a perguntas. <br /> •	Entrega do manual do usuário. <br /> 
 
-colocar foto do cronograma
+![cronograma1](img/cronograma foto 1.png)
+
 
 ![Gráfico de Gantt](img/02-grafico-gantt.png)
 
