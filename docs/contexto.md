@@ -189,8 +189,9 @@ Enumere as restrições à sua solução. Lembre-se de que as restrições geral
 
 # Catálogo de Serviços
 
-Descreva aqui todos os serviços que serão disponibilizados pelo seu projeto, detalhando suas características e funcionalidades.
+O catálogo de serviços do projeto é uma ferramenta vital que delineia os serviços oferecidos, proporcionando clareza e transparência sobre as funcionalidades disponíveis. Com uma estrutura bem definida, o catálogo de serviços torna-se essencial para a gestão eficiente do projeto, auxiliando na tomada de decisões e na alocação adequada de recursos.
 
+![image](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-1-pe6-t2-g3-gestao-med/assets/84341202/aa47f648-30df-4275-a165-69a4e62637cb)
 
 # Gerenciamento de Projeto
 
@@ -232,19 +233,32 @@ colocar foto do gerenciamento
 
 # Arquitetura da Solução
 
-Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
+A arquitetura de software compreende a organização dos elementos de uma solução, junto ao ambiente de hospedagem. Inclui a estrutura do software, seus componentes e a infraestrutura para garantir seu funcionamento. Considerar aspectos técnicos e operacionais é crucial para desenvolver, implantar e manter aplicações robustas.
 
-![Arquitetura da Solução](img/02-mob-arch.png)
+![BD de Usuários](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-1-pe6-t2-g3-gestao-med/assets/84341202/bcfedbdb-e682-45cd-895f-84a784d57327)
+
 
 ## Tecnologias Utilizadas
 
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
+Ao desenvolver um projeto, a seleção das tecnologias desempenha um papel fundamental, definindo sua base e influenciando diretamente sua eficiência e funcionalidade. Abaixo estão as tecnologias inicialmente consideradas para a implementação da solução. No entanto, é importante ressaltar que essas escolhas podem ser ajustadas ao longo do processo de desenvolvimento, conforme novos insights e requisitos emergem.
 
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+- Linguagens de programação: JavaScript e TypeScript
+- Frameworks: React Native
+- Bibliotecas: React e Redux
+- Ferramentas: Visual Studio Code, Postman e Git
+- Banco de dados: MySQL
+- Plataforma de tempo de execução: Node.js
+- Hospedagem: Vercel e AWS
 
 ## Hospedagem
 
-Explique como a hospedagem e o lançamento da plataforma foi feita.
+**Frontend (aplicação web):** Vamos hospedar o frontend da nossa aplicação web na plataforma Vercel.
+
+**Aplicativo móvel:** Para o aplicativo móvel, o frontend será incorporado diretamente no próprio aplicativo, eliminando a necessidade de hospedagem em nuvem.
+
+**Backend:** Para o backend, iremos utilizar o Amazon EC2 (Elastic Compute Cloud) para hospedagem, garantindo escalabilidade e flexibilidade na infraestrutura.
+
+**Base de dados:** Para a base de dados, optaremos pelo Amazon RDS (Relational Database Service) para hospedar nosso banco de dados MySQL. O Amazon RDS oferece um gerenciamento simplificado de bancos de dados relacionais, proporcionando facilidade de uso e manutenção.
 
 > **Links Úteis**:
 >
