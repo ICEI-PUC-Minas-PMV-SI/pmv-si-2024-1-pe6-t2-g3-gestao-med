@@ -102,7 +102,7 @@ Com base na análise das personas foram identificadas as seguintes histórias de
 |Sueli Aparecida  Usuário Paciente|Organizar as informações dos vários medicamentos que utilizo.|Viabilizar utilização segura e eficiente dos medicamentos.|        
 |Sueli Aparecida  Usuário Paciente|Receber notificações 2 dias antes avisando quando determinado medicamento está acabando.|Evitar interrupções no tratamento e prejuízo à saúde.|
 |Adriana Pereira  Usuário Paciente|Manter registro completo de todos os medicamentos já administrados durante o dia e ao longo do tratamento.|Manter o tratamento correto e eficiente.|
-|Mauro Gomes  Usuário Paciente|Cadastrar todos os medicamenos a serem usados.|Não confundir suas medicações e horários de adminstração.|
+|Mauro Gomes  Usuário Paciente|Cadastrar todos os medicamenos a serem usados.|Não confundir as medicações e horários de adminstração.|
 |Joaquim Cardoso  Usuário Paciente|Gerar um relatório do histórico de tomada de medicamentos.|Acompanhar e partilhar com o médico como tomei os medicamentos.|
 
 ## Requisitos
