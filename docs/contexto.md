@@ -221,8 +221,7 @@ O gerenciamento adequado de tarefas contribuirá para que o projeto alcance alto
 
 •	Distribuição de atividades e responsabilidades para a divisão eficiente do trabalho; <br /> •	Comunicação diária rápida de 20 minutos para ajustes e retorno do andamento das atividades; <br /> •	Reunião semanal para acompanhamento do andamento do projeto e abertura de discussões, além de feedbacks para aprimoramento contínuo. <br /> 
 
-colocar foto do nosso gerenciamento de equipe
-![Simple Project Timeline](img/02-project-timeline.png)
+![equipe](GERENCIAMENTO-DE-EQUIPE.png)
 
 ## Gerenciamento de Custos
 
