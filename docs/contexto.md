@@ -30,29 +30,30 @@ O objetivo geral é promover o bem-estar dos usuários através de uma solução
 
 **Objetivos específicos:**
 
-O objetivo é não apenas indicar o medicamento a ser ingerido, mas também fornecer informações sobre o horário correto de ingestão, quantidade e duração do tratamento, visando assim facilitar e tornar mais segura a administração de medicamentos para os usuários como também:
+O objetivo é não apenas indicar o medicamento a ser ingerido, mas também fornecer informações sobre o horário correto de ingestão, quantidade e duração do tratamento, visando assim facilitar e tornar mais segura a administração de medicamentos para os usuários, como também:
 
 1. Desenvolver uma interface intuitiva e amigável que permita aos usuários cadastrarem informações sobre os medicamentos, incluindo nome, dosagem, horário de administração e duração do tratamento;
 2. Criar um banco de dados completo contendo informações detalhadas sobre os medicamentos, como nome, substância ativa, dosagem e posologia;
-3. Implementar funcionalidades de alerta e lembrete, utilizando notificações na tela do celular ou do *smartwatch*, para informar os usuários sobre os horários de administração dos medicamentos e alertar sobre a necessidade de compra caso um medicamento em uso esteja prestes a acabar no estoque do usuário;  
+3. Implementar funcionalidades de alerta e lembrete, utilizando notificações na tela do celular para informar os usuários sobre os horários de administração dos medicamentos e alertar sobre a necessidade de compra caso um medicamento em uso esteja prestes a acabar no estoque do usuário;  
 4. Integrar um sistema de organização dos medicamentos por dia e horário, proporcionando uma visualização clara e organizada do cronograma de administração;
 5. Incluir ferramentas de acompanhamento e registro do histórico de administração de medicamentos, permitindo aos usuários monitorarem a adesão ao tratamento ao longo do tempo e compartilhar essas informações com seus médicos, caso desejem;
 6. Implementar a funcionalidade de enviar esses dados através de um relatório para o médico, facilitando a comunicação entre paciente e profissional de saúde e auxiliando no acompanhamento do tratamento;
 7. Garantir a segurança e privacidade dos dados dos usuários, implementando medidas robustas de proteção de informações pessoais e de saúde, em conformidade com as regulamentações de proteção de dados;
-8. Disponibilizar suporte técnico e orientações para os usuários, visando esclarecer dúvidas e fornecer assistência na utilização do sistema, garantindo uma experiência satisfatória e segura para todos os envolvidos;
+8. Disponibilizar suporte técnico e orientações para os usuários, visando esclarecer dúvidas e fornecer assistência na utilização do sistema, garantindo uma experiência satisfatória e segura para todos os envolvidos.
+   
 Esses objetivos visam não apenas facilitar e tornar mais seguro o processo de administração de medicamentos, mas também promover o acompanhamento e a gestão eficaz da saúde do usuário, integrando-o de forma mais completa ao sistema ou aplicativo.
 
 
 
 ## Justificativa
 
-Este projeto surge da necessidade de simplificar a rotina daqueles que precisam administrar medicamentos diariamente, seja para si mesmos ou para outras pessoas. Conforme relatado pelo Conselho Regional de Enfermagem de São Paulo (COREN, 2017, p. 11), os incidentes relacionados a medicamentos (IRM) estão entre os mais comuns nos serviços de saúde, acarretando não apenas transtornos para os pacientes, mas também para seus familiares, amigos, cuidadores e profissionais de saúde.
+Este projeto surge da necessidade de simplificar a rotina daqueles que precisam administrar medicamentos diariamente, seja para si mesmos ou para outras pessoas. Conforme relatado pelo Conselho Regional de Enfermagem de São Paulo (COREN, 2017, p. 11), os incidentes relacionados a medicamentos estão entre os mais comuns nos serviços de saúde, acarretando não apenas transtornos para os pacientes, mas também para seus familiares, amigos, cuidadores e profissionais de saúde.
 
-O uso racional de medicamentos (URM) é fundamental para garantir o correto e apropriado uso dos medicamentos. Isso envolve fornecer ao paciente o medicamento adequado, na dose correta, pelo tempo necessário e ao menor custo possível. Todos os profissionais envolvidos na cadeia terapêutica - médicos, farmacêuticos, enfermeiros e até mesmo os próprios pacientes - desempenham papéis essenciais para promover o uso racional dos medicamentos (Mastroianni, Varallo, 2013).
+O uso racional de medicamentos é fundamental para garantir o correto e apropriado uso dos medicamentos. Isso envolve fornecer ao paciente o medicamento adequado, na dose correta, pelo tempo necessário e ao menor custo possível. Todos os profissionais envolvidos na cadeia terapêutica - médicos, farmacêuticos, enfermeiros e até mesmo os próprios pacientes - desempenham papéis essenciais para promover o uso racional dos medicamentos (Mastroianni, Varallo, 2013).
 
-Nesse contexto, a tecnologia assistiva surge como uma aliada importante, buscando promover a autonomia e independência das pessoas, especialmente aquelas com deficiência ou mobilidade reduzida. Terapeutas ocupacionais, fisioterapeutas, farmacêuticos e designers, entre outros profissionais, têm trabalhado no desenvolvimento e adaptação de produtos e recursos assistivos para atender às necessidades dos usuários.
+Nesse contexto, a tecnologia assistiva surge como uma aliada importante, buscando promover a autonomia e independência das pessoas, especialmente aquelas com deficiência ou mobilidade reduzida. Terapeutas ocupacionais, fisioterapeutas, farmacêuticos e *designers*, entre outros profissionais, têm trabalhado no desenvolvimento e adaptação de produtos e recursos assistivos para atender às necessidades dos usuários.
 
-Identificado esse problema como uma demanda mais ampla, surge a possibilidade de oferecer uma solução por meio do design de produto. Desta forma, propõe-se a criação desta aplicação *web* como uma ferramenta de auxílio na última etapa do processo de administração de medicamentos. 
+Identificado esse problema como uma demanda mais ampla, surge a possibilidade de oferecer uma solução por meio do *design* de produto. Desta forma, propõe-se a criação desta aplicação *web* como uma ferramenta de auxílio na última etapa do processo de administração de medicamentos. 
 
 
 ## Público-Alvo
@@ -65,7 +66,7 @@ O público-alvo deste projeto abrange tanto pessoas que necessitam administrar m
 
 # Especificações do Projeto
 
-Nesta seção, serão abordados  os tópicos que norteiam o desenvolvimento desta aplicação *web*, que serão descritos a seguir.
+Nesta seção, serão abordados os tópicos que norteiam o desenvolvimento desta aplicação *web*, que serão descritos a seguir:
 
 ## Personas
 
@@ -73,7 +74,7 @@ A descrição das personas trata-se de uma representação semi-fictícia, basea
 
 **1.Joaquim Cardoso dos Santos** 
 
-Joaquim Cardoso dos Santos, 46 anos, viúvo, tem 3 filhos. Atualmente mora sozinho no subúrbio de São Paulo, trabalha como operador de máquinas pesadas em grandes construções e é portador da Síndrome de Burnout (distúrbio psíquico causado pela exaustão extrema). Ultimamente seu psicólogo recomendou-lhe que utilizasse redes sociais para entretenimento, e praticasse exercícios físicos; então ele passou a utilizar frequentemente *WhatsApp*, *Facebook* e o *Instagram*; e faz uma curta caminhada no final da tarde todos os dias. Ele faz uso diário de antidepressivos e ansiolíticos para tratamento de seu distúrbio. Como o horário de sua medicação fica dentro do horário de trabalho ele acaba atrasando ou antecipando o uso dos medicamentos. Tendo isso em mente, ele está procurando por um artifício que possa lembrá-lo de se medicar no horário correto.
+Joaquim Cardoso dos Santos, 46 anos, viúvo, tem 3 filhos. Atualmente mora sozinho no subúrbio de São Paulo, trabalha como operador de máquinas pesadas em grandes construções e é portador da Síndrome de *Burnout* (distúrbio psíquico causado pela exaustão extrema). Ultimamente seu psicólogo recomendou-lhe que utilizasse redes sociais para entretenimento, e praticasse exercícios físicos; então ele passou a utilizar frequentemente *WhatsApp*, *Facebook* e o *Instagram*; e faz uma curta caminhada no final da tarde todos os dias. Ele faz uso diário de antidepressivos e ansiolíticos para tratamento de seu distúrbio. Como o horário de sua medicação fica dentro do horário de trabalho ele acaba atrasando ou antecipando o uso dos medicamentos. Tendo isso em mente, ele está procurando por um artifício que possa lembrá-lo de se medicar no horário correto.
 
 **2.Sueli Aparecida** 
 
@@ -140,7 +141,7 @@ As tabelas a seguir apresentam os requisitos funcionais e não funcionais que de
 |------|------------------------------|
 |Procedimento| 1) Usuário informa nome, sobrenome, e-mail, senha, Estado, Cidade, gênero, data de nascimento e clica no botão  "Criar usuário". <br />2) A aplicação verifica se os dados são válidos e informa ao usuário caso não estejam.<br /> 3) A aplicação armazena os dados e direciona o usuário para a tela de login.|
 |Resultado esperado| Criação do usuário e redirecionamento para página de login. | 
-|Dados de entrada |Nome, sobrenome, e-mail, senha, steado, cidade, gênero, data de nascimento. |
+|Dados de entrada |Nome, sobrenome, e-mail, senha, estado, cidade, gênero, data de nascimento. |
 
 | Casos de Uso | CdU02 - Fazer login  |
 |------|------------------------------|
