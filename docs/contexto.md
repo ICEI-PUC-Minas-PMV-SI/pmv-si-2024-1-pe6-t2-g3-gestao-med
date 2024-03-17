@@ -278,3 +278,15 @@ Ao desenvolver um projeto, a seleção das tecnologias desempenha um papel funda
 **Base de dados:** Para a base de dados, optaremos pelo *Amazon RDS (Relational Database Service)* para hospedar nosso banco de dados *MySQL*. O *Amazon RDS* oferece um gerenciamento simplificado de bancos de dados relacionais, proporcionando facilidade de uso e manutenção.
 
 # Referências Bibliográficas
+
+Born, T. (Organizadora). (2008). Cuidar melhor e evitar a violência - Manual do cuidador da pessoa idosa. Brasília: Secretaria Especial dos Direitos Humanos, Subsecretaria de Promoção e Defesa dos Direitos Humanos. Disponível em: https://www.gov.br/mdh/pt-br/centrais-de-conteudo/pessoa-idosa/manual-do-cuidador-da-pessoa-idosa/view. Acesso em: 23 fev. 2024.
+
+Conselho Federal de Farmácia. (2016). Serviços farmacêuticos diretamente destinados ao paciente, à família e à comunidade: contextualização e arcabouço conceitual. Brasília: Conselho Federal de Farmácia. Disponível em: https://www.cff.org.br/userfiles/Profar_Arcabouco_TELA_FINAL.pdf. Acesso em: 23 fev. 2024.
+
+COREN - Conselho Regional de Enfermagem de São Paulo. (2017). Manual de Orientações para a Enfermagem: Incidentes Relacionados a Medicamentos (IRM). São Paulo, SP: COREN.  Disponível em: https://portal.coren-sp.gov.br/sites/default/files/uso-seguro-medicamentos.pdf Acesso em: 23 fev. 2024.
+
+Costa, R. S. M. (2012). Arranjos domiciliares e a utilização de serviços de saúde dos idosos brasileiros [Dissertação de mestrado, Pós-graduação em Demografia, Faculdade de Ciências Econômicas, Universidade Federal de Minas Gerais]. Repositório Institucional UFMG. Disponível em:https://repositorio.ufmg.br/bitstream/1843/AMSA-97XNMF/1/roberta_stancioli_marinho_costa.pdf. Acesso em: 23 fev. 2024.
+
+MASTROIANNI, Patricia; VARALLO, Fabiana R. Farmacovigilância para promoção do uso correto de medicamentos. Grupo A, 2013. E-book. ISBN 9788582710029. Disponível em: https://integrada.minhabiblioteca.com.br/#/books/9788582710029/.Acesso em: 23 fev. 2024.
+
+Milanez, M. C., Stutz, E., Rosales, T. O., Penteado, A. J., Perez, E., Cruciol, J. M., Pereira, E. M., & Bovo, F. (2010). Avaliação dos estoques domiciliares de medicamentos em uma cidade do Centro-Sul do Paraná. Revista de Ciências Médicas e Biológicas, ISSN 1677-5090. Disponível em: https://repositorio.ufba.br/bitstream/ri/23088/1/3_v.12_3.pdf. Acesso em: 23 fev. 2024.
