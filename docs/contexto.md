@@ -99,7 +99,7 @@ Com base na análise das personas foram identificadas as seguintes histórias de
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`|
 |--------------------|------------------------------------|-----------------------|
 |Todos os usuários pacientes|Receber notificações com as instruções na hora do uso dos medicamentos.|Proporcionar que eu utilize o medicamento certo, na hora certa e na dose prescrita.|                   
-|Sueli Aparecida  Usuário paciente|Organizar as informações dos vários medicamentos que utilizo.|Viabilizar utilização segura e eficiente dos medicamentos.|        
+|Sueli Aparecida  Usuário paciente|Organizar as informações dos vários medicamentos que utilizo.|Viabilizar utilização segura e eficiente dos medicamentos.|       
 |Sueli Aparecida  Usuário paciente|Receber notificações 2 dias antes avisando quando determinado medicamento está acabando.|Evitar interrupções no tratamento e prejuízo à saúde.|
 |Adriana Pereira  Usuário paciente|Manter registro completo de todos os medicamentos já administrados durante o dia e ao longo do tratamento.|Manter o tratamento correto e eficiente.|
 |Mauro Gomes  Usuário paciente|Cadastrar todos os medicamenos a serem usados.|Não confundir as medicações e horários de adminstração.|
@@ -108,6 +108,7 @@ Com base na análise das personas foram identificadas as seguintes histórias de
 ## Requisitos
 
 Os requisitos funcionais se relacionam ao que o sistema faz, em termos de tarefas e serviços. Já os requisitos não funcionais se relacionam ao uso do sistema em termos de desempenho, usabilidade, confiabilidade, segurança, disponibilidade, manutenção e tecnologias envolvidas.
+
 As tabelas a seguir apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto.
 
 ### Requisitos Funcionais
