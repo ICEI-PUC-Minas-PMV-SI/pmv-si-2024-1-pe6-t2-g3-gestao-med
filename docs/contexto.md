@@ -182,6 +182,8 @@ O catálogo de serviços do projeto é uma ferramenta vital que delineia os serv
 
 # Matriz de Rastreabilidade 
 
+![matriz](img/matriz-rastreabilidade.png)
+
 # Gerenciamento de Projeto
 
 O gerenciamento de projetos é um conjunto de práticas, métodos e ferramentas utilizadas para coordenar os processos de um projeto de forma eficaz e atingir resultados. Ele serve para garantir que o projeto seja concluído com sucesso. Ou seja, que os resultados desejados sejam alcançados de acordo com as metas estabelecidas. 
