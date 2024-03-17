@@ -164,17 +164,16 @@ As tabelas a seguir apresentam os requisitos funcionais e não funcionais que de
 As restrições são as situações que limitam o projeto, que podem ser impostas por alguém ou pelo próprio ambiente no qual o projeto está inserido. Elas podem comprometer a execução e o desenvolvimento dos trabalhos que compõem o projeto. 
 O projeto está restrito pelos itens apresentados na tabela abaixo:
 
-
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
-
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
+|01| O projeto deverá ser entregue até o final do primeiro semestre de 2024.|
+|02| O projeto não deve extrapolar o orçamento definido.|
+|03| A aplicação terá somente um tipo de usuário.|
+|04| O desenvolvimento do projeto estará limitado a 6 colaboradores.|
+|05| O projeto será desenvolvido apenas no idioma português.|
+|06| A hospedagem back-end deve ser somente na AWS.|
+|07| A hospedagem front-end será na plataforma vercel.|
+|08| Atividades no web browser serão restritas.|
 
 # Catálogo de Serviços
 
