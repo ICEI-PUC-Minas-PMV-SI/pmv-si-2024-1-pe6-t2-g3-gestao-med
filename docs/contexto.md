@@ -224,9 +224,9 @@ O gerenciamento adequado de tarefas contribuirá para que o projeto alcance alto
 
 ## Gerenciamento de Custos
 
-Gerenciamento de Custos em Projetos é um conjunto de processos que tem por objetivo garantir que o projeto seja entregue dentro do orçamento aprovado. Dessa forma, é possível conciliar os recursos financeiros que o projeto precisa para ser concluído. Ele traz uma forma estruturada para planejar, estimar, determinar e controlar os custos. Dessa forma, garante que nenhuma etapa seja esquecida e proporciona a elaboração de um orçamento mais próximo da realidade. <br />
+Gerenciamento de custos em projetos é um conjunto de processos que tem por objetivo garantir que o projeto seja entregue dentro do orçamento aprovado. Dessa forma, é possível conciliar os recursos financeiros que o projeto precisa para ser concluído. Ele traz uma forma estruturada para planejar, estimar, determinar e controlar os custos. Dessa forma, garante que nenhuma etapa seja esquecida e proporciona a elaboração de um orçamento mais próximo da realidade. <br />
 
-colocar foto do gerenciamento 
+![custos](img/custos-do-projeto.png)
 
 # Arquitetura da Solução
 
