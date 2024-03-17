@@ -1,6 +1,17 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+Com o progresso e a expansão da indústria farmacêutica após a Segunda Guerra Mundial, houve um notável avanço na fabricação de medicamentos. Paralelamente ao desenvolvimento do arsenal terapêutico, surgiram incidentes associados ao uso desses produtos (Mastroianni, Varallo, 2013).
+
+A administração de medicamentos é uma tarefa complexa que afeta pessoas de todas as idades e condições de saúde. No entanto, é especialmente desafiador para os idosos ou aqueles com problemas cognitivos, que muitas vezes lidam com uma grande quantidade de medicamentos prescritos para diferentes tratamentos terapêuticos. Com o aumento da expectativa de vida e da prevalência de condições crônicas, a necessidade de soluções que auxiliem na administração correta de medicamentos torna-se cada vez mais iminente. 
+
+No âmbito da medicina, a administração de medicamentos refere-se à ingestão precisa dos medicamentos conforme horários e dosagens indicados pelo profissional de saúde. Contudo, neste projeto, é adotado o conceito de administração pessoal de medicamentos para abranger não apenas o uso correto dos medicamentos, mas também a sua organização e manejo, desde a compra até a ingestão pelos usuários.
+
+Conforme relatado por Patel e Zed (2002), complicações relacionadas à farmacoterapia representam uma parcela significativa das hospitalizações de emergência, variando entre 9% e 24%. Esses estudos também destacam que aproximadamente 70% desses problemas poderiam ser evitados com uma intervenção direta do farmacêutico no cuidado clínico (*apud* Conselho Federal de Farmácia, 2016).
+
+O armazenamento de medicamentos nos domicílios é prática comum da população brasileira, podendo representar um potencial risco para o surgimento de agravos à saúde. Além disso, esses medicamentos são armazenados, frequentemente, em ambientes inadequados, propiciando diversas possibilidades de consumo irracional, incluindo medicamentos prescritos para doenças crônicas, analgésicos, antibióticos e anti-inflamatórios. (Milanez et al., 2010)
+
+Com base nesse contexto, é proposto o desenvolvimento de uma aplicação web dedicada à organização e gestão da administração de medicamentos, visando facilitar  o dia a dia das pessoas que dependem da ingestão de medicamentos regularmente. 
+
 
 ## Problema
 Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
