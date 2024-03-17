@@ -140,23 +140,23 @@ As tabelas a seguir apresentam os requisitos funcionais e não funcionais que de
 ### Caso de Uso
 | Casos de Uso | CdU01 - Criar conta  |
 |------|------------------------------|
-|Procedimento| 1) Usuário informa nome, sobrenome, e-mail, senha, Estado, Cidade, gênero, data de nascimento e clica no botão  "Criar usuário". <br />2) A aplicação verifica se os dados são válidos e informa ao usuário caso não estejam.<br /> 3) A aplicação armazena os dados e direciona o usuário para a tela de login.|
+|Procedimento| 1) Usuário informa nome, sobrenome, e-mail, senha, estado, cidade, gênero, data de nascimento e clica no botão  "Criar usuário". <br />2) A aplicação verifica se os dados são válidos e informa ao usuário caso não estejam.<br /> 3) A aplicação armazena os dados e direciona o usuário para a tela de login.|
 |Resultado esperado| Criação do usuário e redirecionamento para página de login. | 
-|Dados de entrada |Nome, sobrenome, e-mail, senha, estado, cidade, gênero, data de nascimento. |
+|Dados de entrada | Nome, sobrenome, e-mail, senha, estado, cidade, gênero, data de nascimento. |
 
 | Casos de Uso | CdU02 - Fazer login  |
 |------|------------------------------|
 |Procedimento| 1) Usuário informa e-mail, senha e clica em "entrar".         <br /> 2) A aplicação verifica se os dados estão corretos e informa ao usuário caso não estejam.        <br /> 3) A aplicação direciona o usuário para a sua página inicial.|
-|Requisitos associados|Cadastro de usuário.|
+|Requisitos associados| Cadastro de usuário.|
 |Resultado esperado| Redirecionamento para página home da aplicação. | 
-|Dados de entrada |E-mail e senha. |
+|Dados de entrada | E-mail e senha. |
 
 | Casos de Uso | CdU03 - Cadastrar  medicações e alarmes  |
 |------|------------------------------|
-|Procedimento| 1)O usuário acessa a página de cadastro de medicamentos.<br /> 2)O usuário informa o nome do medicamento, o estoque Inicial, o período de uso e  horários programados para alarme  e clica em adicionar.<br /> 3) A aplicação armazena os dados e direciona o usuário para a home da aplicação.|
-|Requisitos associados|Cadastro de usuário e login.|
+|Procedimento| 1)O usuário acessa a página de cadastro de medicamentos.<br /> 2)O usuário informa o nome do medicamento, o estoque inicial, o período de uso e  horários programados para alarme  e clica em adicionar.<br /> 3) A aplicação armazena os dados e direciona o usuário para a home da aplicação.|
+|Requisitos associados| Cadastro de usuário e login.|
 |Resultado esperado| O medicamento e horários programados para alarmes serão adicionados, e o usuário será redirecionado para página home. | 
-|Dados de entrada |Nome do medicamento, o estoque Inicial, o período de uso e o horário de uso. |
+|Dados de entrada | Nome do medicamento, o estoque inicial, o período de uso e o horário de uso. |
 
 | Casos de Uso | CdU04 - Consultar Histórico de Ingestão de Medicamentos |
 |------|------------------------------|
@@ -176,7 +176,7 @@ As tabelas a seguir apresentam os requisitos funcionais e não funcionais que de
 |------|------------------------------|
 |Procedimento| 1) O usuário recebe um lembrete na tela do celular indicando o horário correto para a ingestão do medicamento, assim como as suas informações e a sua respectiva dosagem. <br />2) O usuário toca na notificação para abrir o aplicativo. <br />3) O aplicativo exibe os detalhes sobre o medicamento para qual o lembrete foi disparado. <br /> 4) O usuário confirma que tomou a medicação carregando no botão “Confirmar Ingestão”.  <br />5) O aplicativo  confirma a ingestão do medicamento. |
 |Requisitos associados| Cadastro de usuário, login, cadastro de medicamentos |
-|Resultado esperado|Confirmação de ingestão de medicamento de forma manual. | 
+|Resultado esperado| Confirmação de ingestão de medicamento de forma manual. | 
 |Dados de entrada | Recepção de lembrete, detalhes do medicamento e confirmação de ingestão de medicamento.|
 
 | Casos de Uso | CdU07 -  Gerar relatório de medicamentos. |
@@ -184,7 +184,7 @@ As tabelas a seguir apresentam os requisitos funcionais e não funcionais que de
 |Procedimento| 1)O usuário acessa a opção “Gerar Relatório”. <br /> 2) O usuário seleciona os medicamentos que deseja incluir no relatório.  <br />3) O aplicativo gera um relatório com as informações dos medicamentos selecionados e cria um arquivo em formato PDF. <br /> 4) O aplicativo  disponibiliza um link para o download do arquivo PDF. <br /> 5) O usuário descarrega o arquivo para envio ao médico. |
 |Requisitos associados| Cadastro de usuário, login, cadastro de medicamentos |
 |Resultado esperado| O usuário recebe um arquivo em formato PDF com um relatório de medicamentos após realizar o pedido de geração de relatório. | 
-|Dados de entrada | Seleção de medicamentos, acesso ao Link para download do arquivo PDF e conexão à internet.  |
+|Dados de entrada | Seleção de medicamentos, acesso ao *link* para download do arquivo PDF e conexão à internet.  |
 
 ### Diagrama de Casos de Uso
 
@@ -193,6 +193,7 @@ As tabelas a seguir apresentam os requisitos funcionais e não funcionais que de
 ## Restrições
 
 As restrições são as situações que limitam o projeto, que podem ser impostas por alguém ou pelo próprio ambiente no qual o projeto está inserido. Elas podem comprometer a execução e o desenvolvimento dos trabalhos que compõem o projeto. 
+
 O projeto está restrito pelos itens apresentados na tabela abaixo:
 
 |ID| Restrição                                             |
@@ -229,9 +230,9 @@ O gerenciamento de projetos é um conjunto de práticas, métodos e ferramentas 
 **ETAPA 2: Planejar, Desenvolver e Gerenciar APIs e Web Services** 
 
 •	Definição das APIs do sistema. <br /> •	Projeto da arquitetura da API. <br /> 
-•	Desenvolvimento das APIs e serviços web. <br /> •	Realização de testes de unidade e integração nas APIs e serviços web. <br /> •	Documentação da API. <br /> •	Interação com o cliente. <br /> 
+•	Desenvolvimento das APIs e serviços *web*. <br /> •	Realização de testes de unidade e integração nas APIs e serviços *web*. <br /> •	Documentação da API. <br /> •	Interação com o cliente. <br /> 
 
-**ETAPA 3: Planejar, Desenvolver e Gerenciar uma Aplicação Web** 
+**ETAPA 3: Planejar, Desenvolver e Gerenciar uma Aplicação *Web*** 
 
 •	Projeto da arquitetura da aplicação *web*. <br /> •	Desenvolvimento das páginas da aplicação *web*. <br /> •	Integração das APIs e serviços *web*. <br /> •	Testes de responsividade da aplicação *web*. <br /> •	Testes de desempenho. <br /> 
 •	Interação com o cliente. <br /> 
@@ -283,7 +284,7 @@ Ao desenvolver um projeto, a seleção das tecnologias desempenha um papel funda
 
 ## Hospedagem
 
-***Frontend* (aplicação *web*):** Vamos hospedar o frontend da nossa aplicação *web* na plataforma Vercel.
+***Frontend* (aplicação *web*):** Vamos hospedar o *front-end* da nossa aplicação *web* na plataforma Vercel.
 
 **Aplicativo móvel:** Para o aplicativo móvel, o *front-end* será incorporado diretamente no próprio aplicativo, eliminando a necessidade de hospedagem em nuvem.
 
