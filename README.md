@@ -8,7 +8,7 @@
 
 Entre os problemas mais comuns associados à administração de medicamentos estão o uso desnecessário ou incorreto de medicamentos, doses inadequadas e a não conformidade com os horários prescritos. Esses problemas podem resultar em efeitos adversos graves, exigindo intervenção médica.
 
-Assim, o Gestão Med é uma aplicação web dedicada à organização e gestão de administração de medicamentos, visando facilitar a vida daqueles que dependem regularmente de medicamentos, principalmente para usuários que lidam com a polifarmácia. 
+Assim, o Gestão Med é uma aplicação *web* dedicada à organização e gestão de administração de medicamentos, visando facilitar a vida daqueles que dependem regularmente de medicamentos, principalmente para usuários que lidam com a polifarmácia. 
 
 
 ## Integrantes
@@ -33,6 +33,7 @@ Assim, o Gestão Med é uma aplicação web dedicada à organização e gestão 
 | ETAPA 3         |[Planejar, desenvolver e gerenciar uma aplicação Web](docs/frontend-web.md) |
 | ETAPA 4        |[Planejar, desenvolver e gerenciar uma aplicação Móvel](docs/frontend-mobile.md) <br>  |
 | ETAPA 5         | [Apresentação](presentation/README.md) |
+
 ## Instruções de utilização
 
 Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
