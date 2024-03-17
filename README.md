@@ -6,7 +6,10 @@
 
 `SEMESTRE: 6º`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+Entre os problemas mais comuns associados à administração de medicamentos estão o uso desnecessário ou incorreto de medicamentos, doses inadequadas e a não conformidade com os horários prescritos. Esses problemas podem resultar em efeitos adversos graves, exigindo intervenção médica.
+
+Assim, o Gestão Med é uma aplicação web dedicada à organização e gestão de administração de medicamentos, visando facilitar a vida daqueles que dependem regularmente de medicamentos, principalmente para usuários que lidam com a polifarmácia. 
+
 
 ## Integrantes
 
