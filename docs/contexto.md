@@ -113,15 +113,27 @@ As tabelas a seguir apresentam os requisitos funcionais e não funcionais que de
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+|RF-001| Cadastrar usuário paciente | ALTA |
+|RF-002| Fazer *login*  | ALTA |
+|RF-003| Cadastrar medicamentos e alertas  | ALTA |
+|RF-004| Disparar lembrete no horário com orientações para tomar o medicamento  | ALTA |
+|RF-005| Disparar alerta de fim de estoque de medicamentos, onde a quantidade mínima para o disparo do alerta pode ser configurada pelo usuário | ALTA |
+|RF-006| Editar medicamnetos cadastrados | MÉDIA |
+|RF-007| Permitir geração de relatório de medicamentos ingeridos por meio de inteligência artificial| MÉDIA |
+|RF-008| Permitir que o paciente confirme a ingestão ao ser notificado | MÉDIA |
+
 
 ### Requisitos não Funcionais
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+|RNF-001| O sistema atenderá ao requisito de **PORTABILIDADE** - deverá executar em qualquer plataforma | ALTA |
+|RNF-002| O sistema atenderá a Lei de Geral de Proteção de Dados pessoais nº 13.709/2018 | ALTA |
+|RNF-003| O sistema deverá atender ao requisito de **USABILIDADE** - facilidade no uso do sistema | ALTA |
+|RNF-004| O sistema deverá atender ao requsiito de **CONFIABILIDADE** - terá alta disponibilidade 99% do tempo | ALTA |
+|RNF-005| O sistema deverá usar arquitetura em camadas para desacoplamento | MÉDIA |
+|RNF-006| O *Layout* do sistema deverá usar *design* responsivo, para que renderize bem em qualquer dispositivo | MÉDIA |
+|RNF-007| O sistema deverá processar requisições do usuário em no máximo 3s | BAIXA |
 
 ### Caso de Uso
 | Casos de Uso | CdU01 - Criar conta  |
