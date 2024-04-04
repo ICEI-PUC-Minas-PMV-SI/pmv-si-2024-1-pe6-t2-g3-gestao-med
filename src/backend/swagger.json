@@ -1,0 +1,156 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Gestão de Medicamentos",
+        "description": "Esta API é responsável pelo gerenciamento de medicamentos de pacientes",
+        "version": "10.0.0"
+    },
+    "paths": {
+        "/user": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "description": "Cadastro de usuários",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/session": {
+            "post": {
+                "tags":[
+                    "User"
+                ],
+                "description": "Autenticação Usuário",
+                "requestBody":{
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "$ref":"#/components/schemas/LoginRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LoginResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "UserRequest": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Nome do usuário",
+                        "example": "João da Silva"
+                    },
+                    "email": {
+                        "type": "string",
+                        "description": "Email do usuário",
+                        "example": "joaosilva@hotmail.com"
+                    },
+                    "password": {
+                        "type": "string",
+                        "description": "Senha do usuário",
+                        "example": "senhacomplexa123"
+                    }
+                },
+                "required": [
+                    "name",
+                    "email",
+                    "password"
+                ]
+            },
+            "UserResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Id do usuário cadastrado",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Nome do usuário cadastrado",
+                        "example": "NAME_TEST"
+                    },
+                    "email": {
+                        "type": "string",
+                        "description": "Email do usuário cadastrado",
+                        "example": "email@email.com"
+                    }
+                }
+            },
+            "LoginRequest":{
+                "type":"object",
+                "properties":{
+                    "email":{
+                        "type":"string",
+                        "description":"email de login",
+                        "example":"email@email.com"
+                    },
+                    "password": {
+                        "type": "string",
+                        "description": "password de login",
+                        "example":"password_test"
+                    }
+                }
+            },
+            "LoginResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Id do usuário cadastrado",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Nome do usuário cadastrado",
+                        "example": "NAME_TEST"
+                    },
+                    "email": {
+                        "type": "string",
+                        "description": "Email do usuário cadastrado",
+                        "example": "email@email.com"
+                    },
+                    "token": {
+                        "type": "string",
+                        "description": "Token",
+                        "example": "token gerado"
+                    }
+                }
+            }
+
+        }
+    }
+}
