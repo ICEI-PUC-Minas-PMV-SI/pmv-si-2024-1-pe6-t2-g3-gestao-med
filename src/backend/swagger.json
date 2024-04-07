@@ -32,6 +32,23 @@
                         }
                     }
                 }
+            },
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "description": "Detalhes do usuário",
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserDetailsResponse"
+                                }
+                            }
+                        }
+                    }
+                }
             }
         },
         "/session": {
@@ -149,8 +166,32 @@
                         "example": "token gerado"
                     }
                 }
+            },
+            "UserDetailsResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Id do usuário cadastrado",
+                        "format": "uuid"
+                    },
+                    "isAdmin": {
+                        "type": "boolean",
+                        "description": "Se o usuário é um administrador",
+                        "format": "false"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Nome do usuário cadastrado",
+                        "example": "NAME_TEST"
+                    },
+                    "email": {
+                        "type": "string",
+                        "description": "Email do usuário cadastrado",
+                        "example": "email@email.com"
+                    }
+                }
             }
-
         }
     }
 }

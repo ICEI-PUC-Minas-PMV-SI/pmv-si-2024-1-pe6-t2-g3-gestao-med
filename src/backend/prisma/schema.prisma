@@ -13,17 +13,26 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model User {
   id       String  @id @default(uuid())
   isAdmin  Boolean @default(false)
   name     String
-  email    String @unique
+  email    String  @unique
   password String
 
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  created_at  DateTime      @default(now())
+  updated_at  DateTime      @updatedAt
+  Medications Medications[]
 
   @@map("user")
 }
 
+model Medications {
+  id      String @id @default(uuid())
+  user_id String
+  name    String
+  description String
+
+  User User @relation(fields: [user_id], references: [id])
+  @@map("medications")
+}
