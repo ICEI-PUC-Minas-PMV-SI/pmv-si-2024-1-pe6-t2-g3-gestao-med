@@ -28,11 +28,33 @@ model User {
 }
 
 model Medications {
-  id      String @id @default(uuid())
-  user_id String
-  name    String
-  description String
+  id                   String   @id @default(uuid())
+  user_id              String
+  name                 String
+  description          String
+  stock                Int
+  time_to_take         String
+  treatment_finished_at DateTime
+
+  created_at DateTime    @default(now())
+  updated_at DateTime    @updatedAt
+  Registers  Registers[]
 
   User User @relation(fields: [user_id], references: [id])
+
   @@map("medications")
+}
+
+model Registers {
+  id               String   @id @default(uuid())
+  medication_id    String
+  medication_taken Boolean
+  time_taken       DateTime
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  Medication Medications @relation(fields: [medication_id], references: [id])
+
+  @@map("registers")
 }
