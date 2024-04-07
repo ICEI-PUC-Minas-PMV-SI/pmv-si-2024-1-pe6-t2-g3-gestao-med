@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 
-import { CreateUserService } from '../Services/CreateUser/Prisma/createUserService'
+import { CreateUserService } from '../../Services/CreateUser/Prisma/createUserService'
 
 class CreateUserController{
     async handle(req: Request, res: Response){
@@ -17,7 +17,7 @@ class CreateUserController{
                 password
             })
     
-            return res.json({message: "User created successfully"})
+            return res.json(user)
         }catch(err: any){
             return res.status(err.statusCode).json({
                 error: err.message
