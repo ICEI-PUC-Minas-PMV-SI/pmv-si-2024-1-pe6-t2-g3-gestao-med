@@ -95,6 +95,21 @@
                         "description": "Email do usuário",
                         "example": "joaosilva@hotmail.com"
                     },
+                    "phone": {
+                        "type": "string",
+                        "description": "Telefone do usuário",
+                        "example": "11981223344"
+                    },
+                    "date_of_birth": {
+                        "type": "string",
+                        "description": "Data de nascimento do usuário",
+                        "example": "2000-01-31"
+                    },
+                    "gender": {
+                        "type": "male | female",
+                        "description": "Gênero do usuário",
+                        "example": "female"
+                    },
                     "password": {
                         "type": "string",
                         "description": "Senha do usuário",
@@ -124,6 +139,21 @@
                         "type": "string",
                         "description": "Email do usuário cadastrado",
                         "example": "email@email.com"
+                    },
+                    "phone": {
+                        "type": "string",
+                        "description": "Telefone do usuário",
+                        "example": "11981223344"
+                    },
+                    "date_of_birth": {
+                        "type": "string",
+                        "description": "Data de nascimento do usuário",
+                        "example": "2000-01-31"
+                    },
+                    "gender": {
+                        "type": "male | female",
+                        "description": "Gênero do usuário",
+                        "example": "female"
                     }
                 }
             },
@@ -160,6 +190,21 @@
                         "description": "Email do usuário cadastrado",
                         "example": "email@email.com"
                     },
+                    "phone": {
+                        "type": "string",
+                        "description": "Telefone do usuário",
+                        "example": "11981223344"
+                    },
+                    "date_of_birth": {
+                        "type": "string",
+                        "description": "Data de nascimento do usuário",
+                        "example": "2000-01-31"
+                    },
+                    "gender": {
+                        "type": "male | female",
+                        "description": "Gênero do usuário",
+                        "example": "female"
+                    },
                     "token": {
                         "type": "string",
                         "description": "Token",
@@ -189,6 +234,21 @@
                         "type": "string",
                         "description": "Email do usuário cadastrado",
                         "example": "email@email.com"
+                    },
+                    "phone": {
+                        "type": "string",
+                        "description": "Telefone do usuário",
+                        "example": "11981223344"
+                    },
+                    "date_of_birth": {
+                        "type": "string",
+                        "description": "Data de nascimento do usuário",
+                        "example": "2000-01-31"
+                    },
+                    "gender": {
+                        "type": "male | female",
+                        "description": "Gênero do usuário",
+                        "example": "female"
                     }
                 }
             }

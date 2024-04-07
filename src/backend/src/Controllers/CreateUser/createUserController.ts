@@ -7,14 +7,17 @@ class CreateUserController{
 
         try{
 
-            const { name, email, password } = req.body
+            const { name, email, phone, date_of_birth, gender, password } = req.body
     
             const createUserService = new CreateUserService()
     
             const user = await createUserService.execute({
                 name,
                 email,
-                password
+                password,
+                phone,
+                date_of_birth,
+                gender
             })
     
             return res.json(user)

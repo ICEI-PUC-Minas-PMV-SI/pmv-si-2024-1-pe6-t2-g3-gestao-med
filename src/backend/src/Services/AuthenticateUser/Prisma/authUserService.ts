@@ -47,6 +47,9 @@ class AuthUserService{
             id: user.id,
             name: user.name,
             email: user.email,
+            phone: user.phone,
+            date_of_birth: user.date_of_birth,
+            gender: user.gender,
             token: token
         }
         
