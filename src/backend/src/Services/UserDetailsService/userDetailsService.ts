@@ -13,7 +13,10 @@ class UserDetailsService {
         id: true,
         isAdmin: true,
         name: true,
-        email: true
+        email: true,
+        phone: true,
+        date_of_birth: true,
+        gender: true
       }
     });
 
