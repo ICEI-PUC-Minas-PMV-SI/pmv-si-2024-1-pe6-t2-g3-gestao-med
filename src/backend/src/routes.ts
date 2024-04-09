@@ -3,6 +3,7 @@ import { CreateUserController } from "./Controllers/CreateUser/createUserControl
 import { AuthUserController } from "./Controllers/AuthenticateUser/authUserController";
 import { UserDetailsController } from "./Controllers/UserDetailsController/userDetailsController";
 import { isAuthenticated } from "./middlewares/isAuthenticated";
+import { UserMedicationsController } from "./Controllers/UserMedicationsController/userMedicationsController";
 
 const router = Router()
 
@@ -14,5 +15,8 @@ router.post("/session", new AuthUserController().handle)
 
 //user details
 router.get("/user", isAuthenticated, new UserDetailsController().handle)
+
+//user medications
+router.get("/medications", isAuthenticated, new UserMedicationsController().handle)
 
 export {router}
