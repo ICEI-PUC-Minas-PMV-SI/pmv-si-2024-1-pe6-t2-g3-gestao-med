@@ -28,7 +28,7 @@ export function isAuthenticated(
         ) as PayLoad
        
         //Recuperar ID do token e inserir na variável req.user_id
-        req.user_id = sub
+        req.userId = sub
 
         return next()
 

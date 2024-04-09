@@ -10,4 +10,5 @@ router.post("/user", new CreateUserController().handle)
 //login user
 router.post("/session", new AuthUserController().handle)
 
+
 export {router}

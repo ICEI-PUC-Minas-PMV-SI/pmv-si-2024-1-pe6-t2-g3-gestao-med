@@ -3,40 +3,40 @@ import prismaClient from '../../../prisma'
 
 import { hash } from "bcryptjs"
 
-interface UserRequest{
+interface UserRequest {
     name: string;
     email: string;
     password: string;
 }
 
 
-class CreateUserInMemory{
-    async execute( { name, email, password}: UserRequest){
-        
+class CreateUserInMemory {
+    async execute(data: UserRequest) {
+
         //Check if admin inserted email
-        if(!email || !password || !name){
+        if (!data.email || !data.password || !data.name) {
             throw new CustomError("Missing information", 400)
         }
 
         //Check if email is already registered
         const userAlreadyExists = await prismaClient.user.findFirst({
-            where:{
-                email: email
+            where: {
+                email: data.email
             }
         })
 
-        if(userAlreadyExists){
+        if (userAlreadyExists) {
             throw new CustomError("User already exists", 400)
         }
 
-        const passwordHash = await hash(password, 8)
+        const passwordHash = await hash(data.password, 8)
 
-        let items = []
+        let user: UserRequest[] = []
 
-       const user = items.push({id:"1", name, email, password})
+        user.push(data)
 
-
-       return user
+        return user
+    
     }
 }
 
