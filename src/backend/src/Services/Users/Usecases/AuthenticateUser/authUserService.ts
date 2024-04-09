@@ -1,7 +1,7 @@
-import prismaClient from '../../../prisma';
+import prismaClient from '../../../../prisma';
 import { compare } from 'bcryptjs'
 import { sign } from "jsonwebtoken";
-import { CustomError } from '../../../errors/custom.error';
+import { CustomError } from '../../../../errors/custom.error';
 
 export interface AuthRequest{
     email: string,
@@ -47,6 +47,9 @@ class AuthUserService{
             id: user.id,
             name: user.name,
             email: user.email,
+            phone: user.phone,
+            date_of_birth: user.date_of_birth,
+            gender: user.gender,
             token: token
         }
         

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { AuthUserService } from "../../Services/AuthenticateUser/Prisma/authUserService";
+import { AuthUserService } from "../../Services/Users/Usecases/AuthenticateUser/authUserService";
 
 class AuthUserController{
     async handle(req: Request, res: Response){
