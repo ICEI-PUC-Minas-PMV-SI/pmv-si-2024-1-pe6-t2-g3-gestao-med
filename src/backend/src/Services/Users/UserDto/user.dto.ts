@@ -1,7 +1,7 @@
 import { Gender } from "@prisma/client"
 
 export type UserAuthDTO = {
-    id: string | null
+    id: string
     isAdmin: boolean
     email: string
     name: string

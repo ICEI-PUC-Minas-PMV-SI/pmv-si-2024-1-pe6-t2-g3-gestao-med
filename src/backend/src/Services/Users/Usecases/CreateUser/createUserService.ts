@@ -2,7 +2,7 @@ import { CustomError } from '../../../../errors/custom.error';
 import { randomUUID} from 'crypto'
 import { hash } from "bcryptjs"
 import { IUsersRepository } from '../../Repositories/users.repository';
-import { UserAuthDTO, UserRequestDTO } from '../../UserDto/user.dto';
+import { UserRequestDTO } from '../../UserDto/user.dto';
 
 
 class CreateUserService {
@@ -11,7 +11,7 @@ class CreateUserService {
         private userRepository: IUsersRepository
     ) { }
     async execute(data: UserRequestDTO) {
-        //data.date_of_birth = new Date()
+        data.date_of_birth = new Date()
 
         // Check if the user inserted all the data
         if (!data.name) throw new CustomError("Name is required", 400)

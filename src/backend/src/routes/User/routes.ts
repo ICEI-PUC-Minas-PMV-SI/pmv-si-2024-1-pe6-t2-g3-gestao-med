@@ -4,6 +4,7 @@ import { UserDetailsController } from "../../Controllers/UserDetailsController/u
 import { isAuthenticated } from "../../middlewares/isAuthenticated";
 import { UserMedicationsController } from "../../Controllers/UserMedicationsController/userMedicationsController";
 import { createUserController } from "../../Controllers/CreateUser";
+import { authUserController } from "../../Controllers/AuthenticateUser";
 
 const userRouter = Router()
 
@@ -13,7 +14,9 @@ userRouter.post("/user", async (request, response) => {
 })
 
 //login user
-userRouter.post("/session", new AuthUserController().handle)
+userRouter.post("/session", async (request, response) => {
+    await authUserController.handle(request, response)
+})
 
 //user details
 userRouter.get("/user", isAuthenticated, new UserDetailsController().handle)

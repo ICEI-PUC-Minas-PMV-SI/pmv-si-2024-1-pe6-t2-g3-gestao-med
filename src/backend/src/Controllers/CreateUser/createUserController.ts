@@ -18,9 +18,9 @@ class CreateUserController{
     
             const createUserService = new CreateUserService(this.useRepository)
     
-            const user = await createUserService.execute(data)
+            await createUserService.execute(data)
     
-            return res.json(user)
+            return res.status(201).json("User created successfully")
         }catch(err: any){
             return res.status(err.statusCode).json({
                 error: err.message

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { CreateUserService } from '../createUserService'
 import { UserMemoryRepository } from '../../../Repositories/implementations/in-memory/user-memory.repository'
-import { UserAuthDTO, UserRequestDTO } from '../../../UserDto/user.dto'
+import { UserRequestDTO } from '../../../UserDto/user.dto'
 
 describe("Create User Service", () => {
     it("Should be able to create a new User", async () => {
