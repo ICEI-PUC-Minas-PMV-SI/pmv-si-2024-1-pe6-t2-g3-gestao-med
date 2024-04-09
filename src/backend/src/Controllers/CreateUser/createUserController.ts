@@ -1,26 +1,26 @@
 import { Request, Response } from 'express'
 
-import { CreateUserService } from '../../Services/CreateUser/Prisma/createUserService'
+import { CreateUserService } from '../../Services/Users/Usecases/CreateUser/createUserService'
+import { IUsersRepository } from '../../Services/Users/Repositories/users.repository'
+import { UserAuthDTO } from '../../Services/Users/UserDto/user.dto'
 
 class CreateUserController{
+
+    constructor(
+        private userRepository: IUsersRepository
+    ) { }
+
     async handle(req: Request, res: Response){
 
         try{
 
-            const { name, email, phone, date_of_birth, gender, password } = req.body
+            const data: UserAuthDTO = req.body
     
-            const createUserService = new CreateUserService()
+            const createUserService = new CreateUserService(this.userRepository)
     
-            const user = await createUserService.execute({
-                name,
-                email,
-                password,
-                phone,
-                date_of_birth,
-                gender
-            })
+            await createUserService.execute(data)
     
-            return res.json(user)
+            return res.status(201).json("User created successfully")
         }catch(err: any){
             return res.status(err.statusCode).json({
                 error: err.message

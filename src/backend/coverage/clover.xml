@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1712698418397" clover="3.2.0">
+  <project timestamp="1712698418397" name="All files">
+    <metrics statements="128" coveredstatements="50" conditionals="50" coveredconditionals="32" methods="34" coveredmethods="16" elements="212" coveredelements="98" complexity="0" loc="128" ncloc="128" packages="18" files="21" classes="21"/>
+    <package name="src">
+      <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="server.ts" path="C:/Users/james/Documents/4.Projetos/23.PUC/semestre6/pmv-si-2024-1-pe6-t2-g3-gestao-med/src/backend/src/server.ts">
+        <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.Controllers.AuthenticateUser">
+      <metrics statements="13" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="authUserController.ts" path="C:/Users/james/Documents/4.Projetos/23.PUC/semestre6/pmv-si-2024-1-pe6-t2-g3-gestao-med/src/backend/src/Controllers/AuthenticateUser/authUserController.ts">
+        <metrics statements="9" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+      </file>
+      <file name="index.ts" path="C:/Users/james/Documents/4.Projetos/23.PUC/semestre6/pmv-si-2024-1-pe6-t2-g3-gestao-med/src/backend/src/Controllers/AuthenticateUser/index.ts">
+        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.Controllers.CreateUser">
+      <metrics statements="9" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="createUserController.ts" path="C:/Users/james/Documents/4.Projetos/23.PUC/semestre6/pmv-si-2024-1-pe6-t2-g3-gestao-med/src/backend/src/Controllers/CreateUser/createUserController.ts">
+        <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+      </file>
+      <file name="index.ts" path="C:/Users/james/Documents/4.Projetos/23.PUC/semestre6/pmv-si-2024-1-pe6-t2-g3-gestao-med/src/backend/src/Controllers/CreateUser/index.ts">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.Controllers.UserDetailsController">
+      <metrics statements="9" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="index.ts" path="C:/Users/james/Documents/4.Projetos/23.PUC/semestre6/pmv-si-2024-1-pe6-t2-g3-gestao-med/src/backend/src/Controllers/UserDetailsController/index.ts">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+      </file>
+      <file name="userDetailsController.ts" path="C:/Users/james/Documents/4.Projetos/23.PUC/semestre6/pmv-si-2024-1-pe6-t2-g3-gestao-med/src/backend/src/Controllers/UserDetailsController/userDetailsController.ts">
+        <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.Controllers.UserMedicationsController">
+      <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="userMedicationsController.ts" path="C:/Users/james/Documents/4.Projetos/23.PUC/semestre6/pmv-si-2024-1-pe6-t2-g3-gestao-med/src/backend/src/Controllers/UserMedicationsController/userMedicationsController.ts">
+        <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.Services.Medications.UserMedicationsService">
+      <metrics statements="4" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="userMedicationsService.ts" path="C:/Users/james/Documents/4.Projetos/23.PUC/semestre6/pmv-si-2024-1-pe6-t2-g3-gestao-med/src/backend/src/Services/Medications/UserMedicationsService/userMedicationsService.ts">
+        <metrics statements="4" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="6" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="24" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="26" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.Services.Users.Repositories.implementations.in-memory">
+      <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
+      <file name="user-memory.repository.ts" path="C:/Users/james/Documents/4.Projetos/23.PUC/semestre6/pmv-si-2024-1-pe6-t2-g3-gestao-med/src/backend/src/Services/Users/Repositories/implementations/in-memory/user-memory.repository.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
+        <line num="5" count="8" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="12" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="10" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="src.Services.Users.Repositories.implementations.prisma">
+      <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <file name="user-prisma.repository.ts" path="C:/Users/james/Documents/4.Projetos/23.PUC/semestre6/pmv-si-2024-1-pe6-t2-g3-gestao-med/src/backend/src/Services/Users/Repositories/implementations/prisma/user-prisma.repository.ts">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.Services.Users.Usecases.AuthenticateUser">
+      <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <file name="authUserService.ts" path="C:/Users/james/Documents/4.Projetos/23.PUC/semestre6/pmv-si-2024-1-pe6-t2-g3-gestao-med/src/backend/src/Services/Users/Usecases/AuthenticateUser/authUserService.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
+        <line num="22" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="27" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.Services.Users.Usecases.CreateUser">
+      <metrics statements="25" coveredstatements="23" conditionals="24" coveredconditionals="17" methods="2" coveredmethods="2"/>
+      <file name="createUserService.ts" path="C:/Users/james/Documents/4.Projetos/23.PUC/semestre6/pmv-si-2024-1-pe6-t2-g3-gestao-med/src/backend/src/Services/Users/Usecases/CreateUser/createUserService.ts">
+        <metrics statements="25" coveredstatements="23" conditionals="24" coveredconditionals="17" methods="2" coveredmethods="2"/>
+        <line num="11" count="8" type="stmt"/>
+        <line num="15" count="9" type="stmt"/>
+        <line num="18" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="19" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="22" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="23" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="26" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="29" count="6" type="cond" truecount="2" falsecount="2"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="33" count="6" type="stmt"/>
+        <line num="36" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="40" count="5" type="stmt"/>
+        <line num="44" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="52" count="5" type="stmt"/>
+        <line num="54" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="59" count="4" type="stmt"/>
+        <line num="61" count="4" type="stmt"/>
+        <line num="64" count="4" type="stmt"/>
+        <line num="69" count="4" type="stmt"/>
+        <line num="71" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.Services.Users.Usecases.UserDetailsService">
+      <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <file name="userDetailsService.ts" path="C:/Users/james/Documents/4.Projetos/23.PUC/semestre6/pmv-si-2024-1-pe6-t2-g3-gestao-med/src/backend/src/Services/Users/Usecases/UserDetailsService/userDetailsService.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="12" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="16" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="18" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.errors">
+      <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="custom.error.ts" path="C:/Users/james/Documents/4.Projetos/23.PUC/semestre6/pmv-si-2024-1-pe6-t2-g3-gestao-med/src/backend/src/errors/custom.error.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="6" count="9" type="stmt"/>
+        <line num="7" count="9" type="stmt"/>
+        <line num="8" count="9" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.prisma">
+      <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="C:/Users/james/Documents/4.Projetos/23.PUC/semestre6/pmv-si-2024-1-pe6-t2-g3-gestao-med/src/backend/src/prisma/index.ts">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.routes">
+      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="C:/Users/james/Documents/4.Projetos/23.PUC/semestre6/pmv-si-2024-1-pe6-t2-g3-gestao-med/src/backend/src/routes/index.ts">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.routes.User">
+      <metrics statements="8" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <file name="routes.ts" path="C:/Users/james/Documents/4.Projetos/23.PUC/semestre6/pmv-si-2024-1-pe6-t2-g3-gestao-med/src/backend/src/routes/User/routes.ts">
+        <metrics statements="8" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.shared.crypto">
+      <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <file name="password.bcrypt.ts" path="C:/Users/james/Documents/4.Projetos/23.PUC/semestre6/pmv-si-2024-1-pe6-t2-g3-gestao-med/src/backend/src/shared/crypto/password.bcrypt.ts">
+        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.shared.middlewares">
+      <metrics statements="10" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="user-auth.middleware.ts" path="C:/Users/james/Documents/4.Projetos/23.PUC/semestre6/pmv-si-2024-1-pe6-t2-g3-gestao-med/src/backend/src/shared/middlewares/user-auth.middleware.ts">
+        <metrics statements="10" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="8" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="12" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="18" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.shared.token">
+      <metrics statements="8" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="2"/>
+      <file name="jwt.token.ts" path="C:/Users/james/Documents/4.Projetos/23.PUC/semestre6/pmv-si-2024-1-pe6-t2-g3-gestao-med/src/backend/src/shared/token/jwt.token.ts">
+        <metrics statements="8" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="2"/>
+        <line num="11" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
