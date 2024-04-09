@@ -1,25 +1,17 @@
 import { CustomError } from "../../../../errors/custom.error";
 import prismaClient from "../../../../prisma";
+import { IUsersRepository } from "../../Repositories/users.repository";
 
 class UserDetailsService {
+
+  constructor(
+    private userRepository: IUsersRepository
+  ){}
   
   async execute(user_id: string) {
     if (!user_id) throw new CustomError("UserId is required!", 400);
 
-    const user = await prismaClient.user.findUnique({
-      where: {
-        id: user_id,
-      },
-      select: {
-        id: true,
-        isAdmin: true,
-        name: true,
-        email: true,
-        phone: true,
-        date_of_birth: true,
-        gender: true
-      }
-    });
+    const user = await this.userRepository.findById(user_id)
 
     if (!user) throw new CustomError("User not found!", 404);
 

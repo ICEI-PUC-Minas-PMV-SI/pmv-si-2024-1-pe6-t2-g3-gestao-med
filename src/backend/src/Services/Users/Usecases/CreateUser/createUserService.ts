@@ -10,6 +10,7 @@ class CreateUserService {
     constructor(
         private userRepository: IUsersRepository
     ) { }
+    
     async execute(data: UserRequestDTO) {
         data.date_of_birth = new Date()
 

@@ -1,10 +1,11 @@
 import { Router, Request, Response } from "express";
 import { AuthUserController } from "../../Controllers/AuthenticateUser/authUserController";
 import { UserDetailsController } from "../../Controllers/UserDetailsController/userDetailsController";
-import { isAuthenticated } from "../../middlewares/isAuthenticated";
+import { isAuthenticated } from "../../shared/middlewares/user-auth.middleware";
 import { UserMedicationsController } from "../../Controllers/UserMedicationsController/userMedicationsController";
 import { createUserController } from "../../Controllers/CreateUser";
 import { authUserController } from "../../Controllers/AuthenticateUser";
+import { userDetailsController } from "../../Controllers/UserDetailsController";
 
 const userRouter = Router()
 
@@ -19,7 +20,9 @@ userRouter.post("/session", async (request, response) => {
 })
 
 //user details
-userRouter.get("/user", isAuthenticated, new UserDetailsController().handle)
+userRouter.get("/user", isAuthenticated, async (request, response) => {
+    await userDetailsController.handle(request, response)
+})
 
 //user medications
 userRouter.get("/medications", isAuthenticated, new UserMedicationsController().handle)

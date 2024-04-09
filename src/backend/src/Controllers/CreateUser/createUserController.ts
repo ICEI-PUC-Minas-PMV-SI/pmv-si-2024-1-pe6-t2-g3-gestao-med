@@ -7,8 +7,8 @@ import { UserAuthDTO } from '../../Services/Users/UserDto/user.dto'
 class CreateUserController{
 
     constructor(
-        private useRepository: IUsersRepository
-    ){}
+        private userRepository: IUsersRepository
+    ) { }
 
     async handle(req: Request, res: Response){
 
@@ -16,7 +16,7 @@ class CreateUserController{
 
             const data: UserAuthDTO = req.body
     
-            const createUserService = new CreateUserService(this.useRepository)
+            const createUserService = new CreateUserService(this.userRepository)
     
             await createUserService.execute(data)
     

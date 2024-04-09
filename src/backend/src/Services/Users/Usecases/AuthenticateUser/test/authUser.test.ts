@@ -39,7 +39,6 @@ describe("Authenticate User Service", () => {
         const authUserService = new AuthUserService(userMemoryRepository, passwordCrypto, tokenGenerated)
 
         const user = await authUserService.execute(userAuth)
-
         expect(user).toHaveProperty("token")
 
     })
