@@ -13,17 +13,57 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Gender {
+  MALE
+  FEMALE
+}
 
 model User {
-  id       String  @id @default(uuid())
-  isAdmin  Boolean @default(false)
-  name     String
-  email    String @unique
-  password String
+  id            String   @id @default(uuid())
+  isAdmin       Boolean  @default(false)
+  name          String
+  email         String   @unique
+  phone         String
+  date_of_birth DateTime
+  gender        Gender
+  password      String
 
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  created_at  DateTime      @default(now())
+  updated_at  DateTime?     @updatedAt
+  Medications Medications[]
 
   @@map("user")
 }
 
+model Medications {
+  id                    String    @id @default(uuid())
+  user_id               String
+  name                  String
+  description           String
+  stock                 Int
+  time_to_take          String
+  treatment_finished_at DateTime?
+
+  created_at DateTime    @default(now())
+  updated_at DateTime?   @updatedAt
+  deleted_at DateTime?
+  Registers  Registers[]
+
+  User User @relation(fields: [user_id], references: [id])
+
+  @@map("medications")
+}
+
+model Registers {
+  id               String    @id @default(uuid())
+  medication_id    String
+  medication_taken Boolean
+  time_taken       DateTime?
+
+  created_at DateTime  @default(now())
+  updated_at DateTime? @updatedAt
+
+  Medication Medications @relation(fields: [medication_id], references: [id])
+
+  @@map("registers")
+}

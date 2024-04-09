@@ -32,6 +32,23 @@
                         }
                     }
                 }
+            },
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "description": "Detalhes do usuário",
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UserDetailsResponse"
+                                }
+                            }
+                        }
+                    }
+                }
             }
         },
         "/session": {
@@ -61,6 +78,25 @@
                     }
                 }
             }
+        },
+        "/medications": {
+            "get": {
+                "tags":[
+                    "Medications"
+                ],
+                "description": "Medicamentos de um usuário",
+                "responses":{
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MedicationsResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -77,6 +113,21 @@
                         "type": "string",
                         "description": "Email do usuário",
                         "example": "joaosilva@hotmail.com"
+                    },
+                    "phone": {
+                        "type": "string",
+                        "description": "Telefone do usuário",
+                        "example": "11981223344"
+                    },
+                    "date_of_birth": {
+                        "type": "string",
+                        "description": "Data de nascimento do usuário",
+                        "example": "2000-01-31"
+                    },
+                    "gender": {
+                        "type": "male | female",
+                        "description": "Gênero do usuário",
+                        "example": "female"
                     },
                     "password": {
                         "type": "string",
@@ -107,6 +158,21 @@
                         "type": "string",
                         "description": "Email do usuário cadastrado",
                         "example": "email@email.com"
+                    },
+                    "phone": {
+                        "type": "string",
+                        "description": "Telefone do usuário",
+                        "example": "11981223344"
+                    },
+                    "date_of_birth": {
+                        "type": "string",
+                        "description": "Data de nascimento do usuário",
+                        "example": "2000-01-31"
+                    },
+                    "gender": {
+                        "type": "male | female",
+                        "description": "Gênero do usuário",
+                        "example": "female"
                     }
                 }
             },
@@ -143,14 +209,103 @@
                         "description": "Email do usuário cadastrado",
                         "example": "email@email.com"
                     },
+                    "phone": {
+                        "type": "string",
+                        "description": "Telefone do usuário",
+                        "example": "11981223344"
+                    },
+                    "date_of_birth": {
+                        "type": "string",
+                        "description": "Data de nascimento do usuário",
+                        "example": "2000-01-31"
+                    },
+                    "gender": {
+                        "type": "male | female",
+                        "description": "Gênero do usuário",
+                        "example": "female"
+                    },
                     "token": {
                         "type": "string",
                         "description": "Token",
                         "example": "token gerado"
                     }
                 }
+            },
+            "UserDetailsResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Id do usuário cadastrado",
+                        "format": "uuid"
+                    },
+                    "isAdmin": {
+                        "type": "boolean",
+                        "description": "Se o usuário é um administrador",
+                        "format": "false"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Nome do usuário cadastrado",
+                        "example": "NAME_TEST"
+                    },
+                    "email": {
+                        "type": "string",
+                        "description": "Email do usuário cadastrado",
+                        "example": "email@email.com"
+                    },
+                    "phone": {
+                        "type": "string",
+                        "description": "Telefone do usuário",
+                        "example": "11981223344"
+                    },
+                    "date_of_birth": {
+                        "type": "string",
+                        "description": "Data de nascimento do usuário",
+                        "example": "2000-01-31"
+                    },
+                    "gender": {
+                        "type": "male | female",
+                        "description": "Gênero do usuário",
+                        "example": "female"
+                    }
+                }
+            },
+            "MedicationsResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Id do medicamento",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Nome do medicamento",
+                        "example": "NAME_TEST"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Descrição do medicamento",
+                        "example": "Description..."
+                    },
+                    "stock": {
+                        "type": "number",
+                        "description": "Estoque do medicamento",
+                        "example": 15
+                    },
+                    "time_to_take": {
+                        "type": "string",
+                        "description": "Horários de tomar o medicamento",
+                        "example": "12:00,22:00"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "description": "Data de ínicio do tratamento",
+                        "example": "2024-04-08T21:20:56.523Z"
+                    }
+                }
             }
-
         }
     }
 }
