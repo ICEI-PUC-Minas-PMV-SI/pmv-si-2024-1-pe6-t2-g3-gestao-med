@@ -78,6 +78,25 @@
                     }
                 }
             }
+        },
+        "/medications": {
+            "get": {
+                "tags":[
+                    "Medications"
+                ],
+                "description": "Medicamentos de um usuário",
+                "responses":{
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MedicationsResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -249,6 +268,41 @@
                         "type": "male | female",
                         "description": "Gênero do usuário",
                         "example": "female"
+                    }
+                }
+            },
+            "MedicationsResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Id do medicamento",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Nome do medicamento",
+                        "example": "NAME_TEST"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Descrição do medicamento",
+                        "example": "Description..."
+                    },
+                    "stock": {
+                        "type": "number",
+                        "description": "Estoque do medicamento",
+                        "example": 15
+                    },
+                    "time_to_take": {
+                        "type": "string",
+                        "description": "Horários de tomar o medicamento",
+                        "example": "12:00,22:00"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "description": "Data de ínicio do tratamento",
+                        "example": "2024-04-08T21:20:56.523Z"
                     }
                 }
             }
