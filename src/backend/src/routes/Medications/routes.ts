@@ -1,12 +1,7 @@
 import { Router, Request, Response } from "express";
-import { AuthUserController } from "../../Controllers/AuthenticateUser/authUserController";
-import { UserDetailsController } from "../../Controllers/UserDetailsController/userDetailsController";
 import { isAuthenticated } from "../../shared/middlewares/user-auth.middleware";
-import { UserMedicationsController } from "../../Controllers/UserMedicationsController/userMedicationsController";
-import { createUserController } from "../../Controllers/CreateUser";
-import { authUserController } from "../../Controllers/AuthenticateUser";
-import { userDetailsController } from "../../Controllers/UserDetailsController";
 import { userMedicationsController } from "../../Controllers/UserMedicationsController";
+import { registerMedicateController } from "../../Controllers/RegisterMedicateController";
 
 const medicationRouter = Router()
 
@@ -14,5 +9,9 @@ const medicationRouter = Router()
 medicationRouter.get("/medications", isAuthenticated, async (request, response) => {
     await userMedicationsController.handle(request, response)
 })
+
+medicationRouter.post("/medications", isAuthenticated, async (request, response) => {
+    await registerMedicateController.handle(request, response)
+}) 
 
 export {medicationRouter}
