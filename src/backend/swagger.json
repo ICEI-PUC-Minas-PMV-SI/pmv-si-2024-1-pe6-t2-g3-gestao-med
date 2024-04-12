@@ -38,6 +38,11 @@
                     "User"
                 ],
                 "description": "Detalhes do usuário",
+                "security":[
+                    {
+                        "bearerAuth":[]
+                    }
+                ],
                 "responses": {
                     "200": {
                         "content": {
@@ -85,6 +90,11 @@
                     "Medications"
                 ],
                 "description": "Medicamentos de um usuário",
+                "security":[
+                    {
+                        "bearerAuth":[]
+                    }
+                ],
                 "responses":{
                     "200": {
                         "content": {
@@ -305,6 +315,15 @@
                         "example": "2024-04-08T21:20:56.523Z"
                     }
                 }
+            }
+        }, 
+        "securitySchemes":{
+            "bearerAuth":{
+                "description":"Autenticação da API",
+                "type":"http",
+                "scheme":"bearer",
+                "bearerFormat":"JWT",
+                "tokenUrl":"http://localhost:3333/session"
             }
         }
     }
