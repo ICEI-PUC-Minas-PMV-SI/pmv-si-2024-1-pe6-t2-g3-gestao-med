@@ -3,7 +3,14 @@ import { MedicationsDTO } from "../../../MedicationsDto/medications.dto";
 import { IMedicationsRepository } from "../../medications.repository";
 
 export class MedicationsPrismaRepository implements IMedicationsRepository{
-    async findByUserid(user_id: string): Promise<MedicationsDTO[]> {
+    async findById(medication_id: string): Promise<MedicationsDTO | null> {
+        return await prismaClient.medications.findUnique({
+            where:{
+                id:medication_id
+            }
+        })
+    }
+    async findByUserId(user_id: string): Promise<MedicationsDTO[]> {
         return await prismaClient.medications.findMany({
             where:{
                 user_id
