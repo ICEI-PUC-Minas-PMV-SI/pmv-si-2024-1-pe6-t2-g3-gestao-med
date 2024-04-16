@@ -6,7 +6,6 @@ import { MedicationsDTO } from "../../../MedicationsDto/medications.dto";
 let medicationsMemoryRepository = new MedicationsMemoryRepository()
 
 beforeAll(async () => {
-    
     const medication: MedicationsDTO = {
         id: "id",
         name: "nome",
@@ -40,12 +39,10 @@ beforeAll(async () => {
 describe("Delete medication service", () => {
 
     it("Medication id is missing - fail", async () => {
-        
         const medicationId = ""
         const userId = "teste"
 
-        const medicationsRepository = new MedicationsMemoryRepository()
-        const deleteMedicationService = new DeleteMedicationService(medicationsRepository)
+        const deleteMedicationService = new DeleteMedicationService(medicationsMemoryRepository)
 
         expect(async () => {
             await deleteMedicationService.execute(medicationId, userId)
@@ -53,12 +50,10 @@ describe("Delete medication service", () => {
     })
 
     it("User id is missing - fail", async () => {
-        
         const medicationId = "teste"
         const userId = ""
 
-        const medicationsRepository = new MedicationsMemoryRepository()
-        const deleteMedicationService = new DeleteMedicationService(medicationsRepository)
+        const deleteMedicationService = new DeleteMedicationService(medicationsMemoryRepository)
 
         expect(async () => {
             await deleteMedicationService.execute(medicationId, userId)
@@ -66,12 +61,10 @@ describe("Delete medication service", () => {
     })
 
     it("Medication not found - fail", async () => {
-        
         const medicationId = "teste"
         const userId = "teste"
 
-        const medicationsRepository = new MedicationsMemoryRepository()
-        const deleteMedicationService = new DeleteMedicationService(medicationsRepository)
+        const deleteMedicationService = new DeleteMedicationService(medicationsMemoryRepository)
 
         expect(async () => {
             await deleteMedicationService.execute(medicationId, userId)
@@ -79,7 +72,6 @@ describe("Delete medication service", () => {
     })
 
     it("Medication is already deleted - fail", async () => {
-        
         const medicationId = "id_deleted"
         const userId = "teste"
 
@@ -91,7 +83,6 @@ describe("Delete medication service", () => {
     })
 
     it("Medication is not from the user - fail", async () => {
-        
         const medicationId = "id"
         const userId = "teste"
 
@@ -103,7 +94,6 @@ describe("Delete medication service", () => {
     })
 
     it("Delete medication - success", async () => {
-        
         const medicationId = "id"
         const userId = "user"
 
@@ -114,6 +104,5 @@ describe("Delete medication service", () => {
         const medication = await medicationsMemoryRepository.findById(medicationId)
 
         expect(medication?.deleted_at).not.toBeNull()
-        
     })
 })
