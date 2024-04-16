@@ -9,8 +9,21 @@ export class MedicationsMemoryRepository implements IMedicationsRepository{
 
         return data
     }
-    async findByUserid(user_id: string): Promise<MedicationsDTO[]> {
+    
+    async findByUserId(user_id: string): Promise<MedicationsDTO[]> {
         return this.medications.filter(medication => medication.id === user_id)
+    }
+
+    async findById(medication_id: string): Promise<MedicationsDTO | null> {
+        return this.medications.find(medication => medication.id === medication_id) || null
+    }
+
+    async delete(medication_id: string): Promise<void> {
+        this.medications = this.medications.map(medication => {
+            if (medication.id === medication_id) 
+                medication.deleted_at = new Date()
+            return medication
+        })
     }
 
 }

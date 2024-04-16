@@ -1,7 +1,7 @@
 import { MedicationsPrismaRepository } from "../../Services/Medications/Repositories/implementations/prisma/medications-prisma.repository";
-import { RegisterMedicateController } from "./registerMedicateController";
+import { DeleteMedicationController } from "./deleteMedicationController";
 
 const medicationPrismaRepository = new MedicationsPrismaRepository()
-const registerMedicateController = new RegisterMedicateController(medicationPrismaRepository)
+const deleteMedicationController = new DeleteMedicationController(medicationPrismaRepository)
 
-export {registerMedicateController}
+export {deleteMedicationController}

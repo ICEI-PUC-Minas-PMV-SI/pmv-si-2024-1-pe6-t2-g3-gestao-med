@@ -8,4 +8,5 @@ export type MedicationsDTO = {
     treatment_finished_at: Date | null
     created_at: Date | null
     updated_at: Date | null
+    deleted_at: Date | null
 }
