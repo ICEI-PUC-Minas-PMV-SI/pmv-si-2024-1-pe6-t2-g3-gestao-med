@@ -16,7 +16,7 @@ beforeAll(async () => {
         treatment_finished_at: null,
         user_id: "user",
         created_at: new Date(),
-        updated_at: new Date(),
+        updated_at: null,
         deleted_at: null
     }
     
@@ -83,8 +83,7 @@ describe("Delete medication service", () => {
         const medicationId = "id_deleted"
         const userId = "teste"
 
-        const medicationsRepository = new MedicationsMemoryRepository()
-        const deleteMedicationService = new DeleteMedicationService(medicationsRepository)
+        const deleteMedicationService = new DeleteMedicationService(medicationsMemoryRepository )
 
         expect(async () => {
             await deleteMedicationService.execute(medicationId, userId)
@@ -96,8 +95,7 @@ describe("Delete medication service", () => {
         const medicationId = "id"
         const userId = "teste"
 
-        const medicationsRepository = new MedicationsMemoryRepository()
-        const deleteMedicationService = new DeleteMedicationService(medicationsRepository)
+        const deleteMedicationService = new DeleteMedicationService(medicationsMemoryRepository )
 
         expect(async () => {
             await deleteMedicationService.execute(medicationId, userId)
@@ -109,14 +107,13 @@ describe("Delete medication service", () => {
         const medicationId = "id"
         const userId = "user"
 
-        const medicationsRepository = new MedicationsMemoryRepository()
-        const deleteMedicationService = new DeleteMedicationService(medicationsRepository)
+        const deleteMedicationService = new DeleteMedicationService(medicationsMemoryRepository )
 
         await deleteMedicationService.execute(medicationId, userId)
+        
+        const medication = await medicationsMemoryRepository.findById(medicationId)
 
-        expect(async () => {
-            const medication = await medicationsMemoryRepository.findById(medicationId)
-            medication?.deleted_at
-        }).equals(new Date())
+        expect(medication?.deleted_at).not.toBeNull()
+        
     })
 })
