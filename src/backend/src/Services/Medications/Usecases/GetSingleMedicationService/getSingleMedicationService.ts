@@ -23,7 +23,6 @@ class GetSingleMedicationService {
 
 
         const medication = await this.medicationsRepository.findById(medication_id)
-        
         if (!medication) {
             throw new CustomError("Medication not found", 404) }
         return medication
