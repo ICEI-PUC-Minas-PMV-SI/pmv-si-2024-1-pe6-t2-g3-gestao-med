@@ -31,8 +31,8 @@ class EditMedicationService {
             throw new CustomError("Medication not found", 404)
         }
 
-        await this.medicationsRepository.edit(data)
-        return medication
+        return await this.medicationsRepository.edit(data)
+
     }
 }
 export { EditMedicationService }

@@ -17,7 +17,7 @@ medicationRouter.post("/medications", isAuthenticated, async (request, response)
     await registerMedicateController.handle(request, response)
 }) 
 
-medicationRouter.put("/medication" , isAuthenticated, async (request, response) => {
+medicationRouter.get("/medication" , isAuthenticated, async (request, response) => {
     await getSingleMedicationController.handle(request, response)
 }) 
 
@@ -29,5 +29,4 @@ medicationRouter.put("/medication" , isAuthenticated, async (request, response) 
     await editMedicationController.handle(request, response)
 }) 
  
-
 export {medicationRouter}

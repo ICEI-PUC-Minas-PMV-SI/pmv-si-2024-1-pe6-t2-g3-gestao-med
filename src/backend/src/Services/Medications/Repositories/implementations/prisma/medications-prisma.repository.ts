@@ -45,7 +45,7 @@ export class MedicationsPrismaRepository implements IMedicationsRepository {
     }
 
     async edit(data: MedicationsDTO): Promise<MedicationsDTO> {
-        await prismaClient.medications.update({
+        const medication = await prismaClient.medications.update({
             where: {
                 id: data.id
             },
@@ -58,8 +58,7 @@ export class MedicationsPrismaRepository implements IMedicationsRepository {
             }
 
         })
-
-        throw new Error("Method not implemented.");
+        return medication
     }
 
     async save(): Promise < MedicationsDTO > {
