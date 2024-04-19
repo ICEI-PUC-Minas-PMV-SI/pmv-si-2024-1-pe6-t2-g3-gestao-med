@@ -12,19 +12,19 @@ const medicationRouter = Router()
 medicationRouter.get("/medications", isAuthenticated, async (request, response) => {
     await userMedicationsController.handle(request, response)
 })
-
+//register of a new medication
 medicationRouter.post("/medications", isAuthenticated, async (request, response) => {
     await registerMedicateController.handle(request, response)
 }) 
-
+//get a single medication
 medicationRouter.get("/medication" , isAuthenticated, async (request, response) => {
     await getSingleMedicationController.handle(request, response)
 }) 
-
+//delete medications
 medicationRouter.delete("/medication/delete/:medicationId" , isAuthenticated, async (request, response) => {
     await deleteMedicationController.handle(request, response)
 }) 
-
+//edit medications
 medicationRouter.put("/medication" , isAuthenticated, async (request, response) => {
     await editMedicationController.handle(request, response)
 }) 

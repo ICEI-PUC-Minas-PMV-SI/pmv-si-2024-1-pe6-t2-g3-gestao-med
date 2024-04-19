@@ -13,12 +13,13 @@ class EditMedicationService {
     ) { }
 
     async execute(data:MedicationsDTO) {
+
         if (!data.user_id) {
             throw new CustomError("User id is required", 400)
         }
 
         if (!data.id) {
-            throw new CustomError("User id is required", 400)
+            throw new CustomError("Medication id is required", 400)
         }
 
         const user = await this.usersRepository.findById(data.user_id)
