@@ -11,6 +11,9 @@ class RegisterMedicateController{
         try{
             const registerMedicateService = new RegisterMedicateService(this.medicationRepository)
             const data: MedicationsDTO = req.body
+
+            data.user_id = req.user_id
+            
             const regiterMedication = await registerMedicateService.execute(data)
 
             return res.status(201).json(regiterMedication)

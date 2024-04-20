@@ -26,7 +26,7 @@ describe("Create Medication Service", () => {
         const medicationService = new RegisterMedicateService(medicationsMemoryRepository)
 
         const medication = await medicationService.execute(medicationMock)
-    
+        console.log({medication})
         expect(medication).toHaveProperty("id")
 
     })
