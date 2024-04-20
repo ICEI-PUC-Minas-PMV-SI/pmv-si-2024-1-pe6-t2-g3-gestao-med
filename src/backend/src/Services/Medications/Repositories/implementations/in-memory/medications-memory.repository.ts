@@ -2,8 +2,11 @@ import { MedicationsDTO } from "../../../MedicationsDto/medications.dto";
 import { IMedicationsRepository } from "../../medications.repository";
 
 export class MedicationsMemoryRepository implements IMedicationsRepository {
-
+    
     medications: MedicationsDTO[] = []
+    register(user_id: string, medication_id: string, time_taken: Date): Promise<void> {
+        throw new Error("Method not implemented.");
+    }
 
     async edit(data: MedicationsDTO): Promise<MedicationsDTO> {
         const index = this.medications.findIndex(medication => medication.id === data.id);
