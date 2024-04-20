@@ -4,6 +4,7 @@ import { IMedicationsRepository } from "../../medications.repository";
 export class MedicationsMemoryRepository implements IMedicationsRepository {
     
     medications: MedicationsDTO[] = []
+    
     register(user_id: string, medication_id: string, time_taken: Date): Promise<void> {
         throw new Error("Method not implemented.");
     }
