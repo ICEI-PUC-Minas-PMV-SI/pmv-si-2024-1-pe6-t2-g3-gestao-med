@@ -10,10 +10,11 @@ export class MedicationsMemoryRepository implements IMedicationsRepository{
 
         return data
     }
-    
+
     async findByUserId(user_id: string): Promise<MedicationsDTO[]> {
         return this.medications.filter(medication => medication.id === user_id)
     }
+
 
     async findById(medication_id: string): Promise<MedicationsDTO | null> {
         return this.medications.find(medication => medication.id === medication_id) || null
@@ -30,4 +31,9 @@ export class MedicationsMemoryRepository implements IMedicationsRepository{
     async register(user_id: string, medication_id: string, time_taken: Date): Promise<void> {
         throw new Error("Method not implemented.");
     }
+
+    edit(data: MedicationsDTO): Promise<MedicationsDTO> {
+        throw new Error("Method not implemented.");
+    }
+
 }

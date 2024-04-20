@@ -59,7 +59,6 @@ describe("Create User Service", () => {
         const createUserInMemory = new CreateUserService(userRepository)
 
         await createUserInMemory.execute(userMock)
-        console.log("user")
         expect(async () => {
             await createUserInMemory.execute(userMock2)
         }).rejects.toThrow("User already exists")
