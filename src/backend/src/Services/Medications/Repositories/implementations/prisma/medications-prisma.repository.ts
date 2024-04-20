@@ -3,6 +3,7 @@ import { MedicationsDTO } from "../../../MedicationsDto/medications.dto";
 import { IMedicationsRepository } from "../../medications.repository";
 
 export class MedicationsPrismaRepository implements IMedicationsRepository{
+    
     async findById(medication_id: string): Promise<MedicationsDTO | null> {
         return await prismaClient.medications.findUnique({
             where:{
@@ -43,5 +44,17 @@ export class MedicationsPrismaRepository implements IMedicationsRepository{
 
     async save(): Promise<MedicationsDTO> {
         throw new Error("Method not implemented.");
+    }
+
+    async register(user_id: string, medication_id: string, time_taken: Date): Promise<void> {
+        // porque não tem o user_id na tabela registers?
+        await prismaClient.registers.create({
+            data: {
+                medication_id: medication_id,
+                time_taken: new Date(time_taken),
+                medication_taken: true,
+                created_at: new Date()
+            }
+        })
     }
 }

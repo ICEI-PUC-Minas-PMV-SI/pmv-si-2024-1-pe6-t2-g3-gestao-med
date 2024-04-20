@@ -4,6 +4,7 @@ import { userMedicationsController } from "../../Controllers/UserMedicationsCont
 import { registerMedicateController } from "../../Controllers/RegisterMedicateController";
 import { getSingleMedicationController } from "../../Controllers/GetSingleMedication";
 import { deleteMedicationController } from "../../Controllers/DeleteMedicationController";
+import { takenMedicationController } from "../../Controllers/TakenMedicationController";
 
 const medicationRouter = Router()
 
@@ -23,5 +24,9 @@ medicationRouter.get("/medication" , isAuthenticated, async (request, response) 
 medicationRouter.delete("/medication/delete/:medicationId" , isAuthenticated, async (request, response) => {
     await deleteMedicationController.handle(request, response)
 }) 
+
+medicationRouter.post("/medication/taken", isAuthenticated, async (request, response) =>{
+    await takenMedicationController.handle(request,response)
+})
 
 export {medicationRouter}
