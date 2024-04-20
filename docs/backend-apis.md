@@ -108,23 +108,29 @@ A segurança é uma consideração crítica para garantir a integridade e confia
 
 ## Implantação
 
-[Instruções para implantar a aplicação distribuída em um ambiente de produção.]
+**Implantação na Vercel**  <br/>
 
-1. Defina os requisitos de hardware e software necessários para implantar a aplicação em um ambiente de produção.
-2. Escolha uma plataforma de hospedagem adequada, como um provedor de nuvem ou um servidor dedicado.
-3. Configure o ambiente de implantação, incluindo a instalação de dependências e configuração de variáveis de ambiente.
-4. Faça o deploy da aplicação no ambiente escolhido, seguindo as instruções específicas da plataforma de hospedagem.
-5. Realize testes para garantir que a aplicação esteja funcionando corretamente no ambiente de produção.
+1 - Preparação do código  <br/>
+
+Criar o arquivo vercel.json, como solicitado pela documentação da mesma, informando os caminhos necessários para a inicialização do app. <br/>
+
+2 - Criação de um novo projeto no dashboard da Vercel  <br/>
+
+Criar um projeto na Vercel importando o repositório do github relacionado ao projeto desejado. Nesta etapa, é necessário inserir as variáveis de ambiente que o projeto exige: DATABASE_URL / JWT_SECRET e clicar em “Deploy”.
+
 
 ## Testes
 
-[Descreva a estratégia de teste, incluindo os tipos de teste a serem realizados (unitários, integração, carga, etc.) e as ferramentas a serem utilizadas.]
+**1 - Preparação dos Casos de Teste** <br/>
 
-1. Crie casos de teste para cobrir todos os requisitos funcionais e não funcionais da aplicação.
-2. Implemente testes unitários para testar unidades individuais de código, como funções e classes.
-3. Realize testes de integração para verificar a interação correta entre os componentes da aplicação.
-4. Execute testes de carga para avaliar o desempenho da aplicação sob carga significativa.
-5. Utilize ferramentas de teste adequadas, como frameworks de teste e ferramentas de automação de teste, para agilizar o processo de teste.
+1.1. Os casos de testes incluem a validação de todos os casos de uso, de acordo com a regra de negócio, verificando se as requisições atendem ao desejado. <br/>
+1.2. Com base nos requisitos de negócio identificados, foram criados casos de teste que cobriram todos os cenários possíveis, incluindo casos de sucesso e casos de erro. <br/>
+
+**2 - Implementação de Testes Unitários** <br/>
+
+2.1. Para cada unidade de código (funções, classes, módulos), foram implementados testes unitários utilizando a biblioteca Vitest na versão 1.4.0 em uma estrutura de teste apropriada para o NodeJS.<br/>
+2.2. Foi certificado que os testes unitários validaram a funcionalidade correta das unidades individuais de código em NodeJS.
+
 
 # Referências
 
