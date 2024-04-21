@@ -2,6 +2,7 @@ import { Request, Response } from 'express'
 import { IMedicationsRepository } from '../../Services/Medications/Repositories/medications.repository'
 import { TakenMedicationService } from '../../Services/Medications/Usecases/TakenMedicationsService/takenMedicationsService'
 import { IUsersRepository } from '../../Services/Users/Repositories/users.repository'
+import { RegisterDTO } from '../../Services/Registers/RegistersDto/registers.dto'
 
 
 class TakenMedicationController{
@@ -12,17 +13,18 @@ class TakenMedicationController{
    async handle(req: Request, res: Response){
 
         try{
-            const medicationId = req.body.medication_id 
-            const userId = req.user_id 
-            const timeTaken = req.body.time_taken  
-            const taken = req.body.taken  
             
+
+            const data: RegisterDTO = req.body
+            data.user_id = req.user_id
+
             const takenMedicationService = new TakenMedicationService(this.medicationRepository, this.usersRepository)
-            await takenMedicationService.execute(userId, medicationId, timeTaken, taken)
+            const result = await takenMedicationService.execute(data)
             
-            return res.status (200).json({msg:"registrado com sucesso"})
+            return res.status(201).json(result)
 
         } catch(err: any){
+            console.log({err})
             return res.status(err.statusCode).json({
                 error: err.message
             })
