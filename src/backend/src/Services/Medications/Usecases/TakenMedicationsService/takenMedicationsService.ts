@@ -9,7 +9,7 @@ class TakenMedicationService{
         private usersRepository: IUsersRepository
      ) {}
     
-    async execute(user_id: string, medication_id: string , time_taken: Date) {
+    async execute(user_id: string, medication_id: string , time_taken: Date, taken: boolean) {
         if (!user_id) {
             throw new CustomError("User id is required", 400) 
         }  
@@ -20,6 +20,10 @@ class TakenMedicationService{
 
         if (!time_taken) {
             throw new CustomError("Time taken is required", 400)
+        }
+
+        if (taken === null) {
+            throw new CustomError("Taken is required", 400)
         }
 
         const user = await this.usersRepository.findById(user_id)
@@ -35,7 +39,7 @@ class TakenMedicationService{
         }
 
         // precisa validar o formato do time_taken pois pode ser informada uma data e hora no formato errado
-        await this.medicationsRepository.register(user_id, medication_id, time_taken)
+        await this.medicationsRepository.register(user_id, medication_id, medication.name, time_taken, taken)
     }
 }
 export {TakenMedicationService}

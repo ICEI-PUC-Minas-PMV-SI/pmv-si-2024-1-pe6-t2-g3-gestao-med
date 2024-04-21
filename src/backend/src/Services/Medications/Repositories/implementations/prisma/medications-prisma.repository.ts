@@ -76,15 +76,15 @@ export class MedicationsPrismaRepository implements IMedicationsRepository{
         return medication
     }
 
-    async register(user_id: string, medication_id: string, time_taken: Date): Promise<void> {
+    async register(user_id: string, medication_id: string, medication_name: string, time_taken: Date, taken: boolean): Promise<void> {
         // porque não tem o user_id na tabela registers?
         await prismaClient.registers.create({
             data: {
                 user_id,
-                medication_name:'',
+                medication_name: medication_name,
                 medication_id: medication_id,
                 time_taken: new Date(time_taken),
-                medication_taken: true,
+                medication_taken: taken,
                 created_at: new Date()
             }
         })

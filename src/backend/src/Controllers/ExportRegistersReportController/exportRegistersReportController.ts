@@ -17,7 +17,7 @@ class ExportRegistersReportController{
             const exportRegistersReportService = new ExportRegistersReportService(this.registersRepository);
             const registersBase64 = await exportRegistersReportService.execute(userId, startDate, endDate);
 
-            return res.json(registersBase64);
+            return res.json({base64: registersBase64});
         } catch (err: any) {
             console.log({err})
             return res.status(err.statusCode).json({

@@ -1,7 +1,6 @@
 import { CustomError } from "../../../../errors/custom.error";
 import { IRegistersRepository } from "../../Repositories/registers.repository";
-import fs from 'fs';
-const PDFDocument = require('pdfkit');
+import PDFDocument from 'pdfkit';
 
 class ExportRegistersReportService {
   constructor(
@@ -26,7 +25,6 @@ class ExportRegistersReportService {
     const registers = await this.registersRepository.findByUserIdInPeriod(user_id, new Date(startDate), new Date(endDate))
 
     if (registers.length === 0) throw new CustomError("Registers not found!", 404);
-
     
     const doc = new PDFDocument();
 
@@ -35,23 +33,32 @@ class ExportRegistersReportService {
     registers.forEach(register => {
       doc.fontSize(12).text(`Nome: ${register.medication_name}`);
       doc.fontSize(12).text(`Ingerido: ${register.medication_taken ? "Sim" : "Não"}`);
-      doc.fontSize(12).text(`Horário: ${(register.time_taken as Date).getHours() + ":" + 
-        (register.time_taken as Date).getMinutes()}`);
-      doc.fontSize(12).text(`Data: ${(register.created_at as Date).toLocaleDateString('pt-BR')}`);
+
+      const timeTaken = register.time_taken as Date;
+      timeTaken.setHours(timeTaken.getHours() + 3);
+      const hours = timeTaken.getHours();
+      const minutes = timeTaken.getMinutes();
+
+      doc.fontSize(12).text(`Horário: ${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}`);
+      
+      const day = timeTaken.getDate();
+      const month = timeTaken.getMonth() + 1;
+      const year = timeTaken.getFullYear();
+      
+      doc.fontSize(12).text(`Data: ${day < 10 ? '0' + day : day}/${month < 10 ? '0' + month : month}/${year}`);
       doc.moveDown();
     });
 
-    doc.end();
-
-    const filePath = 'temp_report.pdf';
-
-    doc.pipe(fs.createWriteStream(filePath));
-
-    const pdfData = fs.readFileSync(filePath, { encoding: 'base64' });
-
-    fs.unlinkSync(filePath);
-
-    return pdfData;
+    return new Promise<string>((resolve, reject) => {
+      const buffers: Buffer[] = [];
+      doc.on('data', buffers.push.bind(buffers));
+      doc.on('end', () => {
+        const pdfData = Buffer.concat(buffers).toString('base64');
+        resolve(pdfData);
+      });
+      doc.on('error', reject);
+      doc.end();
+    });
   }
 }
 
