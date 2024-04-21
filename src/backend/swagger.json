@@ -140,6 +140,39 @@
                     }
                 }
             }
+        },
+        "/medication/edit": {
+            "put": {
+                "tags": [
+                    "Medications"
+                ],
+                "description": "Editar medicamento de um usuário",
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/EditMedicationRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EditMedicationResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -429,7 +462,73 @@
                         "example": "2024-04-08T21:20:56.523Z"
                     }
                 }
+            },
+            "EditMedicationRequest": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Id do medicamento",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Nome editado do medicamento",
+                        "example": "NAME_TEST"
+                    }
+                   
+                },
+                "required": [
+                    "id"                   
+                ]
+            },
+            "EditMedicationResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Id do medicamento",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Nome do medicamento",
+                        "example": "NAME_TEST"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Descrição do medicamento",
+                        "example": "Description..."
+                    },
+                    "stock": {
+                        "type": "number",
+                        "description": "Estoque do medicamento",
+                        "example": 15
+                    },
+                    "time_to_take": {
+                        "type": "string",
+                        "description": "Horários de tomar o medicamento",
+                        "example": "12:00,22:00"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "description": "Data de ínicio do tratamento",
+                        "example": "2024-04-08T21:20:56.523Z"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "description": "Data de atualização",
+                        "example": "2024-04-08T21:20:56.523Z"
+                    },
+                    "deleted_at": {
+                        "type": "string",
+                        "description": "Data de remoção dos dados",
+                        "example": "2024-04-08T21:20:56.523Z"
+                    }
+                }
+                
             }
+
         },
         "securitySchemes": {
             "bearerAuth": {

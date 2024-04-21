@@ -23,7 +23,7 @@ medicationRouter.get("/medication" , isAuthenticated, async (request, response) 
     await getSingleMedicationController.handle(request, response)
 }) 
 //delete medications
-medicationRouter.delete("/medication/delete/:medicationId" , isAuthenticated, async (request, response) => {
+medicationRouter.patch("/medication/delete/:medicationId" , isAuthenticated, async (request, response) => {
     await deleteMedicationController.handle(request, response)
 }) 
 
@@ -33,7 +33,7 @@ medicationRouter.post("/medication/taken", isAuthenticated, async (request, resp
 })
 
 //edit medications
-medicationRouter.put("/medication" , isAuthenticated, async (request, response) => {
+medicationRouter.put("/medication/edit" , isAuthenticated, async (request, response) => {
     await editMedicationController.handle(request, response)
 }) 
  
