@@ -173,6 +173,39 @@
                     }
                 }
             }
+        },
+        "/medication/taken": {
+            "post": {
+                "tags": [
+                    "Registers"
+                ],
+                "description": "Cadastro horário que medicamento foi tomado",
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/MedicationTakenRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MedicationTakenResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -527,6 +560,42 @@
                     }
                 }
                 
+            },
+            "MedicationTakenRequest": {
+                "type": "object",
+                "properties": {
+                    "medication_id": {
+                        "type": "string",
+                        "description": "Id do medicamento",
+                        "format": "uuid"
+                    },
+                    "medication_name": {
+                        "type": "string",
+                        "description": "Nome do medicamento",
+                        "example": "NAME_TEST"
+                    },
+                    "time_taken": {
+                        "type": "",
+                        "description": "Horário que o medicamento foi tomado",
+                        "example": "2024-04-01T08:00:00Z"
+                    },
+                    "medication_taken":{
+                        "type": "boolean",
+                        "description": "Confirmação de medicamento tomado",
+                        "example": true
+                    }
+                   
+                }
+            },
+            "MedicationTakenResponse":{
+                "type": "object",
+                "properties":{
+                    "msg":{
+                        "type":"string",
+                        "description":"Resposta da api",
+                        "example":"Registrado com sucesso"
+                    }
+                }
             }
 
         },
