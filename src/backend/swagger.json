@@ -115,6 +115,44 @@
                         }
                     }
                 }
+            },
+			"get": {
+                 "tags": ["Medications"],
+                 "description": "Medicamento específico",
+                 "security": [
+                     {"bearerAuth": []}
+                 ],
+                 "parameters": [
+                    {
+                        "in":"query",
+                        "name": "medicationId",
+                        "schema": {"type": "string"},
+                        "description":"Id do medicamento"
+                    }
+                ],
+                 "responses": {
+                     "200": {
+                         "content": {
+                             "application/json": {
+                                 "schema": {"$ref": "#/components/schemas/GetSingleMedicationResponse"}
+                             }
+                         }
+                     },
+                     "404": {
+                         "content": {
+                             "text/plain": {
+                                 "schema": {"type": "string"}
+                             }
+                         }
+                     },
+                     "400": {
+                         "content": {
+                             "text/plain": {
+                                 "schema": {"type": "string"}
+                             }
+                         }
+                     }
+                 }
             }
         },
         "/medications": {
@@ -123,12 +161,12 @@
                     "Medications"
                 ],
                 "description": "Medicamentos de um usuário",
-                "security": [
+				"security": [
                     {
                         "bearerAuth": []
                     }
                 ],
-                "responses": {
+				"responses": {
                     "200": {
                         "content": {
                             "application/json": {
@@ -469,6 +507,11 @@
                         "description": "Id do medicamento",
                         "format": "uuid"
                     },
+                    "user_id":{
+                        "type": "string",
+                        "description": "Id do usuário",
+                        "format": "uuid"
+                    },
                     "name": {
                         "type": "string",
                         "description": "Nome do medicamento",
@@ -489,9 +532,79 @@
                         "description": "Horários de tomar o medicamento",
                         "example": "12:00,22:00"
                     },
+                    "treatment_finished_at":{
+                        "type":"null",
+                        "description":"Data de finalização do tratamento",
+                        "example":"2024-04-08T21:20:56.523Z"
+                    },
                     "created_at": {
                         "type": "string",
                         "description": "Data de ínicio do tratamento",
+                        "example": "2024-04-08T21:20:56.523Z"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "description": "Data de atualização da tabela",
+                        "example": "2024-04-08T21:20:56.523Z"
+                    },
+                    "deleted_at":{
+                        "type":"null",
+                        "description":"Data de retirada dos dados",
+                        "example":"2024-04-08T21:20:56.523Z"
+                    }
+                }
+            },
+            "GetSingleMedicationResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Id do medicamento",
+                        "format": "uuid"
+                    },
+                    "user_id": {
+                        "type": "string",
+                        "description": "Id do usuário",
+                        "example": "NAME_TEST"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Nome do medicamento",
+                        "example": "NAME_TEST"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Descrição do medicamento",
+                        "example": "Description..."
+                    },
+                    "stock": {
+                        "type": "number",
+                        "description": "Estoque do medicamento",
+                        "example": 15
+                    },
+                    "time_to_take": {
+                        "type": "string",
+                        "description": "Horários de tomar o medicamento",
+                        "example": "12:00,22:00"
+                    },
+                    "treatment_finished_at": {
+                        "type": "string",
+                        "description": "Acho que é data de finalização do tratamento",
+                        "example": "2024-04-08T21:20:56.523Z"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "description": "Data de ínicio do tratamento",
+                        "example": "2024-04-08T21:20:56.523Z"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "description": "Que data é essa?",
+                        "example": "2024-04-08T21:20:56.523Z"
+                    },
+                    "deleted_at": {
+                        "type": "string",
+                        "description": "Que data é essa?",
                         "example": "2024-04-08T21:20:56.523Z"
                     }
                 }
