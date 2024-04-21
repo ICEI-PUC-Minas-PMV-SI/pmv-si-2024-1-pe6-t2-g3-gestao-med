@@ -250,7 +250,7 @@
                 "tags": [
                     "Medications"
                 ],
-                "description": "Cadastro horário que medicamento foi tomado",
+                "description": "Deletar medicamento cadastrado",
                 "security": [
                     {
                         "bearerAuth": []
