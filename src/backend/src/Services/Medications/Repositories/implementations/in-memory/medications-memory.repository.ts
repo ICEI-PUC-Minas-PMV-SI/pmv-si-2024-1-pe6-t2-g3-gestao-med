@@ -5,7 +5,7 @@ export class MedicationsMemoryRepository implements IMedicationsRepository {
     
     medications: MedicationsDTO[] = []
     
-    register(user_id: string, medication_id: string, time_taken: Date): Promise<void> {
+    register(user_id: string, medication_id: string, medication_name: string, time_taken: Date, taken: boolean): Promise<void> {
         throw new Error("Method not implemented.");
     }
 

@@ -15,9 +15,10 @@ class TakenMedicationController{
             const medicationId = req.body.medication_id 
             const userId = req.user_id 
             const timeTaken = req.body.time_taken  
+            const taken = req.body.taken  
             
             const takenMedicationService = new TakenMedicationService(this.medicationRepository, this.usersRepository)
-            await takenMedicationService.execute(userId,medicationId, timeTaken)
+            await takenMedicationService.execute(userId, medicationId, timeTaken, taken)
             
             return res.status (200).json({msg:"registrado com sucesso"})
 
