@@ -16,15 +16,18 @@ class GetSingleMedicationService {
             throw new CustomError("User id is required", 400)
         }
         if (!medication_id) {
-            throw new CustomError("User id is required", 400)
+            throw new CustomError("Medication id is required", 400)
         }
         const user = await this.usersRepository.findById(user_id)
         if (!user) throw new CustomError("User not found", 404)
 
 
         const medication = await this.medicationsRepository.findById(medication_id)
+        
         if (!medication) {
-            throw new CustomError("Medication not found", 404) }
+            throw new CustomError("Medication not found", 404) 
+        
+        }
         return medication
     }
 }

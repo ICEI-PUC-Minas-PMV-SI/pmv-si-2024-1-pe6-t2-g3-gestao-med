@@ -36,6 +36,7 @@ CREATE TABLE "medications" (
 -- CreateTable
 CREATE TABLE "registers" (
     "id" TEXT NOT NULL,
+    "user_id" TEXT NOT NULL,
     "medication_id" TEXT NOT NULL,
     "medication_taken" BOOLEAN NOT NULL,
     "time_taken" TIMESTAMP(3),
@@ -50,6 +51,9 @@ CREATE UNIQUE INDEX "user_email_key" ON "user"("email");
 
 -- AddForeignKey
 ALTER TABLE "medications" ADD CONSTRAINT "medications_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "user"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "registers" ADD CONSTRAINT "registers_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "user"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "registers" ADD CONSTRAINT "registers_medication_id_fkey" FOREIGN KEY ("medication_id") REFERENCES "medications"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

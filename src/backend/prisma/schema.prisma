@@ -31,6 +31,7 @@ model User {
   created_at  DateTime      @default(now())
   updated_at  DateTime?     @updatedAt
   Medications Medications[]
+  Registers   Registers[]
 
   @@map("user")
 }
@@ -56,13 +57,16 @@ model Medications {
 
 model Registers {
   id               String    @id @default(uuid())
+  user_id          String
   medication_id    String
+  medication_name  String
   medication_taken Boolean
   time_taken       DateTime?
 
   created_at DateTime  @default(now())
   updated_at DateTime? @updatedAt
 
+  User       User        @relation(fields: [user_id], references: [id])
   Medication Medications @relation(fields: [medication_id], references: [id])
 
   @@map("registers")
