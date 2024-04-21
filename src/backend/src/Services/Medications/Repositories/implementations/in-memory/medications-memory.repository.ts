@@ -21,7 +21,7 @@ export class MedicationsMemoryRepository implements IMedicationsRepository {
     }
     
     async findByUserId(user_id: string): Promise<MedicationsDTO[]> {
-        return this.medications.filter(medication => medication.id === user_id)
+        return this.medications.filter(medication => medication.user_id === user_id)
     }
 
     async findById(medication_id: string): Promise<MedicationsDTO | null> {

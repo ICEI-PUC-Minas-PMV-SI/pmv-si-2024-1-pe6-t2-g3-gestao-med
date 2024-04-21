@@ -2,9 +2,6 @@ import { beforeAll, describe, expect, it } from "vitest";
 import { UserRequestDTO } from "../../../../Users/UserDto/user.dto";
 import { CreateUserService } from "../../../../Users/Usecases/CreateUser/createUserService";
 import { UserMemoryRepository } from "../../../../Users/Repositories/implementations/in-memory/user-memory.repository";
-import { PasswordBcrypt } from "../../../../../shared/crypto/password.bcrypt";
-import { JWTToken } from "../../../../../shared/token/jwt.token";
-import { AuthUserService } from "../../../../Users/Usecases/AuthenticateUser/authUserService";
 import { UserMedicationsService } from "../userMedicationsService";
 import { MedicationsMemoryRepository } from "../../../Repositories/implementations/in-memory/medications-memory.repository";
 
