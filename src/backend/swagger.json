@@ -172,13 +172,59 @@
                             "application/json": {
                                 "schema": {
                                     "$ref": "#/components/schemas/GetMedicationsResponse"
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/registers/report": {
+            "get": {
+                "tags": [
+                    "Registers"
+                ],
+                "description": "Relatório de registros de medicamentos do usuário",
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "description": "Data de início do período",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "endDate",
+                        "in": "query",
+                        "description": "Data de término do período",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ExportRegistersReportResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     },
     "components": {
         "schemas": {
@@ -540,6 +586,16 @@
                         "type": "string",
                         "description": "Que data é essa?",
                         "example": "2024-04-08T21:20:56.523Z"
+                    }
+                }
+            },
+            "ExportRegistersReportResponse": {
+                "type": "object",
+                "properties": {
+                    "base64": {
+                        "type": "string",
+                        "description": "Relatório de registros de medicamentos ingeridos em pdf no formato base64",
+                        "example": "iAvRmxhdGVEZWNvZGUKPj4Kc3RyZWFtCniczZa/itwwEMZ7"
                     }
                 }
             }

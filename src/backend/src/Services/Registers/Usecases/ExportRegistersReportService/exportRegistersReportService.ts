@@ -8,7 +8,7 @@ class ExportRegistersReportService {
   ){}
 
   async execute(user_id: string, startDate: string, endDate: string) {
-    if (!user_id) throw new CustomError("UserId is required!", 400);
+    if (!user_id) throw new CustomError("User id is required!", 400);
     if (!startDate) throw new CustomError("Start date is required!", 400);
     if (!endDate) throw new CustomError("End date is required!", 400);
 
