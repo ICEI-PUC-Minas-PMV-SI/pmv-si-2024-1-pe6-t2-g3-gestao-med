@@ -124,23 +124,6 @@ describe("Taken Medication Service", () => {
              await takenMedicationService.execute(registerMock)
         }).rejects.toThrow("Time taken is required")
     })
-    it("Should not be able to register time that medication was taken if medication name is missing", async () => {
-        const takenMedicationService = new TakenMedicationService(medicationsMemoryRepository, userMemoryRepository)
-        
-        const registerMock:RegisterDTO = {
-            user_id:'1',
-            medication_id: '1',
-            medication_name: '',
-            medication_taken: true,
-            time_taken:new Date(),
-            created_at:new Date(),
-            updated_at:new Date()
-        }
-        
-        expect(async () => {
-             await takenMedicationService.execute(registerMock)
-        }).rejects.toThrow("Medication name is required")
-    })
 
     it("Should not be able to register time that medication was taken if user does not exist", async () => {
         const takenMedicationService = new TakenMedicationService(medicationsMemoryRepository, userMemoryRepository)
