@@ -1,5 +1,5 @@
 export type RegistersDTO = {
-    id: String
+    id: string
     user_id: string
     medication_id: string
     medication_name: string
@@ -9,4 +9,4 @@ export type RegistersDTO = {
     updated_at: Date | null
 }
 
-export type RegisterDTO = Omit<RegistersDTO, "user_id">
+export type RegisterDTO = Omit<RegistersDTO, "id">

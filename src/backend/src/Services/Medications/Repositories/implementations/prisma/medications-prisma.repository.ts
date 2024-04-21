@@ -1,4 +1,5 @@
 import prismaClient from "../../../../../prisma";
+import { RegistersDTO } from "../../../../Registers/RegistersDto/registers.dto";
 import { MedicationsDTO } from "../../../MedicationsDto/medications.dto";
 import { IMedicationsRepository } from "../../medications.repository";
 
@@ -76,15 +77,16 @@ export class MedicationsPrismaRepository implements IMedicationsRepository{
         return medication
     }
 
-    async register(user_id: string, medication_id: string, medication_name: string, time_taken: Date, taken: boolean): Promise<void> {
-        // porque não tem o user_id na tabela registers?
+    async register(data: RegistersDTO): Promise<void> {
+
         await prismaClient.registers.create({
             data: {
-                user_id,
-                medication_name: medication_name,
-                medication_id: medication_id,
-                time_taken: new Date(time_taken),
-                medication_taken: taken,
+                id: data.id,
+                user_id: data.user_id,
+                medication_name: data.medication_name,
+                medication_id: data.medication_id,
+                time_taken: data.time_taken,
+                medication_taken: data.medication_taken,
                 created_at: new Date()
             }
         })

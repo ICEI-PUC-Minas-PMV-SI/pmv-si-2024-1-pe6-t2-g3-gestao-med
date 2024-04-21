@@ -14,6 +14,7 @@ export class RegistersPrismaRepository implements IRegistersRepository {
             },
             select: {
                 id: true,
+                user_id: true,
                 medication_id: true,
                 medication_name: true,
                 medication_taken: true,

@@ -1,12 +1,14 @@
+import { RegisterDTO, RegistersDTO } from "../../../../Registers/RegistersDto/registers.dto";
 import { MedicationsDTO } from "../../../MedicationsDto/medications.dto";
 import { IMedicationsRepository } from "../../medications.repository";
 
 export class MedicationsMemoryRepository implements IMedicationsRepository {
     
     medications: MedicationsDTO[] = []
-    
-    register(user_id: string, medication_id: string, medication_name: string, time_taken: Date, taken: boolean): Promise<void> {
-        throw new Error("Method not implemented.");
+    registers: RegisterDTO[] = []
+
+    async register(data: RegistersDTO): Promise<void> {
+        this.registers.push(data)
     }
 
     async edit(data: MedicationsDTO): Promise<MedicationsDTO> {

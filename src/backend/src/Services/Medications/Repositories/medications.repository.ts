@@ -1,3 +1,4 @@
+import { RegistersDTO } from "../../Registers/RegistersDto/registers.dto";
 import { MedicationsDTO } from "../MedicationsDto/medications.dto";
 
 export interface IMedicationsRepository{
@@ -5,6 +6,6 @@ export interface IMedicationsRepository{
     findByUserId(user_id: string): Promise<MedicationsDTO[]>
     findById(medication_id: string): Promise<MedicationsDTO | null>  
     delete(medication_id: string): Promise<void>
-    register(user_id: string, medication_id: string, medication_name: string, time_taken: Date, taken: boolean): Promise<void>
+    register(data: RegistersDTO): Promise<void>
     edit(data: MedicationsDTO): Promise<MedicationsDTO>
 }
