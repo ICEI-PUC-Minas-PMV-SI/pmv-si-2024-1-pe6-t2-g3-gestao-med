@@ -25,7 +25,7 @@ class DeleteMedicationService{
 
         await this.medicationRepository.delete(medicationId)
 
-        return
+        return "Medicamento deletado com sucesso"
     }
 }
 

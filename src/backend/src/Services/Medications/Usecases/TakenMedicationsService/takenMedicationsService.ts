@@ -27,7 +27,7 @@ class TakenMedicationService{
         if (!data.medication_taken) {
             throw new CustomError("Taken is required", 400)
         }
-
+        
         const user = await this.usersRepository.findById(data.user_id)
 
         if (!user) {
@@ -38,6 +38,11 @@ class TakenMedicationService{
         
         if (!medication) {
             throw new CustomError("Medication not found", 404)
+        }
+        data.medication_name = medication.name
+
+        if (!data.medication_name) {
+            throw new CustomError("Medication name is required", 400)
         }
 
         data.medication_name = medication.name

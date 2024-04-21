@@ -179,6 +179,109 @@
                 }
             }
         },
+        "/medication/edit": {
+            "put": {
+                "tags": [
+                    "Medications"
+                ],
+                "description": "Editar medicamento de um usuário",
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/EditMedicationRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EditMedicationResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/medication/taken": {
+            "post": {
+                "tags": [
+                    "Registers"
+                ],
+                "description": "Cadastro horário que medicamento foi tomado",
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/MedicationTakenRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MedicationTakenResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/medication/delete":{
+            "patch":{
+                "tags": [
+                    "Medications"
+                ],
+                "description": "Cadastro horário que medicamento foi tomado",
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "parameters":[
+                    {
+                        "name":"medicationId",
+                        "in":"path",
+                        "description":"Id do medicamento a ser deletado",
+                        "required":true,
+                        "schema":{
+                            "type":"string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Medicamento deletado com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Medicamento deletado com sucesso"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/registers/report": {
             "get": {
                 "tags": [
@@ -225,6 +328,7 @@
                 }
             }
         }
+        
     },
     "components": {
         "schemas": {
@@ -589,6 +693,108 @@
                     }
                 }
             },
+            "EditMedicationRequest": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Id do medicamento",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Nome editado do medicamento",
+                        "example": "NAME_TEST"
+                    }
+                   
+                },
+                "required": [
+                    "id"                   
+                ]
+            },
+            "EditMedicationResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Id do medicamento",
+                        "format": "uuid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Nome do medicamento",
+                        "example": "NAME_TEST"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Descrição do medicamento",
+                        "example": "Description..."
+                    },
+                    "stock": {
+                        "type": "number",
+                        "description": "Estoque do medicamento",
+                        "example": 15
+                    },
+                    "time_to_take": {
+                        "type": "string",
+                        "description": "Horários de tomar o medicamento",
+                        "example": "12:00,22:00"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "description": "Data de ínicio do tratamento",
+                        "example": "2024-04-08T21:20:56.523Z"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "description": "Data de atualização",
+                        "example": "2024-04-08T21:20:56.523Z"
+                    },
+                    "deleted_at": {
+                        "type": "string",
+                        "description": "Data de remoção dos dados",
+                        "example": "2024-04-08T21:20:56.523Z"
+                    }
+                }
+                
+            },
+            "MedicationTakenRequest": {
+                "type": "object",
+                "properties": {
+                    "medication_id": {
+                        "type": "string",
+                        "description": "Id do medicamento",
+                        "format": "uuid"
+                    },
+                    "medication_name": {
+                        "type": "string",
+                        "description": "Nome do medicamento",
+                        "example": "NAME_TEST"
+                    },
+                    "time_taken": {
+                        "type": "",
+                        "description": "Horário que o medicamento foi tomado",
+                        "example": "2024-04-01T08:00:00Z"
+                    },
+                    "medication_taken":{
+                        "type": "boolean",
+                        "description": "Confirmação de medicamento tomado",
+                        "example": true
+                    }
+                   
+                }
+                
+            },
+            "MedicationTakenResponse":{
+                "type": "object",
+                "properties":{
+                    "msg":{
+                        "type":"string",
+                        "description":"Resposta da api",
+                        "example":"Registrado com sucesso"
+                    }
+                }
+            },
             "ExportRegistersReportResponse": {
                 "type": "object",
                 "properties": {
@@ -599,6 +805,7 @@
                     }
                 }
             }
+
         },
         "securitySchemes": {
             "bearerAuth": {
