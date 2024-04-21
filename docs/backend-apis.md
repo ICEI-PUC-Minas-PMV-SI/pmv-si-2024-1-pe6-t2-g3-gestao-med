@@ -17,7 +17,7 @@ A aplicação GestãoMed tem uma estrutura de dados que envolve principalmente i
 
 **API Cadastro de Medicamentos**
 
- - Entidades Principais:<br/>
+ - Entidades Principais <br/>
  
 1 - Nome do medicamento: Representa informações sobre um medicamento, incluindo nome, posologia, horários de tomada e demais informações associadas.<br/>
 2 - Estoque: Quantidade de medicamentos ao iniciar um tratamento.<br/>
@@ -162,6 +162,10 @@ Criar um projeto na Vercel importando o repositório do github relacionado ao pr
 
 2.1. Para cada unidade de código (funções, classes, módulos), foram implementados testes unitários utilizando a biblioteca Vitest na versão 1.4.0 em uma estrutura de teste apropriada para o NodeJS.<br/>
 2.2. Foi certificado que os testes unitários validaram a funcionalidade correta das unidades individuais de código em NodeJS.
+
+**3 - Teste efetuado com sucesso**
+
+![testes](img/testesbackend.jpeg)
 
 # Referências
 
