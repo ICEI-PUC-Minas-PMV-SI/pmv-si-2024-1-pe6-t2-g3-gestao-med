@@ -244,7 +244,45 @@
                     }
                 }
             }
+        },
+        "/medication/delete":{
+            "patch":{
+                "tags": [
+                    "Registers"
+                ],
+                "description": "Cadastro horário que medicamento foi tomado",
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "parameters":[
+                    {
+                        "name":"medicationId",
+                        "in":"path",
+                        "description":"Id do medicamento a ser deletado",
+                        "required":true,
+                        "schema":{
+                            "type":"string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Medicamento deletado com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "Medicamento deletado com sucesso"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
+        
     },
     "components": {
         "schemas": {

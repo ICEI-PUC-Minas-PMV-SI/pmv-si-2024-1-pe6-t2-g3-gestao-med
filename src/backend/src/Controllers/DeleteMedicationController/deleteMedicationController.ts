@@ -12,9 +12,9 @@ class DeleteMedicationController{
             
             const userId = req.user_id
             const medicationId: string = req.params.medicationId
-            await deleteMedicationService.execute(medicationId, userId)
+            const medication = await deleteMedicationService.execute(medicationId, userId)
 
-            return res.status(204).send()
+            return res.json(medication)
         }
         catch(err: any){
             return res.status(err.statusCode).json({
