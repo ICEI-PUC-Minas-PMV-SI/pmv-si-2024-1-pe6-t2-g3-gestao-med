@@ -14,12 +14,12 @@ class ExportRegistersReportController{
             const startDate = req.query.startDate as string
 
             const endDate = req.query.endDate as string
-
             const exportRegistersReportService = new ExportRegistersReportService(this.registersRepository);
             const registersBase64 = await exportRegistersReportService.execute(userId, startDate, endDate);
 
             return res.json(registersBase64);
         } catch (err: any) {
+            console.log({err})
             return res.status(err.statusCode).json({
                 error: err.message
             })

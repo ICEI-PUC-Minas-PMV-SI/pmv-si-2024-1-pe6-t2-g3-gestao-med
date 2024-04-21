@@ -15,7 +15,7 @@ medicationRouter.get("/medications", isAuthenticated, async (request, response) 
     await userMedicationsController.handle(request, response)
 })
 //register of a new medication
-medicationRouter.post("/medications", isAuthenticated, async (request, response) => {
+medicationRouter.post("/medication", isAuthenticated, async (request, response) => {
     await registerMedicateController.handle(request, response)
 }) 
 //get a single medication

@@ -1,6 +1,7 @@
 import { CustomError } from "../../../../errors/custom.error";
 import { IRegistersRepository } from "../../Repositories/registers.repository";
 import fs from 'fs';
+const PDFDocument = require('pdfkit');
 
 class ExportRegistersReportService {
   constructor(
@@ -26,8 +27,7 @@ class ExportRegistersReportService {
 
     if (registers.length === 0) throw new CustomError("Registers not found!", 404);
 
-    const PDFDocument = require('pdfkit');
-
+    
     const doc = new PDFDocument();
 
     doc.fontSize(18).text('Gestão Med - Relatório de Medicamentos', { align: 'center' }).moveDown(0.5);

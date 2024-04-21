@@ -19,6 +19,7 @@ class RegisterMedicateController{
             return res.status(201).json(regiterMedication)
         }
         catch(err: any){
+            console.log({err})
             return res.status(err.statusCode).json({
                 error: err.message
             })

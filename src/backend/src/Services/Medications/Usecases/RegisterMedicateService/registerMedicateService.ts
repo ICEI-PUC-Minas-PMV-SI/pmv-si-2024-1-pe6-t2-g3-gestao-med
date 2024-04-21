@@ -12,9 +12,9 @@ class RegisterMedicateService{
         if(!data.description)throw new CustomError("Descripton is required", 400)
         if(!data.stock)throw new CustomError("Stock is required",400)
         if(!data.time_to_take)throw new CustomError("Time to take is required", 400)
-        if(!data.treatment_finished_at)throw new CustomError("Treatment finished at is required", 400)
-        if(!data.created_at)throw new CustomError("Created at is required", 400)
-        if(!data.updated_at)throw new CustomError("Updated at is required", 400)
+        //if(!data.treatment_finished_at)throw new CustomError("Treatment finished at is required", 400)
+        // if(!data.created_at)throw new CustomError("Created at is required", 400)
+        // if(!data.updated_at)throw new CustomError("Updated at is required", 400)
 
         const medicationRequest = {
             id: randomUUID(),

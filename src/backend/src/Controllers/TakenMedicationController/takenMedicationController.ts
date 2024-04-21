@@ -13,7 +13,7 @@ class TakenMedicationController{
 
         try{
             const medicationId = req.body.medication_id 
-            const userId = req.body.user_id 
+            const userId = req.user_id 
             const timeTaken = req.body.time_taken  
             
             const takenMedicationService = new TakenMedicationService(this.medicationRepository, this.usersRepository)

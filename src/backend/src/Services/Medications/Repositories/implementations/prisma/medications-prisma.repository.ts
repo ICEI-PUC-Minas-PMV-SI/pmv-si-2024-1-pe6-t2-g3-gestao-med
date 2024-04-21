@@ -44,8 +44,19 @@ export class MedicationsPrismaRepository implements IMedicationsRepository{
         })
     }
 
-    save(data: MedicationsDTO): Promise<MedicationsDTO> {
-        throw new Error("Method not implemented.");
+    async save(data: MedicationsDTO): Promise<MedicationsDTO> {
+        return await prismaClient.medications.create({
+            data:{
+                id: data.id,
+                user_id: data.user_id,
+                name: data.name,
+                description: data.description,
+                stock: data.stock,
+                time_to_take: data.time_to_take,
+                treatment_finished_at: data.treatment_finished_at
+            }
+           
+        })
     }
     
     async edit(data: MedicationsDTO): Promise<MedicationsDTO> {
@@ -69,6 +80,8 @@ export class MedicationsPrismaRepository implements IMedicationsRepository{
         // porque não tem o user_id na tabela registers?
         await prismaClient.registers.create({
             data: {
+                user_id,
+                medication_name:'',
                 medication_id: medication_id,
                 time_taken: new Date(time_taken),
                 medication_taken: true,
