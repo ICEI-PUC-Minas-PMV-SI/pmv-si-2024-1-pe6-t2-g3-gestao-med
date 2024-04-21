@@ -18,6 +18,7 @@ A aplicação GestãoMed tem uma estrutura de dados que envolve principalmente i
 **API Cadastro de Medicamentos**
 
  - Entidades Principais:<br/>
+ 
 1 - Nome do medicamento: Representa informações sobre um medicamento, incluindo nome, posologia, horários de tomada e demais informações associadas.<br/>
 2 - Estoque: Quantidade de medicamentos ao iniciar um tratamento.<br/>
 3 - Usuário: Armazena dados de usuários da aplicação, incluindo informações de autenticação e permissões.<br/>
@@ -67,93 +68,60 @@ A aplicação GestãoMed tem uma estrutura de dados que envolve principalmente i
 
 ## API Endpoints
 
-[Liste os principais endpoints da API, incluindo as operações disponíveis, os parâmetros esperados e as respostas retornadas.]
+### Endpoints
 
-### Endpoint 1
-- Método: GET
-- URL: /endpoint1
-- Parâmetros:
-  - param1: [descrição]
-- Resposta:
-  - Sucesso (200 OK)
-    ```
-    {
-      "message": "Success",
-      "data": {
-        ...
-      }
-    }
-    ```
-  - Erro (4XX, 5XX)
-    ```
-    {
-      "message": "Error",
-      "error": {
-        ...
-      }
-    }
-    ```
-</span>
-
-- Cadastro de Usuários
+- Cadastro de usuários
 
 Esta rota demonstra a criação de um usuário após a inserção do nome, email, número de telefone, data de nascimento, gênero e senha, assim como  a resposta de confirmação de cadastro com o seu respectivo “id”.
+
 ![POST  user Cadastro de usuários](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-1-pe6-t2-g3-gestao-med/assets/90141680/a0fff397-ccdc-4a88-bf5e-3fe18140bfe8)
 
-
-
-- Detalhes do Usuário 
+- Detalhes do usuário 
 
 Esta rota demonstra detalhes do usuário. Para que o usuário tenha acesso a essas informações, será necessário efetuar o login.
+
 ![GET user detalhes do usuário](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-1-pe6-t2-g3-gestao-med/assets/90141680/20329d29-1484-406b-bd39-66c37610545a)
 
+- Autenticação do usuário
 
+Esta rota demonstra a autenticação do usuário após introduzir o seu email e senha, assim como a confirmação de login com a respectiva geração do token. 
 
-- Autenticação do Usuário
-
-Esta rota demonstra a autenticação do usuário após introduzir o seu email e senha, assim como a confirmação de login com a respectiva   geração do token. 
 ![POST session Autenticação do usuário](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-1-pe6-t2-g3-gestao-med/assets/90141680/ee0b476c-a6ea-4e52-82bb-fb97e3acba45)
 
-
-
-- Cadastro de Medicamento por Usuário Autenticado 
+- Cadastro de medicamento por usuário autenticado 
 
 Esta rota demonstra a realização do cadastro de medicamentos efetuado pelo usuário já autenticado. 
+
 ![POST medications Cadastro Medicamentos](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-1-pe6-t2-g3-gestao-med/assets/90141680/145cbd79-0a01-40c4-9af0-2fd6c4e4bb85)
 
-
-
-- Medicamento Específico 
+- Medicamento específico 
 
 Esta rota demonstra a visualização de um medicamento específico do usuário. 
+
 ![Get medication Medicamento específico](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-1-pe6-t2-g3-gestao-med/assets/90141680/b445144d-16c5-43a2-a99c-6fe757be94aa)
 
-
-
-- Medicamentos de um Usuário 
+- Medicamentos de um usuário 
 
 Esta rota demonstra a lista de medicamentos já cadastrados pelo usuário.
+
 ![GET medications Medicamentos de um usuário](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-1-pe6-t2-g3-gestao-med/assets/90141680/8133bcd0-060c-4480-9452-d8754e17f9c5)
 
-
-
-- Editar Medicamentos de um Usuário 
+- Editar medicamentos de um usuário 
 
 Esta rota demonstra a edição do medicamento realizada pelo usuário.
+
 ![PUT medication edit](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-1-pe6-t2-g3-gestao-med/assets/90141680/594fd895-2b01-416c-bab7-79629f6ee92f)
 
-
-
-- Cadastro Horário que o Medicamento Foi Tomado 
+- Cadastro do horário que o medicamento foi tomado 
 
 Esta rota demonstra o registro da ingestão do medicamento realizado pelo usuário através da confirmação do horário de ingestão. 
+
 ![Post medication tomado](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-1-pe6-t2-g3-gestao-med/assets/90141680/45d986b7-28ae-4e31-9dca-fb7496505394)
 
+- Relatório de registros de medicamentos do usuário 
 
+Esta rota demonstra o relatório de registro de medicamentos do usuário, cobrindo o período desde a data inicial até a data de término inserida pelo usuário.
 
-- Relatório de Registros de Medicamentos do Usuário 
-
-Esta rota demonstra o relatório de registro de medicamentos do usuário, cobrindo o período desde a data inicial até a data de término inserida pelo usuário.  
 ![GET registers report ](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-1-pe6-t2-g3-gestao-med/assets/90141680/6b0159e0-273a-493a-9e1f-53b946d5335c)
 
 
