@@ -112,6 +112,15 @@ Esta rota demonstra a edição do medicamento realizada pelo usuário.
 
 ![PUT medication edit](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-1-pe6-t2-g3-gestao-med/assets/90141680/594fd895-2b01-416c-bab7-79629f6ee92f)
 
+
+
+- Deletar Medicamento Cadastrado
+
+Esta rota demonstra a exclusão de um medicamento já cadastrado, após a inserção do seu respectivo “id” no campo requerido, assim como a confirmação da sua exclusão. 
+![PATCH medication delete ](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-1-pe6-t2-g3-gestao-med/assets/90141680/635fa431-009e-46b2-ad25-b649409029d3)
+
+
+
 - Cadastro do horário que o medicamento foi tomado 
 
 Esta rota demonstra o registro da ingestão do medicamento realizado pelo usuário através da confirmação do horário de ingestão. 
