@@ -10,4 +10,5 @@ export type MedicationsDTO = {
     updated_at: Date | null
     deleted_at: Date | null
 }
+
 export type Medication = Omit<MedicationsDTO, "id">

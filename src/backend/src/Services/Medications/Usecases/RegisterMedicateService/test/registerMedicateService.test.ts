@@ -1,7 +1,6 @@
-import { beforeAll, describe, expect, it } from "vitest";
+import { describe, expect, it } from "vitest";
 import { MedicationsMemoryRepository } from "../../../Repositories/implementations/in-memory/medications-memory.repository";
-import { UserRequestDTO } from "../../../../Users/UserDto/user.dto";
-import { Medication, MedicationsDTO } from "../../../MedicationsDto/medications.dto";
+import { Medication} from "../../../MedicationsDto/medications.dto";
 import { RegisterMedicateService } from "../registerMedicateService";
 
 
@@ -26,7 +25,6 @@ describe("Create Medication Service", () => {
         const medicationService = new RegisterMedicateService(medicationsMemoryRepository)
 
         const medication = await medicationService.execute(medicationMock)
-        console.log({medication})
         expect(medication).toHaveProperty("id")
 
     })
