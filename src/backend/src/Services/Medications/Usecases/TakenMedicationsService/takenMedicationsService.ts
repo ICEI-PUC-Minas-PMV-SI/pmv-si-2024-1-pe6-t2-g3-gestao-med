@@ -45,6 +45,12 @@ class TakenMedicationService{
             throw new CustomError("Medication name is required", 400)
         }
 
+        data.medication_name = medication.name
+
+        if (!data.medication_name) {
+            throw new CustomError("Medication name is required", 400)
+        }
+
         const medicationRequest = {
             id:randomUUID(),
             ...data

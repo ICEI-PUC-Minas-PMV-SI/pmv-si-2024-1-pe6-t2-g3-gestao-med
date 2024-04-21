@@ -248,7 +248,7 @@
         "/medication/delete":{
             "patch":{
                 "tags": [
-                    "Registers"
+                    "Medications"
                 ],
                 "description": "Cadastro horário que medicamento foi tomado",
                 "security": [
@@ -275,6 +275,52 @@
                                 "schema": {
                                     "type": "string",
                                     "example": "Medicamento deletado com sucesso"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/registers/report": {
+            "get": {
+                "tags": [
+                    "Registers"
+                ],
+                "description": "Relatório de registros de medicamentos do usuário",
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "description": "Data de início do período",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "endDate",
+                        "in": "query",
+                        "description": "Data de término do período",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ExportRegistersReportResponse"
                                 }
                             }
                         }
@@ -737,6 +783,7 @@
                     }
                    
                 }
+                
             },
             "MedicationTakenResponse":{
                 "type": "object",
@@ -745,6 +792,16 @@
                         "type":"string",
                         "description":"Resposta da api",
                         "example":"Registrado com sucesso"
+                    }
+                }
+            },
+            "ExportRegistersReportResponse": {
+                "type": "object",
+                "properties": {
+                    "base64": {
+                        "type": "string",
+                        "description": "Relatório de registros de medicamentos ingeridos em pdf no formato base64",
+                        "example": "iAvRmxhdGVEZWNvZGUKPj4Kc3RyZWFtCniczZa/itwwEMZ7"
                     }
                 }
             }
