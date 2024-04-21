@@ -50,7 +50,6 @@ A aplicação GestãoMed tem uma estrutura de dados que envolve principalmente i
 6 - Responsividade – O layout do sistema deverá usar design responsivo, para que renderize bem em qualquer dispositivo. <br/>
 7 - Arquitetura em camadas - O sistema deverá usar arquitetura em camadas para desacoplamento. 
 
-
 ## Tecnologias Utilizadas
 
 - NodeJs<br/>
@@ -64,7 +63,6 @@ A aplicação GestãoMed tem uma estrutura de dados que envolve principalmente i
 - Express <br/>
 - JsonWebToken <br/>
 - Swagger
-
 
 ## API Endpoints
 
@@ -112,16 +110,13 @@ Esta rota demonstra a edição do medicamento realizada pelo usuário.
 
 ![PUT medication edit](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-1-pe6-t2-g3-gestao-med/assets/90141680/594fd895-2b01-416c-bab7-79629f6ee92f)
 
-
-
 - Deletar Medicamento Cadastrado
 
-Esta rota demonstra a exclusão de um medicamento já cadastrado, após a inserção do seu respectivo “id” no campo requerido, assim como a confirmação da sua exclusão. 
+Esta rota demonstra a exclusão de um medicamento já cadastrado, após a inserção do seu respectivo “id” no campo requerido, assim como a confirmação da sua exclusão.
+
 ![PATCH medication delete ](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-1-pe6-t2-g3-gestao-med/assets/90141680/635fa431-009e-46b2-ad25-b649409029d3)
 
-
-
-- Cadastro do horário que o medicamento foi tomado 
+- Cadastro do horário em que o medicamento foi tomado 
 
 Esta rota demonstra o registro da ingestão do medicamento realizado pelo usuário através da confirmação do horário de ingestão. 
 
@@ -144,7 +139,6 @@ A segurança é uma consideração crítica para garantir a integridade e confia
 - Criptografia de senha com a biblioteca bcrypt. <br/>
 - Variáveis de ambiente para proteger chaves sigilosas.
 
-
 ## Implantação
 
 **Implantação na Vercel**  <br/>
@@ -157,7 +151,6 @@ Criar o arquivo vercel.json, como solicitado pela documentação da mesma, infor
 
 Criar um projeto na Vercel importando o repositório do github relacionado ao projeto desejado. Nesta etapa, é necessário inserir as variáveis de ambiente que o projeto exige: DATABASE_URL / JWT_SECRET e clicar em “Deploy”.
 
-
 ## Testes
 
 **1 - Preparação dos Casos de Teste** <br/>
@@ -169,7 +162,6 @@ Criar um projeto na Vercel importando o repositório do github relacionado ao pr
 
 2.1. Para cada unidade de código (funções, classes, módulos), foram implementados testes unitários utilizando a biblioteca Vitest na versão 1.4.0 em uma estrutura de teste apropriada para o NodeJS.<br/>
 2.2. Foi certificado que os testes unitários validaram a funcionalidade correta das unidades individuais de código em NodeJS.
-
 
 # Referências
 
