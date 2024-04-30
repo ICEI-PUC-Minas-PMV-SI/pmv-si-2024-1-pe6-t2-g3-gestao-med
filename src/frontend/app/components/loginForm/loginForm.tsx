@@ -10,8 +10,6 @@ export default function LoginForm() {
 
     const session = useSession()
   
-    console.log({session})
-  
     async function handleLogin(formData: FormData) {
         const { email, password } = Object.fromEntries(formData)
 
@@ -54,6 +52,9 @@ export default function LoginForm() {
                 </div>
                 <button type='submit'>entrar</button>
             </form>
+
+            <h1>Email: joaotest@joaoteste.com</h1>
+            <h1>Senha: joao123</h1>
         </div>
     )
 }

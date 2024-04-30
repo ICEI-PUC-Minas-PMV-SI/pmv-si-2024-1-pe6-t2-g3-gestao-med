@@ -36,7 +36,7 @@ export const authConfig = {
             // console.log({isLoggedIn})
             // console.log({session})
 
-            const isOnLoginPage = nextUrl.pathname.startsWith("/");
+            const isOnLoginPage = nextUrl.pathname === "/";
             const isOnHomePage = nextUrl.pathname.startsWith('/home');
 
             if (!isLoggedIn) return false
