@@ -7,7 +7,6 @@ export default async function Login() {
   return (
     <main className={styles.main}>
       <LoginForm />
-
     </main>
   );
 }
