@@ -8,8 +8,7 @@ import { useRouter } from 'next/navigation';
 export default function LoginForm() {
     const router = useRouter()
 
-    const session = useSession()
-  
+ 
     async function handleLogin(formData: FormData) {
         const { email, password } = Object.fromEntries(formData)
 
