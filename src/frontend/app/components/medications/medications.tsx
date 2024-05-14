@@ -8,7 +8,7 @@ export default function Medications(){
 
     return(
         <main className={styles.main}>
-            <h1>Medicamentos</h1>
+            
             
         </main>
     )
