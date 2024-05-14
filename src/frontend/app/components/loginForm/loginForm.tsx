@@ -1,59 +1,90 @@
-'use client'
+"use client";
 
-import { signIn, useSession } from 'next-auth/react';
-import styles from '../../page.module.css'
-import { useRouter } from 'next/navigation';
+import { signIn } from "next-auth/react";
+import styles from "./page.module.css";
+import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
+interface FormData {
+  email: string;
+  password: string;
+}
 
 export default function LoginForm() {
-    const router = useRouter()
+  const router = useRouter();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>();
 
- 
-    async function handleLogin(formData: FormData) {
-        const { email, password } = Object.fromEntries(formData)
+  const onSubmit = async (data: FormData) => {
+    const { email, password } = data;
+    try {
+      const response = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+      });
 
-        if (!email || !password) {
-            alert("Preencha todos os campos")
-            return
-        }
+      if (response?.error) {
+        toast.error("Email ou senha incorretos!", {
+          position: "top-right"
+        });
+        return;
+      }
 
-        try {
-            const response = await signIn('credentials', {
-                email,
-                password,
-                redirect: false
-            })
-
-
-            if (response?.error) {
-                router.replace('/')
-                return
-            }
-
-            router.replace('/home')
-
-        } catch (err: any) {
-            console.log("Login error: ", err)
-
-        }
+      router.replace("/home");
+    } catch (err: any) {
+      console.log(err);
     }
+  };
 
-    return (
-        <div className={styles.container}>
-            <form action={handleLogin} className={styles.form}>
-                <div className={styles.inputFied}>
-                    <label htmlFor="email">Email</label>
-                    <input type="email" id='email' name='email' />
-                </div>
-                <div className={styles.inputFied}>
-                    <label htmlFor="password">Senha</label>
-                    <input type="password" id='password' name='password' />
-                </div>
-                <button type='submit'>entrar</button>
-            </form>
-
-            <h1>Email: joaotest@joaoteste.com</h1>
-            <h1>Senha: joao123</h1>
+  return (
+    <main>
+      <div className={styles.container}>
+        <div className={styles.logo_box}>
+          <h1>Gestão Med</h1>
+          <p>A gente te ajuda a se medicar na hora certa.</p>
         </div>
-    )
+        <div className={styles.form_box}>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className={styles.form_field}>
+              <input
+                placeholder="Email"
+                type="text"
+                {...register("email", {
+                  required: "Email obrigatório",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: "Endereço de email inválido",
+                  },
+                })}
+              />
+              {errors.email && <span>{errors.email.message}</span>}
+            </div>
+            <div className={styles.form_field}>
+              <input
+                placeholder="Senha"
+                type="password"
+                {...register("password", { required: "Senha obrigatória" })}
+              />
+              {errors.password && <span>{errors.password.message}</span>}
+            </div>
+            <button className={styles.submit_button} type="submit">
+              Entrar
+            </button>
+            <hr className={styles.hr} />
+            <button className={styles.signup_button} type="button">
+              Criar conta
+            </button>
+          </form>
+        </div>
+      </div>
+      <div className={styles.footer}>
+        <p>GestãoMed &copy; 2024</p>
+      </div>
+    </main>
+  );
 }
