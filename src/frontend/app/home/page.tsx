@@ -1,15 +1,14 @@
-import { useState } from "react"
 import HomePage from "../components/homePage/homePage"
 import { getUserDetails } from "../lib/actions"
-import { setupAPIClient } from "../services/api"
+import AuthLayout from "../(Authenticated)/layout"
 
 export default async function Home (){
    
     const user = await getUserDetails()
     
     return(
-        <main>
+        <AuthLayout>
             <HomePage />
-        </main>
+        </AuthLayout>
     )
 }
