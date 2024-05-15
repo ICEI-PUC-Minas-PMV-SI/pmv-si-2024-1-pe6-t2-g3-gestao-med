@@ -1,0 +1,44 @@
+.section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    margin-top: 2rem;
+    color: var(--white);
+    padding: 0 1rem;
+    gap: 2rem;
+}
+
+.top{
+    text-align: center;
+}
+.medInfo{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+    gap: 1rem;
+}
+
+.time{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 1rem;
+}
+.divider{
+    width: 100%;
+    height: 2px;
+    background-color: var(--white);
+
+}
+
+.list{
+    width: max-content;
+    height: min-content;
+    margin-left: 5rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
