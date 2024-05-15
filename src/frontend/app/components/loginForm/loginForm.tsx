@@ -5,6 +5,9 @@ import styles from "./page.module.css";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import { useState } from "react";
+import Modal from "../modal/modal";
+import { RegisterUserForm } from "../registerUserForm/registerUserForm";
 
 interface FormData {
   email: string;
@@ -19,6 +22,8 @@ export default function LoginForm() {
     formState: { errors },
   } = useForm<FormData>();
 
+  const [isOpenRegisterModal, setIsOpenRegisterModal] = useState(false);
+
   const onSubmit = async (data: FormData) => {
     const { email, password } = data;
     try {
@@ -30,7 +35,7 @@ export default function LoginForm() {
 
       if (response?.error) {
         toast.error("Email ou senha incorretos!", {
-          position: "top-right"
+          position: "top-right",
         });
         return;
       }
@@ -76,7 +81,11 @@ export default function LoginForm() {
               Entrar
             </button>
             <hr className={styles.hr} />
-            <button className={styles.signup_button} type="button">
+            <button
+              className={styles.signup_button}
+              type="button"
+              onClick={() => setIsOpenRegisterModal(true)}
+            >
               Criar conta
             </button>
           </form>
@@ -85,6 +94,13 @@ export default function LoginForm() {
       <div className={styles.footer}>
         <p>GestãoMed &copy; 2024</p>
       </div>
+      <Modal
+        isModalOpen={isOpenRegisterModal}
+        onCloseModal={() => setIsOpenRegisterModal(false)}
+        modalTitle="Cadastro do usuário"
+      >
+        <RegisterUserForm />
+      </Modal>
     </main>
   );
 }

@@ -9,7 +9,8 @@
   --white: #FFFFFF;
   --black: #000000;
   --gray: #7B7B7B;
-  --success-color: #02864A;
+  --success-color: #009588;
+  --success-color-hover: #02a295;
   --danger-color: #CA0B00;
 }
 
