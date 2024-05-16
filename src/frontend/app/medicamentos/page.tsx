@@ -1,10 +1,13 @@
 import AuthLayout from "../(Authenticated)/layout";
-import Medications from "../components/medications/medications";
 
-export default function Medicamentos() {
-    return (
+export default async function Medicamentos(){
+
+    return(
         <AuthLayout>
-            <Medications />
+            <section>
+                
+            </section>
         </AuthLayout>
+        
     )
 }
