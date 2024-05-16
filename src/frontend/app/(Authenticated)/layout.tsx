@@ -3,23 +3,26 @@ import styles from './authLayout.module.css'
 import SideBar from "../components/sidebar/sidebar"
 import Notifications from "../components/notifications/notifications"
 import AddMedicationButton from "../components/addMedicationButton/addMedicationButton"
+import NextMedication from "../components/notifications/nextMedication/nextMedication"
 
 interface LayoutProps {
     children: ReactNode
 }
 const AuthLayout = async ({ children }: LayoutProps) => {
+
     return (
         <div className={styles.container}>
-            <div className={styles.menu}>
+            <aside className={styles.menu}>
                 <SideBar />
-            </div>
-            <div className={styles.content}>
+            </aside>
+            <section className={styles.content}>
                 {children}
-            </div>
-            <div className={styles.right}>
+            </section>
+            <aside className={styles.right}>
                 <Notifications />
+                <NextMedication />
                 <AddMedicationButton />
-            </div>
+            </aside>
         </div>
     )
 }

@@ -4,6 +4,7 @@ import styles from './sidebar.module.css'
 import LogOutButton from './logOutButton/logOutButton';
 import { auth } from '@/app/lib/auth';
 import Link from 'next/link';
+import MenuLink from './menuLink/menuLink';
 
 const menuItems = [
 
@@ -19,8 +20,6 @@ const menuItems = [
         title: "Medicamentos",
         path: "/medicamentos",
     }
-
-
 
 ];
 
@@ -41,11 +40,9 @@ const SideBar = async () => {
 
                 </div>
                 <ul className={styles.list}>
-                    {menuItems.map((cat, index) => (
-
-                        <Link key={index} href={cat.path}>{cat.title}</Link>
-
-                    ))}
+                    <li>
+                        <MenuLink list={menuItems} />
+                    </li>
                 </ul>
             </div>
             <LogOutButton />

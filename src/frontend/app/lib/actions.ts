@@ -26,6 +26,11 @@ export const  getMedications = async () => {
         return { status: response.status, data: response.data}
 
     }catch(err: any){
-        return err.response
+        if(err.response){
+            console.log({err})
+            return { status: err.response.status, data: err.response.data.error}
+        }
+        console.log({err})
+        return { status: '', data: []}
     }
 }
