@@ -75,7 +75,7 @@
   margin: auto;
   padding: 24px 0;
   border-radius: 10px;
-  background-color: var(--dark-blue);
+  background-color: var(--success-color);
   color: var(--white);
   font-size: 20px;
   font-weight: bold;
@@ -84,7 +84,7 @@
 }
 
 .signup_button:hover {
-  background-color: var(--dark-blue-hover);
+  background-color: var(--success-color-hover);
 }
 
 .footer {

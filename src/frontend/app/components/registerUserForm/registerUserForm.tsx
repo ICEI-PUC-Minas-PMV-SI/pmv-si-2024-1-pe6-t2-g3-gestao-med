@@ -34,23 +34,9 @@ export function RegisterUserForm() {
     formState: { errors, isValid },
   } = useForm<FormData>();
 
-  const [selectedState, setSelectedState] = useState("");
-  const [selectedCity, setSelectedCity] = useState("");
   const [registerStep, setRegisterStep] = useState<steps.ONE | steps.TWO>(
     steps.ONE
   );
-
-  const loadStatesAndCities = (): { states: string[]; cities: CityData } => {
-    const states = ["State 1", "State 2", "State 3"];
-    const cities = {
-      "State 1": ["City 1", "City 2", "City 3"],
-      "State 2": ["City 4", "City 5", "City 6"],
-      "State 3": ["City 7", "City 8", "City 9"],
-    };
-    return { states, cities };
-  };
-
-  const { states, cities } = loadStatesAndCities();
 
   return (
     <div className={styles.modalContainer}>
@@ -121,38 +107,33 @@ export function RegisterUserForm() {
             </div>
             <div className={styles.formFields}>
               <div className={styles.formField}>
-                <select
-                  {...register("state", { required: "Selecione um estado" })}
-                  onChange={(e) => {
-                    setValue("state", e.target.value);
-                    setValue("city", "");
-                  }}
+                <input
+                  placeholder="Estado"
+                  type="text"
+                  {...register("state", {
+                    required: "Estado obrigatório",
+                    minLength: {
+                      value: 3,
+                      message: "Estado inválido",
+                    },
+                  })}
                   onBlur={() => trigger("state")}
-                >
-                  <option value="">Estado</option>
-                  {states.map((state) => (
-                    <option key={state} value={state}>
-                      {state}
-                    </option>
-                  ))}
-                </select>
+                />
                 {errors.state && <span>{errors.state.message}</span>}
               </div>
               <div className={styles.formField}>
-                <select
-                  {...register("city", { required: "Selecione uma cidade" })}
-                  disabled={!watch("state")}
-                  onChange={(e) => setValue("city", e.target.value)}
+                <input
+                  placeholder="Cidade"
+                  type="text"
+                  {...register("city", {
+                    required: "Cidade obrigatória",
+                    minLength: {
+                      value: 3,
+                      message: "Cidade inválida",
+                    },
+                  })}
                   onBlur={() => trigger("city")}
-                >
-                  <option value="">Cidade</option>
-                  {!!watch("state") &&
-                    cities[watch("state")].map((city) => (
-                      <option key={city} value={city}>
-                        {city}
-                      </option>
-                    ))}
-                </select>
+                />
                 {errors.city && <span>{errors.city.message}</span>}
               </div>
             </div>

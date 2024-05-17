@@ -128,3 +128,19 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+/* Mobile */
+@media (max-width: 680px) {
+  .modalContainer {
+    width: 80vw;
+  }
+
+  .formFields {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .genderOptions {
+    flex-direction: column;
+  }
+}
