@@ -1,17 +1,22 @@
 .logout{
-    padding: 20px;
+    padding: 11px;
     margin: 5px 0;
     display: flex;
     align-items: center;
     gap: 10px;
     cursor: pointer;
     border-radius: 10px;
-    background: none;
+    background: #009588;
     border: none;
-    width: 100%;
+    width: 90%;
     color: white;
+    transition: 0.4s;
+    
 }
 
 .logout:hover{
+    position: relative;
+    top: -0.75px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 15px 60px 1px;
     background-color: #2e374a;
 }

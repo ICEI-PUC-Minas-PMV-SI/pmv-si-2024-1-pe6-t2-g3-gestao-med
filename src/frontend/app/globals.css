@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --primary-color: #0077B6;
-  --primary-color-hover: #049aea;
+  --primary-color: #2CA3D7;
+  --primary-color-hover: #2CA3D7;
   --secondary-color: #00B4D8;
-  --dark-blue: #03045E;
+  --dark-blue: #0077B6;
   --dark-blue-hover: #04069e;
   --white: #FFFFFF;
   --black: #000000;
