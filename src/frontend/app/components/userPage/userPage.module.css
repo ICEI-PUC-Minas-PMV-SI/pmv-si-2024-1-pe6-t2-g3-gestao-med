@@ -1,3 +1,19 @@
 .main{
     height: 100%;
 }
+.top{
+    text-align: center;
+    margin-top: 60px;
+    color: #ffffff;
+}
+.container{
+    position: relative;
+    top: 90px;
+    left: 11%;
+    height: 300px;
+    width: 78%;
+    box-align: center;
+    background: #ebebeb;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
