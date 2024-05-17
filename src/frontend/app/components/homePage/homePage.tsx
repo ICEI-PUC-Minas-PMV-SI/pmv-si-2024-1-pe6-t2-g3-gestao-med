@@ -1,30 +1,14 @@
 'use client'
 
+import { useContext } from 'react'
 import styles from '../../home/home.module.css'
 import MedicationBox from '../medications/medicationBox/medicationBox'
-
-interface HomePageProps {
-    medications: MedicationProps[]
-    status: number
-}
-
-type MedicationProps = {
-    id: string,
-    user_id: string,
-    name: string,
-    description: string,
-    stock: 30,
-    time_to_take: string,
-    treatment_finished_at: string | null,
-    created_at: string,
-    updated_at: string,
-    deleted_at: string | null
-}
-export default function HomePage(props: HomePageProps) {
-
-    const { medications } = props
+import { AppMedicationContext, MedicationProps } from '@/app/context'
 
 
+export default function HomePage() {
+
+    const { medications} = useContext(AppMedicationContext)
 
     const dayOfWeek = (today: Date) => {
         const weekdays = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
@@ -56,7 +40,7 @@ export default function HomePage(props: HomePageProps) {
     const groupMedicationsByTime = () => {
         const groupedMeds: { [key: string]: MedicationProps[] } = {};
 
-        medications.forEach((med) => {
+        medications?.forEach((med) => {
             const { time_to_take, deleted_at } = med;
             const times = transformTimeToTakeToArray(time_to_take);
             if (times && times.length > 0 && !deleted_at) {
@@ -69,7 +53,14 @@ export default function HomePage(props: HomePageProps) {
             }
         });
 
-        return groupedMeds;
+        // Ordenando as chaves (horários) em ordem crescente
+        const sortedTimes = Object.keys(groupedMeds).sort();
+        const sortedGroupedMeds: { [key: string]: MedicationProps[] } = {};
+        sortedTimes.forEach((time) => {
+            sortedGroupedMeds[time] = groupedMeds[time];
+        });
+
+        return sortedGroupedMeds;
     };
 
     // Função para renderizar os medicamentos agrupados por horário

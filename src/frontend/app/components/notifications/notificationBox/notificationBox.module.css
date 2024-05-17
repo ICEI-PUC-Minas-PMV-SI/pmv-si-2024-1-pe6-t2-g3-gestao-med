@@ -1,0 +1,20 @@
+.container{
+    background-color: var(--white);
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 2rem;
+    padding: .5rem;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.container > h3 {
+    background-color: gray;
+    width: max-content;
+    padding: .5rem 1rem;
+    border-radius: 8px;
+    color: var(--white);
+}
