@@ -8,8 +8,6 @@ import { auth } from "../lib/auth";
 const baseURL = process.env.BASE_URL as string
 
 export async function setupAPIClient(ctx = {}) {
-
-
     const session = await auth()
 
     const api = axios.create({
@@ -18,8 +16,8 @@ export async function setupAPIClient(ctx = {}) {
             Authorization: `Bearer ${session?.user?.token}`
         }
     })
+    
     api.interceptors.response.use(response => {
-
         return response
     }, async (error: AxiosError) => {
         //console.log("error axios: ", error)
@@ -32,12 +30,8 @@ export async function setupAPIClient(ctx = {}) {
                 console.log('caiu aqui 2')
                 return Promise.reject(new AuthTokenError)
             }
-
-
         }
-
         return Promise.reject(error)
     })
-
     return api
 }
