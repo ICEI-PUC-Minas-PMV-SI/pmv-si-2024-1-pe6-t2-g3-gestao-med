@@ -53,11 +53,7 @@ export const registerUser = async (params: {
       console.log({ err });
       return { status: err.response.status, data: err.response.data.error };
     }
-<<<<<<< HEAD
-}
-=======
     console.log({ err });
     return { status: "", data: [] };
   }
 };
->>>>>>> main
