@@ -2,20 +2,18 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import styles from "./page.module.css";
 import { toast } from "react-toastify";
+import Button from "../button/button";
+import { formatPhoneNumber } from "./constants";
+import { registerUser } from "@/app/lib/actions";
 
 interface FormData {
   name: string;
   lastName: string;
   email: string;
   password: string;
-  state: string;
-  city: string;
+  phoneNumber: string;
   birthDate: Date;
-  gender: string;
-}
-
-interface CityData {
-  [state: string]: string[];
+  gender: "male" | "female" | "other";
 }
 
 enum steps {
@@ -23,7 +21,11 @@ enum steps {
   TWO = 2,
 }
 
-export function RegisterUserForm() {
+interface IRegisterUserForm {
+  closeRegisterModal: () => void;
+}
+
+export function RegisterUserForm({ closeRegisterModal }: IRegisterUserForm) {
   const {
     trigger,
     register,
@@ -34,23 +36,52 @@ export function RegisterUserForm() {
     formState: { errors, isValid },
   } = useForm<FormData>();
 
-  const [selectedState, setSelectedState] = useState("");
-  const [selectedCity, setSelectedCity] = useState("");
   const [registerStep, setRegisterStep] = useState<steps.ONE | steps.TWO>(
     steps.ONE
   );
 
-  const loadStatesAndCities = (): { states: string[]; cities: CityData } => {
-    const states = ["State 1", "State 2", "State 3"];
-    const cities = {
-      "State 1": ["City 1", "City 2", "City 3"],
-      "State 2": ["City 4", "City 5", "City 6"],
-      "State 3": ["City 7", "City 8", "City 9"],
-    };
-    return { states, cities };
+  const [isLoadingRegister, setIsLoadingRegister] = useState(false);
+
+  const onSubmit = async (data: FormData) => {
+    const { name, lastName, email, password, phoneNumber, birthDate, gender } =
+      data;
+    setIsLoadingRegister(true);
+    try {
+      const response = await registerUser({
+        name: name.trim() + " " + lastName.trim(),
+        email: email,
+        phone: phoneNumber.replace(/\D/g, ""),
+        gender: gender,
+        date_of_birth: birthDate.toString(),
+        password: password,
+      });
+      setIsLoadingRegister(false);
+
+      if (response.status !== 201) {
+        toast.error("Erro ao cadastrar usuário!", {
+          position: "top-right",
+        });
+        return;
+      }
+
+      closeRegisterModal();
+      toast.success("Cadastro realizado com sucesso!");
+    } catch (err: any) {
+      console.log(err);
+    }
   };
 
-  const { states, cities } = loadStatesAndCities();
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formattedValue = formatPhoneNumber(e.target.value);
+    setValue("phoneNumber", formattedValue);
+  };
+
+  const validatePhoneNumber = (value: string) => {
+    const cleanedValue = value.replace(/\D/g, "");
+    return (
+      cleanedValue.length === 11 || "Telefone deve ter exatamente 11 dígitos"
+    );
+  };
 
   return (
     <div className={styles.modalContainer}>
@@ -119,42 +150,18 @@ export function RegisterUserForm() {
               />
               {errors.password && <span>{errors.password.message}</span>}
             </div>
-            <div className={styles.formFields}>
-              <div className={styles.formField}>
-                <select
-                  {...register("state", { required: "Selecione um estado" })}
-                  onChange={(e) => {
-                    setValue("state", e.target.value);
-                    setValue("city", "");
-                  }}
-                  onBlur={() => trigger("state")}
-                >
-                  <option value="">Estado</option>
-                  {states.map((state) => (
-                    <option key={state} value={state}>
-                      {state}
-                    </option>
-                  ))}
-                </select>
-                {errors.state && <span>{errors.state.message}</span>}
-              </div>
-              <div className={styles.formField}>
-                <select
-                  {...register("city", { required: "Selecione uma cidade" })}
-                  disabled={!watch("state")}
-                  onChange={(e) => setValue("city", e.target.value)}
-                  onBlur={() => trigger("city")}
-                >
-                  <option value="">Cidade</option>
-                  {!!watch("state") &&
-                    cities[watch("state")].map((city) => (
-                      <option key={city} value={city}>
-                        {city}
-                      </option>
-                    ))}
-                </select>
-                {errors.city && <span>{errors.city.message}</span>}
-              </div>
+            <div className={styles.formField}>
+              <input
+                placeholder="Telefone"
+                type="text"
+                {...register("phoneNumber", {
+                  required: "Telefone obrigatório",
+                  validate: validatePhoneNumber,
+                })}
+                onChange={handlePhoneChange}
+                onBlur={() => trigger("phoneNumber")}
+              />
+              {errors.phoneNumber && <span>{errors.phoneNumber.message}</span>}
             </div>
           </>
         )}
@@ -223,7 +230,8 @@ export function RegisterUserForm() {
       </form>
       <div className={styles.buttonsBox}>
         {registerStep === steps.ONE && (
-          <button
+          <Button
+            variant="secondary"
             onClick={() => {
               isValid
                 ? setRegisterStep(steps.TWO)
@@ -231,19 +239,21 @@ export function RegisterUserForm() {
             }}
           >
             Continuar
-          </button>
+          </Button>
         )}
         {registerStep === steps.TWO && (
           <>
-            <button
+            <Button
+              variant="secondary"
               onClick={() => {
                 isValid
-                  ? console.log(getValues())
+                  ? onSubmit(getValues())
                   : toast.info("Preencha todos os campos corretamente!");
               }}
+              loading={isLoadingRegister}
             >
               Criar conta
-            </button>
+            </Button>
             <p onClick={() => setRegisterStep(steps.ONE)}>Voltar</p>
           </>
         )}
