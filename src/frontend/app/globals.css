@@ -12,6 +12,7 @@
   --success-color: #009588;
   --success-color-hover: #02a295;
   --danger-color: #CA0B00;
+  --disabled-color: #8d7979;
 }
 
 * {

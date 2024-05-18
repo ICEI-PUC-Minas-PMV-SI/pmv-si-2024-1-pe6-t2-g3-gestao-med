@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import { useState } from "react";
 import Modal from "../modal/modal";
 import { RegisterUserForm } from "../registerUserForm/registerUserForm";
+import Button from "../button/button";
 
 interface FormData {
   email: string;
@@ -23,15 +24,18 @@ export default function LoginForm() {
   } = useForm<FormData>();
 
   const [isOpenRegisterModal, setIsOpenRegisterModal] = useState(false);
+  const [isLoadingLogin, setIsLoadingLogin] = useState(false);
 
   const onSubmit = async (data: FormData) => {
     const { email, password } = data;
+    setIsLoadingLogin(true);
     try {
       const response = await signIn("credentials", {
         email,
         password,
         redirect: false,
       });
+      setIsLoadingLogin(false);
 
       if (response?.error) {
         toast.error("Email ou senha incorretos!", {
@@ -77,17 +81,16 @@ export default function LoginForm() {
               />
               {errors.password && <span>{errors.password.message}</span>}
             </div>
-            <button className={styles.submit_button} type="submit">
+            <Button type="submit" full loading={isLoadingLogin}>
               Entrar
-            </button>
+            </Button>
             <hr className={styles.hr} />
-            <button
-              className={styles.signup_button}
-              type="button"
+            <Button
+              variant="secondary"
               onClick={() => setIsOpenRegisterModal(true)}
             >
               Criar conta
-            </button>
+            </Button>
           </form>
         </div>
       </div>
@@ -99,7 +102,9 @@ export default function LoginForm() {
         onCloseModal={() => setIsOpenRegisterModal(false)}
         modalTitle="Cadastro do usuário"
       >
-        <RegisterUserForm />
+        <RegisterUserForm
+          closeRegisterModal={() => setIsOpenRegisterModal(false)}
+        />
       </Modal>
     </main>
   );

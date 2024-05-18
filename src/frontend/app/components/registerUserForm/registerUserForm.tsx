@@ -2,20 +2,18 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import styles from "./page.module.css";
 import { toast } from "react-toastify";
+import Button from "../button/button";
+import { formatPhoneNumber } from "./constants";
+import { registerUser } from "@/app/lib/actions";
 
 interface FormData {
   name: string;
   lastName: string;
   email: string;
   password: string;
-  state: string;
-  city: string;
+  phoneNumber: string;
   birthDate: Date;
-  gender: string;
-}
-
-interface CityData {
-  [state: string]: string[];
+  gender: "male" | "female" | "other";
 }
 
 enum steps {
@@ -23,7 +21,11 @@ enum steps {
   TWO = 2,
 }
 
-export function RegisterUserForm() {
+interface IRegisterUserForm {
+  closeRegisterModal: () => void;
+}
+
+export function RegisterUserForm({ closeRegisterModal }: IRegisterUserForm) {
   const {
     trigger,
     register,
@@ -37,6 +39,49 @@ export function RegisterUserForm() {
   const [registerStep, setRegisterStep] = useState<steps.ONE | steps.TWO>(
     steps.ONE
   );
+
+  const [isLoadingRegister, setIsLoadingRegister] = useState(false);
+
+  const onSubmit = async (data: FormData) => {
+    const { name, lastName, email, password, phoneNumber, birthDate, gender } =
+      data;
+    setIsLoadingRegister(true);
+    try {
+      const response = await registerUser({
+        name: name.trim() + " " + lastName.trim(),
+        email: email,
+        phone: phoneNumber.replace(/\D/g, ""),
+        gender: gender,
+        date_of_birth: birthDate.toString(),
+        password: password,
+      });
+      setIsLoadingRegister(false);
+
+      if (response.status !== 201) {
+        toast.error("Erro ao cadastrar usuário!", {
+          position: "top-right",
+        });
+        return;
+      }
+
+      closeRegisterModal();
+      toast.success("Cadastro realizado com sucesso!");
+    } catch (err: any) {
+      console.log(err);
+    }
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formattedValue = formatPhoneNumber(e.target.value);
+    setValue("phoneNumber", formattedValue);
+  };
+
+  const validatePhoneNumber = (value: string) => {
+    const cleanedValue = value.replace(/\D/g, "");
+    return (
+      cleanedValue.length === 11 || "Telefone deve ter exatamente 11 dígitos"
+    );
+  };
 
   return (
     <div className={styles.modalContainer}>
@@ -105,37 +150,18 @@ export function RegisterUserForm() {
               />
               {errors.password && <span>{errors.password.message}</span>}
             </div>
-            <div className={styles.formFields}>
-              <div className={styles.formField}>
-                <input
-                  placeholder="Estado"
-                  type="text"
-                  {...register("state", {
-                    required: "Estado obrigatório",
-                    minLength: {
-                      value: 3,
-                      message: "Estado inválido",
-                    },
-                  })}
-                  onBlur={() => trigger("state")}
-                />
-                {errors.state && <span>{errors.state.message}</span>}
-              </div>
-              <div className={styles.formField}>
-                <input
-                  placeholder="Cidade"
-                  type="text"
-                  {...register("city", {
-                    required: "Cidade obrigatória",
-                    minLength: {
-                      value: 3,
-                      message: "Cidade inválida",
-                    },
-                  })}
-                  onBlur={() => trigger("city")}
-                />
-                {errors.city && <span>{errors.city.message}</span>}
-              </div>
+            <div className={styles.formField}>
+              <input
+                placeholder="Telefone"
+                type="text"
+                {...register("phoneNumber", {
+                  required: "Telefone obrigatório",
+                  validate: validatePhoneNumber,
+                })}
+                onChange={handlePhoneChange}
+                onBlur={() => trigger("phoneNumber")}
+              />
+              {errors.phoneNumber && <span>{errors.phoneNumber.message}</span>}
             </div>
           </>
         )}
@@ -204,7 +230,8 @@ export function RegisterUserForm() {
       </form>
       <div className={styles.buttonsBox}>
         {registerStep === steps.ONE && (
-          <button
+          <Button
+            variant="secondary"
             onClick={() => {
               isValid
                 ? setRegisterStep(steps.TWO)
@@ -212,19 +239,21 @@ export function RegisterUserForm() {
             }}
           >
             Continuar
-          </button>
+          </Button>
         )}
         {registerStep === steps.TWO && (
           <>
-            <button
+            <Button
+              variant="secondary"
               onClick={() => {
                 isValid
-                  ? console.log(getValues())
+                  ? onSubmit(getValues())
                   : toast.info("Preencha todos os campos corretamente!");
               }}
+              loading={isLoadingRegister}
             >
               Criar conta
-            </button>
+            </Button>
             <p onClick={() => setRegisterStep(steps.ONE)}>Voltar</p>
           </>
         )}
