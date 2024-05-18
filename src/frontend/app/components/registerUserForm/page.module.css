@@ -12,6 +12,10 @@
   gap: 8px;
 }
 
+.buttonsBox button {
+  width: 190px;
+}
+
 .buttonsBox p {
   color: var(--black);
   cursor: pointer;

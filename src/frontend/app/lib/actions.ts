@@ -44,7 +44,7 @@ export const registerUser = async (params: {
 
   try {
     const response = await api.post("/user", {
-      params,
+      ...params,
     });
 
     return { status: response.status, data: response.data };
