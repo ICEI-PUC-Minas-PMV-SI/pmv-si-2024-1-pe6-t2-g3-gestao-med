@@ -9,7 +9,7 @@ import { AppMedicationContext, MedicationProps } from '@/app/context'
 export default function HomePage() {
 
     const { medications} = useContext(AppMedicationContext)
-
+    
     const dayOfWeek = (today: Date) => {
         const weekdays = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
         const index = today.getDay();
