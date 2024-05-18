@@ -1,7 +1,8 @@
 .container{
     background-color: rgb(255, 255, 255);
     border-radius: 8px;
-    width: 300px;
+    width: 100%;
+    max-width: 200px;
     color: var(--black);
     padding: 1rem;
     display: flex;
@@ -36,3 +37,4 @@
     border-radius: 8px;
     color: vaR(--white);
 }
+
