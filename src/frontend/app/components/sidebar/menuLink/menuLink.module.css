@@ -1,14 +1,15 @@
 .link{
-    padding: 20px;
+    padding: 12px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     gap: 10px;
     margin: 5px 0;
-    border-radius: 10px;
+    border-radius: 8px 0px 0px 8px;
+    transition: 0.3s;
 }
 
-.link:hover, .container > .active{
+.link.active{
     background-color: var(--dark-blue);
     color: var(--white);
 }
-

@@ -9,8 +9,11 @@ export default function UsuarioComponent(){
 
     return(
         <main className={styles.main}>
-            <h1>página do usuário</h1>
+            <h1 className={styles.top}>Informações pessoais</h1>
             
+            <div className={styles.container}>
+                
+            </div>
         </main>
     )
 }
