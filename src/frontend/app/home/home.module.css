@@ -7,6 +7,7 @@
     color: var(--white);
     padding: 0 1rem;
     gap: 2rem;
+    overflow-y: visible;
 }
 
 .top{
@@ -40,4 +41,14 @@
     margin-left: 5rem;
     display: flex;
     gap: 1rem;
+    width: 100%;
+}
+
+@media (max-width: 960px){
+    .list{
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 0;
+        align-items: center;
+    }
 }
