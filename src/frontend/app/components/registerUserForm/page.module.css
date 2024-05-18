@@ -13,20 +13,7 @@
 }
 
 .buttonsBox button {
-  width: 235px;
-  margin: auto;
-  padding: 24px 0;
-  border-radius: 10px;
-  background-color: var(--success-color);
-  color: var(--white);
-  font-size: 20px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-}
-
-.buttonsBox button:hover {
-  background-color: var(--success-color-hover);
+  width: 190px;
 }
 
 .buttonsBox p {
@@ -127,4 +114,20 @@
 .registerMessage span {
   text-decoration: underline;
   cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 680px) {
+  .modalContainer {
+    width: 80vw;
+  }
+
+  .formFields {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .genderOptions {
+    flex-direction: column;
+  }
 }

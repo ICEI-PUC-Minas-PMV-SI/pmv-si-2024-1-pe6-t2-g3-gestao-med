@@ -1,0 +1,62 @@
+.button {
+  width: fit-content;
+  padding: 24px 34px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.primary:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.secondary {
+  background-color: var(--success-color);
+  color: var(--white);
+}
+
+.secondary:hover {
+  background-color: var(--success-color-hover);
+}
+
+.full {
+  width: 100%;
+}
+
+.disabled {
+  background-color: var(--disabled-color);
+  cursor: initial;
+  opacity: 0.6;
+}
+
+.disabled:hover {
+  background-color: var(--disabled-color);
+}
+
+.loading {
+  cursor: initial;
+  opacity: 0.8;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingIcon {
+  animation: spin 0.5s linear infinite;
+}
