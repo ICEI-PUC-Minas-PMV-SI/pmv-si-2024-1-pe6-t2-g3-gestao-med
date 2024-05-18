@@ -4,9 +4,7 @@ import { getUserDetails } from "../lib/actions";
 
 export default async function MyProfile() {
 
-   
     const userDetails = await getUserDetails()
-   
 
     return (
         <AuthLayout>
@@ -14,3 +12,5 @@ export default async function MyProfile() {
         </AuthLayout>
     )
 }
+
+
