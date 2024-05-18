@@ -1,0 +1,38 @@
+.container {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 20px;
+}
+
+.profile_icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--secondary-color);
+}
+
+.data_box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.data_box h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.data_box hr {
+  height: 2px;
+  background-color: var(--black);
+  border: none;
+}
+
+.data_box p {
+  font-size: 14px;
+  font-weight: 500;
+}
