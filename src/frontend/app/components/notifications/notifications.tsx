@@ -16,7 +16,7 @@ export default function Notifications() {
             {medications.length > 0 ?
                 <>
 
-                    {medications.map((med) => (
+                    {medications?.map((med) => (
 
 
                         <div key={med.id} className={styles.alerts}>

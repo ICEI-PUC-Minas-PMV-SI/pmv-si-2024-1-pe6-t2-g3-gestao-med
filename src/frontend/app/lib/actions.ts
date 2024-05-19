@@ -19,6 +19,7 @@ export const getUserDetails = async () => {
 export const getMedications = async () => {
   const api = await setupAPIClient();
 
+  console.log("pegou os medicamentos")
   try {
     const response = await api.get("/medications");
 
