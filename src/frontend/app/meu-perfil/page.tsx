@@ -8,7 +8,7 @@ export default async function MyProfile() {
 
     return (
         <AuthLayout>
-            <UsuarioComponent user={userDetails}/>
+            <UsuarioComponent {...userDetails!}/>
         </AuthLayout>
     )
 }

@@ -1,7 +1,7 @@
 import { openai } from "./openai.config";
 
 
-export default async function OpenAiRequest(userPrompt: string, disciplina: string) {
+export default async function OpenAiRequest(userPrompt: string) {
 
     const gptResponse = await openai.chat.completions.create({
         model: 'gpt-3.5-turbo-16k',

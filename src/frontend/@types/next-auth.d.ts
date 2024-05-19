@@ -10,6 +10,8 @@ declare module 'next-auth' {
             name: string | null
             phone: string | null
             token: string
+            created_at: date
+            date_of_birth: string
         }
     }
 }

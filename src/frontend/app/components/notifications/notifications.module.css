@@ -1,4 +1,4 @@
-.container{
+.container {
     background-color: var(--primary-color);
     width: 100%;
     border-radius: 8px;
@@ -7,15 +7,34 @@
     overflow-y: scroll;
     flex: 1;
     text-align: center;
-    
+
 }
 
-.container > h3 {
+.container>h3 {
     margin-bottom: 2rem;
 }
-.alerts{
+
+.alerts {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+}
+
+
+.container::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.container::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: var(--bgSoft);
+    box-shadow: 0 0 1px 1px #111, inset 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: linear-gradient(left, #3e3e3e, #111, #000);
+    box-shadow: inset 0 0 1px 1px #646464;
 }
