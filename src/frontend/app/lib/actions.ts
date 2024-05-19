@@ -1,13 +1,14 @@
 "use server";
 
 import { setupAPIClient } from "../services/api";
+import { IMedication, IUserDetails } from "./model";
 
 //Buscar detalhes do usuário
 export const getUserDetails = async () => {
   const api = await setupAPIClient();
 
   try {
-    const response = await api.get("/user");
+    const response = await api.get<IUserDetails>("/user");
 
     return response.data;
   } catch (err: any) {
@@ -29,6 +30,18 @@ export const getMedications = async () => {
     }
     console.log({ err });
     return { status: "", data: [] };
+  }
+};
+
+export const getUserMedications = async () => {
+  const api = await setupAPIClient();
+
+  try {
+    const response = await api.get<IMedication[]>("/medications");
+
+    return response.data;
+  } catch (err: any) {
+    console.log({ err });
   }
 };
 

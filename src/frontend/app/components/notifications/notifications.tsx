@@ -11,21 +11,28 @@ export default function Notifications() {
 
     return (
         <div className={styles.container}>
-            <h1>Alerta de estoque</h1>
+            <h3>Alerta de estoque</h3>
 
-            {medications.map((med) => (
+            {medications.length > 0 ?
+                <>
+
+                    {medications.map((med) => (
 
 
-                <div key={med.id} className={styles.alerts}>
-                    {med.stock <= 3 && !med.deleted_at && !med.treatment_finished_at &&
-                        (
-                            <MedicationBox name={med.name} stock={med.stock} />
+                        <div key={med.id} className={styles.alerts}>
+                            {med.stock <= 3 && !med.deleted_at && !med.treatment_finished_at &&
+                                (
+                                    <MedicationBox name={med.name} stock={med.stock} />
 
-                        )
-                    }
-                </div>
+                                )
+                            }
+                        </div>
 
-            ))}
+                    ))}
+                </>
+                :
+                <p>Nenhum alerta encontrado</p>    
+        }
         </div>
     )
 }

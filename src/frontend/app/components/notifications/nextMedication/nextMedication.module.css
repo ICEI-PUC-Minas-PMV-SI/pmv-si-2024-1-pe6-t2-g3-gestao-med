@@ -1,12 +1,11 @@
 .container{
-    flex: 1;
-    height: 200px;
-    background-color: rgb(172, 171, 171);
+    min-height: 200px;
+    background-color: rgb(185, 185, 185);
     border-radius: 8px;
-    padding: 2rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    padding: 2rem .5rem;
 }
 
 .medInfo{
