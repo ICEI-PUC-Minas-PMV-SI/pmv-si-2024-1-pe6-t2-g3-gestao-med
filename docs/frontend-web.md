@@ -14,12 +14,29 @@ JavaScript
 O Front end é o componente com o qual o usuário interage. O front end fornece uma interface de usuário amigável para cadastrar os usuários e os medicamentos, editar medicamentos, entre outras funcionalidades. Ele envia solicitações à API web para que o alerta de horário de tomada do medicamento seja disparado como um alarme por meio de tela de alerta, no horário cadastrado para a tomada do medicamento.
 
 ## Modelagem da Aplicação
-[Descreva a modelagem da aplicação, incluindo a estrutura de dados, diagramas de classes ou entidades, e outras representações visuais relevantes.]
+
+![modelagem](img/fluxo-requisicao-next-js.png)
 
 ## Projeto da Interface Web
 
 ### Protótipos
-[Inclua os wireframes das páginas principais da interface, mostrando a disposição dos elementos na página.]
+
+Tela de Login 
+
+![login](img/login.jpg)
+
+Tela de cadastro de usuário
+
+![cadastrousu](img/cadastro-usuario-1.jpg)
+
+Tela de cadastro de medicamentos
+
+![cadastromed](img/cadastro-medicamentos.jpg)
+
+Tela de Lembrete/Alerta
+
+![lembrete](img/alerta-lembrete.jpg)
+
 
 ### Design Visual
 1. Paleta de Cores </br>
