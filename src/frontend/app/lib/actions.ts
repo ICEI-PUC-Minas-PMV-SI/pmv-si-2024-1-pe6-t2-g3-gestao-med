@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { setupAPIClient } from "../services/api";
 import { IMedication, IUserDetails } from "./model";
 
@@ -71,3 +72,22 @@ export const registerUser = async (params: {
     return { status: "", data: [] };
   }
 };
+
+
+export const deleteMedicationAction = async (id: string) => {
+  const api = await setupAPIClient()
+
+  try {
+    const response = await api.patch(`/medication/delete/${id}`)
+
+    return { status: response.status }
+  } catch (err: any) {
+
+    console.log({ err })
+
+    return { status: '' }
+  }
+
+
+
+}

@@ -6,7 +6,6 @@ import LogOutButton from './logOutButton/logOutButton';
 import MenuLink from './menuLink/menuLink';
 import { useSession } from 'next-auth/react';
 import AddMedicationButton from '../addMedicationButton/addMedicationButton';
-import Image from 'next/image';
 
 const menuItems = [
 
