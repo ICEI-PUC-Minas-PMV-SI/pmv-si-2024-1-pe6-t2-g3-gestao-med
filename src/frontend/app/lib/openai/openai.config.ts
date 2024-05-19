@@ -1,10 +1,11 @@
 import OpenAI from 'openai'
+import dotenv from 'dotenv'
 
-const OPEN_AI_SECRET_KEY = process.env.OPEN_AI_KEY as string
+dotenv.config()
 
-
+const open_ai_key = process.env.OPEN_AI_KEY as string
 const openai = new OpenAI({
-    apiKey: process.env.OPEN_AI_SECRET_KEY,
+    apiKey: open_ai_key,
     dangerouslyAllowBrowser: true,
 })
 

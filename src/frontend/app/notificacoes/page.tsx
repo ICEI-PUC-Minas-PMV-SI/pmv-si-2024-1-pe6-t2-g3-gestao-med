@@ -1,6 +1,6 @@
 'use client'
 
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import AuthLayout from "../(Authenticated)/layout";
 import { UserData } from "../components/userData/userData";
 import styles from './notifications.module.css'
@@ -14,14 +14,20 @@ export default function NotificationsPage() {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [selectedMedicationId, setSelectedMedicationId] = useState('')
     const [medicationName, setMedicationName] = useState('')
+    const [hasAlerts, setHasAlerts] = useState(false);
 
     const { medications } = useContext(AppMedicationContext)
+
+
+    useEffect(() => {
+        const alertsExist = medications.some(med => med.stock <= 3 && !med.deleted_at && !med.treatment_finished_at);
+        setHasAlerts(alertsExist);
+    }, [medications]);
 
     const handleOpenModal = async (medicationId: string, medicationName: string) => {
         setSelectedMedicationId(medicationId)
         setMedicationName(medicationName)
         setIsModalOpen(true)
-        // const result = await updateMedicationStock(medicationId, stock)
     }
 
     const handleCloseModal = () => {
@@ -47,6 +53,9 @@ export default function NotificationsPage() {
                 <h1>Alerta de estoque</h1>
                 {medications.length > 0 ?
                     <div className={styles.notificationList}>
+                        {!hasAlerts && (
+                            <p>Nenhum alerta encontrado</p>
+                        )}
                         {medications?.map((med) => (
                             <div key={med.id} className={styles.alerts}>
                                 {med.stock <= 3 && !med.deleted_at && !med.treatment_finished_at &&
@@ -56,7 +65,7 @@ export default function NotificationsPage() {
                                             <p>Restam apenas <strong>{med.stock}</strong> comprimidos</p>
                                             <div className={styles.actions}>
                                                 <p onClick={() => handleOpenModal(med.id, med.name)}>Reabastecer</p>
-                                                <p>Remover</p>
+                                                
                                             </div>
                                             <div className={styles.divider}></div>
 

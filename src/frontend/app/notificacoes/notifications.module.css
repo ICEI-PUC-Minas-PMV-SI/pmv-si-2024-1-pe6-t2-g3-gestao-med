@@ -70,6 +70,7 @@
 .form > input{
   border-radius: 8px;
   padding: .5rem 1rem;
+  outline: none;
 
 }
 
@@ -80,5 +81,6 @@
   border: none;
   width: 100%;
   color: var(--white);
+  cursor: pointer;
 }
 
