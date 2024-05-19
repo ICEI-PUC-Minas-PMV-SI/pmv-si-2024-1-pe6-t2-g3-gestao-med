@@ -9,9 +9,9 @@
 .container{
     position: relative;
     top: 90px;
-    left: 11%;
-    height: 25vw;
-    width: 78%;
+    left: 13%;
+    height: 24vw;
+    width: 75%;
     box-align: center;
     background: #ebebeb;
     border-radius: 10px;
@@ -24,4 +24,76 @@
     top: 5vw;
     left: 4vw;
     margin-top: 12px;
+}
+
+@media(max-width:830px){
+    .top{
+        font-size: 20px;
+        margin-top: 70px;
+    }
+
+    .container{
+        top: 50px;
+    }
+    .dataText{
+        font-size: 8.5px;
+        left: 2vw;
+        top: 3vw;
+    }
+}
+
+@media(max-width:750px){
+    .dataText{
+        font-size: 8.5px;
+        left: 2vw;
+        top: 2.2vw;
+    }
+}
+@media(max-width:690px){
+    .dataText{
+        top: 2vw;
+        left: 2vw;
+        font-size: 8.5px;
+    }
+}
+@media(max-width:680px){
+    
+    .dataText{
+        top: 2vw;
+        left: 2vw;
+    }
+}
+
+@media(max-width:650px){
+    .top{
+        font-size: 20px;
+        margin-top: 70px;
+    }
+
+    .container{
+        top: 30px;
+        left: 25%;
+        height: 250px;
+        width: 50%;
+    }
+    .dataText{
+        top: 30px;
+        font-size: 12px;
+    }
+}
+
+@media(max-width:465px){
+    .dataText{
+        top: 35px;
+        font-size: 2.35vw;
+    }
+}
+
+@media(max-width:415px){
+    .container{
+        top: 30px;
+        left: 25%;
+        height: 220px;
+        width: 50%;
+    }
 }
