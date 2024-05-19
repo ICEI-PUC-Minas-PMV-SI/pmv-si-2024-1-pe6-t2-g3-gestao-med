@@ -51,19 +51,21 @@ Tela de Lembrete/Alerta
 
 
 ### Design Visual
-1. Paleta de Cores </br>
+
+- Paleta de Cores </br>
 Optamos por uma paleta predominante de tons azuis para o front end para proporcionar uma experiência de usuário agradável pois o azul é uma cor associada à tranquilidade, calma, confiança. A cor primária tem o código #2CA3D7. </br>
 
-2. Tipografia</br>
+- Tipografia</br>
 A fonte principal usada no corpo do texto é "Roboto”. A fonte é legível e possui uma aparência moderna.
 
-4. Botões</br>
+- Botões</br>
 Os botões na interface têm bordas arredondadas e prevalência na cor de fundo verde (#009588) com texto em branco para criar um contraste com o fundo escuro e facilitar a leitura para o usuário.
 
-6. Campos</br>
+- Campos</br>
 Os campos de preenchimento de texto têm bordas arredondadas e uma cor de fundo branca que contrasta com os textos de instrução de escrita na cor cinza, código #A5A5A5.
 
 ### Layout Responsivo
+
 O desenvolvimento do front end responsivo tem como parte essencial a adaptação da interface do projeto para diferentes tamanhos de tela e dispositivos. Seguem abaixo maneiras de adaptação da interface: </br>
 
 Media Queries: Utilizaremos media queries em nosso CSS para aplicar estilos específicos com base na largura da tela. Isso permite a personalização de estilos, como alterar o tamanho das fontes, reorganizar os elementos na página e ocultar ou exibir certos conteúdos com base na resolução da tela.</br>
@@ -131,10 +133,10 @@ A segurança é um ponto crítico para a garantia da integridade e confiabilidad
 A implantação do front end exige criar um projeto na Vercel, importando o repositório do github relacionado ao projeto desejado. É necessário inserir as variáveis de ambiente que o projeto exige e que estão listadas abaixo, e depois fazer o deploy da aplicação no ambiente escolhido, seguindo as instruções específicas da Vercel.</br>
 
 Variáveis de ambiente:</br>
-AUTH_URL=http://localhost:3000/api/auth </br>
-AUTH_SECRET=testsecret </br>
-JWT_SECRET=secretjwt </br>
-BASE_URL=http://localhost:3333.
+- AUTH_URL=http://localhost:3000/api/auth </br>
+- AUTH_SECRET=testsecret </br>
+- JWT_SECRET=secretjwt </br>
+- BASE_URL=http://localhost:3333.
 
 
 ## Testes
