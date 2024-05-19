@@ -19,7 +19,7 @@ O Front end é o componente com o qual o usuário interage. O front end fornece 
 ## Projeto da Interface Web
 [Descreva o projeto da interface Web da aplicação, incluindo o design visual, layout das páginas, interações do usuário e outros aspectos relevantes.]
 
-### Wireframes
+### Protótipos
 [Inclua os wireframes das páginas principais da interface, mostrando a disposição dos elementos na página.]
 
 ### Design Visual
