@@ -1,9 +1,10 @@
 "use client";
 
-import { Pencil, Pill } from "@phosphor-icons/react";
+import { CircleNotch, Pencil, Pill } from "@phosphor-icons/react";
 import styles from "./page.module.css";
 import { useQuery } from "react-query";
 import { getUserMedications } from "@/app/lib/actions";
+import { IMedication } from "@/app/lib/model";
 
 export function MedicationsList() {
   const medicationsQuery = useQuery(["medications"], async () => {
@@ -32,14 +33,57 @@ export function MedicationsList() {
     }
   }
 
+  function calculateLastPillDate(medication: IMedication): string {
+    const timeToTakeArray = medication.time_to_take.split(",");
+    const dosesPerDay = timeToTakeArray.length;
+
+    const currentTime = new Date();
+    const currentHours = currentTime.getHours();
+    const currentMinutes = currentTime.getMinutes();
+
+    let dosesLeftToday = 0;
+    timeToTakeArray.forEach((time) => {
+      const [hours, minutes] = time.split(":").map(Number);
+      if (
+        hours > currentHours ||
+        (hours === currentHours && minutes > currentMinutes)
+      ) {
+        dosesLeftToday++;
+      }
+    });
+
+    const remainingStock = medication.stock - dosesLeftToday;
+    const daysLast = Math.ceil(remainingStock / dosesPerDay);
+
+    const currentDate = new Date();
+
+    const lastPillDate = new Date(currentDate);
+    lastPillDate.setDate(currentDate.getDate() + daysLast);
+
+    const day = String(lastPillDate.getDate()).padStart(2, "0");
+    const month = String(lastPillDate.getMonth() + 1).padStart(2, "0");
+
+    return `${day}/${month}`;
+  }
+
   return (
     <div className={styles.medications_container}>
       <h2>Medicamentos</h2>
       <div className={styles.medications_list}>
-        {!medicationsQuery.data || medicationsQuery.data.length === 0 ? (
-          <p className={styles.emptyMessage}>
-            Nenhum medicamento cadastrado ainda...
-          </p>
+        {!medicationsQuery.data ||
+        medicationsQuery.data.length === 0 ||
+        medicationsQuery.isLoading ? (
+          <>
+            {medicationsQuery.isLoading ? (
+              <div className={styles.loading_box}>
+                <CircleNotch size={40} className={styles.loadingIcon} />
+              </div>
+            ) : (
+              <p className={styles.emptyMessage}>
+                Nenhum medicamento cadastrado ainda...
+              </p>
+            )}
+          </>
         ) : (
           medicationsQuery.data.map((medication, index) => (
             <div key={index}>
@@ -57,7 +101,7 @@ export function MedicationsList() {
                     <strong>
                       {formatHoursString(medication.time_to_take)}
                     </strong>{" "}
-                    | Até <strong>29/09</strong>
+                    | Até <strong>{calculateLastPillDate(medication)}</strong>
                   </p>
                   <p className={styles.stock}>
                     <strong>{medication.stock}</strong> unidades restantes
