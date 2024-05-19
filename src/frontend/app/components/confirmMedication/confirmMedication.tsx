@@ -19,7 +19,7 @@ export default function ConfirmMedication() {
         <div className={styles.modalContainer}>
             <h2>Medicamento: XYZ</h2>
             <h3>Instrução</h3>
-            <p> Blablabla</p>
+            <p>lorem ipsum dolor sit amet</p>
             <form action={confirm} className={styles.formContainer}>
                 <div className={styles.formFields}>
                     <input type="date" id='dia' name='dia' />
