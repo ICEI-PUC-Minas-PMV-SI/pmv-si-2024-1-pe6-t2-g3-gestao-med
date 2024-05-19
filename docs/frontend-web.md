@@ -29,9 +29,21 @@ Tela de cadastro de usuário
 
 ![cadastrousu](img/cadastro-usuario-1.jpg)
 
+Tela home
+
+![home](img/home.jpg)
+
+Tela perfil
+
+![perfil](img/meu-perfil.jpg)
+
 Tela de cadastro de medicamentos
 
 ![cadastromed](img/cadastro-medicamentos.jpg)
+
+Tela de medicamentos
+
+![medicamentos](img/medicamentos.jpg)
 
 Tela de Lembrete/Alerta
 
