@@ -79,7 +79,15 @@ O projeto foi desenvolvido com o objetivo de oferecer uma experiência prática,
 
 ## Requisitos Não Funcionais
 
-[Liste os principais requisitos não funcionais da aplicação, como desempenho, segurança, escalabilidade, etc.]
+|ID     | Descrição do Requisito  |Prioridade |
+|-------|-------------------------|----|
+|RNF-001| O sistema atenderá ao requisito de **PORTABILIDADE** - deverá executar em qualquer plataforma | ALTA |
+|RNF-002| O sistema atenderá a Lei de Geral de Proteção de Dados pessoais nº 13.709/2018 | ALTA |
+|RNF-003| O sistema deverá atender ao requisito de **USABILIDADE** - facilidade no uso do sistema | ALTA |
+|RNF-004| O sistema deverá atender ao requsiito de **CONFIABILIDADE** - terá alta disponibilidade 99% do tempo | ALTA |
+|RNF-005| O sistema deverá usar arquitetura em camadas para desacoplamento | MÉDIA |
+|RNF-006| O *Layout* do sistema deverá usar *design* responsivo, para que renderize bem em qualquer dispositivo | MÉDIA |
+|RNF-007| O sistema deverá processar requisições do usuário em no máximo 3s | BAIXA |
 
 
 ## Considerações de Segurança
