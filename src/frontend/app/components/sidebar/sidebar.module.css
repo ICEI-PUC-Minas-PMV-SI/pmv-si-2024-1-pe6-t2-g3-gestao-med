@@ -19,7 +19,6 @@
     flex-direction: column;
     top: 40px;
     flex: 1;
-    gap: 3rem;
 }
 
 
@@ -29,7 +28,7 @@
     align-items: center;
     gap: 20px;
     margin-bottom: 20px;
-    padding: 2rem .5rem;
+    padding: 1rem .5rem;
 }
 
 .logo {
@@ -46,8 +45,8 @@
 .userDetails {
     display: flex;
     flex-direction: column;
-}
 
+}
 .userTitle {
     font-size: .8rem;
     color: var(--textSoft);

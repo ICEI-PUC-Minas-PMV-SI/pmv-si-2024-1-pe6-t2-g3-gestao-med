@@ -49,7 +49,7 @@ const SideBar = () => {
                     <div className={styles.user}>
                         <div className={styles.userDetails}>
                             <span className={styles.userTitle}>Bem vindo</span>
-                            <span className={styles.userName}>{session.data?.user.name}</span>
+                            <span className={styles.userName}><strong>{session.data?.user.name}</strong></span>
                         </div>
 
                     </div>
