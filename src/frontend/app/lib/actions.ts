@@ -91,3 +91,23 @@ export const deleteMedicationAction = async (id: string) => {
 
 
 }
+
+export const updateMedicationStock = async (medicationId: string, stock: number) => {
+  if(!medicationId || !stock) return
+
+  
+  try{
+    const api = await setupAPIClient()
+    
+    const response = await api.put(`/medication/edit`, {
+      id: medicationId,
+      stock
+    })
+
+    return { status: response.status }
+  }catch(err: any){
+    console.log({err})
+
+    return {status: ''}
+  }
+}

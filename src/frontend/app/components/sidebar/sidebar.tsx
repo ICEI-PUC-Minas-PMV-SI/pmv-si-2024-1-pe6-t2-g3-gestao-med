@@ -19,7 +19,7 @@ const menuItems = [
     },
     {
         title: "Notificações",
-        path: "/notifications",
+        path: "/notificacoes",
     },
     {
         title: "Relatórios",

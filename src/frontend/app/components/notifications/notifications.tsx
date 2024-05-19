@@ -31,8 +31,8 @@ export default function Notifications() {
                     ))}
                 </>
                 :
-                <p>Nenhum alerta encontrado</p>    
-        }
+                <p>Nenhum alerta encontrado</p>
+            }
         </div>
     )
 }
