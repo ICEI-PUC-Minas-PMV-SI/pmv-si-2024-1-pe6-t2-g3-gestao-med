@@ -2,6 +2,7 @@
 
 import { Pencil, Pill } from "@phosphor-icons/react";
 import styles from "./page.module.css";
+import { IMedication } from "@/app/lib/model";
 import { deleteMedicationAction, getUserMedications } from "@/app/lib/actions";
 import { useContext, useEffect, useState } from "react";
 import Modal from "../modal/modal";
@@ -90,6 +91,39 @@ export function MedicationsList() {
     }
   }
 
+  function calculateLastPillDate(medication: IMedication): string {
+    const timeToTakeArray = medication.time_to_take.split(",");
+    const dosesPerDay = timeToTakeArray.length;
+
+    const currentTime = new Date();
+    const currentHours = currentTime.getHours();
+    const currentMinutes = currentTime.getMinutes();
+
+    let dosesLeftToday = 0;
+    timeToTakeArray.forEach((time) => {
+      const [hours, minutes] = time.split(":").map(Number);
+      if (
+        hours > currentHours ||
+        (hours === currentHours && minutes > currentMinutes)
+      ) {
+        dosesLeftToday++;
+      }
+    });
+
+    const remainingStock = medication.stock - dosesLeftToday;
+    const daysLast = Math.ceil(remainingStock / dosesPerDay);
+
+    const currentDate = new Date();
+
+    const lastPillDate = new Date(currentDate);
+    lastPillDate.setDate(currentDate.getDate() + daysLast);
+
+    const day = String(lastPillDate.getDate()).padStart(2, "0");
+    const month = String(lastPillDate.getMonth() + 1).padStart(2, "0");
+
+    return `${day}/${month}`;
+  }
+
   return (
     <div className={styles.medications_container}>
       <h2>Medicamentos</h2>
@@ -118,7 +152,7 @@ export function MedicationsList() {
                         <strong>
                           {formatHoursString(medication.time_to_take)}
                         </strong>{" "}
-                        | Até <strong>29/09</strong>
+                        | Até <strong>{calculateLastPillDate(medication)}</strong>
                       </p>
                       <p className={styles.stock}>
                         <strong>{medication.stock}</strong> unidades restantes
