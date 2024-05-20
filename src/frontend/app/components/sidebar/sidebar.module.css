@@ -19,7 +19,6 @@
     flex-direction: column;
     top: 40px;
     flex: 1;
-    gap: 3rem;
 }
 
 
@@ -29,19 +28,25 @@
     align-items: center;
     gap: 20px;
     margin-bottom: 20px;
-    padding: 2rem .5rem;
+    padding: 1rem .5rem;
 }
 
-.userImage {
-    border-radius: 50%;
-    object-fit: cover;
+.logo {
+    background-image: url('../../../public/logotipo.png');
+    height: 150px;
+    width: 200px;
+    background-size: cover;
+    background-position-x: -40px;
+    background-repeat: no-repeat;
 }
+
+
 
 .userDetails {
     display: flex;
     flex-direction: column;
-}
 
+}
 .userTitle {
     font-size: .8rem;
     color: var(--textSoft);
@@ -56,7 +61,7 @@
     gap: 2rem;
 }
 
-.list > a{
+.list>a {
     padding: 1rem .8rem;
 }
 
@@ -64,20 +69,27 @@
     color: var(--black);
 }
 
-.list a:hover{
+.list a:hover {
     background-color: var(--dark-blue);
     color: var(--white);
     border-radius: 8px 0 0 8px;
 }
 
 
-.mobileMenu{
+.mobileMenu {
     position: absolute;
     z-index: 99;
 }
 
-@media (min-width:650px){
-    .medButton{
+@media (max-width: 720px){
+    .logo{
+        width: 100px;
+        height: 50px;
+        background-position: center;
+    }
+}
+@media (min-width:650px) {
+    .medButton {
         display: none;
     }
 }

@@ -1,0 +1,130 @@
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 500px;
+}
+
+.buttonsBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.buttonsBox button {
+  width: 235px;
+  margin: auto;
+  padding: 24px 0;
+  border-radius: 10px;
+  background-color: var(--success-color);
+  color: var(--white);
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.buttonsBox button:hover {
+  background-color: var(--success-color-hover);
+}
+
+.buttonsBox p {
+  color: var(--black);
+  cursor: pointer;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formFields {
+  display: flex;
+  gap: 15px;
+}
+
+.formField {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.formField > span {
+  font-size: 12px;
+  color: #6f240b;
+}
+
+.formContainer input,
+.formContainer select {
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  padding: 12px 20px;
+  font-size: 18px;
+}
+
+.fieldBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fieldBox p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.genderOptions input[type="radio"] {
+  display: none;
+}
+
+.genderOptions {
+  display: flex;
+  gap: 15px;
+}
+
+.genderOptions div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: var(--white);
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.genderOptions input[type="radio"]:checked + label::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #333;
+}
+
+.genderOptions label::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.genderOptions label {
+  cursor: pointer;
+}
+
+.registerMessage {
+  font-size: 14px;
+  color: var(--white);
+}
+
+.registerMessage span {
+  text-decoration: underline;
+  cursor: pointer;
+}

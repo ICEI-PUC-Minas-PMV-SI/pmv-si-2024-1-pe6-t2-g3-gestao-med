@@ -93,21 +93,50 @@
   font-weight: 500;
 }
 
-.loading_box {
+.form{
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.editField{
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
+.editField > input {
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  padding: .5rem 1rem;
+}
+
+.form > button {
+  padding: .5rem;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--dark-blue);
+  color: white;
+  cursor: pointer;
+}
+
+.aiModal{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
 @keyframes spin {
-  0% {
+  from {
     transform: rotate(0deg);
   }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
 
-.loadingIcon {
-  margin: auto;
-  color: var(--white);
-  animation: spin 0.5s linear infinite;
+.hourglass {
+  animation: spin 2s linear infinite;
 }

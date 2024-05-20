@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { setupAPIClient } from "../services/api";
 import { IMedication, IUserDetails } from "./model";
 
@@ -19,6 +20,7 @@ export const getUserDetails = async () => {
 export const getMedications = async () => {
   const api = await setupAPIClient();
 
+  console.log("pegou os medicamentos")
   try {
     const response = await api.get("/medications");
 
@@ -70,3 +72,42 @@ export const registerUser = async (params: {
     return { status: "", data: [] };
   }
 };
+
+
+export const deleteMedicationAction = async (id: string) => {
+  const api = await setupAPIClient()
+
+  try {
+    const response = await api.patch(`/medication/delete/${id}`)
+
+    return { status: response.status }
+  } catch (err: any) {
+
+    console.log({ err })
+
+    return { status: '' }
+  }
+
+
+
+}
+
+export const updateMedicationStock = async (medicationId: string, stock: number) => {
+  if(!medicationId || !stock) return
+
+  
+  try{
+    const api = await setupAPIClient()
+    
+    const response = await api.put(`/medication/edit`, {
+      id: medicationId,
+      stock
+    })
+
+    return { status: response.status }
+  }catch(err: any){
+    console.log({err})
+
+    return {status: ''}
+  }
+}

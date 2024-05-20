@@ -8,7 +8,6 @@ const baseURL = process.env.BASE_URL as string
 export const {
     handlers: { GET, POST },
     auth,
-    update,
     signIn,
     signOut,
 } = NextAuth({
@@ -54,6 +53,7 @@ export const {
                             user.phone = userData.phone;
                             user.date_of_birth = userData.date_of_birth;
                             user.gender = userData.gender;
+                            user.created_at = userData.created_at
 
                             return user;
                         } catch (error) {

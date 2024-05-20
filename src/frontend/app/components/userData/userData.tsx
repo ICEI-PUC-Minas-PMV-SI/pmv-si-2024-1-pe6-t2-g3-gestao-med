@@ -1,18 +1,16 @@
 "use client";
 
-import { getUserDetails } from "@/app/lib/actions";
 import { UserCircle } from "@phosphor-icons/react";
-import { useQuery } from "react-query";
 import { formatPhoneNumber } from "../registerUserForm/constants";
 import dayjs from "dayjs";
 import styles from "./page.module.css";
+import { useSession } from "next-auth/react";
 
 export function UserData() {
-  const userDetailsQuery = useQuery(["user-details"], async () => {
-    const response = await getUserDetails();
-    return response;
-  });
 
+  const session = useSession()
+
+ 
   function calculateAge(birthDate: Date): number {
     const today = new Date();
     let age = today.getFullYear() - birthDate.getFullYear();
@@ -32,17 +30,17 @@ export function UserData() {
         <UserCircle size={100} />
       </div>
       <div className={styles.data_box}>
-        <h2>{userDetailsQuery.data?.name || ""}</h2>
+        <h2>{session.data?.user.name || ""}</h2>
         <p>
-          {calculateAge(new Date(userDetailsQuery.data?.date_of_birth || ""))}{" "}
+          {calculateAge(new Date(session.data?.user.date_of_birth || ""))}{" "}
           anos
         </p>
         <hr />
         <p>
           Cadastrado em{" "}
-          {dayjs(userDetailsQuery.data?.created_at || "").format("DD/MM/YYYY")}
+          {dayjs(session.data?.user.created_at || "").format("DD/MM/YYYY")}
         </p>
-        <p>Telefone: {formatPhoneNumber(userDetailsQuery.data?.phone || "")}</p>
+        <p>Telefone: {formatPhoneNumber(session.data?.user.phone || "")}</p>
       </div>
     </div>
   );
