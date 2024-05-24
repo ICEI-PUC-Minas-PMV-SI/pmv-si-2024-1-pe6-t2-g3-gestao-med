@@ -5,7 +5,6 @@ export type UserAuthDTO = {
     isAdmin: boolean
     email: string
     name: string
-    phone: string
     date_of_birth: Date
     gender: Gender
     password: string
