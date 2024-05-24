@@ -9,19 +9,18 @@ class CreateUserService {
   constructor(private userRepository: IUsersRepository) {}
 
   async execute(data: UserRequestDTO) {
-    data.date_of_birth = new Date(data.date_of_birth);
 
+    data.date_of_birth = new Date(data.date_of_birth)
     // Check if the user inserted all the data
     if (!data.name) throw new CustomError("Name is required", 400);
     if (!data.email) throw new CustomError("Email is required", 400);
     if (!data.password) throw new CustomError("Password is required", 400);
-    if (!data.phone) throw new CustomError("Phone is required", 400);
-    if (!data.date_of_birth)
-      throw new CustomError("Date of birth is required", 400);
+    // if (!data.phone) throw new CustomError("Phone is required", 400);
+    if (!data.date_of_birth) throw new CustomError("Date of birth is required", 400);
     if (!data.gender) throw new CustomError("Gender is required", 400);
 
-    if (!(data.date_of_birth instanceof Date))
-      throw new CustomError("Invalid date format", 400);
+
+    if (!(data.date_of_birth instanceof Date)) throw new CustomError("Invalid date format", 400);
 
     // Check if the user entered a valid gender
     if (
@@ -36,12 +35,12 @@ class CreateUserService {
     if (data.gender.toUpperCase() === "FEMALE") data.gender = Gender.FEMALE;
     if (data.gender.toUpperCase() === "OTHER") data.gender = Gender.OTHER;
 
-    const phoneRegex = /^\d{11}$/;
+    // const phoneRegex = /^\d{11}$/;
 
     // Check if the user entered a valid phone number
-    if (!phoneRegex.test(data.phone)) {
-      throw new CustomError("Invalid phone number!", 400);
-    }
+    // if (!phoneRegex.test(data.phone)) {
+    //   throw new CustomError("Invalid phone number!", 400);
+    // }
 
     const today = new Date();
 

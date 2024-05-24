@@ -22,6 +22,7 @@ class CreateUserController{
     
             return res.status(201).json("User created successfully")
         }catch(err: any){
+            console.log({err})
             return res.status(err.statusCode).json({
                 error: err.message
             })

@@ -24,7 +24,6 @@ model User {
   isAdmin       Boolean  @default(false)
   name          String
   email         String   @unique
-  phone         String
   date_of_birth DateTime
   gender        Gender
   password      String
