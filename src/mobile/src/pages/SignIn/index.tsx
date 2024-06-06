@@ -21,7 +21,7 @@ export default function SignIn() {
     const { signIn, loadingAuth } = useContext(AuthContext)
 
     const navigation = useNavigation<any>()
-
+    
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState("")
 
@@ -61,7 +61,7 @@ export default function SignIn() {
                     {loadingAuth ? (
                         <ActivityIndicator size={20} color="#FFF" />
                     ) : (
-                        <SubmitText>Cadastrar</SubmitText>
+                        <SubmitText>Entrar</SubmitText>
                     )}
                 </SubmitButton>
 

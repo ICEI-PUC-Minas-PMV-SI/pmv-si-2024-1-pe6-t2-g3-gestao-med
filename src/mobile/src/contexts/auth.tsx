@@ -91,6 +91,7 @@ function AuthProvider({ children }: AuthContextProps) {
 
             console.log("Erro ao cadastrar", err)
         }
+        setLoadingAuth(false)
     }
 
     async function signIn(email: string, password: string) {
@@ -130,6 +131,8 @@ function AuthProvider({ children }: AuthContextProps) {
         await AsyncStorage.clear()
         .then(() => {
             setUser(null)
+            setLoadingAuth(false)
+        
         })
     }
     return (
