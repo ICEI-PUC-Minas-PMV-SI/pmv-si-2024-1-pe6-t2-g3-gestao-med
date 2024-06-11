@@ -50,7 +50,6 @@ export const getUserMedications = async () => {
 export const registerUser = async (params: {
   name: string;
   email: string;
-  phone: string;
   date_of_birth: string;
   gender: "male" | "female" | "other";
   password: string;

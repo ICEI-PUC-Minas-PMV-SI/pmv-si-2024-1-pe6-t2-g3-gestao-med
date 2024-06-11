@@ -74,7 +74,6 @@ function AuthProvider({ children }: AuthContextProps) {
 
     async function signUp(name: string, email: string, password: string, gender: string, date_of_birth: string) {
         setLoadingAuth(true)
-
         try {
             const response = await api.post("/user", {
                 name,
@@ -83,6 +82,7 @@ function AuthProvider({ children }: AuthContextProps) {
                 gender,
                 date_of_birth
             })
+            console.log(response.data)
             setLoadingAuth(false)
             navigation.goBack()
 

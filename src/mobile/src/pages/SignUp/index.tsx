@@ -15,7 +15,6 @@ import {
     SubmitText,
     Logo,
     StyledPicker,
-    DatePickerContainer
 } from '../SignIn/styles'
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
