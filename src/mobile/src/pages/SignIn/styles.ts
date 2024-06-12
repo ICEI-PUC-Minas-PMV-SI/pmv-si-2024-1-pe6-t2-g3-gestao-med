@@ -11,6 +11,7 @@ export const Container = styled.KeyboardAvoidingView`
     flex: 1;
     justify-content: center;
     align-items: center;
+
     
 `
 
@@ -54,7 +55,7 @@ export const SubmitButton = styled.TouchableOpacity`
     height: 45px;
     border-radius: 8px;
     background-color:#00778C;
-    margin-top: 10px;
+    margin: 10px 0 20px 0;
     align-items: center;
     justify-content: center;
 
