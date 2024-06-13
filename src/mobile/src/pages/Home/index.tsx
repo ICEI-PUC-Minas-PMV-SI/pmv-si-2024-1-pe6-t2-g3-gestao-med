@@ -1,12 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { View, Text, Button } from 'react-native';
 import { AuthContext } from '../../contexts/auth';
 import Header from "../../components/Header";
 import { Background, Divider, HighlightedDivider, HighlightedLabel, Label, ListMedications, MedicationBox, TimeBox } from './styles'
 import { api } from '../../services/api';
 import { useIsFocused } from '@react-navigation/native'
 import MedicationItem from '../../components/MedicationItem';
-import MedicationAlert from '../../components/MedicationAlert';
+import FooterMenu from '../../components/Menu';
 
 export type MedicationsDTO = {
   id: string
@@ -159,7 +158,7 @@ export default function Home() {
         </TimeBox>
         <MedicationBox >
           {groupedMeds[time].map((med) => (
-            <MedicationItem id={med.id} medName={med.name} />
+            <MedicationItem key={med.id} id={med.id} medName={med.name} />
           ))}
         </MedicationBox>
       </ListMedications>
@@ -170,7 +169,7 @@ export default function Home() {
     <Background>
       <Header title={`Para Hoje: ${new Date().toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric' })}`} />
       {renderMedicationsByTime()}
-      <MedicationAlert />
+      <FooterMenu />
     </Background>
   );
 }

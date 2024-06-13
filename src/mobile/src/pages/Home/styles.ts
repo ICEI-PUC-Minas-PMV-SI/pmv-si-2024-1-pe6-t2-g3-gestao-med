@@ -3,12 +3,12 @@ import styled from "styled-components/native";
 export const Background = styled.SafeAreaView`
     flex: 1;
     background-color: #2585C0;
-    padding: 0 5px 5px 5px;
 `
 
 export const ListMedications = styled.View`
     flex: 1;
     scroll-behavior: auto;
+    padding: 5px 15px;
     
 `
 
