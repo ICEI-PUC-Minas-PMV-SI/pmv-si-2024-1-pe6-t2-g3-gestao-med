@@ -5,10 +5,26 @@ import Home from '../pages/Home'
 
 const AppDrawer = createDrawerNavigator()
 
-function AppRoutes(){
-    return(
-        <AppDrawer.Navigator>
-            <AppDrawer.Screen 
+function AppRoutes() {
+    return (
+        <AppDrawer.Navigator
+            screenOptions={
+                {
+                    headerShown: false,
+                    drawerStyle: {
+                        backgroundColor: '#00B4D8',
+                        paddingTop: 20
+                    },
+
+                    drawerActiveBackgroundColor: '#04069e',
+                    drawerActiveTintColor: '#FFF',
+
+                    drawerInactiveBackgroundColor: "F0F2FF",
+                    drawerInactiveTintColor: '#121212'
+                }
+            }
+        >
+            <AppDrawer.Screen
                 name="Home"
                 component={Home}
             />

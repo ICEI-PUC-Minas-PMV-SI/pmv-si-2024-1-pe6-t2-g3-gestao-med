@@ -28,6 +28,7 @@ export default function SignUp() {
     const { signUp, loadingAuth } = useContext(AuthContext)
 
     const [name, setName] = useState<string>('')
+    const [surname, setSurname] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
@@ -92,7 +93,7 @@ export default function SignUp() {
                     <Logo
                         source={require('../../assets/logotipo.png')}
                     />
-
+                  
                     <AreaInput>
                         <Input
                             placeholder="Nome"
@@ -100,7 +101,13 @@ export default function SignUp() {
                             onChangeText={(text) => setName(text)}
                         />
                     </AreaInput>
-
+                    <AreaInput>
+                        <Input
+                            placeholder="Sobrenome"
+                            value={surname}
+                            onChangeText={(text) => setSurname(text)}
+                        />
+                    </AreaInput>
                     <AreaInput>
                         <Input
                             placeholder="Seu email"

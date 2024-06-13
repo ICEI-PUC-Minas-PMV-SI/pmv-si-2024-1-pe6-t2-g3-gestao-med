@@ -6,6 +6,7 @@ import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { AppWrapper } from "./context";
 import { getMedications } from "./lib/actions";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default async function RootLayout({
   return (
     <html lang="pt-br">
       <body className={inter.className}>
+      <script src="https://app.aminos.ai/js/chat_plugin.js" data-bot-id="25264"></script>
 
         <AuthWrapper>
           <AppWrapper apiData={data}>
