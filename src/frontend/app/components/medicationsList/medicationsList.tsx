@@ -10,7 +10,7 @@ import generateMedicationPrompt from "../medications/medicationPrompt/medication
 import { AppMedicationContext } from "@/app/context";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
-import OpenAiRequest from "@/app/lib/openai/openai-request";
+// import OpenAiRequest from "@/app/lib/openai/openai-request";
 import Image from "next/image";
 
 export function MedicationsList() {
@@ -48,23 +48,23 @@ export function MedicationsList() {
 
 
 
-  const handleMedicationAI = async (name: string) => {
-    setIsAIModalOpen(true)
-    setMedicationName(name)
+  // const handleMedicationAI = async (name: string) => {
+  //   setIsAIModalOpen(true)
+  //   setMedicationName(name)
 
-    setAiInProgress(true)
+  //   setAiInProgress(true)
     
-    const promptRequest = await generateMedicationPrompt(name)
+  //   const promptRequest = await generateMedicationPrompt(name)
 
-    const aiResponse = await OpenAiRequest(promptRequest)
+  //   const aiResponse = await OpenAiRequest(promptRequest)
 
-    setAiInProgress(false)
+  //   setAiInProgress(false)
 
-    setAiResponse(aiResponse.choices[0].message.content)
-    console.log(aiResponse.choices[0].message.content)
+  //   setAiResponse(aiResponse.choices[0].message.content)
+  //   console.log(aiResponse.choices[0].message.content)
 
 
-  }
+  // }
 
   const handleCloseAIModal = () => {
     setIsAIModalOpen(false)
@@ -158,7 +158,7 @@ export function MedicationsList() {
                         <strong>{medication.stock}</strong> unidades restantes
                       </p>
                       <div className={styles.learn_more_and_remove}>
-                        <p onClick={() => handleMedicationAI(medication.name)}>Saiba mais</p>
+                        {/* <p onClick={() => handleMedicationAI(medication.name)}>Saiba mais</p> */}
                         <p onClick={() => deleteMedication(medication.id)}>Remover</p>
                       </div>
                     </div>
