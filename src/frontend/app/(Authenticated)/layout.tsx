@@ -8,6 +8,8 @@ import AddMedicationButton from "../components/addMedicationButton/addMedication
 import NextMedication from "../components/notifications/nextMedication/nextMedication"
 import { FaChevronLeft } from "react-icons/fa"
 
+import Script from 'next/script'
+
 interface LayoutProps {
     children: ReactNode
 }

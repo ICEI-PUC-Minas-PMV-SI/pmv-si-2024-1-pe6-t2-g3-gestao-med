@@ -17,7 +17,6 @@ export default function UsuarioComponent(data: IUserDetails){
                 <p className={styles.dataText}>Data de nascimento: { data.date_of_birth.slice(0, 10).split('-').reverse().join('/')}</p>   
                 <p className={styles.dataText}>Gênero: {data.gender.replace("MALE", "Masculino").replace("FEMALE", "Feminino")}</p> 
                 <p className={styles.dataText}>E-mail: {data.email} </p> 
-                <p className={styles.dataText}>Número de Telefone: ({data.phone.slice(0, 2) + ") " + data.phone.slice(2)} </p> 
             </div>
         </main>
     )
