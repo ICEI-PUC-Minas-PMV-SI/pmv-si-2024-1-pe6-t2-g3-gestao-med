@@ -11,8 +11,7 @@ export const Container = styled.KeyboardAvoidingView`
     flex: 1;
     justify-content: center;
     align-items: center;
-    overflow-y: scroll;
-
+    
 `
 
 export const Logo = styled.Image`

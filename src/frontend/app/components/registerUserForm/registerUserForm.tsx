@@ -11,6 +11,7 @@ interface FormData {
   lastName: string;
   email: string;
   password: string;
+  confirmPassword: string
   phoneNumber: string;
   birthDate: Date;
   gender: "male" | "female" | "other";
@@ -43,14 +44,13 @@ export function RegisterUserForm({ closeRegisterModal }: IRegisterUserForm) {
   const [isLoadingRegister, setIsLoadingRegister] = useState(false);
 
   const onSubmit = async (data: FormData) => {
-    const { name, lastName, email, password, phoneNumber, birthDate, gender } =
+    const { name, lastName, email, password, birthDate, gender } =
       data;
     setIsLoadingRegister(true);
     try {
       const response = await registerUser({
         name: name.trim() + " " + lastName.trim(),
         email: email,
-        phone: phoneNumber.replace(/\D/g, ""),
         gender: gender,
         date_of_birth: birthDate.toString(),
         password: password,
@@ -71,17 +71,17 @@ export function RegisterUserForm({ closeRegisterModal }: IRegisterUserForm) {
     }
   };
 
-  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const formattedValue = formatPhoneNumber(e.target.value);
-    setValue("phoneNumber", formattedValue);
-  };
+  // const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const formattedValue = formatPhoneNumber(e.target.value);
+  //   setValue("phoneNumber", formattedValue);
+  // };
 
-  const validatePhoneNumber = (value: string) => {
-    const cleanedValue = value.replace(/\D/g, "");
-    return (
-      cleanedValue.length === 11 || "Telefone deve ter exatamente 11 dígitos"
-    );
-  };
+  // const validatePhoneNumber = (value: string) => {
+  //   const cleanedValue = value.replace(/\D/g, "");
+  //   return (
+  //     cleanedValue.length === 11 || "Telefone deve ter exatamente 11 dígitos"
+  //   );
+  // };
 
   return (
     <div className={styles.modalContainer}>
@@ -152,16 +152,16 @@ export function RegisterUserForm({ closeRegisterModal }: IRegisterUserForm) {
             </div>
             <div className={styles.formField}>
               <input
-                placeholder="Telefone"
-                type="text"
-                {...register("phoneNumber", {
-                  required: "Telefone obrigatório",
-                  validate: validatePhoneNumber,
+                placeholder="Confirmação de Senha"
+                type="password"
+                {...register("confirmPassword", {
+                  required: "Confirmação de senha obrigatória",
+                  validate: (value) =>
+                    value === watch("password") || "As senhas não coincidem",
                 })}
-                onChange={handlePhoneChange}
-                onBlur={() => trigger("phoneNumber")}
+                onBlur={() => trigger("confirmPassword")}
               />
-              {errors.phoneNumber && <span>{errors.phoneNumber.message}</span>}
+              {errors.confirmPassword && <span>{errors.confirmPassword.message}</span>}
             </div>
           </>
         )}

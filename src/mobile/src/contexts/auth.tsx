@@ -74,7 +74,6 @@ function AuthProvider({ children }: AuthContextProps) {
 
     async function signUp(name: string, email: string, password: string, gender: string, date_of_birth: string) {
         setLoadingAuth(true)
-
         try {
             const response = await api.post("/user", {
                 name,
@@ -83,6 +82,7 @@ function AuthProvider({ children }: AuthContextProps) {
                 gender,
                 date_of_birth
             })
+            console.log(response.data)
             setLoadingAuth(false)
             navigation.goBack()
 
@@ -91,6 +91,7 @@ function AuthProvider({ children }: AuthContextProps) {
 
             console.log("Erro ao cadastrar", err)
         }
+        setLoadingAuth(false)
     }
 
     async function signIn(email: string, password: string) {
@@ -130,6 +131,8 @@ function AuthProvider({ children }: AuthContextProps) {
         await AsyncStorage.clear()
         .then(() => {
             setUser(null)
+            setLoadingAuth(false)
+        
         })
     }
     return (

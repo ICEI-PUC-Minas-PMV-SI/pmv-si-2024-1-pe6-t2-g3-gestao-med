@@ -34,7 +34,6 @@ export class UserPrismaRepository implements IUsersRepository {
         id: data.id,
         email: data.email,
         name: data.name,
-        phone: '',
         date_of_birth: data.date_of_birth,
         gender: data.gender,
         password: data.password,

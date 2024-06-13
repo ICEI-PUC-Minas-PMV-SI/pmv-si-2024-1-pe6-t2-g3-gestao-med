@@ -1,10 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Platform, ActivityIndicator } from "react-native";
-import DateTimePicker from "@react-native-community/datetimepicker";
 
 import { AuthContext } from "../../contexts/auth";
 
-import { Picker } from "@react-native-picker/picker";
 
 import {
     Background,
@@ -13,25 +11,24 @@ import {
     Input,
     SubmitButton,
     SubmitText,
-    Logo,
-    StyledPicker
+    Logo
 } from '../SignIn/styles'
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 
 export default function Medication() {
 
-    let name: string;
-    let description: string;
-    let stock: number;
-    let timeToTake: string;
+    const [name, onChangeName] = React.useState('');
+    const [description, onChangeDescription] = React.useState('');
+    const [stock, onChangeStock] = React.useState('');
+    const [timeToTake, onChangeTimeToTake] = React.useState('');
 
     const handleSave = async () => {
-        /*if (!name || !email || !password || !confirmPassword || !gender || !dateOfBirth) {
-            alert("Preencha todos os campos");
+        if (!name || !description || !timeToTake) {
+            alert("Preencha os campos obrigatórios");
             return;
         }
-*/
+
         // verificar como enviar para o backend
     }
 
@@ -50,28 +47,29 @@ export default function Medication() {
                     <AreaInput>
                         <Input
                             placeholder="Nome"
-                           // value={name}
+                            value={name}
                         />
                     </AreaInput>
 
                     <AreaInput>
                         <Input
                             placeholder="Descrição"
-                            //value={description}
+                            value={description}
                         />
                     </AreaInput>
 
                     <AreaInput>
                         <Input
                             placeholder="Estoque inicial - opcional"
-                           // value={stock}
+                            keyboardType="numeric"
+                            value={stock}
                         />
                     </AreaInput>
 
                     <AreaInput>
                         <Input
                             placeholder="Período de uso"
-                           // value={timeToTake}
+                            value={timeToTake}
                         />
                     </AreaInput>
 
