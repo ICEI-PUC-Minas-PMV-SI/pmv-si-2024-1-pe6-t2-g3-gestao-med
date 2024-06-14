@@ -41,7 +41,7 @@ A aplicação GestãoMed possui uma estrutura de dados que envolve principalment
  **Estrutura de dados e Entidades Principais:**  
 
  
-**1. Usuário**
+1. **Usuário**
 
 **name:**  Representa o nome do usuário.
 
@@ -56,7 +56,7 @@ A aplicação GestãoMed possui uma estrutura de dados que envolve principalment
 **password:** Representa a senha do usuário. 
 
  
-**2. Medicação** 
+2. **Medicação** 
 
 **id:** Identificador da medicação. 
 
@@ -69,7 +69,7 @@ A aplicação GestãoMed possui uma estrutura de dados que envolve principalment
 **time_to_take:** Representa o horário que a medicação deve ser administrada.  
 
 
-**3. Registro de tomada do medicamento** 
+3. **Registro de tomada do medicamento** 
  
 **Medication_id:** Representa o identificador da medicação tomada. 
 
@@ -97,7 +97,31 @@ A aplicação GestãoMed possui uma estrutura de dados que envolve principalment
 
 ## Fluxo de Dados
 
-[Diagrama ou descrição do fluxo de dados na aplicação.]
+A aplicação consiste em um front end desenvolvido em React Native, que proporciona uma interface móvel interativa e responsiva para os usuários. Este front end se comunica com o back end, implementado em Node.js, através de requisições HTTP. O back end é responsável por processar essas requisições, executar a lógica de negócios necessária e interagir com o banco de dados para armazenar e recuperar informações, retornando respostas adequadas ao front end para atualização e apresentação na interface do usuário. O fluxo de dados consiste no seguinte:
+
+1. **Usuário** interage com o aplicativo mobile (por exemplo, clica em um botão).
+2. **Aplicativo Mobile** (React Native) processa a entrada do usuário e prepara uma requisição HTTP.
+3. **Requisição HTTP** é enviada para o back end (APIs NodeJS).
+4. **Back end (APIs)** recebe a requisição, executa a lógica necessária (validações, acesso ao banco de dados, etc.), e processa a solicitação.
+5. **Back end** retorna os dados solicitados ou uma mensagem de confirmação.
+6. **Aplicativo Mobile** recebe a resposta, atualiza a interface do usuário (UI) conforme necessário.
+
+Exemplos de fluxos de dados da aplicação:
+
+**Cadastro de medicamento:**
+
+1. **Usuário** preenche informações do medicamento na tela de cadastro de medicamentos: Nome, Descrição, Estoque inicial e Período de uso; e clica em Cadastrar.
+2. **Aplicativo Mobile** verifica se todos os campos obrigatórios foram preenchidos e se os dados estão no formato correto e envia requisição no endpoint “/medication” com o verbo “POST”.
+3. **Back end** recebe a requisição, faz as validações, caso os dados estejam válidos salva as informações do medicamento no banco de dados e retorna uma resposta com código de status 201, caso alguma informação informada não seja válida é retornado um erro com o respectivo código de status.
+4. **Aplicativo Mobile** recebe a resposta e informa ao usuário o sucesso ou falha no cadastro do medicamento.
+
+
+**Consulta dos medicamentos:**
+
+1. **Usuário** acessa a tela de medicamentos.
+2. **Aplicativo Mobile** envia requisição no endpoint “/medications” com o verbo “GET”.
+3. **Back end** recebe a requisição, faz as validações, caso a requisição esteja correta e o usuário logado na aplicação tenha medicamentos cadastrados é retornada uma lista com os medicamentos do usuário, caso o usuário não tenha medicamentos cadastrados o retorno será vazio com o código de status 204.
+4. **Aplicativo Mobile** recebe a resposta do back end e exibe a lista de medicamentos do usuário, caso a resposta seja vazia é exibida uma mensagem informando que ainda não há nenhum medicamento cadastrado.
 
 ## Requisitos Funcionais
 
