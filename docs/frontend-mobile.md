@@ -148,13 +148,90 @@ Exemplos de fluxos de dados da aplicação:
 
 ## Testes
 
-[Descreva a estratégia de teste, incluindo os tipos de teste a serem realizados (unitários, integração, carga, etc.) e as ferramentas a serem utilizadas.]
+**Testes Unitários:**
 
-1. Crie casos de teste para cobrir todos os requisitos funcionais e não funcionais da aplicação.
-2. Implemente testes unitários para testar unidades individuais de código, como funções e classes.
-3. Realize testes de integração para verificar a interação correta entre os componentes da aplicação.
-4. Execute testes de carga para avaliar o desempenho da aplicação sob carga significativa.
-5. Utilize ferramentas de teste adequadas, como frameworks de teste e ferramentas de automação de teste, para agilizar o processo de teste.
+- Objetivo: Validar unidades individuais de código, como funções, métodos e classes, para garantir que cada parte isolada funcione conforme o esperado.
+
+- Ferramentas:
+  -  JavaScript: Vitest versão 1.4.0
+    
+- Caso de teste:
+  -  **Teste de validação:** onde irá testar se as entradas de dados é validada corretamente
+  -  **Teste de modelo:** onde verifica se um modelo de usuário salva e recupera os dados corretamente.
+  -  **Teste de serviço:** onde verifica se um serviço de autenticação valida corretamente as credenciais
+  -  **Testes de API:** onde verifica se um endpoint de criação de usuário cria um usuário corretamente
+
+
+**Testes de integração:**
+
+- Objetivo: Verificar a interação correta entre diferentes componentes ou módulos da aplicação.
+ 
+- Ferramentas:
+  -  Cypress
+   
+- Caso de teste:
+  -  **Testes de Integração de API:** Testar se uma chamada de API para criar um usuário também atualiza corretamente o banco de dados e retorna a resposta esperada.
+  -  **Testes de Integração de Banco de Dados:** Testar se a criação de um registro de usuário atualiza as tabelas relacionadas corretamente.
+  -  **Testes de Integração de Frontend e Backend:** Testar se um formulário de login no frontend envia a requisição correta ao backend e processa a resposta adequadamente.
+
+
+**Caso de testes**
+
+**Requisitos Funcionais:**
+
+**1)  Cadastro de Usuários**
+- Clicar em Criar Usuário na tela de login.
+- Preencher os campos: nome, sobrenome, e-mail, senha, Estado, Cidade, gênero, data de nascimento.
+- Clicar em Criar Usuário, para verificar se a aplicação é bem-sucedida caso os dados sejam válidos, ou se dá erro caso os dados sejam inválidos.
+
+**2) Autenticação de Usuários**
+- Preencher as credenciais (e-mail e senha).
+- Verificar se o login é bem-sucedido ou mal-sucedido clicando em entrar.
+
+**3) Cadastro de Medicamentos e Alarmes**
+- Selecionar a opção Cadastro de Medicamentos que fica na home da aplicação.
+- Preencher os campos: nome do medicamento, estoque Inicial, período de uso e  horários programados para alarme.
+- Clicar em adicionar.
+
+**4)  Editar medicamentos cadastrados**
+- Selecionar a opção Cadastro de Medicamentos que fica na home da aplicação.
+- Selecionar o medicamento que deseja editar.
+- Editar a opção desejada. 
+- Clicar na opção Guardar Alteração.
+
+**5)  Confirmar ingestão de medicamento**
+- Tocar na notificação que aparece na tela do celular que indica o horário correto para a ingestão do medicamento.
+- Clicar no botão “Confirmar Ingestão”.
+
+**6)  Consultar Histórico de Ingestão de Medicamentos**
+- Selecionar a opção Histórico de ingestão.
+- Selecionar o período desejado (dia, semana, mês, ano), onde será retornado o histórico de ingestão de medicamento desse período.
+
+
+**Requisitos Não Funcionais:**
+
+**1) Portabilidade**
+- Testar a responsividade em diferentes dispositivos e tamanho de tela.
+- Avaliar a navegabilidade do usuário.
+ 
+**2) Segurança**
+- Testar a aplicação contra Injeção SQL.
+- Verificar a proteção contra ataques de XSS e CSRF.
+- Testar a sobrecarga do sistemas contra ataques DDOs.
+  
+	**3) Desempenho**
+- Medir o tempo de resposta para operações críticas sob carga normal.
+- Testar a estabilidade da aplicação durante picos de carga.
+  
+**4) Usabilidade**
+- Testar a facilidade de aprendizado do sistema.
+- Testar a eficiência de uso da aplicação.
+  
+**5) Confiabilidade**
+- Testar a disponibilidade referindo-se ao tempo em que o sistema está acessível aos usuários.
+- Verificar a capacidade do sistema de continuar operando corretamente mesmo diante de falhas ou condições adversas.
+- Testar a habilidade do sistema de se recuperar rapidamente e eficientemente após uma falha.
+
 
 # Referências
 
