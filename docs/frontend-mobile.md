@@ -12,7 +12,7 @@ Gestão Med é uma aplicação desenvolvida para a organização e gestão da ad
 ## Arquitetura
 
 Arquitetura mobile é distribuída em multilayers de camadas lógicas da aplicação: As camadas podem ser assim divididas:
-Interface do Usuário (UI): Esta camada é responsável pela apresentação da interface gráfica para o usuário. Ela engloba todos os elementos visuais, como botões, menus e layouts, proporcionando a experiência de interação do usuário com o aplicativo.
+**Interface do Usuário (UI):** Esta camada é responsável pela apresentação da interface gráfica para o usuário. Ela engloba todos os elementos visuais, como botões, menus e layouts, proporcionando a experiência de interação do usuário com o aplicativo.
 Lógica de Apresentação: Lógica responsável por controlar como os dados são apresentados na interface do usuário. Inclui a manipulação de eventos de usuário, a atualização da interface em resposta a mudanças nos dados e a navegação entre diferentes telas e seções do aplicativo.
 Lógica de Negócios: Esta camada representa o núcleo da aplicação, sendo responsável por todas as operações e regras de negócios. Engloba o processamento de dados, validações e quaisquer outras operações que não estejam diretamente ligadas à interface do usuário.
 Acesso a Dados: Responsável por interagir com o banco de dados ou serviço web, neste caso, o Neon Tech. Suas funcionalidades incluem operações como consultas para recuperar dados do banco de dados, inserções para adicionar novos dados, atualizações para modificar dados existentes e exclusões para remover dados.
