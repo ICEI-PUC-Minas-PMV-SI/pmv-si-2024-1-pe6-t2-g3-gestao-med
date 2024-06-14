@@ -35,7 +35,50 @@ A seguir uma imagem que ilustra uma Arquitetura Cliente e Servidor em aplicaçõ
 
 
 ## Modelagem da Aplicação
-[Descreva a modelagem da aplicação, incluindo a estrutura de dados, diagramas de classes ou entidades, e outras representações visuais relevantes.]
+
+A aplicação GestãoMed possui uma estrutura de dados que envolve principalmente informações relevantes sobre as medicações, instrução sobre as formas corretas de administração e alertas para lembrar aos seus usuários os horários de administração de medicamentos.  
+ 
+ **Estrutura de dados e Entidades Principais:**  
+
+ 
+**1. Usuário**
+
+**name:**  Representa o nome do usuário.
+
+**email:** Representa o email do usuário.
+
+**phone:** Representa o número de telefone do usuário. 
+
+**date_of_birth:** Representa a data de nascimento do usuário. 
+
+**gender:** Representa o sexo do usuário.  
+
+**password:** Representa a senha do usuário. 
+
+ 
+**2. Medicação** 
+
+**id:** Identificador da medicação. 
+
+**name:** Representa o nome da medicação. 
+
+**description:** Representa informações sobre determinado medicamento, incluindo nome, posologia e demais informações associadas. 
+
+**stock:** Representa a quantidade de medicamentos ao iniciar um tratamento. 
+
+**time_to_take:** Representa o horário que a medicação deve ser administrada.  
+
+
+**3. Registro de tomada do medicamento** 
+ 
+**Medication_id:** Representa o identificador da medicação tomada. 
+
+**Medication_name:** Representa o nome da medicação tomada. 
+
+**Time_taken:** Representa o horário em que a medicação foi tomada.
+
+**Medication_taken:** Representa a informação se a medicação programada foi ou não administrada.
+
 
 ## Projeto da Interface
 [Descreva o projeto da interface móvel da aplicação, incluindo o design visual, layout das páginas, interações do usuário e outros aspectos relevantes.]
