@@ -29,6 +29,10 @@ São duas camadas do tipo _Tyers_ , camadas físicas, sendo elas  Servidor - Cli
 
 A seguir uma imagem que ilustra uma Arquitetura Cliente e Servidor em aplicações móveis:
 
+<p align="center">
+  <img width="460" height="300" src="https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2024-1-pe6-t2-g3-gestao-med/blob/main/docs/img/mobile%20architecture.png">
+</p>
+
 
 ## Modelagem da Aplicação
 [Descreva a modelagem da aplicação, incluindo a estrutura de dados, diagramas de classes ou entidades, e outras representações visuais relevantes.]
