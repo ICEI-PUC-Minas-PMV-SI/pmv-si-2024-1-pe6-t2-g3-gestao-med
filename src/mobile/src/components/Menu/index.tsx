@@ -1,7 +1,6 @@
 import { Container, Link } from "./styles"
-import { Text } from "react-native"
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { useNavigation } from "@react-navigation/native"
+import { House, Pill, User } from "phosphor-react-native"
 
 export default function FooterMenu() {
     const navigation = useNavigation<any>()
@@ -9,19 +8,14 @@ export default function FooterMenu() {
     return (
         <Container>
             <Link onPress={() => navigation.navigate('Home')}>
-                <Icon name='home' size={30}></Icon>
+                <House size={30} />
             </Link>
             <Link  onPress={() => navigation.navigate('Perfil')}>
-                <Icon name='account' size={30}></Icon>
+                <User size={30} />
             </Link>
-            <Link>
-                <Icon name='home' size={30}></Icon>
+            <Link onPress={() => navigation.navigate('Medicamentos')}>
+                <Pill size={30} />
             </Link>
-            <Link>
-                <Icon name='home' size={30}></Icon>
-            </Link>
-
-
         </Container>
     )
 }

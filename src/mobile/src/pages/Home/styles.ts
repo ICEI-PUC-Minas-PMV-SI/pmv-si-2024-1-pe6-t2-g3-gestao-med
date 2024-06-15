@@ -5,12 +5,13 @@ export const Background = styled.SafeAreaView`
     background-color: #2585C0;
 `
 
+export const MedicationsList = styled.ScrollView`
+    flex: 1;
+`
+
 export const ListMedications = styled.View`
     flex: 1;
-    scroll-behavior: auto;
-    padding: 5px 15px;
-    height: 300px;
-    
+    padding: 5px 15px;    
 `
 
 export const TimeBox = styled.View`
