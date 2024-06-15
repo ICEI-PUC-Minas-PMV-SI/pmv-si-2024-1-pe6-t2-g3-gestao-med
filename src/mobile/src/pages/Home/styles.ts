@@ -9,6 +9,7 @@ export const ListMedications = styled.View`
     flex: 1;
     scroll-behavior: auto;
     padding: 5px 15px;
+    height: 300px;
     
 `
 
@@ -31,7 +32,8 @@ export const Divider = styled.View`
 `
 
 export const Label = styled.Text`
-    font-size: 25px;
+    font-size: 20px;
+    color: #fff;
 `
 
 export const HighlightedLabel = styled.Text`

@@ -11,7 +11,7 @@ export default function Header(props: HeaderProps){
     return(
         <Container>
             <ButtonMenu onPress={() => navigation.openDrawer()}>
-                <Icon name='menu' size={35} color="#121212"></Icon>
+                <Icon name='menu' size={35} color="#FFF"></Icon>
             </ButtonMenu>
             { props.title && (
                 <Title>{props.title}</Title>

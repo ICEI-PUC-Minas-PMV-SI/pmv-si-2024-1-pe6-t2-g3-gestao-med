@@ -44,13 +44,14 @@ export const Input = styled.TextInput`
 export const Label = styled.Text`
     align-items: flex-start;
     font-size: 18px;
+    color: #fff;
 `
 
 export const SubmitButton = styled.TouchableOpacity`
     width: 90%;
     height: 45px;
     border-radius: 8px;
-    background-color:#00778C;
+    background-color:#075281;
     margin: 10px 0 20px 0;
     align-items: center;
     justify-content: center;
@@ -71,7 +72,6 @@ export const LinkText = styled.Text`
 export const Logo = styled.Image`
     width: 150px;
     height: 150px;
-    margin-bottom: 15px;
 `
 
 export const StyledPicker = styled(Picker)`

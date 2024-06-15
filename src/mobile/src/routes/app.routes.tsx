@@ -1,29 +1,34 @@
-import React from "react";
+import React, { useContext } from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import Home from '../pages/Home'
 import User from "../pages/User";
+import { Button } from "react-native";
+import { AuthContext } from "../contexts/auth";
+import CustomDrawerContent from "../components/CustomDrawer";
 
 const AppDrawer = createDrawerNavigator()
 
 function AppRoutes() {
+
     return (
         <AppDrawer.Navigator
             screenOptions={
                 {
                     headerShown: false,
                     drawerStyle: {
-                        backgroundColor: '#00B4D8',
+                        backgroundColor: '#2585C0',
                         paddingTop: 20
                     },
 
-                    drawerActiveBackgroundColor: '#6163ce',
+                    drawerActiveBackgroundColor: '#075281',
                     drawerActiveTintColor: '#FFF',
 
-                    drawerInactiveBackgroundColor: "F0F2FF",
-                    drawerInactiveTintColor: '#838181'
+                    drawerInactiveBackgroundColor: "#6eafd8",
+                    drawerInactiveTintColor: '#000000'
                 }
             }
+            drawerContent={(props) => <CustomDrawerContent {...props} />}
         >
             <AppDrawer.Screen
                 name="Home"
@@ -31,10 +36,12 @@ function AppRoutes() {
             />
 
             <AppDrawer.Screen
-                name="User"
+                name="Perfil"
                 component={User}
+                
             />
 
+            
         </AppDrawer.Navigator>
     )
 }

@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
+import { Button } from "react-native";
+import { AuthContext } from "../contexts/auth";
 
 
-function AuthRoutes(){
+function AuthRoutes() {
     const AuthStack = createNativeStackNavigator()
-    return(
+
+    return (
         <AuthStack.Navigator>
-            <AuthStack.Screen 
+            <AuthStack.Screen
                 name="SignIn"
                 component={SignIn}
                 options={{
@@ -17,19 +20,21 @@ function AuthRoutes(){
                 }}
             />
 
-            <AuthStack.Screen 
+            <AuthStack.Screen
                 name="SignUp"
                 component={SignUp}
                 options={{
-                    headerStyle:{
-                        backgroundColor:'#00778C',
-                        
+                    headerStyle: {
+                        backgroundColor: '#00778C',
+
                     },
                     headerTintColor: '#FFF',
-                    headerTitle:'Voltar',
+                    headerTitle: 'Voltar',
                     headerBackTitleVisible: false
-                }}           
+                }}
             />
+            
+
         </AuthStack.Navigator>
     )
 }
