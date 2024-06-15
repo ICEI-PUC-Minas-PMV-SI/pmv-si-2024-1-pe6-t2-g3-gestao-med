@@ -10,3 +10,6 @@ export const Container = styled.View`
     height: 40px;
     background-color: white;
 `
+
+export const Link = styled.TouchableOpacity`
+`

@@ -23,6 +23,7 @@ interface AuthContextData {
     signUp: (name: string, email: string, password: string, gender: string, date_of_birth: string) => void;
     signIn: (email: string, password: string) => void;
     signOut: () => void
+    user: UserProps | null
 }
 export const AuthContext = createContext({} as AuthContextData)
 
@@ -136,7 +137,7 @@ function AuthProvider({ children }: AuthContextProps) {
         })
     }
     return (
-        <AuthContext.Provider value={{ signed: !!user, signUp, loadingAuth, loading, signIn, signOut }}>
+        <AuthContext.Provider value={{ signed: !!user, signUp, loadingAuth, loading, signIn, signOut, user }}>
             {children}
         </AuthContext.Provider>
     )

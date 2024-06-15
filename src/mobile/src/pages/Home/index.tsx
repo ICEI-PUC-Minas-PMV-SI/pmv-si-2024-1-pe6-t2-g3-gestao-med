@@ -6,6 +6,7 @@ import { api } from '../../services/api';
 import { useIsFocused } from '@react-navigation/native'
 import MedicationItem from '../../components/MedicationItem';
 import FooterMenu from '../../components/Menu';
+import { Button } from 'react-native';
 
 export type MedicationsDTO = {
   id: string
@@ -106,29 +107,29 @@ export default function Home() {
     return closestTime;
   };
 
-  const renderGroupedMedications = () => {
-    const groupedMedications = groupMedicationsByTime();
-    const data = Object.keys(groupedMedications).map(time => ({
-      time,
-      medications: groupedMedications[time]
-    }));
+  // const renderGroupedMedications = () => {
+  //   const groupedMedications = groupMedicationsByTime();
+  //   const data = Object.keys(groupedMedications).map(time => ({
+  //     time,
+  //     medications: groupedMedications[time]
+  //   }));
 
-    const currentTime = currentTimeString()
+  //   const currentTime = currentTimeString()
 
-    let timeArray: string[] = []
+  //   let timeArray: string[] = []
 
-    data.forEach((item) => {
-      timeArray.push(item.time)
-    })
+  //   data.forEach((item) => {
+  //     timeArray.push(item.time)
+  //   })
 
 
 
-    return data.map(({ time, medications }) => (
-      <ListMedications key={time}>
+  //   return data.map(({ time, medications }) => (
+  //     <ListMedications key={time}>
 
-      </ListMedications>
-    ));
-  };
+  //     </ListMedications>
+  //   ));
+  // };
 
   const renderMedicationsByTime = () => {
     const groupedMeds = groupMedicationsByTime();
@@ -169,7 +170,9 @@ export default function Home() {
     <Background>
       <Header title={`Para Hoje: ${new Date().toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric' })}`} />
       {renderMedicationsByTime()}
+      <Button onPress={() => signOut()} title='Sair' />
       <FooterMenu />
+      
     </Background>
   );
 }
