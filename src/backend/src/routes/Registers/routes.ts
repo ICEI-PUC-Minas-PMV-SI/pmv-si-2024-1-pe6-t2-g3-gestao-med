@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { isAuthenticated } from "../../shared/middlewares/user-auth.middleware";
-import { exportRegistersReportController } from "../../Controllers/ExportRegistersReportController";
+import { exportRegistersReportController } from "../../Controllers/Registers/ExportRegistersReportController";
 
 const registersRouter = Router()
 
