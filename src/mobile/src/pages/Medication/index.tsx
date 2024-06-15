@@ -1,7 +1,9 @@
 import React, { useContext, useState } from "react";
 import { Platform, ActivityIndicator } from "react-native";
 
-import { AuthContext } from "../../contexts/auth";
+import { api } from "../../services/api";
+
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 import {
@@ -18,6 +20,8 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 
 export default function Medication() {
 
+    const [loadingAuth, setLoadingAuth] = useState(false)
+
     const [name, onChangeName] = React.useState('');
     const [description, onChangeDescription] = React.useState('');
     const [stock, onChangeStock] = React.useState('');
@@ -30,6 +34,31 @@ export default function Medication() {
         }
 
         // verificar como enviar para o backend
+        try {
+            const storageUser = await AsyncStorage.getItem('@medToken')
+            
+            api.defaults.headers['Authorization'] = `Bearer ${storageUser}`
+
+            setLoadingAuth(true)
+            const response = await api.post("/medication", {
+                name,
+                description,
+                stock: parseInt(stock),
+                time_to_take: timeToTake
+            })
+            console.log(response.data)
+            setLoadingAuth(false)
+            
+
+        } catch (err: any) {
+            setLoadingAuth(false)
+
+            console.log("Erro ao cadastrar", err)
+        }
+        setLoadingAuth(false)
+       
+
+        
     }
 
    
@@ -48,6 +77,7 @@ export default function Medication() {
                         <Input
                             placeholder="Nome"
                             value={name}
+                            onChangeText={(name => onChangeName(name))}
                         />
                     </AreaInput>
 
@@ -55,6 +85,7 @@ export default function Medication() {
                         <Input
                             placeholder="Descrição"
                             value={description}
+                            onChangeText={(description => onChangeDescription(description))}
                         />
                     </AreaInput>
 
@@ -63,6 +94,7 @@ export default function Medication() {
                             placeholder="Estoque inicial - opcional"
                             keyboardType="numeric"
                             value={stock}
+                            onChangeText={(stock => onChangeStock(stock))}
                         />
                     </AreaInput>
 
@@ -70,6 +102,7 @@ export default function Medication() {
                         <Input
                             placeholder="Período de uso"
                             value={timeToTake}
+                            onChangeText={(timeToTake => onChangeTimeToTake(timeToTake))}
                         />
                     </AreaInput>
 
