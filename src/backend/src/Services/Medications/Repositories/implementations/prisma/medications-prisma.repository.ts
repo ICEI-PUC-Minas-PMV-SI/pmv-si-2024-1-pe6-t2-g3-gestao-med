@@ -15,7 +15,8 @@ export class MedicationsPrismaRepository implements IMedicationsRepository{
     async findByUserId(user_id: string): Promise<MedicationsDTO[]> {
         return await prismaClient.medications.findMany({
             where: {
-                user_id
+                user_id,
+                deleted_at: null
             },
             select: {
                 id: true,

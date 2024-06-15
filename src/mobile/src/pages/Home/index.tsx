@@ -1,52 +1,62 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../../contexts/auth';
+import React, { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../contexts/auth";
 import Header from "../../components/Header";
-import { Background, Divider, HighlightedDivider, HighlightedLabel, Label, ListMedications, MedicationBox, TimeBox } from './styles'
-import { api } from '../../services/api';
-import { useIsFocused } from '@react-navigation/native'
-import MedicationItem from '../../components/MedicationItem';
-import FooterMenu from '../../components/Menu';
-import { Button } from 'react-native';
-
-import { Text } from 'react-native';
+import {
+  Background,
+  Divider,
+  HighlightedDivider,
+  HighlightedLabel,
+  Label,
+  ListMedications,
+  MedicationBox,
+  MedicationsList,
+  TimeBox,
+} from "./styles";
+import { api } from "../../services/api";
+import { useIsFocused } from "@react-navigation/native";
+import MedicationItem from "../../components/MedicationItem";
+import FooterMenu from "../../components/Menu";
+import { Button } from "react-native";
 
 export type MedicationsDTO = {
-  id: string
-  user_id: string
-  name: string
-  description: string
-  stock: number
-  time_to_take: string
-  treatment_finished_at: Date | null
-  created_at: Date | null
-  updated_at: Date | null
-  deleted_at: Date | null
-}
+  id: string;
+  user_id: string;
+  name: string;
+  description: string;
+  stock: number;
+  time_to_take: string;
+  treatment_finished_at: Date | null;
+  created_at: Date | null;
+  updated_at: Date | null;
+  deleted_at: Date | null;
+};
 
 export default function Home() {
-  const { signOut } = useContext(AuthContext)
-  const [medications, setMedications] = useState<MedicationsDTO[] | []>([])
-  const isFocused = useIsFocused()
+  const { signOut } = useContext(AuthContext);
+  const [medications, setMedications] = useState<MedicationsDTO[] | []>([]);
+  const isFocused = useIsFocused();
 
   useEffect(() => {
-    let isActive = true
+    let isActive = true;
 
     const getMedications = async () => {
       try {
-        const response = await api.get('/medications')
+        const response = await api.get("/medications");
         if (isActive) {
-          setMedications(response.data)
+          setMedications(response.data);
         }
       } catch (err: any) {
         if (err?.response.data.error === "Medications not found") {
-          console.error("Medications not found")
+          console.error("Medications not found");
         }
       }
-    }
-    getMedications()
+    };
+    getMedications();
 
-    return () => { isActive = false }
-  }, [isFocused])
+    return () => {
+      isActive = false;
+    };
+  }, [isFocused]);
 
   const groupMedicationsByTime = () => {
     const groupedMeds: { [key: string]: MedicationsDTO[] } = {};
@@ -71,24 +81,23 @@ export default function Home() {
     return sortedGroupedMeds;
   };
 
-
   const currentTimeString = () => {
-    const getCurrentTime = new Date()
-    const hour = getCurrentTime.getHours()
-    const minutes = getCurrentTime.getMinutes()
+    const getCurrentTime = new Date();
+    const hour = getCurrentTime.getHours();
+    const minutes = getCurrentTime.getMinutes();
 
-    return `${hour}:${minutes}`
-  }
+    return `${hour}:${minutes}`;
+  };
 
   const getNextTime = (currentTime: string, times: string[]): string | null => {
     let closestTime: string | null = null;
     let closestDifference = Infinity;
 
-    const [currentHour, currentMinute] = currentTime.split(':').map(Number);
+    const [currentHour, currentMinute] = currentTime.split(":").map(Number);
     const currentTotalMinutes = currentHour * 60 + currentMinute;
 
     for (const time of times) {
-      const [hour, minute] = time.split(':').map(Number);
+      const [hour, minute] = time.split(":").map(Number);
       const totalMinutes = hour * 60 + minute;
 
       // Calculate the difference between the times
@@ -111,46 +120,39 @@ export default function Home() {
 
   const renderGroupedMedications = () => {
     const groupedMedications = groupMedicationsByTime();
-    const data = Object.keys(groupedMedications).map(time => ({
+    const data = Object.keys(groupedMedications).map((time) => ({
       time,
-      medications: groupedMedications[time]
+      medications: groupedMedications[time],
     }));
 
-    const currentTime = currentTimeString()
+    const currentTime = currentTimeString();
 
-    let timeArray: string[] = []
+    let timeArray: string[] = [];
 
     data.forEach((item) => {
-      timeArray.push(item.time)
-    })
-
-
+      timeArray.push(item.time);
+    });
 
     return data.map(({ time, medications }) => (
-      <ListMedications key={time}>
-
-      </ListMedications>
+      <ListMedications key={time}></ListMedications>
     ));
   };
 
   const renderMedicationsByTime = () => {
     const groupedMeds = groupMedicationsByTime();
 
-    const data = Object.keys(groupedMeds)
+    const data = Object.keys(groupedMeds);
 
-    const currentTime = currentTimeString()
-    const nextTime = getNextTime(currentTime, data)
-
-
+    const currentTime = currentTimeString();
+    const nextTime = getNextTime(currentTime, data);
 
     return Object.keys(groupedMeds).map((time) => (
       <ListMedications key={time}>
-        <TimeBox >
+        <TimeBox>
           {time === nextTime ? (
             <>
               <HighlightedLabel>{time}</HighlightedLabel>
               <HighlightedDivider />
-
             </>
           ) : (
             <>
@@ -158,9 +160,8 @@ export default function Home() {
               <Divider />
             </>
           )}
-
         </TimeBox>
-        <MedicationBox >
+        <MedicationBox>
           {groupedMeds[time].map((med) => (
             <MedicationItem key={med.id} id={med.id} medName={med.name} />
           ))}
@@ -171,22 +172,24 @@ export default function Home() {
 
   return (
     <Background>
-      <Header title={`Para Hoje: ${new Date().toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric' })}`} />
-      {medications.length === 0 || !medications ?
-        
-        <ListMedications>
-          <Label>Nenhum medicamento encontrado</Label>
-        </ListMedications>
-        :
-        <>
-          {renderMedicationsByTime()}
-        </>
-      }
-      {/* {renderMedicationsByTime()} */}
-      <Button onPress={() => signOut()} title='Sair' />
+      <Header
+        title={`Para Hoje: ${new Date().toLocaleDateString("pt-BR", {
+          weekday: "long",
+          day: "numeric",
+        })}`}
+      />
+      <MedicationsList>
+        {medications.length === 0 || !medications ? (
+          <ListMedications>
+            <Label>Nenhum medicamento encontrado</Label>
+          </ListMedications>
+        ) : (
+          <>{renderMedicationsByTime()}</>
+        )}
+        {/* {renderMedicationsByTime()} */}
+      </MedicationsList>
+      <Button onPress={() => signOut()} title="Sair" />
       <FooterMenu />
-
     </Background>
   );
 }
-
