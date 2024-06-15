@@ -15,6 +15,7 @@ export const Container = styled.SafeAreaView`
 
 export const Title = styled.Text`
     font-size: 22px;
+    color: #FFF;
 `
 
 export const ButtonMenu = styled.TouchableOpacity`

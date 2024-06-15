@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Platform, ActivityIndicator } from "react-native";
 import DateTimePicker from "@react-native-community/datetimepicker";
-
+import { useNavigation } from "@react-navigation/native";
 import { AuthContext } from "../../contexts/auth";
 
 import { Picker } from "@react-native-picker/picker";
@@ -19,6 +19,8 @@ import {
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import Header from "../../components/Header";
 import { Label } from "./styles";
+import { api } from "../../services/api";
+import FooterMenu from "../../components/Menu";
 
 export enum Gender {
     MALE,
@@ -26,35 +28,39 @@ export enum Gender {
     OTHER,
 }
 export default function User() {
+    const navigation = useNavigation<any>()
 
-    const { signUp, loadingAuth, user } = useContext(AuthContext)
+    const { loadingAuth, user } = useContext(AuthContext)
 
     const [name, setName] = useState<string>('')
     const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [confirmPassword, setConfirmPassword] = useState('')
     const [gender, setGender] = useState('')
     const [dateOfBirth, setDateOfBirth] = useState<Date | null>(null);
     const [showDatePicker, setShowDatePicker] = useState(false);
+    const [buttonIsDisabled, setButtonIsDisabled] = useState(true)
 
-    const handleSignUp = async () => {
-        if (!name || !email || !password || !confirmPassword || !gender || !dateOfBirth) {
-            alert("Preencha todos os campos");
-            return;
+    const handleUpdateUser = async () => {
+
+        try{
+            const response = await api.put("/user/update", {
+                name: name ? name : undefined,
+                email: email ? email : undefined,
+                gender: gender ? gender : undefined,
+                dateOfBirth: dateOfBirth ? dateOfBirth : undefined
+            })
+
+            if(response.status === 201){
+                navigation.navigate("User")
+            }
+        }catch(err: any){
+
         }
 
-        if (password !== confirmPassword) {
-            alert("As senhas não coincidem")
-            return
-        }
 
-        // Format the dateOfBirth as desired (e.g., "YYYY-MM-DD")
-        //const formattedDateOfBirth = dateOfBirth?.toISOString().split('T')[0];
-
-        signUp(name, email, password, gender, dateOfBirth.toString())
     }
 
     const handleDateChange = (event: any, selectedDate: Date | undefined) => {
+        setButtonIsDisabled(false)
         const currentDate = selectedDate || dateOfBirth;
         setShowDatePicker(Platform.OS === 'ios');
         setDateOfBirth(currentDate);
@@ -101,7 +107,12 @@ export default function User() {
                         <Input
                             placeholder={user?.name}
                             value={name}
-                            onChangeText={(text) => setName(text)}
+                            onChangeText={
+                                (text) => {
+                                    setName(text)
+                                    setButtonIsDisabled(false)
+                                }
+                            }
                             placeholderTextColor="#171717"
 
                         />
@@ -112,7 +123,12 @@ export default function User() {
                         <Input
                             placeholder={user?.email}
                             value={email}
-                            onChangeText={(text) => setEmail(text)}
+                            onChangeText={
+                                (text) => {
+                                    setName(text)
+                                    setButtonIsDisabled(false)
+                                }
+                            }
                             placeholderTextColor="#171717"
 
                         />
@@ -143,18 +159,21 @@ export default function User() {
                         <Label>Gênero: </Label>
                         <StyledPicker
                             selectedValue={gender}
-                            onValueChange={(itemValue) => setGender(itemValue as string)}
+                            onValueChange={(itemValue) => {
+                                setGender(itemValue as string)
+                                setButtonIsDisabled(false)
+                            }}
                             placeholder={user?.gender}
                         >
-                            <Picker.Item label={user?.gender === "MALE" ? "Masculino" : user?.gender === "FEMALE" ? "Feminino" : "Outro" } value={user?.gender} />
+                            <Picker.Item label={user?.gender === "MALE" ? "Masculino" : user?.gender === "FEMALE" ? "Feminino" : "Outro"} value={user?.gender} />
                             <Picker.Item label="Masculino" value="MALE" />
                             <Picker.Item label="Feminino" value="FEMALE" />
                             <Picker.Item label="Outro" value="OTHER" />
                         </StyledPicker>
                     </AreaInput>
 
-                   
-                    <SubmitButton onPress={handleSignUp}>
+
+                    <SubmitButton onPress={handleUpdateUser} disabled={buttonIsDisabled}>
 
                         {loadingAuth ? (
                             <ActivityIndicator size={20} color="#FFF" />
@@ -164,7 +183,9 @@ export default function User() {
 
                     </SubmitButton>
                 </Container>
+
             </KeyboardAwareScrollView>
+            <FooterMenu />
         </Background>
 
     )
