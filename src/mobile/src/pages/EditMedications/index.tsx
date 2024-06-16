@@ -128,7 +128,7 @@ export default function EditMedication() {
             <AreaInput>
               <Label>Nome: </Label>
               <Input
-                placeholder="Nome"
+                placeholder="Ex: Dipirona"
                 value={name}
                 onChangeText={(name) => onChangeName(name)}
               />
@@ -136,7 +136,7 @@ export default function EditMedication() {
             <AreaInput>
               <Label>Descrição: </Label>
               <Input
-                placeholder="Descrição"
+                placeholder="Ex: Como administrar a medicação"
                 value={description}
                 onChangeText={(description) => onChangeDescription(description)}
               />
@@ -144,14 +144,14 @@ export default function EditMedication() {
             <AreaInput>
               <Label>Estoque inicial: </Label>
               <Input
-                placeholder="Estoque inicial"
+                placeholder="Ex: 10"
                 keyboardType="numeric"
                 value={stock}
                 onChangeText={(stock) => onChangeStock(stock)}
               />
             </AreaInput>
             <AreaInput>
-              <Label>Período de uso: </Label>
+              <Label>Horário de administração: </Label>
               {timeToTake.map((time, index) => (
                 <TimeInputContainer key={index}>
                   <TimeInput

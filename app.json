@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "pmv-si-2024-1-pe6-t2-g3-gestao-med",
+    "slug": "pmv-si-2024-1-pe6-t2-g3-gestao-med",
+    "version": "1.0.0",
+    "sdkVersion": "51.0.0",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "android": {
+      "package": "com.anonymous.pmvsi20241pe6t2g3gestaomed"
+    }
+  }
+}

@@ -188,7 +188,6 @@ export default function Home() {
         )}
         {/* {renderMedicationsByTime()} */}
       </MedicationsList>
-      <Button onPress={() => signOut()} title="Sair" />
       <FooterMenu />
     </Background>
   );
