@@ -1,11 +1,11 @@
 import { Router, Request, Response } from "express";
 import { isAuthenticated } from "../../shared/middlewares/user-auth.middleware";
-import { userMedicationsController } from "../../Controllers/UserMedicationsController";
-import { registerMedicateController } from "../../Controllers/RegisterMedicateController";
-import { getSingleMedicationController } from "../../Controllers/GetSingleMedicationController";
-import { deleteMedicationController } from "../../Controllers/DeleteMedicationController";
-import { takenMedicationController } from "../../Controllers/TakenMedicationController";
-import { editMedicationController } from "../../Controllers/EditMedicationController";
+import { userMedicationsController } from "../../Controllers/Medications/UserMedicationsController";
+import { registerMedicateController } from "../../Controllers/Medications/RegisterMedicateController";
+import { getSingleMedicationController } from "../../Controllers/Medications/GetSingleMedicationController";
+import { deleteMedicationController } from "../../Controllers/Medications/DeleteMedicationController";
+import { takenMedicationController } from "../../Controllers/Medications/TakenMedicationController";
+import { editMedicationController } from "../../Controllers/Medications/EditMedicationController";
 
 
 const medicationRouter = Router()
@@ -23,7 +23,7 @@ medicationRouter.get("/medication" , isAuthenticated, async (request, response) 
     await getSingleMedicationController.handle(request, response)
 }) 
 //delete medications
-medicationRouter.patch("/medication/delete/:medicationId" , isAuthenticated, async (request, response) => {
+medicationRouter.post("/medication/delete/:medicationId" , isAuthenticated, async (request, response) => {
     await deleteMedicationController.handle(request, response)
 }) 
 

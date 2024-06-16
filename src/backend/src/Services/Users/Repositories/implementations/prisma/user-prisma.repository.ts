@@ -1,8 +1,22 @@
 import prismaClient from "../../../../../prisma";
 import { UserResponseDTO, UserAuthDTO } from "../../../UserDto/user.dto";
 import { IUsersRepository } from "../../users.repository";
+import { Gender } from "@prisma/client"
 
 export class UserPrismaRepository implements IUsersRepository {
+  async update(email: string, name: string, date_of_birth: Date, gender: Gender, user_id: string): Promise<void> {
+    await prismaClient.user.update({
+      where:{
+        id: user_id
+      },
+      data:{
+        email,
+        name,
+        date_of_birth,
+        gender
+      }
+    })
+  }
   async findByEmail(email: string): Promise<UserAuthDTO | null> {
     return await prismaClient.user.findUnique({
       where: {

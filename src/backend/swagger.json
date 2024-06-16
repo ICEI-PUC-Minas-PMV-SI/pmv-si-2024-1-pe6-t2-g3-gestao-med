@@ -245,8 +245,8 @@
                 }
             }
         },
-        "/medication/delete":{
-            "patch":{
+        "/medication/delete/{medicationId}":{
+            "post":{
                 "tags": [
                     "Medications"
                 ],

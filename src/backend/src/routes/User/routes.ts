@@ -1,11 +1,9 @@
 import { Router, Request, Response } from "express";
-import { AuthUserController } from "../../Controllers/AuthenticateUser/authUserController";
-import { UserDetailsController } from "../../Controllers/UserDetailsController/userDetailsController";
 import { isAuthenticated } from "../../shared/middlewares/user-auth.middleware";
-import { UserMedicationsController } from "../../Controllers/UserMedicationsController/userMedicationsController";
-import { createUserController } from "../../Controllers/CreateUser";
-import { authUserController } from "../../Controllers/AuthenticateUser";
-import { userDetailsController } from "../../Controllers/UserDetailsController";
+import { updateUserController } from "../../Controllers/User/UpdateUserController";
+import { createUserController } from "../../Controllers/User/CreateUser";
+import { authUserController } from "../../Controllers/User/AuthenticateUser";
+import { userDetailsController } from "../../Controllers/User/UserDetailsController";
 
 const userRouter = Router()
 
@@ -24,5 +22,9 @@ userRouter.get("/user", isAuthenticated, async (request, response) => {
     await userDetailsController.handle(request, response)
 })
 
+//update user profile
+userRouter.put("/user/update", isAuthenticated, async (request, response) => {
+    await updateUserController.handle(request, response)
+})
 
 export {userRouter}
