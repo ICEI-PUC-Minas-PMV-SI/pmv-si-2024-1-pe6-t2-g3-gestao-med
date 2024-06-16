@@ -197,7 +197,7 @@ export default function Medications() {
                           <EditIcon
                           // onPress={handleOpenEditModal}
                           >
-                            <Link onPress={() => navigation.navigate('Editar medicamento')}>
+                            <Link onPress={() => navigation.navigate('Editar medicamento', {medicationId: medication.id})}>
                                 <Pencil size={18} />
                             </Link>
                             

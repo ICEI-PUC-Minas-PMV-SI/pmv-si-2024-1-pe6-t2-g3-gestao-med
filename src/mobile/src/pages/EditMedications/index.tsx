@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Platform, ActivityIndicator } from "react-native";
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 
 import { api } from "../../services/api";
 
@@ -23,11 +23,12 @@ import {
 import Header from "../../components/Header";
 import FooterMenu from "../../components/Menu";
 
+type EditMedicationRouteProp = RouteProp<{ params: { medicationId: string } }, 'params'>;
 export default function EditMedication() {
     
   const navigation = useNavigation();
-  const route = useRoute();
-  const  medicationId  = route.params;
+  const route = useRoute<EditMedicationRouteProp>();
+  const  { medicationId }  = route.params;
 
   const [loading, setLoading] = useState(false);
 
@@ -37,18 +38,20 @@ export default function EditMedication() {
   const [timeToTake, setTimeToTake] = useState([""]);
 
   useEffect(() => {
-    
+    setLoading(true);
+
     const loadMedication = async () => {
       try {
-        setLoading(true);
-        const response = await api.get(`/medication/${medicationId}`);
+        const response = await api.get(`/medication?medicationId=${medicationId}`);
         const medication = response.data;
+
         onChangeName(medication.name);
         onChangeDescription(medication.description);
         onChangeStock(medication.stock.toString());
         setTimeToTake(medication.time_to_take.split(","));
-      } catch (err) {
-        console.log("Erro ao carregar medicamento", err);
+        
+      } catch (err: any) {
+        // console.log("Erro ao carregar medicamento", err.response.data);
       } finally {
         setLoading(false);
       }

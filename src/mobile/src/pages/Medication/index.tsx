@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Platform, ActivityIndicator, Button } from "react-native";
+import { Platform, ActivityIndicator } from "react-native";
 
 import { api } from "../../services/api";
 
@@ -162,7 +162,5 @@ export default function Medication() {
     </Background>
   );
 }
-function uuidv4() {
-  throw new Error("Function not implemented.");
-}
+
 
