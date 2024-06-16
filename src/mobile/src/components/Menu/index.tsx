@@ -1,6 +1,6 @@
 import { Container, Link } from "./styles"
 import { useNavigation } from "@react-navigation/native"
-import { House, Pill, User } from "phosphor-react-native"
+import { House, Pill, Plus, User } from "phosphor-react-native"
 
 export default function FooterMenu() {
     const navigation = useNavigation<any>()
@@ -12,6 +12,9 @@ export default function FooterMenu() {
             </Link>
             <Link  onPress={() => navigation.navigate('Perfil')}>
                 <User size={30} />
+            </Link>
+            <Link  onPress={() => navigation.navigate('Cadastrar medicamento')}>
+                <Plus size={30} />
             </Link>
             <Link onPress={() => navigation.navigate('Medicamentos')}>
                 <Pill size={30} />
