@@ -33,7 +33,7 @@ class CreateUserService {
 
     if (data.gender.toUpperCase() === "MALE") data.gender = Gender.MALE;
     if (data.gender.toUpperCase() === "FEMALE") data.gender = Gender.FEMALE;
-    //if (data.gender.toUpperCase() === "OTHER") data.gender = Gender.OTHER;
+    if (data.gender.toUpperCase() === "OTHER") data.gender = Gender.OTHER;
 
     // const phoneRegex = /^\d{11}$/;
 
