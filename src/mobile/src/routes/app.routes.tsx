@@ -2,6 +2,7 @@ import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import Home from "../pages/Home";
+import Medication from "../pages/Medication";
 import User from "../pages/User";
 import CustomDrawerContent from "../components/CustomDrawer";
 import Medications from "../pages/Medications";
@@ -29,6 +30,7 @@ function AppRoutes() {
       <AppDrawer.Screen name="Home" component={Home} />
       <AppDrawer.Screen name="Perfil" component={User} />
       <AppDrawer.Screen name="Medicamentos" component={Medications} />
+      <AppDrawer.Screen name="Cadastrar medicamento" component={Medication} />
     </AppDrawer.Navigator>
   );
 }
