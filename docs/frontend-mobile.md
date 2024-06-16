@@ -87,13 +87,39 @@ A aplicação GestãoMed possui uma estrutura de dados que envolve principalment
 [Inclua os wireframes das páginas principais da interface, mostrando a disposição dos elementos na página.]
 
 ### Design Visual
-[Descreva o estilo visual da interface, incluindo paleta de cores, tipografia, ícones e outros elementos gráficos.]
+
+1. Paleta de Cores:
+Optamos por uma paleta predominante de tons azuis para o front end para proporcionar uma experiência de usuário agradável pois o azul é uma cor associada à tranquilidade, calma e confiança. A cor primária tem o código #2CA3D7.
+
+3. Tipografia:
+A fonte principal usada no corpo do texto é "Roboto”. A fonte é legível e possui uma aparência moderna.
+
+5. Botões:
+Os botões na interface têm bordas arredondadas e prevalência na cor de fundo verde (#009588) com texto em branco para criar um contraste com o fundo escuro e facilitar a leitura para o usuário.
+
+7. Campos:
+Os campos de preenchimento de texto têm bordas arredondadas e uma cor de fundo branca que contrasta com os textos de instrução de escrita na cor cinza, código #A5A5A5.
 
 ### Layout Responsivo
-[Discuta como a interface será adaptada para diferentes tamanhos de tela e dispositivos.]
+O desenvolvimento do front end responsivo tem como parte essencial a adaptação da interface do projeto para diferentes tamanhos de tela e dispositivos. Seguem abaixo maneiras de adaptação da interface:
+
+Media Queries: Utilizaremos media queries em nosso CSS para aplicar estilos específicos com base na largura da tela. Isso permite a personalização de estilos, como alterar o tamanho das fontes, reorganizar os elementos na página e ocultar ou exibir certos conteúdos com base na resolução da tela.
+
+Layout Flexível: O layout da página será projetado com unidades flexíveis, como porcentagens, em vez de unidades fixas, como pixels. Isso permite que os elementos da página se ajustem dinamicamente ao tamanho da tela, preenchendo o espaço disponível de forma adequada.
+
+Menu de Navegação Adaptável: Em dispositivos móveis e tablets, podemos substituir o menu de navegação tradicional por um menu de hambúrguer, economizando espaço na tela e tornando a navegação por toque mais fácil.
+
+Imagens Responsivas: As imagens serão configuradas para serem responsivas. Isso significa que as imagens se redimensionarão automaticamente para se ajustar ao tamanho da tela, economizando largura de banda e melhorando o desempenho.
+
+Fontes Flexíveis: O tamanho e o estilo das fontes também serão ajustados para garantir que o texto seja legível em diferentes dispositivos. Usaremos unidades relativas, como "em" e "rem", para manter a consistência.
+
+Testes em Múltiplos Dispositivos: A interface será testada em uma variedade de dispositivos e tamanhos de tela, desde smartphones até monitores de alta resolução. Isso ajuda a identificar problemas e garantir que a experiência do usuário seja otimizada em todos os contextos.
+
+Componentes Interativos: Elementos interativos, como botões e caixas de entrada, serão dimensionados e espaçados adequadamente para garantir que sejam fáceis de usar em telas sensíveis ao toque e com dispositivos de entrada variados.
 
 ### Interações do Usuário
-[Descreva as interações do usuário na interface, como animações, transições entre páginas e outras interações.]
+
+O projeto foi desenvolvido com o objetivo de oferecer uma experiência prática, permitindo que pessoas de todas as idades realizem facilmente os cadastros do usuário e de medicamentos a serem tomados.  É esperado que os processos de login e de alarme retornados pelo sistema também sejam compreendidos facilmente.
 
 ## Fluxo de Dados
 
@@ -115,7 +141,6 @@ Exemplos de fluxos de dados da aplicação:
 3. **Back end** recebe a requisição, faz as validações, caso os dados estejam válidos salva as informações do medicamento no banco de dados e retorna uma resposta com código de status 201, caso alguma informação informada não seja válida é retornado um erro com o respectivo código de status.
 4. **Aplicativo Mobile** recebe a resposta e informa ao usuário o sucesso ou falha no cadastro do medicamento.
 
-
 **Consulta dos medicamentos:**
 
 1. **Usuário** acessa a tela de medicamentos.
@@ -125,16 +150,32 @@ Exemplos de fluxos de dados da aplicação:
 
 ## Requisitos Funcionais
 
-[Liste os principais requisitos funcionais da aplicação.]
+|ID    | Descrição do Requisito  | Prioridade |
+|------|-----------------------------------------|----|
+|RF-001| Gerenciar usuário paciente | ALTA |
+|RF-002| Fazer *login*  | ALTA |
+|RF-003| Gerenciar medicamentos e alertas  | ALTA |
+|RF-004| Disparar lembrete no horário com orientações para tomar o medicamento  | ALTA |
+|RF-005| Disparar alerta de fim de estoque de medicamentos | ALTA |
+|RF-006| Permitir que o paciente confirme a ingestão ao ser notificado | MÉDIA |
 
 ## Requisitos Não Funcionais
 
-[Liste os principais requisitos não funcionais da aplicação, como desempenho, segurança, escalabilidade, etc.]
-
+|ID     | Descrição do Requisito  |Prioridade |
+|-------|-------------------------|----|
+|RNF-001| O sistema atenderá ao requisito de PORTABILIDADE - executável a partir do Android  8.1 Oreo 2017 e do IOS 12 | ALTA |
+|RNF-002| O sistema atenderá a Lei de Geral de Proteção de Dados pessoais nº 13.709/2018 | ALTA |
+|RNF-003| O sistema deverá atender ao requisito de USABILIDADE - facilidade no uso do sistema com 3 cliques máximos para alcançar a função | ALTA |
+|RNF-004| O sistema deverá atender ao requsiito de **CONFIABILIDADE** - terá alta disponibilidade 99% do tempo | ALTA |
+|RNF-005| O *Layout* do sistema deverá usar *design* responsivo, para que renderize bem em qualquer dispositivo celular ou tablet de XXXX pixels | MÉDIA |
+|RNF-006| O sistema deverá processar requisições do usuário em no máximo 3s | BAIXA |
 
 ## Considerações de Segurança
 
-[Discuta as considerações de segurança relevantes para a aplicação distribuída, como autenticação, autorização, proteção contra ataques, etc.]
+A segurança é um ponto crítico para a garantia da integridade e confiabilidade do funcionamento da aplicação. Seguem algumas considerações de segurança relacionadas ao front-end:
+
+- Autenticação e autorização da api com criação do token JWT.
+- Validação de dados de entrada retornando campos cuidadosamente avaliados.
 
 ## Implantação
 
@@ -206,7 +247,6 @@ Exemplos de fluxos de dados da aplicação:
 **6)  Consultar Histórico de Ingestão de Medicamentos**
 - Selecionar a opção Histórico de ingestão.
 - Selecionar o período desejado (dia, semana, mês, ano), onde será retornado o histórico de ingestão de medicamento desse período.
-
 
 **Requisitos Não Funcionais:**
 
