@@ -81,7 +81,6 @@ A aplicação GestãoMed possui uma estrutura de dados que envolve principalment
 
 
 ## Projeto da Interface
-[Descreva o projeto da interface móvel da aplicação, incluindo o design visual, layout das páginas, interações do usuário e outros aspectos relevantes.]
 
 ### Wireframes
 [Inclua os wireframes das páginas principais da interface, mostrando a disposição dos elementos na página.]
@@ -272,7 +271,12 @@ A segurança é um ponto crítico para a garantia da integridade e confiabilidad
 - Verificar a capacidade do sistema de continuar operando corretamente mesmo diante de falhas ou condições adversas.
 - Testar a habilidade do sistema de se recuperar rapidamente e eficientemente após uma falha.
 
-
 # Referências
+
+Documentação React Native - https://reactnative.dev/docs/getting-started
+
+Documentação Expo - https://docs.expo.dev/
+
+W3 School - https://www.w3schools.com/css/css_website_layout.asp
 
 Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho.
