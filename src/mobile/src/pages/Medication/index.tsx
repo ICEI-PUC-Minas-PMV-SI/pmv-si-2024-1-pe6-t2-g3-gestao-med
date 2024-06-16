@@ -23,12 +23,15 @@ import Header from "../../components/Header";
 import FooterMenu from "../../components/Menu";
 
 export default function Medication() {
+
   const [loading, setLoading] = useState(false);
 
   const [name, onChangeName] = React.useState("");
   const [description, onChangeDescription] = React.useState("");
   const [stock, onChangeStock] = React.useState("");
   const [timeToTake, setTimeToTake] = React.useState([""]);
+
+  
 
   const handleAddTimeField = () => {
     setTimeToTake([...timeToTake, ""]);
@@ -159,3 +162,7 @@ export default function Medication() {
     </Background>
   );
 }
+function uuidv4() {
+  throw new Error("Function not implemented.");
+}
+

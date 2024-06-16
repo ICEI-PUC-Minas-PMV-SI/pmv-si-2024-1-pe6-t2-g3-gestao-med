@@ -98,9 +98,7 @@ export default function User() {
                     behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
                     enabled
                 >
-                    <Logo
-                        source={require('../../assets/logotipo.png')}
-                    />
+                <Logo source={require('../../assets/logotipo.png')}/>
 
                     <AreaInput>
                         <Label>Nome: </Label>
