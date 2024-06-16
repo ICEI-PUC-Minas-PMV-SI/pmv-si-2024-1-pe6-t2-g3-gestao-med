@@ -178,13 +178,52 @@ A segurança é um ponto crítico para a garantia da integridade e confiabilidad
 
 ## Implantação
 
-[Instruções para implantar a aplicação distribuída em um ambiente de produção.]
+**Implementação do Aplicativo de Gestão de Medicamentos com *React Native* e *TypeScript*:**
 
-1. Defina os requisitos de hardware e software necessários para implantar a aplicação em um ambiente de produção.
-2. Escolha uma plataforma de hospedagem adequada, como um provedor de nuvem ou um servidor dedicado.
-3. Configure o ambiente de implantação, incluindo a instalação de dependências e configuração de variáveis de ambiente.
-4. Faça o deploy da aplicação no ambiente escolhido, seguindo as instruções específicas da plataforma de hospedagem.
-5. Realize testes para garantir que a aplicação esteja funcionando corretamente no ambiente de produção.
+**1) Configuração Inicial**
+
+Para desenvolver o aplicativo, foi utilizado um backend gerado no Node.js. Portanto, era essencial configurar o servidor, incluindo variáveis de ambiente, configuração do banco de dados e ajustes de segurança.
+Posteriormente, segue-se os passos para configurar um novo projeto *React Native* com *TypeScript* no *Node.js*, para isso, executou-se o seguinte comando:
+
+*npx react-native init MeuApp --template react-native-template-typescript*
+
+**2) Componentes e Telas**
+
+A criação de componentes funcionais e de classe é essencial para construir as telas do aplicativo. 
+Neste trabalho foram criados, por exemplo, as seguintes páginas:
+
+- Tela para cadastro de usuário
+- Tela para exibir detalhes de um medicamento
+- Tela para mostrar o histórico de uso.
+
+**3) Integração com APIs**
+
+Para obter dados de medicamentos, é necessário integrar o aplicativo com uma API externa, nesse trabalho é utilizado a *neon tech*.
+
+**4) Publicação na Loja**
+
+Por fim é realizado ajustes no aplicativo para publicação na Google Play Store (Android) e na App Store (iOS), para publicar o aplicativo na loja, é necessário seguir os seguintes passos:
+
+- **Criação da Chave Privada (Private Key) ou Atualização na Store Apps:**
+
+Inicialmente, deve-se criar uma chave privada (private key) ou atualizar a existente na loja de aplicativos (chave de identificação).
+Essa chave é essencial para assinar o APK (Android Package) antes de publicá-lo.
+
+- **Gerenciamento de Variáveis:**
+
+A pasta android/app do projeto deve ser acessada.
+No arquivo gradle.properties, adicionar as variáveis necessárias, como informações de API, chaves de acesso, etc.
+
+- **Configuração do Build Gradle:**
+
+Informe ao arquivo build.gradle para usar as informações das variáveis definidas anteriormente.
+Atualize a seção signingConfigs para incluir as configurações de assinatura para a versão de release.
+
+- **Geração do APK:**
+
+No terminal, navegue até a pasta do projeto.
+Execute o comando ./gradlew bundleRelease.
+Isso gerará o arquivo de release no formato AAB (Android App Bundle).
 
 ## Testes
 
@@ -258,7 +297,7 @@ A segurança é um ponto crítico para a garantia da integridade e confiabilidad
 - Verificar a proteção contra ataques de XSS e CSRF.
 - Testar a sobrecarga do sistemas contra ataques DDOs.
   
-	**3) Desempenho**
+**3) Desempenho**
 - Medir o tempo de resposta para operações críticas sob carga normal.
 - Testar a estabilidade da aplicação durante picos de carga.
   
