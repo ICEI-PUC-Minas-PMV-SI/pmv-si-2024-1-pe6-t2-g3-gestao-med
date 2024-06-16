@@ -279,4 +279,4 @@ Documentação Expo - https://docs.expo.dev/
 
 W3 School - https://www.w3schools.com/css/css_website_layout.asp
 
-Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho.
+
