@@ -6,6 +6,7 @@ import Medication from "../pages/Medication";
 import User from "../pages/User";
 import CustomDrawerContent from "../components/CustomDrawer";
 import Medications from "../pages/Medications";
+import EditMedicate from "../pages/EditMedications";
 
 const AppDrawer = createDrawerNavigator();
 
@@ -31,6 +32,8 @@ function AppRoutes() {
       <AppDrawer.Screen name="Perfil" component={User} />
       <AppDrawer.Screen name="Medicamentos" component={Medications} />
       <AppDrawer.Screen name="Cadastrar medicamento" component={Medication} />
+      <AppDrawer.Screen name="Editar medicamento" component={EditMedicate} />
+
     </AppDrawer.Navigator>
   );
 }

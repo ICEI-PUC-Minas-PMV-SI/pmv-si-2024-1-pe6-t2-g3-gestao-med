@@ -18,11 +18,12 @@ import {
   LearnMoreAndRemove,
   Remove,
   LoadingBox,
+  Link,
 } from "./styles";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import Header from "../../components/Header";
 import { Pencil, Pill } from "phosphor-react-native";
-import { useIsFocused } from "@react-navigation/native";
+import { useIsFocused, useNavigation } from "@react-navigation/native";
 import { api } from "../../services/api";
 import FooterMenu from "../../components/Menu";
 
@@ -42,6 +43,8 @@ export type MedicationsDTO = {
 export default function Medications() {
   const [medications, setMedications] = useState<MedicationsDTO[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  const navigation = useNavigation<any>()
 
   const isFocused = useIsFocused();
 
@@ -194,7 +197,10 @@ export default function Medications() {
                           <EditIcon
                           // onPress={handleOpenEditModal}
                           >
-                            <Pencil size={18} />
+                            <Link onPress={() => navigation.navigate('Editar medicamento')}>
+                                <Pencil size={18} />
+                            </Link>
+                            
                           </EditIcon>
                         </MedicationNameEdit>
                         <Recurrence>
