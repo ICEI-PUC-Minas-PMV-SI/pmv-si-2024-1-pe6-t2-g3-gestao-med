@@ -47,8 +47,6 @@ A aplicação GestãoMed possui uma estrutura de dados que envolve principalment
 
 **email:** Representa o email do usuário.
 
-**phone:** Representa o número de telefone do usuário. 
-
 **date_of_birth:** Representa a data de nascimento do usuário. 
 
 **gender:** Representa o sexo do usuário.  
