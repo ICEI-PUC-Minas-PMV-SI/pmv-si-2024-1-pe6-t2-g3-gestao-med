@@ -81,7 +81,38 @@ A aplicação GestãoMed possui uma estrutura de dados que envolve principalment
 ## Projeto da Interface
 
 ### Wireframes
-[Inclua os wireframes das páginas principais da interface, mostrando a disposição dos elementos na página.]
+
+Tela de login
+
+![login](img/login.jpeg)
+
+Tela Home
+
+![home](img/home.jpeg)
+
+Tela Menu
+
+![menu](img/menu.jpeg)
+
+Tela Cadastrar Usuário
+
+![cadusuario](img/cadastro-usuario.jpeg)
+
+Tela Perfil
+
+![perfil](img/meu-perfil.jpeg)
+
+Tela Cadastrar Medicamento
+
+![cadmedicamento](img/cadastrar-medicamento.jpeg)
+
+Tela Editar Medicamento
+
+![editmedicamento](img/editar-medicamento.jpeg)
+
+Tela Medicamentos
+
+![medicamentosn](img/medicamentos.jpeg)
 
 ### Design Visual
 
