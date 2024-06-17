@@ -4,9 +4,10 @@ Gestão Med é uma aplicação desenvolvida para a organização e gestão da ad
 
 
 ## Tecnologias Utilizadas
- 1) React Native
- 2) Typescript
- 3) Figma
+
+React Native
+Typescript
+Figma
 
 
 ## Arquitetura
@@ -209,14 +210,14 @@ A segurança é um ponto crítico para a garantia da integridade e confiabilidad
 
 **Implementação do Aplicativo de Gestão de Medicamentos com *React Native* e *TypeScript*:**
 
-**1) Configuração Inicial**
+**1. Configuração Inicial**
 
 Para desenvolver o aplicativo, foi utilizado um backend gerado no Node.js. Portanto, era essencial configurar o servidor, incluindo variáveis de ambiente, configuração do banco de dados e ajustes de segurança.
 Posteriormente, segue-se os passos para configurar um novo projeto *React Native* com *TypeScript* no *Node.js*, para isso, executou-se o seguinte comando:
 
 *npx react-native init MeuApp --template react-native-template-typescript*
 
-**2) Componentes e Telas**
+**2. Componentes e Telas**
 
 A criação de componentes funcionais e de classe é essencial para construir as telas do aplicativo. 
 Neste trabalho foram criados, por exemplo, as seguintes páginas:
@@ -225,11 +226,11 @@ Neste trabalho foram criados, por exemplo, as seguintes páginas:
 - Tela para exibir detalhes de um medicamento
 - Tela para mostrar o histórico de uso.
 
-**3) Integração com APIs**
+**3. Integração com APIs**
 
 Para obter dados de medicamentos, é necessário integrar o aplicativo com uma API externa, nesse trabalho é utilizado a *neon tech*.
 
-**4) Publicação na Loja**
+**4. Publicação na Loja**
 
 Por fim é realizado ajustes no aplicativo para publicação na Google Play Store (Android) e na App Store (iOS), para publicar o aplicativo na loja, é necessário seguir os seguintes passos:
 
@@ -287,54 +288,54 @@ Isso gerará o arquivo de release no formato AAB (Android App Bundle).
 
 **Requisitos Funcionais:**
 
-**1)  Cadastro de Usuários**
+**1. Cadastro de Usuários**
 - Clicar em Criar Usuário na tela de login.
 - Preencher os campos: nome, sobrenome, e-mail, senha, Estado, Cidade, gênero, data de nascimento.
 - Clicar em Criar Usuário, para verificar se a aplicação é bem-sucedida caso os dados sejam válidos, ou se dá erro caso os dados sejam inválidos.
 
-**2) Autenticação de Usuários**
+**2. Autenticação de Usuários**
 - Preencher as credenciais (e-mail e senha).
 - Verificar se o login é bem-sucedido ou mal-sucedido clicando em entrar.
 
-**3) Cadastro de Medicamentos e Alarmes**
+**3. Cadastro de Medicamentos e Alarmes**
 - Selecionar a opção Cadastro de Medicamentos que fica na home da aplicação.
 - Preencher os campos: nome do medicamento, estoque Inicial, período de uso e  horários programados para alarme.
 - Clicar em adicionar.
 
-**4)  Editar medicamentos cadastrados**
+**4. Editar medicamentos cadastrados**
 - Selecionar a opção Cadastro de Medicamentos que fica na home da aplicação.
 - Selecionar o medicamento que deseja editar.
 - Editar a opção desejada. 
 - Clicar na opção Guardar Alteração.
 
-**5)  Confirmar ingestão de medicamento**
+**5. Confirmar ingestão de medicamento**
 - Tocar na notificação que aparece na tela do celular que indica o horário correto para a ingestão do medicamento.
 - Clicar no botão “Confirmar Ingestão”.
 
-**6)  Consultar Histórico de Ingestão de Medicamentos**
+**6. Consultar Histórico de Ingestão de Medicamentos**
 - Selecionar a opção Histórico de ingestão.
 - Selecionar o período desejado (dia, semana, mês, ano), onde será retornado o histórico de ingestão de medicamento desse período.
 
 **Requisitos Não Funcionais:**
 
-**1) Portabilidade**
+**1. Portabilidade**
 - Testar a responsividade em diferentes dispositivos e tamanho de tela.
 - Avaliar a navegabilidade do usuário.
  
-**2) Segurança**
+**2. Segurança**
 - Testar a aplicação contra Injeção SQL.
 - Verificar a proteção contra ataques de XSS e CSRF.
 - Testar a sobrecarga do sistemas contra ataques DDOs.
   
-**3) Desempenho**
+**3. Desempenho**
 - Medir o tempo de resposta para operações críticas sob carga normal.
 - Testar a estabilidade da aplicação durante picos de carga.
   
-**4) Usabilidade**
+**4. Usabilidade**
 - Testar a facilidade de aprendizado do sistema.
 - Testar a eficiência de uso da aplicação.
   
-**5) Confiabilidade**
+**5. Confiabilidade**
 - Testar a disponibilidade referindo-se ao tempo em que o sistema está acessível aos usuários.
 - Verificar a capacidade do sistema de continuar operando corretamente mesmo diante de falhas ou condições adversas.
 - Testar a habilidade do sistema de se recuperar rapidamente e eficientemente após uma falha.
