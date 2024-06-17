@@ -5,8 +5,8 @@ Gestão Med é uma aplicação desenvolvida para a organização e gestão da ad
 
 ## Tecnologias Utilizadas
 
-React Native
-Typescript
+React Native </br>
+Typescript </br>
 Figma
 
 
