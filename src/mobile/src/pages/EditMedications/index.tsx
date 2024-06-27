@@ -90,7 +90,8 @@ export default function EditMedication() {
 
     try {
       setLoading(true);
-      await api.put(`/medication/${medicationId}`, {
+      await api.put(`/medication/edit`, {
+        id: medicationId,
         name,
         description,
         stock: parseInt(stock),
