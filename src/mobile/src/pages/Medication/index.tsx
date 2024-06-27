@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Platform, ActivityIndicator, Button } from "react-native";
+import { Platform, ActivityIndicator } from "react-native";
 
 import { api } from "../../services/api";
 
@@ -23,12 +23,15 @@ import Header from "../../components/Header";
 import FooterMenu from "../../components/Menu";
 
 export default function Medication() {
+
   const [loading, setLoading] = useState(false);
 
   const [name, onChangeName] = React.useState("");
   const [description, onChangeDescription] = React.useState("");
   const [stock, onChangeStock] = React.useState("");
   const [timeToTake, setTimeToTake] = React.useState([""]);
+
+  
 
   const handleAddTimeField = () => {
     setTimeToTake([...timeToTake, ""]);
@@ -100,7 +103,7 @@ export default function Medication() {
             <AreaInput>
               <Label>Nome: </Label>
               <Input
-                placeholder="Exemplo: Dipirona"
+                placeholder="Ex: Dipirona"
                 value={name}
                 onChangeText={(name) => onChangeName(name)}
               />
@@ -108,7 +111,7 @@ export default function Medication() {
             <AreaInput>
               <Label>Descrição: </Label>
               <Input
-                placeholder="Exemplo: Como administrar a medicação"
+                placeholder="Ex: Como administrar a medicação"
                 value={description}
                 onChangeText={(description) => onChangeDescription(description)}
               />
@@ -116,7 +119,7 @@ export default function Medication() {
             <AreaInput>
               <Label>Estoque inicial: </Label>
               <Input
-                placeholder="Exemplo: 10"
+                placeholder="Ex: 10"
                 keyboardType="numeric"
                 value={stock}
                 onChangeText={(stock) => onChangeStock(stock)}
@@ -159,3 +162,5 @@ export default function Medication() {
     </Background>
   );
 }
+
+

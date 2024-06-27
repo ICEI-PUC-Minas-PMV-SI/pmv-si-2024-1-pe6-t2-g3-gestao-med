@@ -4,9 +4,10 @@ Gestão Med é uma aplicação desenvolvida para a organização e gestão da ad
 
 
 ## Tecnologias Utilizadas
- 1) React Native
- 2) Typescript
- 3) Figma
+
+React Native </br>
+Typescript </br>
+Figma
 
 
 ## Arquitetura
@@ -47,8 +48,6 @@ A aplicação GestãoMed possui uma estrutura de dados que envolve principalment
 
 **email:** Representa o email do usuário.
 
-**phone:** Representa o número de telefone do usuário. 
-
 **date_of_birth:** Representa a data de nascimento do usuário. 
 
 **gender:** Representa o sexo do usuário.  
@@ -81,19 +80,75 @@ A aplicação GestãoMed possui uma estrutura de dados que envolve principalment
 
 
 ## Projeto da Interface
-[Descreva o projeto da interface móvel da aplicação, incluindo o design visual, layout das páginas, interações do usuário e outros aspectos relevantes.]
 
 ### Wireframes
-[Inclua os wireframes das páginas principais da interface, mostrando a disposição dos elementos na página.]
+
+Tela de login
+
+![login](img/login.jpeg)
+
+Tela Home
+
+![home](img/home.jpeg)
+
+Tela Menu
+
+![menu](img/menu.jpeg)
+
+Tela Cadastrar Usuário
+
+![cadusuario](img/cadastro-usuario.jpeg)
+
+Tela Perfil
+
+![perfil](img/meu-perfil.jpeg)
+
+Tela Cadastrar Medicamento
+
+![cadmedicamento](img/cadastrar-medicamento.jpeg)
+
+Tela Editar Medicamento
+
+![editmedicamento](img/editar-medicamento.jpeg)
+
+Tela Medicamentos
+
+![medicamentosn](img/medicamentos.jpeg)
 
 ### Design Visual
-[Descreva o estilo visual da interface, incluindo paleta de cores, tipografia, ícones e outros elementos gráficos.]
+
+1. Paleta de Cores:
+Optamos por uma paleta predominante de tons azuis para o front end para proporcionar uma experiência de usuário agradável pois o azul é uma cor associada à tranquilidade, calma e confiança. A cor primária tem o código #2CA3D7.
+
+3. Tipografia:
+A fonte principal usada no corpo do texto é "Roboto”. A fonte é legível e possui uma aparência moderna.
+
+5. Botões:
+Os botões na interface têm bordas arredondadas e prevalência na cor de fundo verde (#009588) com texto em branco para criar um contraste com o fundo escuro e facilitar a leitura para o usuário.
+
+7. Campos:
+Os campos de preenchimento de texto têm bordas arredondadas e uma cor de fundo branca que contrasta com os textos de instrução de escrita na cor cinza, código #A5A5A5.
 
 ### Layout Responsivo
-[Discuta como a interface será adaptada para diferentes tamanhos de tela e dispositivos.]
+O desenvolvimento do front end responsivo tem como parte essencial a adaptação da interface do projeto para diferentes tamanhos de tela e dispositivos. Seguem abaixo maneiras de adaptação da interface:
+
+Media Queries: Utilizaremos media queries em nosso CSS para aplicar estilos específicos com base na largura da tela. Isso permite a personalização de estilos, como alterar o tamanho das fontes, reorganizar os elementos na página e ocultar ou exibir certos conteúdos com base na resolução da tela.
+
+Layout Flexível: O layout da página será projetado com unidades flexíveis, como porcentagens, em vez de unidades fixas, como pixels. Isso permite que os elementos da página se ajustem dinamicamente ao tamanho da tela, preenchendo o espaço disponível de forma adequada.
+
+Menu de Navegação Adaptável: Em dispositivos móveis e tablets, podemos substituir o menu de navegação tradicional por um menu de hambúrguer, economizando espaço na tela e tornando a navegação por toque mais fácil.
+
+Imagens Responsivas: As imagens serão configuradas para serem responsivas. Isso significa que as imagens se redimensionarão automaticamente para se ajustar ao tamanho da tela, economizando largura de banda e melhorando o desempenho.
+
+Fontes Flexíveis: O tamanho e o estilo das fontes também serão ajustados para garantir que o texto seja legível em diferentes dispositivos. Usaremos unidades relativas, como "em" e "rem", para manter a consistência.
+
+Testes em Múltiplos Dispositivos: A interface será testada em uma variedade de dispositivos e tamanhos de tela, desde smartphones até monitores de alta resolução. Isso ajuda a identificar problemas e garantir que a experiência do usuário seja otimizada em todos os contextos.
+
+Componentes Interativos: Elementos interativos, como botões e caixas de entrada, serão dimensionados e espaçados adequadamente para garantir que sejam fáceis de usar em telas sensíveis ao toque e com dispositivos de entrada variados.
 
 ### Interações do Usuário
-[Descreva as interações do usuário na interface, como animações, transições entre páginas e outras interações.]
+
+O projeto foi desenvolvido com o objetivo de oferecer uma experiência prática, permitindo que pessoas de todas as idades realizem facilmente os cadastros do usuário e de medicamentos a serem tomados.  É esperado que os processos de login e de alarme retornados pelo sistema também sejam compreendidos facilmente.
 
 ## Fluxo de Dados
 
@@ -115,7 +170,6 @@ Exemplos de fluxos de dados da aplicação:
 3. **Back end** recebe a requisição, faz as validações, caso os dados estejam válidos salva as informações do medicamento no banco de dados e retorna uma resposta com código de status 201, caso alguma informação informada não seja válida é retornado um erro com o respectivo código de status.
 4. **Aplicativo Mobile** recebe a resposta e informa ao usuário o sucesso ou falha no cadastro do medicamento.
 
-
 **Consulta dos medicamentos:**
 
 1. **Usuário** acessa a tela de medicamentos.
@@ -125,26 +179,81 @@ Exemplos de fluxos de dados da aplicação:
 
 ## Requisitos Funcionais
 
-[Liste os principais requisitos funcionais da aplicação.]
+|ID    | Descrição do Requisito  | Prioridade |
+|------|-----------------------------------------|----|
+|RF-001| Gerenciar usuário paciente | ALTA |
+|RF-002| Fazer *login*  | ALTA |
+|RF-003| Gerenciar medicamentos e alertas  | ALTA |
+|RF-004| Disparar lembrete no horário com orientações para tomar o medicamento  | ALTA |
+|RF-005| Disparar alerta de fim de estoque de medicamentos | ALTA |
+|RF-006| Permitir que o paciente confirme a ingestão ao ser notificado | MÉDIA |
 
 ## Requisitos Não Funcionais
 
-[Liste os principais requisitos não funcionais da aplicação, como desempenho, segurança, escalabilidade, etc.]
-
+|ID     | Descrição do Requisito  |Prioridade |
+|-------|-------------------------|----|
+|RNF-001| O sistema atenderá ao requisito de PORTABILIDADE - executável a partir do Android  8.1 Oreo 2017 e do IOS 12 | ALTA |
+|RNF-002| O sistema atenderá a Lei de Geral de Proteção de Dados pessoais nº 13.709/2018 | ALTA |
+|RNF-003| O sistema deverá atender ao requisito de USABILIDADE - facilidade no uso do sistema com 3 cliques máximos para alcançar a função | ALTA |
+|RNF-004| O sistema deverá atender ao requsiito de **CONFIABILIDADE** - terá alta disponibilidade 99% do tempo | ALTA |
+|RNF-005| O *Layout* do sistema deverá usar *design* responsivo, para que renderize bem em qualquer dispositivo celular (resolução 720p) ou tablet (resolução 768p)  | MÉDIA |
+|RNF-006| O sistema deverá processar requisições do usuário em no máximo 3s | BAIXA |
 
 ## Considerações de Segurança
 
-[Discuta as considerações de segurança relevantes para a aplicação distribuída, como autenticação, autorização, proteção contra ataques, etc.]
+A segurança é um ponto crítico para a garantia da integridade e confiabilidade do funcionamento da aplicação. Seguem algumas considerações de segurança relacionadas ao front-end:
+
+- Autenticação e autorização da api com criação do token JWT.
+- Validação de dados de entrada retornando campos cuidadosamente avaliados.
 
 ## Implantação
 
-[Instruções para implantar a aplicação distribuída em um ambiente de produção.]
+**Implementação do Aplicativo de Gestão de Medicamentos com *React Native* e *TypeScript*:**
 
-1. Defina os requisitos de hardware e software necessários para implantar a aplicação em um ambiente de produção.
-2. Escolha uma plataforma de hospedagem adequada, como um provedor de nuvem ou um servidor dedicado.
-3. Configure o ambiente de implantação, incluindo a instalação de dependências e configuração de variáveis de ambiente.
-4. Faça o deploy da aplicação no ambiente escolhido, seguindo as instruções específicas da plataforma de hospedagem.
-5. Realize testes para garantir que a aplicação esteja funcionando corretamente no ambiente de produção.
+**1. Configuração Inicial**
+
+Para desenvolver o aplicativo, foi utilizado um backend gerado no Node.js. Portanto, era essencial configurar o servidor, incluindo variáveis de ambiente, configuração do banco de dados e ajustes de segurança.
+Posteriormente, segue-se os passos para configurar um novo projeto *React Native* com *TypeScript* no *Node.js*, para isso, executou-se o seguinte comando:
+
+*npx react-native init MeuApp --template react-native-template-typescript*
+
+**2. Componentes e Telas**
+
+A criação de componentes funcionais e de classe é essencial para construir as telas do aplicativo. 
+Neste trabalho foram criados, por exemplo, as seguintes páginas:
+
+- Tela para cadastro de usuário
+- Tela para exibir detalhes de um medicamento
+- Tela para mostrar o histórico de uso.
+
+**3. Integração com APIs**
+
+Para obter dados de medicamentos, é necessário integrar o aplicativo com uma API externa, nesse trabalho é utilizado a *neon tech*.
+
+**4. Publicação na Loja**
+
+Por fim é realizado ajustes no aplicativo para publicação na Google Play Store (Android) e na App Store (iOS), para publicar o aplicativo na loja, é necessário seguir os seguintes passos:
+
+- **Criação da Chave Privada (Private Key) ou Atualização na Store Apps:**
+
+Inicialmente, deve-se criar uma chave privada (private key) ou atualizar a existente na loja de aplicativos (chave de identificação).
+Essa chave é essencial para assinar o APK (Android Package) antes de publicá-lo.
+
+- **Gerenciamento de Variáveis:**
+
+A pasta android/app do projeto deve ser acessada.
+No arquivo gradle.properties, adicionar as variáveis necessárias, como informações de API, chaves de acesso, etc.
+
+- **Configuração do Build Gradle:**
+
+Informe ao arquivo build.gradle para usar as informações das variáveis definidas anteriormente.
+Atualize a seção signingConfigs para incluir as configurações de assinatura para a versão de release.
+
+- **Geração do APK:**
+
+No terminal, navegue até a pasta do projeto.
+Execute o comando ./gradlew bundleRelease.
+Isso gerará o arquivo de release no formato AAB (Android App Bundle).
 
 ## Testes
 
@@ -179,60 +288,64 @@ Exemplos de fluxos de dados da aplicação:
 
 **Requisitos Funcionais:**
 
-**1)  Cadastro de Usuários**
+**1. Cadastro de Usuários**
 - Clicar em Criar Usuário na tela de login.
 - Preencher os campos: nome, sobrenome, e-mail, senha, Estado, Cidade, gênero, data de nascimento.
 - Clicar em Criar Usuário, para verificar se a aplicação é bem-sucedida caso os dados sejam válidos, ou se dá erro caso os dados sejam inválidos.
 
-**2) Autenticação de Usuários**
+**2. Autenticação de Usuários**
 - Preencher as credenciais (e-mail e senha).
 - Verificar se o login é bem-sucedido ou mal-sucedido clicando em entrar.
 
-**3) Cadastro de Medicamentos e Alarmes**
+**3. Cadastro de Medicamentos e Alarmes**
 - Selecionar a opção Cadastro de Medicamentos que fica na home da aplicação.
 - Preencher os campos: nome do medicamento, estoque Inicial, período de uso e  horários programados para alarme.
 - Clicar em adicionar.
 
-**4)  Editar medicamentos cadastrados**
+**4. Editar medicamentos cadastrados**
 - Selecionar a opção Cadastro de Medicamentos que fica na home da aplicação.
 - Selecionar o medicamento que deseja editar.
 - Editar a opção desejada. 
 - Clicar na opção Guardar Alteração.
 
-**5)  Confirmar ingestão de medicamento**
+**5. Confirmar ingestão de medicamento**
 - Tocar na notificação que aparece na tela do celular que indica o horário correto para a ingestão do medicamento.
 - Clicar no botão “Confirmar Ingestão”.
 
-**6)  Consultar Histórico de Ingestão de Medicamentos**
+**6. Consultar Histórico de Ingestão de Medicamentos**
 - Selecionar a opção Histórico de ingestão.
 - Selecionar o período desejado (dia, semana, mês, ano), onde será retornado o histórico de ingestão de medicamento desse período.
 
-
 **Requisitos Não Funcionais:**
 
-**1) Portabilidade**
+**1. Portabilidade**
 - Testar a responsividade em diferentes dispositivos e tamanho de tela.
 - Avaliar a navegabilidade do usuário.
  
-**2) Segurança**
+**2. Segurança**
 - Testar a aplicação contra Injeção SQL.
 - Verificar a proteção contra ataques de XSS e CSRF.
 - Testar a sobrecarga do sistemas contra ataques DDOs.
   
-	**3) Desempenho**
+**3. Desempenho**
 - Medir o tempo de resposta para operações críticas sob carga normal.
 - Testar a estabilidade da aplicação durante picos de carga.
   
-**4) Usabilidade**
+**4. Usabilidade**
 - Testar a facilidade de aprendizado do sistema.
 - Testar a eficiência de uso da aplicação.
   
-**5) Confiabilidade**
+**5. Confiabilidade**
 - Testar a disponibilidade referindo-se ao tempo em que o sistema está acessível aos usuários.
 - Verificar a capacidade do sistema de continuar operando corretamente mesmo diante de falhas ou condições adversas.
 - Testar a habilidade do sistema de se recuperar rapidamente e eficientemente após uma falha.
 
-
 # Referências
 
-Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho.
+Documentação React Native - https://reactnative.dev/docs/getting-started
+
+Documentação Expo - https://docs.expo.dev/
+
+W3 School - https://www.w3schools.com/css/css_website_layout.asp
+
+

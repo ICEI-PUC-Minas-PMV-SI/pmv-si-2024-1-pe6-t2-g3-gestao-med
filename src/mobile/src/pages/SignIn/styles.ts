@@ -3,7 +3,7 @@ import { Picker } from "@react-native-picker/picker";
 
 export const Background = styled.View`
     flex: 1;
-    background-color: #F0F4FF;
+    background-color: #2585c0;
    
 `;
 
@@ -46,28 +46,27 @@ export const StyledPicker = styled(Picker)`
     height: 45px;
     background-color: #FFF;
     border-radius: 8px;
-    color: #054d5f;
+    color:  #075281;
     margin-bottom: 15px;
 `;
 
 export const SubmitButton = styled.TouchableOpacity`
-    width: 90%;
-    height: 45px;
-    border-radius: 8px;
-    background-color:#00778C;
-    margin: 10px 0 20px 0;
-    align-items: center;
-    justify-content: center;
-
-`
+  width: 90%;
+  height: 45px;
+  border-radius: 8px;
+  background-color: #075281;
+  margin: 10px 0 20px 0;
+  align-items: center;
+  justify-content: center;
+`;
 export const SubmitText = styled.Text`
-    font-size: 20px;
-    color: #FFF;
-`
+  font-size: 20px;
+  color: #fff;
+`;
 export const Link = styled.TouchableOpacity`
     margin-top: 10px;
     margin-bottom: 10px;
 `
 export const LinkText = styled.Text`
-    color: #171717;
+    color: #FFF;
 `

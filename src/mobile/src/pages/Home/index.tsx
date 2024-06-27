@@ -13,10 +13,10 @@ import {
   TimeBox,
 } from "./styles";
 import { api } from "../../services/api";
-import { useIsFocused } from "@react-navigation/native";
+import { useIsFocused, useNavigation } from "@react-navigation/native";
 import MedicationItem from "../../components/MedicationItem";
 import FooterMenu from "../../components/Menu";
-import { Button } from "react-native";
+import * as Notifications from 'expo-notifications';
 
 export type MedicationsDTO = {
   id: string;
@@ -32,9 +32,9 @@ export type MedicationsDTO = {
 };
 
 export default function Home() {
-  const { signOut } = useContext(AuthContext);
   const [medications, setMedications] = useState<MedicationsDTO[] | []>([]);
   const isFocused = useIsFocused();
+  const navigation = useNavigation<any>();
 
   useEffect(() => {
     let isActive = true;
@@ -44,6 +44,8 @@ export default function Home() {
         const response = await api.get("/medications");
         if (isActive) {
           setMedications(response.data);
+          checkStockAndNotify(response.data);
+          scheduleNextMedicationNotification(response.data);
         }
       } catch (err: any) {
         if (err?.response.data.error === "Medications not found") {
@@ -58,7 +60,65 @@ export default function Home() {
     };
   }, [isFocused]);
 
-  const groupMedicationsByTime = () => {
+  useEffect(() => {
+    const subscription = Notifications.addNotificationResponseReceivedListener(response => {
+      const medicationId = response.notification.request.content.data.medicationId;
+
+      if (medicationId) {
+        navigation.navigate('Editar medicamento', { medicationId: medicationId });
+      }
+    });
+
+    return () => subscription.remove();
+  }, []);
+
+  const checkStockAndNotify = (medications: MedicationsDTO[]) => {
+    medications.forEach(async (med) => {
+      if (med.stock < 3) {
+        await Notifications.scheduleNotificationAsync({
+          content: {
+            title: "Atenção",
+            body: `O medicamento ${med.name} está com estoque baixo (${med.stock} unidades).`,
+            data: { medicationId: med.id },
+          },
+          trigger: {
+            seconds: 1,
+          },
+        });
+      }
+    });
+  };
+
+  const scheduleNextMedicationNotification = async (medications: MedicationsDTO[]) => {
+    const groupedMeds = groupMedicationsByTime(medications);
+    const currentTime = currentTimeString();
+    const times = Object.keys(groupedMeds);
+    const nextTime = getNextTime(currentTime, times);
+    if (nextTime) {
+      const nextMedications = groupedMeds[nextTime];
+      const nextMedicationNames = nextMedications.map(med => med.name).join(", ");
+
+      const [nextHour, nextMinute] = nextTime.split(":").map(Number);
+      const now = new Date();
+      const nextNotificationDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), nextHour, nextMinute);
+
+      if (nextNotificationDate > now) {
+        
+        await Notifications.scheduleNotificationAsync({
+          content: {
+            title: "Próximo Medicamento",
+            body: `Está na hora de tomar: ${nextMedicationNames}`,
+            data: { nextTime },
+          },
+          trigger: {
+            date: nextNotificationDate
+          },
+        });
+      }
+    }
+  };
+
+  const groupMedicationsByTime = (medications: MedicationsDTO[]) => {
     const groupedMeds: { [key: string]: MedicationsDTO[] } = {};
     medications?.forEach((med) => {
       const times = med.time_to_take.split(",");
@@ -72,7 +132,12 @@ export default function Home() {
       }
     });
 
-    const sortedTimes = Object.keys(groupedMeds).sort();
+    const sortedTimes = Object.keys(groupedMeds).sort((a, b) => {
+      const [aHour, aMinute] = a.split(":").map(Number);
+      const [bHour, bMinute] = b.split(":").map(Number);
+      return aHour * 60 + aMinute - (bHour * 60 + bMinute);
+    });
+
     const sortedGroupedMeds: { [key: string]: MedicationsDTO[] } = {};
     sortedTimes.forEach((time) => {
       sortedGroupedMeds[time] = groupedMeds[time];
@@ -118,28 +183,10 @@ export default function Home() {
     return closestTime;
   };
 
-  const renderGroupedMedications = () => {
-    const groupedMedications = groupMedicationsByTime();
-    const data = Object.keys(groupedMedications).map((time) => ({
-      time,
-      medications: groupedMedications[time],
-    }));
-
-    const currentTime = currentTimeString();
-
-    let timeArray: string[] = [];
-
-    data.forEach((item) => {
-      timeArray.push(item.time);
-    });
-
-    return data.map(({ time, medications }) => (
-      <ListMedications key={time}></ListMedications>
-    ));
-  };
+  
 
   const renderMedicationsByTime = () => {
-    const groupedMeds = groupMedicationsByTime();
+    const groupedMeds = groupMedicationsByTime(medications);
 
     const data = Object.keys(groupedMeds);
 
@@ -188,7 +235,6 @@ export default function Home() {
         )}
         {/* {renderMedicationsByTime()} */}
       </MedicationsList>
-      <Button onPress={() => signOut()} title="Sair" />
       <FooterMenu />
     </Background>
   );

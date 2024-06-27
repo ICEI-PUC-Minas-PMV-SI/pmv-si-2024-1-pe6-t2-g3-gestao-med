@@ -84,3 +84,6 @@ export const Remove = styled.Text`
   font-weight: 500;
   color: #d9534f;
 `;
+
+export const Link = styled.TouchableOpacity`
+`

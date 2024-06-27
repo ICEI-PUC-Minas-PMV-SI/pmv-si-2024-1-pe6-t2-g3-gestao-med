@@ -39,7 +39,9 @@ export const Label = styled.Text`
 
 export const HighlightedLabel = styled.Text`
     font-size: 25px;
-    background-color: lightgreen
+    background-color: lightgreen;
+    border-radius: 8px;
+    padding: 5px;
 `
 
 export const HighlightedDivider = styled.View`

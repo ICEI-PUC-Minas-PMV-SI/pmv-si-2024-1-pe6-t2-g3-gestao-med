@@ -72,7 +72,7 @@ export const TimeInput = styled.TextInput`
   font-size: 17px;
   padding: 10px;
   border-radius: 8px;
-  color: #054d5f;
+  color: #075281;
   flex: 1;
 `;
 
