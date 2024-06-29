@@ -71,18 +71,6 @@ export function RegisterUserForm({ closeRegisterModal }: IRegisterUserForm) {
     }
   };
 
-  // const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const formattedValue = formatPhoneNumber(e.target.value);
-  //   setValue("phoneNumber", formattedValue);
-  // };
-
-  // const validatePhoneNumber = (value: string) => {
-  //   const cleanedValue = value.replace(/\D/g, "");
-  //   return (
-  //     cleanedValue.length === 11 || "Telefone deve ter exatamente 11 dígitos"
-  //   );
-  // };
-
   return (
     <div className={styles.modalContainer}>
       <form className={styles.formContainer}>

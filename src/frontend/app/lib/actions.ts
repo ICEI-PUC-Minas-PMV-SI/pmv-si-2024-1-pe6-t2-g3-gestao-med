@@ -47,6 +47,27 @@ export const getUserMedications = async () => {
   }
 };
 
+export const registerMedication = async (params: {
+  name: string;
+  description: string;
+  stock: number;
+  timeToTake: string;
+}) => {
+  const api = await setupAPIClient();
+  try {
+    const response = await api.post("/medication", {...params});
+    return { status: response.status, data: response.data };
+
+  } catch (err: any) {
+    if (err.response) {
+      console.log({ err });
+      return { status: err.response.status, data: err.response.data.error };
+    }
+    console.log({ err });
+    return { status: "", data: [] };
+  }
+};
+
 export const registerUser = async (params: {
   name: string;
   email: string;

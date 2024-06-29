@@ -1,7 +1,10 @@
+'use client'
+
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import styles from "./page.module.css";
 import { toast } from "react-toastify";
+import { registerMedication } from "@/app/lib/actions";
 
 interface FormData {
   name: string;
@@ -10,7 +13,11 @@ interface FormData {
   timeToTake: string;
 }
 
-export function RegisterMedicationForm() {
+interface IRegisterMedicationForm {
+  closeRegisterModal: () => void;
+}
+
+export function RegisterMedicationForm({ closeRegisterModal }: IRegisterMedicationForm) {
   const {
     trigger,
     register,
@@ -20,6 +27,51 @@ export function RegisterMedicationForm() {
     watch,
     formState: { errors, isValid },
   } = useForm<FormData>();
+
+  const [timeToTake, setTimeToTake] = useState([""]);
+
+  const handleAddTimeField = (e: any) => {
+    e.preventDefault();
+    setTimeToTake([...timeToTake, ""]);
+  };
+
+  const handleRemoveTimeField = (e: any, index: number) => {
+    e.preventDefault();
+    setTimeToTake(timeToTake.filter((_, i) => i !== index));
+  };
+
+  const handleTimeChange = (e: any, index: number) => {
+    timeToTake[index] = e.target.value;
+    setTimeToTake([...timeToTake]);
+  };
+
+  const [isLoadingRegister, setIsLoadingRegister] = useState(false);
+
+  const onSubmit = async (data: FormData) => {
+    setIsLoadingRegister(true);
+
+    try {
+      const response = await registerMedication({
+        name: data.name.trim(),
+        description: data.description,
+        stock: Number(data.stock),
+        time_to_take: data.timeToTake
+      });
+
+      setIsLoadingRegister(false);
+
+      if (response.status !== 201) {
+        toast.error("Erro ao cadastrar medicamento!", {position: "top-right"});
+        return;
+      }
+
+      toast.success("Cadastro realizado com sucesso!");
+      closeRegisterModal();
+      
+    } catch (err: any) {
+      console.log(err);
+    }
+  };
 
   return (
     <div className={styles.modalContainer}>
@@ -55,35 +107,36 @@ export function RegisterMedicationForm() {
           </div>
 
           <div className={styles.formField}>
-            <input type="number" placeholder="Estoque inicial - opcional" min="0"
+            <input type="number" placeholder="Estoque inicial" min="0"
               {...register("stock")}
               onBlur={() => trigger("stock")}
             />
           </div>
-          
-          <div className={styles.formField}>
-            <input placeholder="Período de uso" type="text"
-              {...register("timeToTake", {
-                required: "Período de uso obrigatório",
-                minLength: {
-                  value: 3,
-                  message: "Período de uso inválido",
-                },
-              })}
-              onBlur={() => trigger("timeToTake")}
-            />
-            {errors.timeToTake && <span>{errors.timeToTake.message}</span>}
+        
+          {timeToTake.map((time, index) => (
+            <div key={index} className={styles.formFieldTime}>
+              <input placeholder="HH:MM" type="time" value={time} onChange={(e) => handleTimeChange(e, index)}/>
+              {index > 0 && (
+                <div className={styles.removeButton}>
+                  <button onClick={(e) => handleRemoveTimeField(e, index)}>Remover</button>
+                </div>
+              )}
+            </div>
+          ))}
+           
+          <div className={styles.buttonAddTime}>
+            <button onClick={(e) => handleAddTimeField(e)}>
+              Adicionar horário
+            </button>
           </div>
-
         </>
       </form>
       <div className={styles.buttonsBox}>
         <>
-          <button
+          <button 
             onClick={() => {
-              isValid
-                ? console.log(getValues())
-                : toast.info("Preencha todos os campos corretamente!");
+              setValue('timeToTake',  timeToTake.filter((time) => time.length > 0).join(","));
+              isValid ? onSubmit(getValues()) : toast.info("Preencha todos os campos corretamente!");
             }}
           >
             Adicionar

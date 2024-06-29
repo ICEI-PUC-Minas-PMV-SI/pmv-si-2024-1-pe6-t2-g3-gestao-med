@@ -14,7 +14,7 @@ export default function AddMedicationButton(){
                 Adicionar medicamento
             </div>
             <Modal isModalOpen={isOpenRegisterModal} onCloseModal={() => setIsOpenRegisterModal(false)} modalTitle="Cadastrar medicamento">
-                <RegisterMedicationForm />
+                <RegisterMedicationForm closeRegisterModal={() => setIsOpenRegisterModal(false)} />
             </Modal>
         </main>
     );
