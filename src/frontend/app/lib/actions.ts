@@ -20,7 +20,6 @@ export const getUserDetails = async () => {
 export const getMedications = async () => {
   const api = await setupAPIClient();
 
-  console.log("pegou os medicamentos")
   try {
     const response = await api.get("/medications");
 
@@ -77,7 +76,7 @@ export const deleteMedicationAction = async (id: string) => {
   const api = await setupAPIClient()
 
   try {
-    const response = await api.patch(`/medication/delete/${id}`)
+    const response = await api.post(`/medication/delete/${id}`)
 
     return { status: response.status }
   } catch (err: any) {
@@ -86,7 +85,6 @@ export const deleteMedicationAction = async (id: string) => {
 
     return { status: '' }
   }
-
 
 
 }

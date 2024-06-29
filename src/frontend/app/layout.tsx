@@ -4,9 +4,10 @@ import "./globals.css";
 import AuthWrapper from "./auth_wrapper";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import { AppWrapper } from "./context";
+import { AppMedicationContext, AppWrapper } from "./context";
 import { getMedications } from "./lib/actions";
 import Script from "next/script";
+import { useContext } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,14 +22,14 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  const { status, data } = await getMedications()
+  // const { status, data } = await getMedications()
   return (
     <html lang="pt-br">
       <body className={inter.className}>
       <script src="https://app.aminos.ai/js/chat_plugin.js" data-bot-id="25264"></script>
 
         <AuthWrapper>
-          <AppWrapper apiData={data}>
+          <AppWrapper >
             {children}
           </AppWrapper>
         </AuthWrapper>
