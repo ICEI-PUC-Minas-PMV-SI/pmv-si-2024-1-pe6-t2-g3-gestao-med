@@ -34,7 +34,7 @@ medicationRouter.post("/medication/taken", isAuthenticated, async (request, resp
 
 //edit medications
 medicationRouter.put("/medication/edit" , isAuthenticated, async (request, response) => {
-    await editMedicationController.handle(request, response)
+    await registerMedicateController.handle(request, response)
 }) 
  
 

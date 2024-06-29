@@ -1,10 +1,11 @@
 'use client'
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import styles from "./page.module.css";
 import { toast } from "react-toastify";
 import { registerMedication } from "@/app/lib/actions";
+import { MedicationProps } from "@/app/context";
 
 interface FormData {
   name: string;
@@ -15,9 +16,12 @@ interface FormData {
 
 interface IRegisterMedicationForm {
   closeRegisterModal: () => void;
+  medication: MedicationProps | null;
 }
 
-export function RegisterMedicationForm({ closeRegisterModal }: IRegisterMedicationForm) {
+export function RegisterMedicationForm({ closeRegisterModal, medication }: IRegisterMedicationForm) {
+  
+
   const {
     trigger,
     register,
@@ -29,6 +33,34 @@ export function RegisterMedicationForm({ closeRegisterModal }: IRegisterMedicati
   } = useForm<FormData>();
 
   const [timeToTake, setTimeToTake] = useState([""]);
+
+  useEffect(() => {
+    if (medication) {
+      setValue('name', medication.name);
+      setValue('description', medication.description);
+      setValue('stock', medication.stock);
+      const times = medication.time_to_take.split(',');
+
+      times.forEach((time, idx) => {
+        if (idx > 0) {
+          addTime("");
+          setTime(time, idx);
+        } else {
+          setTime(time, idx);
+        }
+      });
+      
+    }
+  }, []);
+
+  const addTime = (value:string) => {
+    setTimeToTake([...timeToTake, value]);
+  }
+
+  const setTime = (value:string, index: number) => {
+    timeToTake[index] = value;
+    setTimeToTake([...timeToTake])
+  }
 
   const handleAddTimeField = (e: any) => {
     e.preventDefault();
@@ -48,10 +80,15 @@ export function RegisterMedicationForm({ closeRegisterModal }: IRegisterMedicati
   const [isLoadingRegister, setIsLoadingRegister] = useState(false);
 
   const onSubmit = async (data: FormData) => {
+    if (!validarFormulario(data)) {
+      return;
+    }
+    
     setIsLoadingRegister(true);
 
     try {
       const response = await registerMedication({
+        id: medication ? medication.id : null,
         name: data.name.trim(),
         description: data.description,
         stock: Number(data.stock),
@@ -65,13 +102,36 @@ export function RegisterMedicationForm({ closeRegisterModal }: IRegisterMedicati
         return;
       }
 
-      toast.success("Cadastro realizado com sucesso!");
+      toast.success(medication ? "Medicamento atualizado com sucesso!" : "Medicamento adicionado com sucesso!");
       closeRegisterModal();
       
     } catch (err: any) {
       console.log(err);
     }
   };
+
+  const validarFormulario = (data: FormData) => {
+    if (!data.name || data.name.trim().length < 3) {
+      toast.info("Preencha todos os campos corretamente!")
+      return false;
+    }
+
+    if (!data.description || data.description.trim().length < 3) {
+      toast.info("Preencha todos os campos corretamente!")
+      return false;
+    }
+
+    if (!data.stock || data.stock < 0) {
+      toast.info("Preencha todos os campos corretamente!")
+      return false;
+    }
+    if (!data.timeToTake || data.timeToTake.trim().length < 0) {
+      toast.info("Preencha todos os campos corretamente!")
+      return false;
+    }
+
+    return true;
+  }
 
   return (
     <div className={styles.modalContainer}>
@@ -136,10 +196,11 @@ export function RegisterMedicationForm({ closeRegisterModal }: IRegisterMedicati
           <button 
             onClick={() => {
               setValue('timeToTake',  timeToTake.filter((time) => time.length > 0).join(","));
-              isValid ? onSubmit(getValues()) : toast.info("Preencha todos os campos corretamente!");
+              onSubmit(getValues());
             }}
           >
-            Adicionar
+           {!medication && ("Adicionar")}
+           {medication && ("Alterar")}
           </button>
         </>
       </div>

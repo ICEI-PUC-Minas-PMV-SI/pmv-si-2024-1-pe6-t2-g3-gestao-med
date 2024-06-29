@@ -7,24 +7,29 @@ import { deleteMedicationAction, getUserMedications } from "@/app/lib/actions";
 import { useContext, useEffect, useState } from "react";
 import Modal from "../modal/modal";
 import generateMedicationPrompt from "../medications/medicationPrompt/medicationPrompt";
-import { AppMedicationContext } from "@/app/context";
+import { AppMedicationContext, MedicationProps } from "@/app/context";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
-// import OpenAiRequest from "@/app/lib/openai/openai-request";
 import Image from "next/image";
+import { RegisterMedicationForm } from "../registerMedicationForm/registerMedicationForm";
 
 export function MedicationsList() {
+
   const [isAIModalOpen, setIsAIModalOpen] = useState(false);
+  
   const [isEditModalOpen, setIsEditModalOpen] = useState(false)
+  
   const [aiInProgress, setAiInProgress] = useState(false)
+  
   const [aiResponse, setAiResponse] = useState<string | null>(null)
 
   const [medicationName, setMedicationName] = useState('')
+  
   const router = useRouter()
 
   const { medications } = useContext(AppMedicationContext)
 
-
+  const [medicationEdit, setMedicationEdit] = useState<MedicationProps | null>(null);
 
   function formatHoursString(hoursString: string) {
     const hoursArray = hoursString.split(",");
@@ -46,36 +51,18 @@ export function MedicationsList() {
     }
   }
 
-
-
-  // const handleMedicationAI = async (name: string) => {
-  //   setIsAIModalOpen(true)
-  //   setMedicationName(name)
-
-  //   setAiInProgress(true)
-    
-  //   const promptRequest = await generateMedicationPrompt(name)
-
-  //   const aiResponse = await OpenAiRequest(promptRequest)
-
-  //   setAiInProgress(false)
-
-  //   setAiResponse(aiResponse.choices[0].message.content)
-  //   console.log(aiResponse.choices[0].message.content)
-
-
-  // }
-
   const handleCloseAIModal = () => {
     setIsAIModalOpen(false)
   }
 
-  const handleOpenEditModal = () => {
-    setIsEditModalOpen(true)
+  const handleOpenEditModal = (medication:MedicationProps) => {
+    setIsEditModalOpen(true);
+    setMedicationEdit(medication);
   }
 
   const handleCloseEditModal = () => {
-    setIsEditModalOpen(false)
+    setIsEditModalOpen(false);
+    setMedicationEdit(null);
   }
 
   const deleteMedication = async (id: string) => {
@@ -145,7 +132,7 @@ export function MedicationsList() {
                     <div className={styles.medication_data}>
                       <div className={styles.medication_name_edit}>
                         <p>{medication.name}</p>
-                        <Pencil size={18} onClick={handleOpenEditModal} />
+                        <Pencil size={18} onClick={() => handleOpenEditModal(medication)} />
                       </div>
                       <p className={styles.recurrence}>
                         Todos os dias às{" "}
@@ -194,36 +181,11 @@ export function MedicationsList() {
           </div>
         </Modal>
       )}
-      {isEditModalOpen && (
-        <Modal
-          isModalOpen={isEditModalOpen}
-          onCloseModal={handleCloseEditModal}
-          modalTitle="Editar medicamento"
-        >
-          <div>
-            <form action="" className={styles.form}>
-              <div className={styles.editField}>
-                <label htmlFor="medication_name">Nome</label>
-                <input type="text" name="name" id="medication_name" />
-              </div>
-              <div className={styles.editField}>
-                <label htmlFor="description">Descrição</label>
-                <input type="text" name="description" id="description" />
-              </div>
-              <div className={styles.editField}>
-                <label htmlFor="stock">Estoque</label>
-                <input type="number" name="stock" id="stock" />
-              </div>
-              <div className={styles.editField}>
-                <label htmlFor="time_to_take">Horário para tomar</label>
-                <input type="string" name="time_to_take" id="time_to_take" />
-              </div>
-              <button type="submit">Editar</button>
-            </form>
-            {/* Adicione outros detalhes conforme necessário */}
-          </div>
-        </Modal>
-      )}
+
+      <Modal isModalOpen={isEditModalOpen} onCloseModal={() => handleCloseEditModal()} modalTitle="Editar medicamento">
+        <RegisterMedicationForm medication={medicationEdit} closeRegisterModal={() => handleCloseEditModal()} />
+      </Modal>
+
     </div>
   );
 }

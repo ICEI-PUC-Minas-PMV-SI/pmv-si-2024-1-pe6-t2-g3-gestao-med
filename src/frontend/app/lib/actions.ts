@@ -48,14 +48,18 @@ export const getUserMedications = async () => {
 };
 
 export const registerMedication = async (params: {
+  id: string | null;
   name: string;
   description: string;
   stock: number;
   timeToTake: string;
 }) => {
   const api = await setupAPIClient();
+
   try {
-    const response = await api.post("/medication", {...params});
+    const metodo = params.id ? 'put' : 'post';
+    const url = params.id ? '/medication/edit' : '/medication';
+    const response = await api[metodo](url, {...params});
     return { status: response.status, data: response.data };
 
   } catch (err: any) {

@@ -12,7 +12,6 @@ type MedicationBoxProps = {
 export default function MedicationBox(props: MedicationBoxProps) {
     const [boxExpanded, setBoxExpanded] = useState(false)
 
-
     return (
         <div className={`${styles.container} ${boxExpanded ? styles.expanded : ''}`}  >
             <div className={styles.topBox}>
