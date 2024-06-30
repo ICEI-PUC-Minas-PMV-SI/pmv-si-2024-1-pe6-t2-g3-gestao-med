@@ -33,13 +33,17 @@ Tela home
 
 ![cadastrousu](img/home-com-chatbot.png)
 
+Tela chatbot 
+
+
+
 Tela perfil
 
 ![perfil](img/meu-perfil.jpg)
 
 Tela de cadastro de medicamentos
 
-![cadastromed](img/cadastro-medicamentos.jpg)
+![cadastromed](img/cadastrar-medicamentoweb-addhora.png)
 
 Tela de edição de medicamentos
 
