@@ -3,13 +3,13 @@
 import { Pencil, Pill } from "@phosphor-icons/react";
 import styles from "./page.module.css";
 import { IMedication } from "@/app/lib/model";
-import { deleteMedicationAction, getUserMedications } from "@/app/lib/actions";
-import { useContext, useEffect, useState } from "react";
+import { deleteMedicationAction,  } from "@/app/lib/actions";
+import { useContext,  useState } from "react";
 import Modal from "../modal/modal";
-import generateMedicationPrompt from "../medications/medicationPrompt/medicationPrompt";
-import { AppMedicationContext, MedicationProps } from "@/app/context";
+import { AppMedicationContext } from "@/app/context";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+
 import Image from "next/image";
 import { RegisterMedicationForm } from "../registerMedicationForm/registerMedicationForm";
 

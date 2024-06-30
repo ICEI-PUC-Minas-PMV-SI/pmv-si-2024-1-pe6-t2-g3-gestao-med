@@ -20,7 +20,6 @@ export const getUserDetails = async () => {
 export const getMedications = async () => {
   const api = await setupAPIClient();
 
-  console.log("pegou os medicamentos")
   try {
     const response = await api.get("/medications");
 
@@ -97,24 +96,19 @@ export const registerUser = async (params: {
   }
 };
 
-
 export const deleteMedicationAction = async (id: string) => {
-  const api = await setupAPIClient()
+  const api = await setupAPIClient();
 
   try {
-    const response = await api.patch(`/medication/delete/${id}`)
+    const response = await api.post(`/medication/delete/${id}`)
 
-    return { status: response.status }
+    return { status: response.status };
   } catch (err: any) {
+    console.log({ err });
 
-    console.log({ err })
-
-    return { status: '' }
+    return { status: "" };
   }
-
-
-
-}
+};
 
 export const updateMedicationStock = async (medicationId: string, stock: number) => {
   if(!medicationId || !stock) return
@@ -125,13 +119,31 @@ export const updateMedicationStock = async (medicationId: string, stock: number)
     
     const response = await api.put(`/medication/edit`, {
       id: medicationId,
-      stock
-    })
+      stock,
+    });
 
-    return { status: response.status }
-  }catch(err: any){
-    console.log({err})
+    return { status: response.status };
+  } catch (err: any) {
+    console.log({ err });
 
-    return {status: ''}
+    return { status: "" };
   }
-}
+};
+
+export const getRegistersReport = async (params: {
+  startDate: string;
+  endDate: string;
+}) => {
+  try {
+    const api = await setupAPIClient();
+    const response = await api.get<{ base64: string }>("/registers/report", { params });
+    return { data: response.data, status: response.status };
+  } catch (err: any) {
+    if (err.response) {
+      console.log({ err });
+      return { data: err.response.data.error, status: err.response.status };
+    }
+    console.log({ err });
+    return { status: "", data: [] };
+  }
+};

@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.container h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--white);
+}
+
+.container h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.container p {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.export_container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dates_select {
+  display: flex;
+  gap: 30px;
+}
+
+.dates_select div {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.dates_select input {
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+}
+
+.submit_btn {
+  width: 50%;
+  margin: 180px auto 0;
+}
+
+/* Mobile */
+@media (max-width: 680px) {
+  .dates_select {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .submit_btn {
+    width: 90%;
+  }
+}

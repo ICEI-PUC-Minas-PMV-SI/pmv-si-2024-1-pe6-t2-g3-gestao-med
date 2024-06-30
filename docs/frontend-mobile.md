@@ -195,7 +195,7 @@ Exemplos de fluxos de dados da aplicação:
 |RNF-001| O sistema atenderá ao requisito de PORTABILIDADE - executável a partir do Android  8.1 Oreo 2017 e do IOS 12 | ALTA |
 |RNF-002| O sistema atenderá a Lei de Geral de Proteção de Dados pessoais nº 13.709/2018 | ALTA |
 |RNF-003| O sistema deverá atender ao requisito de USABILIDADE - facilidade no uso do sistema com 3 cliques máximos para alcançar a função | ALTA |
-|RNF-004| O sistema deverá atender ao requsiito de **CONFIABILIDADE** - terá alta disponibilidade 99% do tempo | ALTA |
+|RNF-004| O sistema deverá atender ao requisito de **CONFIABILIDADE** - terá alta disponibilidade 99% do tempo | ALTA |
 |RNF-005| O *Layout* do sistema deverá usar *design* responsivo, para que renderize bem em qualquer dispositivo celular (resolução 720p) ou tablet (resolução 768p)  | MÉDIA |
 |RNF-006| O sistema deverá processar requisições do usuário em no máximo 3s | BAIXA |
 

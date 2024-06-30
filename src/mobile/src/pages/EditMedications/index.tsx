@@ -23,6 +23,7 @@ import {
 import Header from "../../components/Header";
 import FooterMenu from "../../components/Menu";
 
+
 type EditMedicationRouteProp = RouteProp<{ params: { medicationId: string } }, 'params'>;
 export default function EditMedication() {
     

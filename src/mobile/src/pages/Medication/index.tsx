@@ -21,6 +21,7 @@ import {
 } from "./styles";
 import Header from "../../components/Header";
 import FooterMenu from "../../components/Menu";
+import { useIsFocused, useNavigation } from "@react-navigation/native";
 
 export default function Medication() {
 
@@ -31,6 +32,7 @@ export default function Medication() {
   const [stock, onChangeStock] = React.useState("");
   const [timeToTake, setTimeToTake] = React.useState([""]);
 
+  const navigation = useNavigation<any>()
   
 
   const handleAddTimeField = () => {
@@ -73,6 +75,8 @@ export default function Medication() {
           })
           .join(","),
       });
+      alert("Medicamento cadastrado com sucesso!");
+      navigation.goBack();
       onChangeName("");
       onChangeDescription("");
       onChangeStock("");

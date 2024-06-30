@@ -97,26 +97,24 @@ O projeto foi desenvolvido com o objetivo de oferecer uma experiência prática,
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Cadastrar usuário paciente | ALTA |
+|RF-001| Gerenciar usuário paciente | ALTA |
 |RF-002| Fazer *login*  | ALTA |
-|RF-003| Cadastrar medicamentos e alertas  | ALTA |
-|RF-004| Disparar lembrete no horário com orientações para tomar o medicamento  | ALTA |
-|RF-005| Disparar alerta de fim de estoque de medicamentos, onde a quantidade mínima para o disparo do alerta pode ser configurada pelo usuário | ALTA |
-|RF-006| Editar medicamnetos cadastrados | MÉDIA |
-|RF-007| Permitir geração de relatório de medicamentos ingeridos por meio de inteligência artificial| MÉDIA |
-|RF-008| Permitir que o paciente confirme a ingestão ao ser notificado | MÉDIA |
+|RF-003| Gerenciar medicamentos | ALTA |
+|RF-004| Disparar alerta de fim de estoque de medicamentos, onde a quantidade mínima para o disparo do alerta é de 2 medicamentos | ALTA |
+|RF-005| Permitir geração de relatório de medicamentos ingeridos por meio de inteligência artificial| MÉDIA |
+|RF-006| Permitir que o paciente confirme a ingestão ao ser notificado | MÉDIA |
 
 
 ## Requisitos Não Funcionais
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| O sistema atenderá ao requisito de **PORTABILIDADE** - deverá executar em qualquer plataforma | ALTA |
+|RNF-001| O sistema atenderá ao requisito de **PORTABILIDADE** - deverá executar em browsers chrome 64+, edge 79+, fireforx 67+, opera 51+, safari 12+| ALTA |
 |RNF-002| O sistema atenderá a Lei de Geral de Proteção de Dados pessoais nº 13.709/2018 | ALTA |
-|RNF-003| O sistema deverá atender ao requisito de **USABILIDADE** - facilidade no uso do sistema | ALTA |
+|RNF-003| O sistema deverá atender ao requisito de **USABILIDADE** - facilidade no uso do sistema, com 3 cliques máximos para alcançar a função | ALTA |
 |RNF-004| O sistema deverá atender ao requsiito de **CONFIABILIDADE** - terá alta disponibilidade 99% do tempo | ALTA |
 |RNF-005| O sistema deverá usar arquitetura em camadas para desacoplamento | MÉDIA |
-|RNF-006| O *Layout* do sistema deverá usar *design* responsivo, para que renderize bem em qualquer dispositivo | MÉDIA |
+|RNF-006| O *Layout* do sistema deverá usar *design* responsivo, para que renderize bem em qualquer tela a partir de 14 polegadas | MÉDIA |
 |RNF-007| O sistema deverá processar requisições do usuário em no máximo 3s | BAIXA |
 
 
