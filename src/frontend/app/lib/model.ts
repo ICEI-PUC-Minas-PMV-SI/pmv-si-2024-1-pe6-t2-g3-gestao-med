@@ -1,4 +1,5 @@
 export interface IUserDetails {
+  lastName: string;
   id: string;
   isAdmin: boolean;
   email: string;
