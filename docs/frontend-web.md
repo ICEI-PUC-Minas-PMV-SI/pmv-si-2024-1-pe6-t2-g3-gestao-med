@@ -31,7 +31,7 @@ Tela de cadastro de usuário
 
 Tela home
 
-![home](img/home.jpg)
+
 
 Tela perfil
 
@@ -41,13 +41,15 @@ Tela de cadastro de medicamentos
 
 ![cadastromed](img/cadastro-medicamentos.jpg)
 
+Tela de edição de medicamentos
+
 Tela de medicamentos
 
 ![medicamentos](img/medicamentos.jpg)
 
-Tela de Lembrete/Alerta
+Tela de exportar relatório
 
-![lembrete](img/alerta-lembrete.jpg)
+
 
 
 ### Design Visual
@@ -139,15 +141,100 @@ Variáveis de ambiente:</br>
 
 ## Testes
 
-1 - Preparação dos Casos de Teste</br>
+**1 - Preparação dos Casos de Teste**</br>
 
 1.1. Os casos de testes incluem a validação de todos os casos de uso, de acordo com a regra de negócio, verificando se as requisições atendem ao desejado.</br>
 
 1.2. Com base nos requisitos de negócio identificados, foram criados casos de teste que cobriram todos os cenários possíveis, incluindo casos de sucesso e casos de erro.
 
-2 – Testes </br>
+**2 – Testes** </br>
 
-2.1. Os testes realizados serão manuais, de integração e de carga.
+**2.1 Testes Unitários**</br>
+
+  •	Objetivo: Validar unidades individuais de código, como funções, métodos e classes, para garantir que cada parte isolada funcione conforme o esperado.</br>
+ 
+  •	Caso de teste:</br>
+    o	Teste de validação: testa se as entradas de dados são validadas corretamente.</br>
+    o	Teste de modelo: verifica se um modelo de usuário salva e recupera os dados corretamente.</br>
+    o	Teste de serviço: verifica se um serviço de autenticação valida corretamente as credenciais. </br>
+    o	Testes de API: verifica se um endpoint de criação de usuário cria um usuário corretamente. </br>
+    
+**2.2  Testes de integração**</br>
+
+  •	Objetivo: Verificar a interação correta entre diferentes componentes ou módulos da aplicação.</br>
+  
+  •	Caso de teste:</br>
+    o	Testes de Integração de API: Testar se uma chamada de API para criar um usuário também atualiza corretamente o banco de dados e retorna a resposta esperada.</br>
+    o	Testes de Integração de Banco de Dados: Testar se a criação de um registro de usuário atualiza as tabelas relacionadas corretamente.</br>
+    o	Testes de Integração de Frontend e Backend: Testar se um formulário de login no frontend envia a requisição correta ao backend e processa a resposta adequadamente.</br>
+
+**2.3 Casos de testes**</br>
+  
+  **2.3.1 - Requisitos Funcionais**
+   
+   **Gerenciar Usuários**</br>
+   
+  Cadastro</br>
+ • Clicar em criar conta na tela de login.</br>
+ • Preencher os campos: nome, sobrenome, e-mail, senha e confirmação de senha.</br>
+ • Clicar em Criar Usuário, para verificar se a aplicação é bem-sucedida caso os dados sejam válidos, ou se dá erro caso os dados sejam inválidos.</br> 
+  
+  Edição</br>
+  • Clicar em meu perfil.</br>
+  • Fazer os ajustes necessários.</br>
+  • Clicar em editar.</br>
+  
+  **Autenticação de Usuários**</br>
+  
+  •	Preencher as credenciais (e-mail e senha).</br>
+  •	Verificar se o login é bem-sucedido ou não, clicando em entrar.</br>
+
+  **Gerenciar Medicamentos**</br> 
+  Cadastro</br>
+  •	Selecionar a opção adicionar medicamento que fica na home da aplicação.</br>
+  •	Preencher os campos: nome do medicamento, estoque inicial, descrição e horários programados para alarme.</br>
+  •	Clicar no botão adicionar. </br>
+  •	O modal deverá fechar e então aparece a mensagem de sucesso do cadastro.</br>
+  
+  Edição</br>
+  •	Na página home, selecionar medicamentos e lá clicar no ícone do lápis para a realizar a edição do respectivo medicamento.</br>
+  •	Ao abrir o modal, fazer a edição desejada.</br>
+  •	Clicar no botão alterar.</br>
+  
+  **Confirmar ingestão de medicamento**</br>
+  
+  • Na página home, clicar no nome do medicamento no seu respectivo horário de tomada para validar a ingestão do medicamento.</br>
+  
+  **Gerar relatório de ingestão de medicamentos**</br>
+  
+  •	Na página home, selecionar a opção relatórios</br>
+  •	Selecionar o período desejado (dia, semana, mês, ano), onde será retornado o histórico de ingestão de medicamento desse período.</br>
+  •	Clicar em exportar relatório.</br>
+  •	O relatório deverá será exportado em .pdf. Caso não tenha registros no período, uma mensagem de que não há registros para o período deverá aparecer.</br>
+
+**2.3.2 Requisitos Não Funcionais**
+
+  **Portabilidade**</br>
+  •	Testar a responsividade em diferentes dispositivos e tamanho de tela.</br>
+  •	Avaliar a navegabilidade do usuário.</br>
+
+  **Segurança**</br>
+  •	Testar a aplicação contra Injeção SQL.</br>
+  •	Verificar a proteção contra ataques de XSS e CSRF.</br>
+  •	Testar a sobrecarga do sistema contra ataques DDOs.</br>
+  
+  **Desempenho**</br>
+  •	Medir o tempo de resposta para operações críticas sob carga normal.</br>
+  •	Testar a estabilidade da aplicação durante picos de carga.</br>
+  
+**Usabilidade**</br>
+•	Testar a facilidade de aprendizado do sistema.</br>
+•	Testar a eficiência de uso da aplicação.</br>
+
+**Confiabilidade**</br>
+•	Testar a disponibilidade referindo-se ao tempo em que o sistema está acessível aos usuários.</br>
+•	Verificar a capacidade do sistema de continuar operando corretamente mesmo diante de falhas ou condições adversas.</br>
+•	Testar a habilidade do sistema de se recuperar rapidamente e eficientemente após uma falha.</br>
 
 # Referências
 
