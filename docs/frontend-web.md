@@ -190,6 +190,7 @@ Variáveis de ambiente:</br>
   •	Verificar se o login é bem-sucedido ou não, clicando em entrar.</br>
 
   **Gerenciar Medicamentos**</br> 
+ 
   Cadastro</br>
   •	Selecionar a opção adicionar medicamento que fica na home da aplicação.</br>
   •	Preencher os campos: nome do medicamento, estoque inicial, descrição e horários programados para alarme.</br>
@@ -227,14 +228,14 @@ Variáveis de ambiente:</br>
   •	Medir o tempo de resposta para operações críticas sob carga normal.</br>
   •	Testar a estabilidade da aplicação durante picos de carga.</br>
   
-**Usabilidade**</br>
-•	Testar a facilidade de aprendizado do sistema.</br>
-•	Testar a eficiência de uso da aplicação.</br>
+  **Usabilidade**</br>
+  •	Testar a facilidade de aprendizado do sistema.</br>
+  •	Testar a eficiência de uso da aplicação.</br>
 
-**Confiabilidade**</br>
-•	Testar a disponibilidade referindo-se ao tempo em que o sistema está acessível aos usuários.</br>
-•	Verificar a capacidade do sistema de continuar operando corretamente mesmo diante de falhas ou condições adversas.</br>
-•	Testar a habilidade do sistema de se recuperar rapidamente e eficientemente após uma falha.</br>
+  **Confiabilidade**</br>
+  •	Testar a disponibilidade referindo-se ao tempo em que o sistema está acessível aos usuários.</br>
+  •	Verificar a capacidade do sistema de continuar operando corretamente mesmo diante de falhas ou condições adversas.</br>
+  •	Testar a habilidade do sistema de se recuperar rapidamente e eficientemente após uma falha.</br>
 
 # Referências
 
