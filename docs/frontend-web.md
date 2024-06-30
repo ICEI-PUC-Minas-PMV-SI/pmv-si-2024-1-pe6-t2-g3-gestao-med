@@ -27,11 +27,11 @@ Tela de Login
 
 Tela de cadastro de usuário
 
-![cadastrousu](img/cadastro-usuario-1.jpg)
+![home](img/cadastro-usuario-1.jpg)
 
 Tela home
 
-
+![cadastrousu](img/home-com-chatbot.png)
 
 Tela perfil
 
@@ -43,13 +43,15 @@ Tela de cadastro de medicamentos
 
 Tela de edição de medicamentos
 
+![editamed](img/editar-medicamentoweb.png)
+
 Tela de medicamentos
 
 ![medicamentos](img/medicamentos.jpg)
 
 Tela de exportar relatório
 
-
+![relatórios](img/exportar-relatório.png)
 
 
 ### Design Visual
