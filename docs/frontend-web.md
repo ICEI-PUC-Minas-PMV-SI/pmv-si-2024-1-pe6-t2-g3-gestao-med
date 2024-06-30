@@ -35,7 +35,7 @@ Tela home
 
 Tela chatbot 
 
-
+![chatbot](img/chatbot-aberto.png)
 
 Tela perfil
 
@@ -109,7 +109,7 @@ O projeto foi desenvolvido com o objetivo de oferecer uma experiência prática,
 |RF-002| Fazer *login*  | ALTA |
 |RF-003| Gerenciar medicamentos | ALTA |
 |RF-004| Disparar alerta de fim de estoque de medicamentos, onde a quantidade mínima para o disparo do alerta é de 2 medicamentos | ALTA |
-|RF-005| Permitir geração de relatório de medicamentos ingeridos por meio de inteligência artificial| MÉDIA |
+|RF-005| Pesquisar informações de saúde e medicamentos por meio de inteligência artificial| MÉDIA |
 |RF-006| Permitir que o paciente confirme a ingestão ao ser notificado | MÉDIA |
 
 
