@@ -22,7 +22,7 @@ Assim, o Gestão Med é uma aplicação *web* dedicada à organização e gestã
 
 ## Orientador
 
-* Josiane da Costa Vieira Rezende
+* Pedro Pongelupe Lopes
 
 # Planejamento
 
