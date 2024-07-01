@@ -27,6 +27,8 @@ export default function UsuarioComponent(data: IUserDetails){
                 <input className={styles.dataInput} type="text" placeholder={data.date_of_birth.slice(0, 10).split('-').reverse().join('/')}/>
                 <p className={styles.dataText}>Gênero: {data.gender.replace("MALE", "Masculino").replace("FEMALE", "Feminino")}</p> 
                 
+
+                <input type="submit" className={styles.butaoEditar} value="Editar"/>
             </div>
         </main>
     )
