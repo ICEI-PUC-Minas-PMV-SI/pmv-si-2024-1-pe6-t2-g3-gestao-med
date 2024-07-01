@@ -36,8 +36,33 @@
     color: rgb(71, 71, 71);
     margin-top: 12px;
 }
-
+.butaoEditar{
+    background: var(--primary-color);
+    color: #ffffff;
+    cursor: pointer;
+    border: transparent;
+    border-radius: 8px;
+    position: relative;
+    top: 10vw;
+    left: 15vw;
+    height: 2.4vw;
+    width: 30%;
+}
+@media(max-width:1020px){
+    .butaoEditar{
+        left: 12.2vw;
+    }
+}
+@media(max-width:942px){
+    .butaoEditar{
+        left: 11vw;
+    }
+}
 @media(max-width:830px){
+    .butaoEditar{
+        top: 9vw;
+        left: 10vw;
+    }
     .top{
         font-size: 20px;
         margin-top: 70px;
@@ -54,6 +79,10 @@
 }
 
 @media(max-width:750px){
+    .butaoEditar{
+        top: 9vw;
+        left: 27vw;
+    }
     .dataText{
         font-size: 8.5px;
         left: 2vw;
@@ -61,6 +90,10 @@
     }
 }
 @media(max-width:690px){
+    .butaoEditar{
+        top: 8vw;
+        left: 28vw;
+    }
     .dataText{
         top: 2vw;
         left: 2vw;
@@ -76,6 +109,11 @@
 }
 
 @media(max-width:650px){
+    .butaoEditar{
+        height: 30px;
+        top: 17vw;
+        left: 19vw;
+    }
     .top{
         font-size: 20px;
         margin-top: 70px;
@@ -94,6 +132,11 @@
 }
 
 @media(max-width:465px){
+    .butaoEditar{
+        height: 30px;
+        top: 20vw;
+        left: 19vw;
+    }
     .dataText{
         top: 35px;
         font-size: 2.35vw;
@@ -101,6 +144,11 @@
 }
 
 @media(max-width:415px){
+    .butaoEditar{
+        height: 30px;
+        top: 20vw;
+        left: 19vw;
+    }
     .container{
         top: 30px;
         left: 25%;
