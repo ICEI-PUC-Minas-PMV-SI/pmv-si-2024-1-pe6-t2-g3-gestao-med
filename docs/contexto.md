@@ -188,7 +188,7 @@ As tabelas a seguir apresentam os requisitos funcionais e não funcionais que de
 
 ### Diagrama de Casos de Uso
 
-![diagrama caso de uso](img/Diagrama-caso-uso.png)
+![diagrama caso de uso](img/diagrama-casosdeuso-atual.png)
 
 ## Restrições
 
