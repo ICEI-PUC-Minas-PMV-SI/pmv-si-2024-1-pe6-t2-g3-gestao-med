@@ -18,18 +18,23 @@ export class MedicationsPrismaRepository implements IMedicationsRepository{
                 user_id,
                 deleted_at: null
             },
-            select: {
-                id: true,
-                user_id: true,
-                name: true,
-                description: true,
-                stock: true,
-                time_to_take: true,
-                treatment_finished_at: true,
-                created_at: true,
-                updated_at: true,
-                deleted_at: true
-            }
+            include:{
+                Registers: true
+            },
+
+            // select: {
+            //     id: true,
+            //     user_id: true,
+            //     name: true,
+            //     description: true,
+            //     stock: true,
+            //     time_to_take: true,
+            //     treatment_finished_at: true,
+            //     created_at: true,
+            //     updated_at: true,
+            //     deleted_at: true,
+            
+            // }
         })
     }
 

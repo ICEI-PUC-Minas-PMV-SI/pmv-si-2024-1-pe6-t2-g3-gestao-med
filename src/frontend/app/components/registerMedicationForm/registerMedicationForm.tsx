@@ -6,7 +6,7 @@ import styles from "./page.module.css";
 import { toast } from "react-toastify";
 import { registerMedication } from "@/app/lib/actions";
 import { MedicationProps } from "@/app/context";
-
+import { useRouter } from "next/navigation";
 interface FormData {
   name: string;
   description: string;
@@ -20,7 +20,7 @@ interface IRegisterMedicationForm {
 }
 
 export function RegisterMedicationForm({ closeRegisterModal, medication }: IRegisterMedicationForm) {
-  
+  const router = useRouter()
 
   const {
     trigger,
@@ -86,7 +86,7 @@ export function RegisterMedicationForm({ closeRegisterModal, medication }: IRegi
     
     setIsLoadingRegister(true);
 
-    try {
+    
       const response = await registerMedication({
         id: medication ? medication.id : null,
         name: data.name.trim(),
@@ -102,12 +102,12 @@ export function RegisterMedicationForm({ closeRegisterModal, medication }: IRegi
         return;
       }
 
+
       toast.success(medication ? "Medicamento atualizado com sucesso!" : "Medicamento adicionado com sucesso!");
+      window.location.reload()
       closeRegisterModal();
       
-    } catch (err: any) {
-      console.log(err);
-    }
+    
   };
 
   const validarFormulario = (data: FormData) => {

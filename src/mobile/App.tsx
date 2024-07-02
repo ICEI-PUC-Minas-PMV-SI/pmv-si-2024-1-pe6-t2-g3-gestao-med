@@ -27,15 +27,15 @@ export default function App() {
       return 
     }
 
-    await Notifications.scheduleNotificationAsync({
-      content: {
-        title: "Olá",
-        body: "Não esqueça de tomar seus medicamentos"
-      },
-      trigger:{
-        seconds: 2
-      }
-    })
+    // await Notifications.scheduleNotificationAsync({
+    //   content: {
+    //     title: "Olá",
+    //     body: "Não esqueça de tomar seus medicamentos"
+    //   },
+    //   trigger:{
+    //     seconds: 2
+    //   }
+    // })
   }
 
   useEffect(() => {

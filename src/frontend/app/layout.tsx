@@ -4,10 +4,7 @@ import "./globals.css";
 import AuthWrapper from "./auth_wrapper";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import { AppMedicationContext, AppWrapper } from "./context";
-import { getMedications } from "./lib/actions";
-import Script from "next/script";
-import { useContext } from "react";
+import { AppWrapper } from "./context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,7 +30,7 @@ export default async function RootLayout({
             {children}
           </AppWrapper>
         </AuthWrapper>
-        <ToastContainer />
+        <ToastContainer autoClose={2000}/>
       </body>
     </html>
   );

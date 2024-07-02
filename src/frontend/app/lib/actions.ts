@@ -51,7 +51,7 @@ export const registerMedication = async (params: {
   name: string;
   description: string;
   stock: number;
-  timeToTake: string;
+  time_to_take: string;
 }) => {
   const api = await setupAPIClient();
 
@@ -59,6 +59,9 @@ export const registerMedication = async (params: {
     const metodo = params.id ? 'put' : 'post';
     const url = params.id ? '/medication/edit' : '/medication';
     const response = await api[metodo](url, {...params});
+    revalidatePath('home')
+    revalidatePath('/medicamentos')
+
     return { status: response.status, data: response.data };
 
   } catch (err: any) {
@@ -69,6 +72,7 @@ export const registerMedication = async (params: {
     console.log({ err });
     return { status: "", data: [] };
   }
+
 };
 
 export const registerUser = async (params: {
