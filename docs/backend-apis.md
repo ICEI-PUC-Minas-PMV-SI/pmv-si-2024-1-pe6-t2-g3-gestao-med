@@ -35,8 +35,8 @@ A aplicação GestãoMed tem uma estrutura de dados que envolve principalmente i
 
 ## Requisitos Funcionais
 
-1 - A aplicação deve permitir aos usuários se cadastrarem, fazerem log-in no sistema, cadastrar medicamentos e suas informações, incluindo alertas de tomada de medicações, além de acessarem a listagem dos medicamentos cadastrados e gerarem relatórios de medicamentos por um período específico.<br/>
-2 - Os usuários devem ser capazes de cadastrar as informações e horários das medicações.<br/>
+1 - A aplicação deve permitir aos usuários se cadastrarem, editarem seus cadastros,fazerem log-in no sistema, cadastrar medicamentos e suas informações, incluindo alertas de tomada de medicações, além de acessarem a listagem dos medicamentos cadastrados e gerarem relatórios de medicamentos por um período específico.<br/>
+2 - Os usuários devem ser capazes de cadastrar e editar as informações e horários das medicações.<br/>
 3 - A API deve autenticar os usuários antes de permitir o uso do sistema. <br/>
 4 - A API deve gerar o alerta de tomada de medicamentos no horário programado além do alerta de proximidade do fim do estoque de medicações.
 
