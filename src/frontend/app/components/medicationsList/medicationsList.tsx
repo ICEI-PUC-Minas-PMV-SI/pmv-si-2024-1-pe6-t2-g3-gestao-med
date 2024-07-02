@@ -6,7 +6,7 @@ import { IMedication } from "@/app/lib/model";
 import { deleteMedicationAction,  } from "@/app/lib/actions";
 import { useContext,  useState } from "react";
 import Modal from "../modal/modal";
-import { AppMedicationContext } from "@/app/context";
+import { AppMedicationContext, MedicationProps } from "@/app/context";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 

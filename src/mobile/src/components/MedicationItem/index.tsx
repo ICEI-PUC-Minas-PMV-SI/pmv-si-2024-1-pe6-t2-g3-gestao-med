@@ -55,12 +55,12 @@ export default function MedicationItem({ data, time }: MedicationBoxProps) {
             }) 
 
             if (result.status === 201) {
-                setIsTakenToday(true);
-
+                
                 await api.put('/medication/edit', {
                     id: data.id,
                     stock: data.stock - 1
                 })
+                setIsTakenToday(true);
             
 
         } else {

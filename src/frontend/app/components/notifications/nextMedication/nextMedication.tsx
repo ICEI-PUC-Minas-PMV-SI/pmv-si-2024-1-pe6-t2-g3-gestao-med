@@ -72,9 +72,9 @@ export default function NextMedication() {
                     <p>Nenhum medicamento a ser tomado em breve.</p>
                 )}
             </div>
-            <Modal isModalOpen={isOpenRegisterModal} onCloseModal={() => setIsOpenRegisterModal(false)} modalTitle="Lembrete">
+            {/* <Modal isModalOpen={isOpenRegisterModal} onCloseModal={() => setIsOpenRegisterModal(false)} modalTitle="Lembrete">
                 <ConfirmMedication />
-            </Modal>
+            </Modal> */}
         </>
     );
 }

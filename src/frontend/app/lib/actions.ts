@@ -27,10 +27,6 @@ export const editUser = async (formData: FormData) => {
     gender,
 
   } = Object.fromEntries(formData)
-  console.log({name})
-  console.log({email})
-  console.log({date_of_birth})
-  console.log({gender})
   
 
   try{
@@ -87,6 +83,7 @@ export const registerMedication = async (params: {
   try {
     const metodo = params.id ? 'put' : 'post';
     const url = params.id ? '/medication/edit' : '/medication';
+    console.log({url})
     const response = await api[metodo](url, {...params});
     revalidatePath('home')
     revalidatePath('/medicamentos')

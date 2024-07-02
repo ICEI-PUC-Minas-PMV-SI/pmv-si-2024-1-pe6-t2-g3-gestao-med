@@ -27,16 +27,6 @@ export default function MedicationBox({ data, time }: MedicationBoxProps) {
                 const minuteTaken = timeString.split(":")[1]
                 const registerTimeStr = `${hourTaken}:${minuteTaken}`
 
-                //  // Formato 'HH:MM'
-                // console.log("name: ", data.name)
-                // console.log("time_taken: ", register.time_taken)
-                // console.log("registerDate: ", registerDate)
-                // console.log('registerTimeStr: ', registerTimeStr)
-                // console.log('time: ', time)
-                // console.log("registerDateStrg === todayDateSrt: ", registerDateStr === todayDateStr)
-                // console.log('registerTimeStr === time: ', registerTimeStr === time)
-                // console.log("register.medication_taken: ", register.medication_taken)
-                // console.log("**************")
                 return registerDateStr === todayDateStr && registerTimeStr === time && register.medication_taken;
             });
 

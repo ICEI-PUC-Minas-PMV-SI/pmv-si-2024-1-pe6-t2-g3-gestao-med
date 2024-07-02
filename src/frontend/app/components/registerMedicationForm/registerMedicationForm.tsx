@@ -97,7 +97,7 @@ export function RegisterMedicationForm({ closeRegisterModal, medication }: IRegi
 
       setIsLoadingRegister(false);
 
-      if (response.status !== 201) {
+      if (response.status !== 200) {
         toast.error("Erro ao cadastrar medicamento!", {position: "top-right"});
         return;
       }

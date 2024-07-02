@@ -40,7 +40,7 @@ export default function User() {
     const [buttonIsDisabled, setButtonIsDisabled] = useState(true)
 
     const handleUpdateUser = async () => {
-
+        
         try {
             const response = await api.put("/user/update", {
                 name: name ? name : undefined,
@@ -48,12 +48,13 @@ export default function User() {
                 gender: gender ? gender : undefined,
                 dateOfBirth: dateOfBirth ? dateOfBirth : undefined
             })
-
+            console.log()
             if (response.status === 201) {
+                alert("Dados atualizados com sucesso")
                 navigation.navigate("User")
             }
         } catch (err: any) {
-
+            console.log({err})
         }
 
 
