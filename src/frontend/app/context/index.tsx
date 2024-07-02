@@ -31,7 +31,7 @@ export  function AppWrapper({
   const [medications, setMedications] = useState<MedicationProps[]>([]);
 
   const medicationsRequest = async () => {
-
+    console.log('medication request called')
     const { status, data } = await getMedications()
     if (status === 200) {
       setMedications(data)
