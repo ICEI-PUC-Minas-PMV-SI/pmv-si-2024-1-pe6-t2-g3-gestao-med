@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../contexts/auth";
 import Header from "../../components/Header";
 import {
   Background,
@@ -29,7 +28,20 @@ export type MedicationsDTO = {
   created_at: Date | null;
   updated_at: Date | null;
   deleted_at: Date | null;
+  Registers: MedicationRegisters[]
+
 };
+
+export type MedicationRegisters = {
+  id: string
+  user_id: string
+  medication_id: string
+  medication_name: string
+  medication_taken: boolean
+  time_taken: string
+  created_at: Date
+  updated_at: Date
+}
 
 export default function Home() {
   const [medications, setMedications] = useState<MedicationsDTO[] | []>([]);
@@ -74,7 +86,7 @@ export default function Home() {
 
   const checkStockAndNotify = (medications: MedicationsDTO[]) => {
     medications.forEach(async (med) => {
-      if (med.stock < 3) {
+      if (med.stock < 4) {
         await Notifications.scheduleNotificationAsync({
           content: {
             title: "Atenção",
@@ -210,7 +222,7 @@ export default function Home() {
         </TimeBox>
         <MedicationBox>
           {groupedMeds[time].map((med) => (
-            <MedicationItem key={med.id} id={med.id} medName={med.name} />
+            <MedicationItem key={med.id} data={med} time={time} />
           ))}
         </MedicationBox>
       </ListMedications>

@@ -66,7 +66,6 @@ export default function MedicationBox({ data, time }: MedicationBoxProps) {
                 toast.success(`${data.name} atualizado com sucesso`)
 
                 const result = await editMedicationStock(data.id, data.stock - 1)
-                console.log({result})
                 window.location.reload()
 
             } else {

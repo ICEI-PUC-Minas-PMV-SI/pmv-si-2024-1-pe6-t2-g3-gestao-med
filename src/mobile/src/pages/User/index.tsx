@@ -30,7 +30,7 @@ export enum Gender {
 export default function User() {
     const navigation = useNavigation<any>()
 
-    const { loadingAuth, user } = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
 
     const [name, setName] = useState<string>('')
     const [email, setEmail] = useState('')
@@ -41,7 +41,7 @@ export default function User() {
 
     const handleUpdateUser = async () => {
 
-        try{
+        try {
             const response = await api.put("/user/update", {
                 name: name ? name : undefined,
                 email: email ? email : undefined,
@@ -49,10 +49,10 @@ export default function User() {
                 dateOfBirth: dateOfBirth ? dateOfBirth : undefined
             })
 
-            if(response.status === 201){
+            if (response.status === 201) {
                 navigation.navigate("User")
             }
-        }catch(err: any){
+        } catch (err: any) {
 
         }
 
@@ -98,7 +98,7 @@ export default function User() {
                     behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
                     enabled
                 >
-                <Logo source={require('../../assets/logotipo.png')}/>
+                    <Logo source={require('../../assets/logotipo.png')} />
 
                     <AreaInput>
                         <Label>Nome: </Label>
@@ -173,11 +173,9 @@ export default function User() {
 
                     <SubmitButton onPress={handleUpdateUser} disabled={buttonIsDisabled}>
 
-                        {loadingAuth ? (
-                            <ActivityIndicator size={20} color="#FFF" />
-                        ) : (
-                            <SubmitText>Atualizar Dados</SubmitText>
-                        )}
+
+                        <SubmitText>Atualizar Dados</SubmitText>
+
 
                     </SubmitButton>
                 </Container>

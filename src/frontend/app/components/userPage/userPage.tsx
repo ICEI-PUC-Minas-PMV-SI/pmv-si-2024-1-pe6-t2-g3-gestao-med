@@ -1,40 +1,92 @@
 'use client'
 
-import { useSession } from 'next-auth/react'
+import { signOut, useSession } from 'next-auth/react'
 import styles from './userPage.module.css'
-import { IUserDetails } from '@/app/lib/model'
+import { useState } from 'react'
+import { editUser } from '@/app/lib/actions'
+import { toast } from 'react-toastify'
 
+export default function UsuarioComponent() {
+    const { data } = useSession()
+    const [loading, setLoading] = useState(false)
+    const [name, setName] = useState(data?.user.name || '')
+    const [email, setEmail] = useState(data?.user.email || '')
+    const [gender, setGender] = useState(data?.user.gender || '')
+    const [birthday, setBirthday] = useState(data?.user.date_of_birth ? data.user.date_of_birth.slice(0, 10) : '')
 
+    const handleEditUser = async (formData: FormData) => {
+        setLoading(true)
+        const result = await editUser(formData)
 
-export default function UsuarioComponent(data: IUserDetails){
-
-    function trigger(arg0: string): void {
-        throw new Error('Function not implemented.')
+        if (result.status === 204) {
+            toast.success("Dados editados com sucesso")
+            setLoading(false)
+            await signOut()
+        }
     }
 
-    return(
+    return (
         <main className={styles.main}>
             <h1 className={styles.top}>Informações pessoais</h1>
-            
-            <div className={styles.container}>
-                {/* <p className={styles.dataText}>Nome: {data.name}</p> 
-                <p className={styles.dataText}>Data de nascimento: { data.date_of_birth.slice(0, 10).split('-').reverse().join('/')}</p>   
-                <p className={styles.dataText}>Gênero: {data.gender.replace("MALE", "Masculino").replace("FEMALE", "Feminino")}</p> 
-                <p className={styles.dataText}>E-mail: {data.email} </p>  */}
 
-                <input className={styles.dataInput} type="text" placeholder= {data.name} />
-                <input className={styles.dataInput} type="email" placeholder= {data.email} />
-                <input className={styles.dataInput} type="text" placeholder={data.date_of_birth.slice(0, 10).split('-').reverse().join('/')}/>
-                <p className={styles.dataText}>Gênero: {data.gender.replace("MALE", "Masculino").replace("FEMALE", "Feminino")}</p> 
-                
+            <form className={styles.container} action={handleEditUser}>
 
-                <input type="submit" className={styles.butaoEditar} value="Editar"/>
-            </div>
+                <div className={styles.inputBox}>
+                    <label htmlFor="name">Nome: </label>
+                    <input
+                        className={styles.dataInput}
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Nome"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
+                </div>
+                <div className={styles.inputBox}>
+                    <label htmlFor="email">Email: </label>
+                    <input
+                        className={styles.dataInput}
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </div>
+                <div className={styles.inputBox}>
+                    <label htmlFor="birthday">Data de Nascimento: </label>
+                    <input
+                        className={styles.dataInput}
+                        type="date"
+                        id="birthday"
+                        name="date_of_birth"
+                        value={birthday}
+                        onChange={(e) => setBirthday(e.target.value)}
+                    />
+                </div>
+                <div className={styles.inputBox}>
+                    <label htmlFor="gender">Gênero: </label>
+                    <select
+                        id="gender"
+                        name="gender"
+                        className={styles.dataInput}
+                        value={gender}
+                        onChange={(e) => setGender(e.target.value)}
+                    >
+                        <option value="MALE">Masculino</option>
+                        <option value="FEMALE">Feminino</option>
+                        <option value="OTHER">Outro</option>
+                    </select>
+                </div>
+
+                <button className={styles.button} type="submit">
+                    {loading ? "Carregando" :
+                        "Editar dados"
+                    }
+                </button>
+            </form>
         </main>
     )
 }
-
-function register(arg0: string, arg1: { required: string; minLength: { value: number; message: string } }): import("react").JSX.IntrinsicAttributes & import("react").ClassAttributes<HTMLInputElement> & import("react").InputHTMLAttributes<HTMLInputElement> {
-    throw new Error('Function not implemented.')
-}
-
