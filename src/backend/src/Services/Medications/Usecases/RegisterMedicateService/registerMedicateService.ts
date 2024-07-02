@@ -17,7 +17,13 @@ class RegisterMedicateService {
         // if(!data.created_at)throw new CustomError("Created at is required", 400)
         // if(!data.updated_at)throw new CustomError("Updated at is required", 400)
 
-        return !data.id ? await this.medicationRepository.save(data) : await this.medicationRepository.edit(data);
+        if (!data.id) {
+            data.id = randomUUID();
+            return await this.medicationRepository.save(data);
+        } else {
+            return await this.medicationRepository.edit(data);
+        }
+
     }
 }
 
