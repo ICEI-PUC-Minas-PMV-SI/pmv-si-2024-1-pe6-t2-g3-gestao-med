@@ -17,6 +17,35 @@ export const getUserDetails = async () => {
   }
 };
 
+export const editUser = async (formData: FormData) => {
+  const api = await setupAPIClient()
+
+  const {
+    name,
+    email,
+    date_of_birth,
+    gender,
+
+  } = Object.fromEntries(formData)
+  console.log({name})
+  console.log({email})
+  console.log({date_of_birth})
+  console.log({gender})
+  
+
+  try{
+    const response = await api.put('/user/update', {
+      name, email, date_of_birth, gender
+    })
+
+    return {status: response.status, data: ''}
+  }catch(err: any){
+    if(err.response) return {status: err.response.status, data: err.response.data.error}
+
+    return {status: '', data: ''}
+  }
+}
+
 export const getMedications = async () => {
   const api = await setupAPIClient();
 

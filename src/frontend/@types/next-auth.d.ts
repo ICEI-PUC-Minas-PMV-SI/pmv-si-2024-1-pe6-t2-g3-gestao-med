@@ -11,6 +11,7 @@ declare module 'next-auth' {
             phone: string | null
             token: string
             created_at: date
+            gender: string
             date_of_birth: string
         }
     }

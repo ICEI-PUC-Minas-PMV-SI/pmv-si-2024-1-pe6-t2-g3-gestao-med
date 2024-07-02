@@ -1,53 +1,52 @@
 .main{
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
 }
 .top{
     text-align: center;
     margin-top: 60px;
-    color: #ffffff;
+    color: #000000;
 }
 .container{
-    position: relative;
-    top: 90px;
-    left: 13%;
-    height: 24vw;
     width: 75%;
-    box-align: center;
     background: #ebebeb;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 15px 5px;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.inputBox{
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
 }
 .dataInput{
     outline: none;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 3px 2px;
     border: transparent;
-    text-align: center;
     border-radius: 10px;
-    margin-left: 13%;
-    margin-top: 20px;
-    height: 3vw;
-    width: 75%;
+    width: 100%;
+    padding: 1rem .5rem;
 }
-.dataText{
-    font-size: 1vw;
-    position: relative;
-    top: 0.5vw;
-    left: 6vw;
-    color: rgb(71, 71, 71);
-    margin-top: 12px;
+
+.dataInput::placeholder{
+    color: #000;
 }
-.butaoEditar{
-    background: var(--primary-color);
-    color: #ffffff;
+
+.button{
+    padding: 1rem .5rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
     cursor: pointer;
-    border: transparent;
-    border-radius: 8px;
-    position: relative;
-    top: 10vw;
-    left: 15vw;
-    height: 2.4vw;
-    width: 30%;
 }
+
 @media(max-width:1020px){
     .butaoEditar{
         left: 12.2vw;
