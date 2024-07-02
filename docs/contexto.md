@@ -120,8 +120,9 @@ As tabelas a seguir apresentam os requisitos funcionais e não funcionais que de
 |RF-003| Gerenciar medicamentos   | ALTA |
 |RF-004| Disparar lembrete no horário com orientações para tomar o medicamento  | ALTA |
 |RF-005| Disparar alerta de fim de estoque de medicamentos, onde a quantidade mínima para o disparo do alerta é de 2 medicamentos | ALTA |
-|RF-006| Pesquisar informações de saúde e medicamentos por meio de inteligência artificial | MÉDIA |
-|RF-007| Permitir que o paciente confirme a ingestão ao ser notificado | MÉDIA |
+|RF-006| Gerar relatório contendo o padrão de uso das medicações | MÉDIA |
+|RF-007| Pesquisar informações de saúde e medicamentos por meio de inteligência artificial | MÉDIA |
+|RF-008| Permitir que o paciente confirme a ingestão ao ser notificado | MÉDIA |
 
 
 ### Requisitos não Funcionais
