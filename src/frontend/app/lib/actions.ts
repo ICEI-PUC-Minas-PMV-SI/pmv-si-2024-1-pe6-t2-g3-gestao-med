@@ -75,6 +75,22 @@ export const registerMedication = async (params: {
 
 };
 
+export const editMedicationStock = async (id: string, stock: number)  => {
+  const api = await setupAPIClient();
+
+  try{
+    const response = await api.put("/medication/edit", {
+      id,
+      stock
+    })
+
+    return {status: response.status}
+  }catch(err: any){
+    if(err.response) return {status: err.response.status}
+
+    return {status: ''}
+  }
+}
 export const registerUser = async (params: {
   name: string;
   email: string;
@@ -114,25 +130,25 @@ export const deleteMedicationAction = async (id: string) => {
   }
 };
 
-export const updateMedicationStock = async (medicationId: string, stock: number) => {
-  if(!medicationId || !stock) return
+// export const updateMedicationStock = async (medicationId: string, stock: number) => {
+//   if(!medicationId || !stock) return
 
   
-  try{
-    const api = await setupAPIClient()
+//   try{
+//     const api = await setupAPIClient()
     
-    const response = await api.put(`/medication/edit`, {
-      id: medicationId,
-      stock,
-    });
+//     const response = await api.put(`/medication/edit`, {
+//       id: medicationId,
+//       stock,
+//     });
 
-    return { status: response.status };
-  } catch (err: any) {
-    console.log({ err });
+//     return { status: response.status };
+//   } catch (err: any) {
+//     console.log({ err });
 
-    return { status: "" };
-  }
-};
+//     return { status: "" };
+//   }
+// };
 
 export const getRegistersReport = async (params: {
   startDate: string;
@@ -151,3 +167,24 @@ export const getRegistersReport = async (params: {
     return { status: "", data: [] };
   }
 };
+
+export const registerMedicationTaken = async (medication_id: string, time_taken: string, medication_taken: boolean, medication_name: string) => {
+  try{
+    const api = await setupAPIClient()
+        
+    const response = await api.post('/medication/taken', {
+      medication_id,
+      time_taken,
+      medication_taken,
+      medication_name
+    })
+
+    return {status: response.status, data: response.data}
+  }catch(err: any){
+    if(err.response){
+      return {status: err.response.status, data: err.response.data.error}
+    }
+
+    return {status:'', data:''}
+  }
+}

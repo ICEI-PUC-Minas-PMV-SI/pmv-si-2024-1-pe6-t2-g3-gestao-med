@@ -6,7 +6,7 @@ import MedicationBox from "../medications/medicationBox/medicationBox";
 import { AppMedicationContext, MedicationProps } from "@/app/context";
 
 export default function HomePage() {
-  const { medications } = useContext(AppMedicationContext);
+  const { medications, loadingMedications } = useContext(AppMedicationContext);
   const dayOfWeek = (today: Date) => {
     const weekdays = [
       "Domingo",
@@ -92,7 +92,9 @@ export default function HomePage() {
         </div>
         <div className={styles.list}>
           {groupedMeds[time].map((med) => (
-            <MedicationBox key={med.id} id={med.id} medName={med.name} />
+
+            <MedicationBox data={med} time={time} />
+
           ))}
         </div>
       </div>
@@ -104,7 +106,11 @@ export default function HomePage() {
         <h1>Para Hoje</h1>
         {adjustedDate()}
       </div>
-      {renderMedicationsByTime()}
+      {loadingMedications ?
+          "Carregando medicamentos"
+          :
+          renderMedicationsByTime()
+        }
     </section>
   );
 }
