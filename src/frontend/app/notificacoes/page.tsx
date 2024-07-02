@@ -7,7 +7,7 @@ import styles from './notifications.module.css'
 import { AppMedicationContext } from "../context";
 import Modal from "../components/modal/modal";
 import Button from "../components/button/button";
-import { updateMedicationStock } from "../lib/actions";
+import { editMedicationStock} from "../lib/actions";
 import { toast } from "react-toastify";
 
 export default function NotificationsPage() {
@@ -37,9 +37,9 @@ export default function NotificationsPage() {
     const updateStock = async (formData: FormData) => {
         const stock = formData.get('stock')
 
-        const response = await updateMedicationStock(selectedMedicationId, Number(stock) )
+        const response = await editMedicationStock(selectedMedicationId, Number(stock) )
 
-        if(response?.status === 200){
+        if(response.status === 200){
             toast.success("Estoque atualizado com sucesso")
             location.reload()
         }else{
