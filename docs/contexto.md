@@ -181,7 +181,7 @@ As tabelas a seguir apresentam os requisitos funcionais e não funcionais que de
 
 | Casos de Uso | CdU05 -  Gerar relatório de medicamentos. |
 |------|------------------------------|
-|Procedimento| 1)O usuário acessa o ícone relatórios na página home”. <br /> 2) O usuário seleciona os medicamentos que deseja incluir no relatório.  <br />3) O aplicativo gera um relatório com as informações dos medicamentos selecionados e cria um arquivo em formato PDF. <br /> 4) O aplicativo  disponibiliza um link para o download do arquivo PDF. <br /> 5) O usuário descarrega o arquivo para envio ao médico. |
+|Procedimento| 1)O usuário acessa o botão relatórios na página home”. <br /> 2) O usuário coloca o período em que deseja buscar as medicações tomadas e clica em exportar relatório.  <br />3) A aplicação gera um relatório com as informações dos medicamentos selecionados e cria um arquivo em formato PDF. <br /> 4) A aplicação  disponibiliza um link para o download do arquivo PDF. <br /> 5) O usuário descarrega o arquivo para envio ao médico. |
 |Requisitos associados| Cadastro de usuário, login, cadastro de medicamentos |
 |Resultado esperado| O usuário recebe um arquivo em formato PDF com um relatório de medicamentos após realizar o pedido de geração de relatório. | 
 |Dados de entrada | Seleção de medicamentos, acesso ao *link* para download do arquivo PDF e conexão à internet.  |
