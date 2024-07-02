@@ -183,7 +183,7 @@ Exemplos de fluxos de dados da aplicação:
 |------|-----------------------------------------|----|
 |RF-001| Gerenciar usuário paciente | ALTA |
 |RF-002| Fazer *login*  | ALTA |
-|RF-003| Gerenciar medicamentos e alertas  | ALTA |
+|RF-003| Gerenciar medicamentos | ALTA |
 |RF-004| Disparar lembrete no horário com orientações para tomar o medicamento  | ALTA |
 |RF-005| Disparar alerta de fim de estoque de medicamentos | ALTA |
 |RF-006| Permitir que o paciente confirme a ingestão ao ser notificado | MÉDIA |
@@ -288,21 +288,30 @@ Isso gerará o arquivo de release no formato AAB (Android App Bundle).
 
 **Requisitos Funcionais:**
 
-**1. Cadastro de Usuários**
+**1. Gerenciar Usuários** </br>
+  
+Cadastro
 - Clicar em Criar Usuário na tela de login.
 - Preencher os campos: nome, sobrenome, e-mail, senha, Estado, Cidade, gênero, data de nascimento.
 - Clicar em Criar Usuário, para verificar se a aplicação é bem-sucedida caso os dados sejam válidos, ou se dá erro caso os dados sejam inválidos.
+
+Edição
+- Clicar em meu perfil.
+- Fazer os ajustes necessários.
+- Clicar em editar.
 
 **2. Autenticação de Usuários**
 - Preencher as credenciais (e-mail e senha).
 - Verificar se o login é bem-sucedido ou mal-sucedido clicando em entrar.
 
-**3. Cadastro de Medicamentos e Alarmes**
+**3. Gerenciar Medicamentos** </br>
+
+Cadastro
 - Selecionar a opção Cadastro de Medicamentos que fica na home da aplicação.
 - Preencher os campos: nome do medicamento, estoque Inicial, período de uso e  horários programados para alarme.
 - Clicar em adicionar.
 
-**4. Editar medicamentos cadastrados**
+Edição
 - Selecionar a opção Cadastro de Medicamentos que fica na home da aplicação.
 - Selecionar o medicamento que deseja editar.
 - Editar a opção desejada. 
